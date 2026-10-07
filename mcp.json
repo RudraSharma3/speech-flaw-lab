@@ -1,0 +1,26 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/mcp.json",
+  "mcpServers": {
+    "gemini-worker": {
+      "command": "npx",
+      "args": ["-y", "@google/gemini-mcp-server"],
+      "env": {
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      },
+      "description": "Worker for UI generation, large-context analysis, and multimodal assets"
+    },
+    "codex-worker": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./"],
+      "env": {
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+      },
+      "description": "Worker for backend implementation, database migrations, and test writing"
+    },
+    "local-ollama-worker": {
+      "command": "ollama",
+      "args": ["serve"],
+      "description": "Optional 100% free local model worker (DeepSeek-R1 / Qwen 2.5 Coder)"
+    }
+  }
+}

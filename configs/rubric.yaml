@@ -1,0 +1,92 @@
+# Rubric Configuration for Contrastive Speech Analytics
+# Maps statistical deviation metrics into deterministic 0-100 dimension scores and overall score.
+
+version: "1.0.0"
+deterministic_seed: 42
+
+weights:
+  pacing: 0.25
+  pitch_expressiveness: 0.25
+  volume_dynamics: 0.20
+  pauses_fluency: 0.15
+  clarity_articulation: 0.15
+
+dimensions:
+  pacing:
+    name: "Pacing & Speech Rate"
+    description: "Evaluates syllable articulation rate consistency and appropriate timing."
+    metric: "rate_deviation_z"
+    optimal_target: 0.0
+    tolerance_mad: 1.2
+    curve: "sigmoid_symmetric"
+    params:
+      center: 0.0
+      steepness: 1.5
+      min_score: 10.0
+      max_score: 100.0
+
+  pitch_expressiveness:
+    name: "Pitch Expressiveness (F0 Dynamics)"
+    description: "Evaluates semitone variation (P10-P90 range) and pitch contour dynamics to detect monotone or unnatural inflections."
+    metric: "f0_range_semitones_z"
+    optimal_target: 0.0
+    tolerance_mad: 1.0
+    curve: "piecewise_linear"
+    params:
+      points:
+        - [ -4.0, 10.0 ]   # Severely monotone
+        - [ -2.0, 45.0 ]   # Noticeably flat
+        - [ -1.0, 80.0 ]   # Mildly flat
+        - [  0.0, 100.0 ]  # Ideal natural pitch dynamics
+        - [  1.5, 90.0 ]   # Expressive
+        - [  3.0, 60.0 ]   # Over-exaggerated / erratic pitch
+        - [  5.0, 20.0 ]   # Unnatural pitch instability
+
+  volume_dynamics:
+    name: "Volume Dynamics & Energy Envelope"
+    description: "Evaluates dB energy contrast between stressed words, unstressed words, and silent baseline."
+    metric: "energy_contrast_db_z"
+    optimal_target: 0.0
+    tolerance_mad: 1.2
+    curve: "piecewise_linear"
+    params:
+      points:
+        - [ -3.5, 15.0 ]   # Extreme volume drop / flat energy
+        - [ -2.0, 50.0 ]   # Low volume contrast
+        - [  0.0, 100.0 ]  # Strong rhythmic stress-timed contrast
+        - [  2.5, 75.0 ]   # Over-compressed / clipped dynamics
+        - [  4.0, 30.0 ]   # Severe blasting / clipping
+
+  pauses_fluency:
+    name: "Pauses & Syntactic Fluency"
+    description: "Measures pause placements at syntactic phrase boundaries vs disruptive intra-phrase hesitation."
+    metric: "inappropriate_pause_penalty"
+    optimal_target: 0.0
+    curve: "exponential_decay"
+    params:
+      base: 100.0
+      decay_per_inappropriate_pause_sec: 18.0
+      min_score: 5.0
+
+  clarity_articulation:
+    name: "Acoustic Clarity & Harmonics"
+    description: "Harmonics-to-Noise Ratio (HNR) and spectral flux to assess vocal clarity vs breathiness/noise."
+    metric: "hnr_mean_db_z"
+    optimal_target: 0.0
+    curve: "sigmoid_lower_bound"
+    params:
+      midpoint_z: -1.8
+      steepness: 1.2
+      min_score: 15.0
+      max_score: 100.0
+
+severity_calculation:
+  formula: "duration_s * max_abs_z * type_weight"
+  type_weights:
+    monotone: 1.2
+    rushed: 1.4
+    drag_slow: 1.2
+    inappropriate_pause: 1.6
+    missing_pause: 1.3
+    volume_drop: 1.1
+    breathy_unclear: 1.0

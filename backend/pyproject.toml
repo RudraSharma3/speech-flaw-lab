@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contrastive-speech-analytics"
+version = "1.0.0"
+description = "Contrastive Speech Analytics & Temporal Flaw Grounding"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Hackathon Team" }]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["backend/tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

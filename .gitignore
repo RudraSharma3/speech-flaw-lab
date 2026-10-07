@@ -1,0 +1,44 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.env.*
+!.env.example
+venv/
+env/
+.venv/
+conda-env/
+
+# Node / Frontend
+node_modules/
+dist/
+build/
+.next/
+*.tsbuildinfo
+
+# Data / Caches
+.cache/
+.pytest_cache/
+.ruff_cache/
+*.wav
+*.mp3
+*.flac
+*.ogg
+!data/demo_audio/*.wav
+data/raw/*
+data/processed/*
+data/alignments/*
+data/population_norms/*
+data/cached_results/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/alignments/.gitkeep
+!data/population_norms/.gitkeep
+!data/cached_results/.gitkeep
+
+# Docker / OS
+.DS_Store
+Thumbs.db

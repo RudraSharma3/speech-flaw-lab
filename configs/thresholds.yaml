@@ -1,0 +1,53 @@
+# Acoustic and DSP Processing Thresholds & Parameters
+
+audio:
+  canonical_sample_rate: 16000
+  channels: 1
+  bit_depth: 16
+  target_lufs: -20.0
+  clipping_threshold_dbfs: -0.5
+  min_audio_duration_s: 3.0
+  max_audio_duration_s: 300.0
+
+vad:
+  silero_threshold: 0.45
+  min_speech_duration_ms: 150
+  min_silence_duration_ms: 200
+  speech_pad_ms: 40
+
+features:
+  frame_step_s: 0.010       # 10ms hop
+  frame_length_s: 0.025     # 25ms window
+  f0_praat:
+    floor_hz: 75.0
+    ceiling_hz: 500.0
+    time_step_s: 0.010
+    adaptive_percentiles: [5.0, 95.0]
+    octave_jump_cost: 0.35
+  intensity:
+    floor_db: 30.0
+    time_step_s: 0.010
+  mfcc:
+    n_mfcc: 13
+    n_mels: 40
+    n_fft: 512
+    hop_length: 160         # 10ms at 16kHz
+  hnr:
+    time_step_s: 0.010
+    min_pitch_hz: 75.0
+    silence_threshold: 0.1
+
+grounding:
+  hysteresis_high_z: 2.2
+  hysteresis_low_z: 1.5
+  peak_prominence_z: 1.4
+  peak_distance_words: 2
+  min_region_duration_s: 0.25
+  merge_gap_s: 0.30
+  snap_to_words: true
+  iou_overlap_threshold: 0.50
+
+quality_flags:
+  snr_low_threshold_db: 15.0
+  clipping_fraction_threshold: 0.015
+  bg_noise_hnr_floor_db: 10.0

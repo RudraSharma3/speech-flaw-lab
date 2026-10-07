@@ -1,0 +1,115 @@
+# Flaw Detection Rules and Structured Causal Explanations
+# All rules are deterministic statistical triggers based on speaker-normalized z-scores and boundary checks.
+
+rules:
+  - id: "monotone_pitch"
+    flaw_type: "monotone"
+    feature: "f0_range_semitones"
+    unit: "semitones (st)"
+    trigger:
+      metric: "f0_range_st_z"
+      operator: "<="
+      threshold: -2.0
+      min_duration_words: 3
+    severity_tier:
+      critical: -3.5
+      major: -2.5
+      minor: -2.0
+    rationale_template: "Pitch expressiveness collapsed from {baseline:.1f} to {observed:.1f} semitones across words {start_word_idx}-{end_word_idx} (z={z_score:+.1f})."
+    why_it_hurts: "Flattening pitch modulation removes vocal stress and nuclear accents, resulting in a robotic delivery that reduces listener engagement and comprehension."
+
+  - id: "rushed_delivery"
+    flaw_type: "rushed"
+    feature: "articulation_rate"
+    unit: "syllables/sec"
+    trigger:
+      metric: "rate_syllables_per_sec_z"
+      operator: ">="
+      threshold: 2.2
+      min_duration_words: 3
+    severity_tier:
+      critical: 3.5
+      major: 2.7
+      minor: 2.2
+    rationale_template: "Articulation rate surged from baseline {baseline:.1f} to {observed:.1f} syllables/sec ({delta:+.1f} syl/s, z={z_score:+.1f}) across words '{words}'."
+    why_it_hurts: "Compressing word durations and swallowing vowel nuclei prevents listeners from parsing key ideas and conveys nervous urgency."
+
+  - id: "drag_slow_delivery"
+    flaw_type: "drag_slow"
+    feature: "articulation_rate"
+    unit: "syllables/sec"
+    trigger:
+      metric: "rate_syllables_per_sec_z"
+      operator: "<="
+      threshold: -2.2
+      min_duration_words: 3
+    severity_tier:
+      critical: -3.5
+      major: -2.7
+      minor: -2.2
+    rationale_template: "Speech tempo slowed from baseline {baseline:.1f} to {observed:.1f} syllables/sec ({delta:+.1f} syl/s, z={z_score:+.1f}) across '{words}'."
+    why_it_hurts: "Excessively lengthened phones break sentence cadence and dilute rhetorical momentum, causing listener fatigue."
+
+  - id: "inappropriate_pause"
+    flaw_type: "inappropriate_pause"
+    feature: "pause_duration"
+    unit: "seconds (s)"
+    trigger:
+      metric: "unpunctuated_pause_duration_s"
+      operator: ">="
+      threshold: 0.35
+      requires_no_punctuation: true
+    severity_tier:
+      critical: 1.0
+      major: 0.6
+      minor: 0.35
+    rationale_template: "Disruptive {observed:.2f}s unpunctuated pause detected between words '{word_before}' and '{word_after}' (expected <= {baseline:.2f}s)."
+    why_it_hurts: "Inserting hesitations mid-phrase fractures syntactic chunking and introduces cognitive processing friction for the listener."
+
+  - id: "missing_pause"
+    flaw_type: "missing_pause"
+    feature: "pause_duration"
+    unit: "seconds (s)"
+    trigger:
+      metric: "punctuated_pause_duration_s"
+      operator: "<="
+      threshold: 0.10
+      requires_punctuation: true
+    severity_tier:
+      critical: 0.02
+      major: 0.05
+      minor: 0.10
+    rationale_template: "Syntactic pause omitted after punctuation '{punctuation}' at word '{word_before}' ({observed:.2f}s vs expected baseline {baseline:.2f}s)."
+    why_it_hurts: "Running through punctuation boundaries denies listeners cognitive processing time to digest completed thematic units."
+
+  - id: "volume_drop"
+    flaw_type: "volume_drop"
+    feature: "intensity_db"
+    unit: "dB"
+    trigger:
+      metric: "intensity_db_z"
+      operator: "<="
+      threshold: -2.5
+      min_duration_words: 2
+    severity_tier:
+      critical: -3.8
+      major: -3.0
+      minor: -2.5
+    rationale_template: "Vocal energy plummeted by {delta:.1f} dB relative to speaker median (observed {observed:.1f} dB vs baseline {baseline:.1f} dB, z={z_score:+.1f})."
+    why_it_hurts: "Abrupt loss of acoustic power creates trailing-off phrases where word endings become inaudible or sound unconfident."
+
+  - id: "breathy_unclear"
+    flaw_type: "breathy_unclear"
+    feature: "harmonics_to_noise_ratio"
+    unit: "dB HNR"
+    trigger:
+      metric: "hnr_mean_db_z"
+      operator: "<="
+      threshold: -2.2
+      min_duration_words: 2
+    severity_tier:
+      critical: -3.5
+      major: -2.8
+      minor: -2.2
+    rationale_template: "Harmonics-to-Noise Ratio (HNR) dropped to {observed:.1f} dB ({delta:.1f} dB vs baseline {baseline:.1f} dB, z={z_score:+.1f}) indicating excessive turbulence/breathiness."
+    why_it_hurts: "Acoustic breathiness and poor harmonic definition reduce phonetic contrast and impair intelligibility."

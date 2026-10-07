@@ -1,0 +1,41 @@
+[
+  {
+    "speech_id": "jfk_moon_1962",
+    "title": "Address at Rice University on the Nation's Space Effort ('We choose to go to the Moon')",
+    "speaker": "John F. Kennedy",
+    "date": "1962-09-12",
+    "location": "Rice Stadium, Houston, Texas",
+    "source_url": "https://www.jfklibrary.org/asset-viewer/archives/JFKWHA/1962/JFKWHA-127-002",
+    "audio_source_url": "https://archive.org/download/jfks19620912/jfks19620912.mp3",
+    "licence": "Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
+    "excerpt_start_s": 942.0,
+    "excerpt_end_s": 962.0,
+    "canonical_transcript": "We choose to go to the moon . We choose to go to the moon in this decade and do the other things , not because they are easy , but because they are hard , because that goal will serve to organize and measure the best of our energies and skills ."
+  },
+  {
+    "speech_id": "reagan_challenger_1986",
+    "title": "Address to the Nation on the Explosion of the Space Shuttle Challenger",
+    "speaker": "Ronald Reagan",
+    "date": "1986-01-28",
+    "location": "Oval Office, Washington, D.C.",
+    "source_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
+    "audio_source_url": "https://archive.org/download/ChallengerAddress/ReaganChallengerAddress.mp3",
+    "licence": "Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
+    "excerpt_start_s": 224.0,
+    "excerpt_end_s": 248.0,
+    "canonical_transcript": "The future doesn't belong to the fainthearted ; it belongs to the brave . The Challenger crew was pulling us into the future , and we'll continue to follow them ."
+  },
+  {
+    "speech_id": "fdr_fear_itself_1933",
+    "title": "First Inaugural Address ('The only thing we have to fear is fear itself')",
+    "speaker": "Franklin D. Roosevelt",
+    "date": "1933-03-04",
+    "location": "U.S. Capitol, Washington, D.C.",
+    "source_url": "https://www.archives.gov/milestone-documents/franklin-d-roosevelts-first-inaugural-address",
+    "audio_source_url": "https://archive.org/download/FDR_First_Inaugural_Address/FDR_Inaugural.mp3",
+    "licence": "Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
+    "excerpt_start_s": 45.0,
+    "excerpt_end_s": 65.0,
+    "canonical_transcript": "This great Nation will endure as it has endured , will revive and will prosper . So , first of all , let me assert my firm belief that the only thing we have to fear is fear itself ."
+  }
+]

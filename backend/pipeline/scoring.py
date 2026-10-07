@@ -1,0 +1,171 @@
+"""
+Deterministic Rubric Scoring Module.
+Evaluates dimensions (0-100) using monotonic mathematical curves from configs/rubric.yaml
+and computes weighted overall composite scores and estimated quality levels.
+"""
+
+import os
+import math
+import yaml
+import numpy as np
+from typing import List, Dict, Any, Tuple
+
+RUBRIC_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "rubric.yaml")
+
+
+def load_rubric_config() -> Dict[str, Any]:
+    if os.path.exists(RUBRIC_PATH):
+        with open(RUBRIC_PATH, "r") as f:
+            return yaml.safe_load(f)
+    return {}
+
+
+def evaluate_piecewise_linear(val: float, points: List[List[float]]) -> float:
+    """Monotonic piecewise linear interpolation."""
+    pts = sorted(points, key=lambda p: p[0])
+    if val <= pts[0][0]:
+        return float(pts[0][1])
+    if val >= pts[-1][0]:
+        return float(pts[-1][1])
+
+    for i in range(len(pts) - 1):
+        x0, y0 = pts[i]
+        x1, y1 = pts[i + 1]
+        if x0 <= val <= x1:
+            frac = (val - x0) / (x1 - x0) if x1 != x0 else 0.0
+            return float(y0 + frac * (y1 - y0))
+
+    return float(pts[-1][1])
+
+
+def evaluate_sigmoid_symmetric(z_val: float, center: float = 0.0, steepness: float = 1.5, min_score: float = 10.0, max_score: float = 100.0) -> float:
+    """Symmetric sigmoid penalty centered at 0 deviation."""
+    abs_dev = abs(z_val - center)
+    sig = 1.0 / (1.0 + math.exp(steepness * (abs_dev - 1.5)))
+    return float(min_score + (max_score - min_score) * sig)
+
+
+def evaluate_exponential_decay(penalty_value: float, base: float = 100.0, decay_per_unit: float = 18.0, min_score: float = 5.0) -> float:
+    """Exponential decay for penalty accumulation (e.g. pause disruptions)."""
+    score = base * math.exp(-0.25 * penalty_value)
+    return float(max(min_score, min(100.0, score)))
+
+
+def score_dimension(dim_key: str, dim_cfg: Dict[str, Any], words: List[Dict[str, Any]], grounded_flaws: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Scores a single rubric dimension based on its configured mathematical curve."""
+    curve = dim_cfg.get("curve", "piecewise_linear")
+    params = dim_cfg.get("params", {})
+    name = dim_cfg.get("name", dim_key.title())
+
+    # Calculate metric raw and z
+    if dim_key == "pacing":
+        z_vals = [w.get("z_by_feature", {}).get("rate_syllables_per_sec_z", 0.0) for w in words]
+        metric_z = float(np.mean(np.abs(z_vals))) if z_vals else 0.0
+        raw_rates = [w["articulation_rate"] for w in words if "articulation_rate" in w]
+        metric_raw = float(np.mean(raw_rates)) if raw_rates else 4.2
+        score = evaluate_sigmoid_symmetric(metric_z, **params)
+        summary = f"Mean articulation rate {metric_raw:.1f} syl/s with mean |z|={metric_z:.2f}."
+
+    elif dim_key == "pitch_expressiveness":
+        z_vals = [w.get("z_by_feature", {}).get("f0_range_st_z", 0.0) for w in words]
+        metric_z = float(np.mean(z_vals)) if z_vals else 0.0
+        raw_ranges = [w["f0_range_st"] for w in words if "f0_range_st" in w]
+        metric_raw = float(np.mean(raw_ranges)) if raw_ranges else 5.4
+        score = evaluate_piecewise_linear(metric_z, params.get("points", []))
+        summary = f"Average pitch range {metric_raw:.1f} semitones (z={metric_z:+.2f})."
+
+    elif dim_key == "volume_dynamics":
+        z_vals = [w.get("z_by_feature", {}).get("intensity_db_z", 0.0) for w in words]
+        metric_z = float(np.mean(z_vals)) if z_vals else 0.0
+        raw_energies = [w["energy_mean_db"] for w in words if "energy_mean_db" in w]
+        metric_raw = float(np.mean(raw_energies)) if raw_energies else 0.0
+        score = evaluate_piecewise_linear(metric_z, params.get("points", []))
+        summary = f"Mean energy dynamic offset {metric_raw:+.1f} dB re median (z={metric_z:+.2f})."
+
+    elif dim_key == "pauses_fluency":
+        # Sum duration of inappropriate pauses
+        inapp_pauses = [f for f in grounded_flaws if f["flaw_type"] == "inappropriate_pause"]
+        total_inapp_s = sum(f["observed_value"] for f in inapp_pauses)
+        metric_raw = total_inapp_s
+        metric_z = len(inapp_pauses) * 1.5
+        score = evaluate_exponential_decay(total_inapp_s, **params)
+        summary = f"{len(inapp_pauses)} disruptive pauses ({total_inapp_s:.2f}s total)."
+
+    elif dim_key == "clarity_articulation":
+        z_vals = [w.get("z_by_feature", {}).get("hnr_mean_db_z", 0.0) for w in words]
+        metric_z = float(np.mean(z_vals)) if z_vals else 0.0
+        raw_hnrs = [w["hnr_mean_db"] for w in words if "hnr_mean_db" in w]
+        metric_raw = float(np.mean(raw_hnrs)) if raw_hnrs else 18.0
+        mid = params.get("midpoint_z", -1.8)
+        k = params.get("steepness", 1.2)
+        score = 15.0 + 85.0 / (1.0 + math.exp(-k * (metric_z - mid)))
+        summary = f"Acoustic HNR clarity {metric_raw:.1f} dB (z={metric_z:+.2f})."
+
+    else:
+        score = 80.0
+        metric_raw = 0.0
+        metric_z = 0.0
+        summary = "Standard evaluation"
+
+    return {
+        "id": dim_key,
+        "name": name,
+        "score": round(float(np.clip(score, 0.0, 100.0)), 1),
+        "metric_raw": round(metric_raw, 2),
+        "metric_z": round(metric_z, 2),
+        "summary": summary,
+    }
+
+
+def calculate_overall_scores(words: List[Dict[str, Any]], grounded_flaws: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Calculates all dimension scores and weighted composite overall score."""
+    rubric = load_rubric_config()
+    weights = rubric.get("weights", {
+        "pacing": 0.25,
+        "pitch_expressiveness": 0.25,
+        "volume_dynamics": 0.20,
+        "pauses_fluency": 0.15,
+        "clarity_articulation": 0.15,
+    })
+    dimensions_cfg = rubric.get("dimensions", {})
+
+    dim_results = []
+    overall_score = 0.0
+
+    for dim_key, weight in weights.items():
+        cfg = dimensions_cfg.get(dim_key, {})
+        scored_dim = score_dimension(dim_key, cfg, words, grounded_flaws)
+        weighted = round(scored_dim["score"] * weight, 2)
+        scored_dim["weight"] = weight
+        scored_dim["weighted_score"] = weighted
+        overall_score += weighted
+        dim_results.append(scored_dim)
+
+    overall_score = round(float(np.clip(overall_score, 0.0, 100.0)), 1)
+
+    # Assign Letter Grade
+    if overall_score >= 93.0:
+        grade = "A+"
+        quality_level = 4
+    elif overall_score >= 85.0:
+        grade = "A"
+        quality_level = 4
+    elif overall_score >= 75.0:
+        grade = "B"
+        quality_level = 3
+    elif overall_score >= 60.0:
+        grade = "C"
+        quality_level = 2
+    elif overall_score >= 40.0:
+        grade = "D"
+        quality_level = 1
+    else:
+        grade = "F"
+        quality_level = 0
+
+    return {
+        "overall": overall_score,
+        "grade": grade,
+        "quality_level_est": quality_level,
+        "dimensions": dim_results,
+    }

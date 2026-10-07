@@ -1,0 +1,42 @@
+FROM mambaorg/micromamba:1.5.8-noble
+
+USER root
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libsndfile1 \
+    sox \
+    libsox-fmt-all \
+    curl \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+USER $MAMBA_USER
+
+WORKDIR /app
+
+# Copy environment.yml first for caching
+COPY --chown=$MAMBA_USER:$MAMBA_USER environment.yml /tmp/env.yaml
+
+# Build conda environment
+RUN micromamba create -y -f /tmp/env.yaml && \
+    micromamba clean --all --yes
+
+# Activate conda environment by default
+ENV PATH="/opt/conda/envs/speech-env/bin:$PATH"
+ENV CONDA_DEFAULT_ENV="speech-env"
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Pre-download MFA english_us_arpa acoustic model and dictionary so no internet needed at demo time
+RUN /opt/conda/envs/speech-env/bin/mfa model download dictionary english_us_arpa || true
+RUN /opt/conda/envs/speech-env/bin/mfa model download acoustic english_us_arpa || true
+
+# Copy project files
+COPY --chown=$MAMBA_USER:$MAMBA_USER . /app
+
+EXPOSE 8000
+
+CMD ["/opt/conda/envs/speech-env/bin/uvicorn", "backend.app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

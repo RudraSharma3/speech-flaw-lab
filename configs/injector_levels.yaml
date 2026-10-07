@@ -1,0 +1,101 @@
+# Parameterized Flaw Injector Configuration
+# Defines 5 quality levels (4=ideal to 0=egregious) and precise parametric transformations.
+
+levels:
+  4:
+    name: "Ideal Reference"
+    description: "Original master recording, pristine prosody, optimal cadence and emphasis."
+    flaw_count: 0
+    flaws_allowed: []
+
+  3:
+    name: "Near Perfect"
+    description: "Very mild, subtle prosodic imperfections (e.g. slight pace acceleration or minor pitch dip)."
+    flaw_count: 1
+    intensity_multiplier: 0.6
+    flaw_profiles:
+      - type: "monotone"
+        f0_compression_ratio: 0.65  # 35% compression towards median
+        duration_words: [3, 6]
+      - type: "rushed"
+        tempo_factor: 1.25          # 25% faster
+        duration_words: [3, 5]
+      - type: "drag_slow"
+        tempo_factor: 0.82          # 18% slower
+        duration_words: [3, 5]
+      - type: "volume_drop"
+        gain_db: -4.5
+        duration_words: [2, 4]
+
+  2:
+    name: "Slightly Flawed"
+    description: "Noticeable pacing, pause, or intonation errors across 2 distinct regions."
+    flaw_count: 2
+    intensity_multiplier: 1.0
+    flaw_profiles:
+      - type: "monotone"
+        f0_compression_ratio: 0.40  # 60% compression towards median
+        duration_words: [4, 8]
+      - type: "rushed"
+        tempo_factor: 1.45          # 45% faster
+        duration_words: [4, 7]
+      - type: "inappropriate_pause"
+        pause_duration_s: 0.55
+        locations: "non_punctuation"
+      - type: "missing_pause"
+        shrink_to_s: 0.04
+        locations: "punctuation"
+      - type: "volume_drop"
+        gain_db: -8.0
+        duration_words: [3, 6]
+
+  1:
+    name: "Flawed"
+    description: "Multiple pronounced flaws (3 distinct regions) with severe prosodic disruption."
+    flaw_count: 3
+    intensity_multiplier: 1.5
+    flaw_profiles:
+      - type: "monotone"
+        f0_compression_ratio: 0.20  # 80% compression
+        duration_words: [6, 12]
+      - type: "rushed"
+        tempo_factor: 1.70          # 70% faster
+        duration_words: [5, 10]
+      - type: "drag_slow"
+        tempo_factor: 0.60          # 40% slower
+        duration_words: [5, 9]
+      - type: "inappropriate_pause"
+        pause_duration_s: 0.90
+        locations: "non_punctuation"
+      - type: "volume_drop"
+        gain_db: -12.0
+        duration_words: [4, 8]
+      - type: "breathy_unclear"
+        noise_snr_db: 14.0
+
+  0:
+    name: "Egregiously Wrong"
+    description: "Extreme, multi-tier failure across 4 distinct regions combining robotic pitch, erratic tempo, and jarring pauses."
+    flaw_count: 4
+    intensity_multiplier: 2.2
+    flaw_profiles:
+      - type: "monotone"
+        f0_compression_ratio: 0.05  # Near 100% pitch flatline
+        duration_words: [8, 16]
+      - type: "rushed"
+        tempo_factor: 2.10          # More than 2x speed
+        duration_words: [6, 12]
+      - type: "drag_slow"
+        tempo_factor: 0.45          # 55% slower
+        duration_words: [6, 12]
+      - type: "inappropriate_pause"
+        pause_duration_s: 1.50
+        locations: "non_punctuation"
+      - type: "missing_pause"
+        shrink_to_s: 0.01
+        locations: "punctuation"
+      - type: "volume_drop"
+        gain_db: -18.0
+        duration_words: [5, 10]
+      - type: "breathy_unclear"
+        noise_snr_db: 8.0
