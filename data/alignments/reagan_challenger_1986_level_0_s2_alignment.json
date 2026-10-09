@@ -1,0 +1,1311 @@
+{
+  "engine_used": "torchaudio_mms_fa",
+  "words": [
+    {
+      "index": 0,
+      "text": "and",
+      "start": 0.14,
+      "end": 0.26,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 1,
+      "text": "tell",
+      "start": 0.26,
+      "end": 0.54,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 2,
+      "text": "them",
+      "start": 0.54,
+      "end": 0.91,
+      "duration": 0.37,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 3,
+      "text": "your",
+      "start": 1.77,
+      "end": 1.9,
+      "duration": 0.13,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 4,
+      "text": "dedication",
+      "start": 1.9,
+      "end": 2.581,
+      "duration": 0.681,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 5,
+      "text": "and",
+      "start": 2.581,
+      "end": 2.721,
+      "duration": 0.14,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 6,
+      "text": "professionalism",
+      "start": 2.721,
+      "end": 3.701,
+      "duration": 0.98,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 7,
+      "text": "have",
+      "start": 3.77,
+      "end": 3.921,
+      "duration": 0.151,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 8,
+      "text": "moved",
+      "start": 3.921,
+      "end": 4.301,
+      "duration": 0.38,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 9,
+      "text": "and",
+      "start": 4.301,
+      "end": 4.421,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 10,
+      "text": "impressed",
+      "start": 4.421,
+      "end": 4.861,
+      "duration": 0.44,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 11,
+      "text": "us",
+      "start": 4.9,
+      "end": 4.981,
+      "duration": 0.081,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 12,
+      "text": "for",
+      "start": 4.981,
+      "end": 5.141,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 13,
+      "text": "decades",
+      "start": 5.141,
+      "end": 5.8,
+      "duration": 0.659,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 14,
+      "text": "and",
+      "start": 6.59,
+      "end": 6.662,
+      "duration": 0.072,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 15,
+      "text": "we",
+      "start": 6.662,
+      "end": 6.822,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 16,
+      "text": "know",
+      "start": 6.822,
+      "end": 7.25,
+      "duration": 0.428,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 17,
+      "text": "of",
+      "start": 7.62,
+      "end": 7.682,
+      "duration": 0.062,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 18,
+      "text": "your",
+      "start": 7.72,
+      "end": 7.902,
+      "duration": 0.182,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 19,
+      "text": "anguish",
+      "start": 7.902,
+      "end": 8.39,
+      "duration": 0.488,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 20,
+      "text": "We",
+      "start": 8.98,
+      "end": 9.082,
+      "duration": 0.102,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 21,
+      "text": "share",
+      "start": 9.082,
+      "end": 9.362,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 22,
+      "text": "it",
+      "start": 9.362,
+      "end": 9.542,
+      "duration": 0.18,
+      "punctuation": ".\"",
+      "has_punctuation": true
+    },
+    {
+      "index": 23,
+      "text": "There's",
+      "start": 11.043,
+      "end": 11.303,
+      "duration": 0.26,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 24,
+      "text": "a",
+      "start": 11.303,
+      "end": 11.66,
+      "duration": 0.357,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 25,
+      "text": "coincidence",
+      "start": 11.9,
+      "end": 12.543,
+      "duration": 0.643,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 26,
+      "text": "today",
+      "start": 12.543,
+      "end": 13.18,
+      "duration": 0.637,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 27,
+      "text": "On",
+      "start": 13.58,
+      "end": 13.63,
+      "duration": 0.05,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 28,
+      "text": "this",
+      "start": 13.63,
+      "end": 13.843,
+      "duration": 0.213,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 29,
+      "text": "day",
+      "start": 13.843,
+      "end": 14.043,
+      "duration": 0.2,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 30,
+      "text": "390",
+      "start": 14.043,
+      "end": 14.984,
+      "duration": 0.941,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 31,
+      "text": "years",
+      "start": 14.984,
+      "end": 15.264,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 32,
+      "text": "ago",
+      "start": 15.264,
+      "end": 15.584,
+      "duration": 0.32,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 33,
+      "text": "the",
+      "start": 15.584,
+      "end": 15.724,
+      "duration": 0.14,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 34,
+      "text": "great",
+      "start": 15.724,
+      "end": 15.844,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 35,
+      "text": "explorer",
+      "start": 15.844,
+      "end": 16.164,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 36,
+      "text": "Sir",
+      "start": 16.164,
+      "end": 16.264,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 37,
+      "text": "Francis",
+      "start": 16.264,
+      "end": 16.444,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 38,
+      "text": "Drake",
+      "start": 16.444,
+      "end": 16.924,
+      "duration": 0.48,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 39,
+      "text": "died",
+      "start": 16.924,
+      "end": 17.024,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 40,
+      "text": "aboard",
+      "start": 17.024,
+      "end": 17.404,
+      "duration": 0.38,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 41,
+      "text": "ship",
+      "start": 17.404,
+      "end": 17.684,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 42,
+      "text": "off",
+      "start": 17.69,
+      "end": 17.844,
+      "duration": 0.154,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 43,
+      "text": "the",
+      "start": 17.844,
+      "end": 17.964,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 44,
+      "text": "coast",
+      "start": 17.964,
+      "end": 18.264,
+      "duration": 0.3,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 45,
+      "text": "of",
+      "start": 18.264,
+      "end": 18.364,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 46,
+      "text": "Panama",
+      "start": 18.364,
+      "end": 18.85,
+      "duration": 0.486,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 47,
+      "text": "In",
+      "start": 19.88,
+      "end": 19.93,
+      "duration": 0.05,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 48,
+      "text": "his",
+      "start": 19.93,
+      "end": 20.165,
+      "duration": 0.235,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 49,
+      "text": "lifetime",
+      "start": 20.165,
+      "end": 21.505,
+      "duration": 1.34,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 50,
+      "text": "the",
+      "start": 21.505,
+      "end": 21.725,
+      "duration": 0.22,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 51,
+      "text": "great",
+      "start": 21.725,
+      "end": 22.285,
+      "duration": 0.56,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 52,
+      "text": "frontiers",
+      "start": 22.285,
+      "end": 23.806,
+      "duration": 1.521,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 53,
+      "text": "were",
+      "start": 23.806,
+      "end": 24.026,
+      "duration": 0.22,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 54,
+      "text": "the",
+      "start": 24.026,
+      "end": 24.34,
+      "duration": 0.314,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 55,
+      "text": "oceans",
+      "start": 24.34,
+      "end": 25.6,
+      "duration": 1.26,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 56,
+      "text": "and",
+      "start": 25.94,
+      "end": 26.266,
+      "duration": 0.326,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 57,
+      "text": "a",
+      "start": 26.266,
+      "end": 26.48,
+      "duration": 0.214,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 58,
+      "text": "historian",
+      "start": 26.966,
+      "end": 28.267,
+      "duration": 1.3,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 59,
+      "text": "later",
+      "start": 28.267,
+      "end": 28.98,
+      "duration": 0.713,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 60,
+      "text": "said",
+      "start": 28.98,
+      "end": 29.36,
+      "duration": 0.38,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 61,
+      "text": "he",
+      "start": 29.847,
+      "end": 30.027,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 62,
+      "text": "lived",
+      "start": 30.027,
+      "end": 30.347,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 63,
+      "text": "by",
+      "start": 30.347,
+      "end": 30.507,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 64,
+      "text": "the",
+      "start": 30.507,
+      "end": 30.687,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 65,
+      "text": "sea",
+      "start": 30.687,
+      "end": 31.15,
+      "duration": 0.463,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 66,
+      "text": "died",
+      "start": 31.3,
+      "end": 31.83,
+      "duration": 0.53,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 67,
+      "text": "on",
+      "start": 33.208,
+      "end": 33.308,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 68,
+      "text": "it",
+      "start": 33.31,
+      "end": 33.488,
+      "duration": 0.178,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 69,
+      "text": "and",
+      "start": 34.07,
+      "end": 34.248,
+      "duration": 0.178,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 70,
+      "text": "was",
+      "start": 34.248,
+      "end": 34.448,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 71,
+      "text": "buried",
+      "start": 34.448,
+      "end": 34.828,
+      "duration": 0.38,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 72,
+      "text": "in",
+      "start": 34.828,
+      "end": 34.948,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 73,
+      "text": "it",
+      "start": 34.948,
+      "end": 35.13,
+      "duration": 0.182,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 74,
+      "text": "Well",
+      "start": 36.348,
+      "end": 36.509,
+      "duration": 0.16,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 75,
+      "text": "today",
+      "start": 36.509,
+      "end": 37.12,
+      "duration": 0.611,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 76,
+      "text": "we",
+      "start": 37.91,
+      "end": 38.009,
+      "duration": 0.099,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 77,
+      "text": "can",
+      "start": 38.009,
+      "end": 38.209,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 78,
+      "text": "say",
+      "start": 38.209,
+      "end": 38.429,
+      "duration": 0.22,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 79,
+      "text": "of",
+      "start": 38.429,
+      "end": 38.509,
+      "duration": 0.08,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 80,
+      "text": "the",
+      "start": 38.509,
+      "end": 38.629,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 81,
+      "text": "challenger",
+      "start": 38.629,
+      "end": 39.169,
+      "duration": 0.54,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 82,
+      "text": "crew",
+      "start": 39.169,
+      "end": 39.6,
+      "duration": 0.431,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 83,
+      "text": "their",
+      "start": 40.34,
+      "end": 40.509,
+      "duration": 0.169,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 84,
+      "text": "dedication",
+      "start": 40.509,
+      "end": 41.2,
+      "duration": 0.691,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 85,
+      "text": "was",
+      "start": 41.4,
+      "end": 41.83,
+      "duration": 0.43,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 86,
+      "text": "like",
+      "start": 41.84,
+      "end": 42.07,
+      "duration": 0.23,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 87,
+      "text": "Drake's",
+      "start": 42.07,
+      "end": 42.58,
+      "duration": 0.51,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 88,
+      "text": "complete",
+      "start": 42.84,
+      "end": 43.35,
+      "duration": 0.51,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 89,
+      "text": "The",
+      "start": 44.42,
+      "end": 44.49,
+      "duration": 0.07,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 90,
+      "text": "crew",
+      "start": 44.55,
+      "end": 44.71,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 91,
+      "text": "of",
+      "start": 44.71,
+      "end": 44.79,
+      "duration": 0.08,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 92,
+      "text": "the",
+      "start": 44.79,
+      "end": 44.89,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 93,
+      "text": "space",
+      "start": 44.89,
+      "end": 45.211,
+      "duration": 0.321,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 94,
+      "text": "shuttle",
+      "start": 45.211,
+      "end": 45.531,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 95,
+      "text": "challenger",
+      "start": 45.531,
+      "end": 46.14,
+      "duration": 0.609,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 96,
+      "text": "honored",
+      "start": 46.4,
+      "end": 46.671,
+      "duration": 0.271,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 97,
+      "text": "us",
+      "start": 46.671,
+      "end": 46.831,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 98,
+      "text": "for",
+      "start": 46.831,
+      "end": 46.951,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 99,
+      "text": "the",
+      "start": 46.951,
+      "end": 47.071,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 100,
+      "text": "manner",
+      "start": 47.071,
+      "end": 47.391,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 101,
+      "text": "in",
+      "start": 47.391,
+      "end": 47.491,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 102,
+      "text": "which",
+      "start": 47.491,
+      "end": 47.691,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 103,
+      "text": "they",
+      "start": 47.691,
+      "end": 47.871,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 104,
+      "text": "lived",
+      "start": 47.871,
+      "end": 48.071,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 105,
+      "text": "their",
+      "start": 48.071,
+      "end": 48.251,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 106,
+      "text": "lives",
+      "start": 48.251,
+      "end": 48.78,
+      "duration": 0.529,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 107,
+      "text": "We",
+      "start": 49.71,
+      "end": 49.76,
+      "duration": 0.05,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 108,
+      "text": "will",
+      "start": 49.76,
+      "end": 49.892,
+      "duration": 0.132,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 109,
+      "text": "never",
+      "start": 49.892,
+      "end": 50.112,
+      "duration": 0.22,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 110,
+      "text": "forget",
+      "start": 50.112,
+      "end": 50.472,
+      "duration": 0.36,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 111,
+      "text": "them",
+      "start": 50.472,
+      "end": 50.73,
+      "duration": 0.258,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 112,
+      "text": "nor",
+      "start": 51.36,
+      "end": 51.552,
+      "duration": 0.192,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 113,
+      "text": "the",
+      "start": 51.552,
+      "end": 51.692,
+      "duration": 0.14,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 114,
+      "text": "last",
+      "start": 51.692,
+      "end": 51.992,
+      "duration": 0.3,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 115,
+      "text": "time",
+      "start": 52.03,
+      "end": 52.252,
+      "duration": 0.222,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 116,
+      "text": "we",
+      "start": 52.252,
+      "end": 52.412,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 117,
+      "text": "saw",
+      "start": 52.412,
+      "end": 52.652,
+      "duration": 0.24,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 118,
+      "text": "them",
+      "start": 52.652,
+      "end": 52.89,
+      "duration": 0.238,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 119,
+      "text": "this",
+      "start": 53.23,
+      "end": 53.372,
+      "duration": 0.142,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 120,
+      "text": "morning",
+      "start": 53.372,
+      "end": 53.773,
+      "duration": 0.401,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 121,
+      "text": "as",
+      "start": 54.58,
+      "end": 54.633,
+      "duration": 0.053,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 122,
+      "text": "they",
+      "start": 54.633,
+      "end": 54.813,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 123,
+      "text": "prepared",
+      "start": 54.813,
+      "end": 55.273,
+      "duration": 0.46,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 124,
+      "text": "for",
+      "start": 55.273,
+      "end": 55.393,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 125,
+      "text": "their",
+      "start": 55.393,
+      "end": 55.593,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 126,
+      "text": "journey",
+      "start": 55.593,
+      "end": 56.013,
+      "duration": 0.42,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 127,
+      "text": "and",
+      "start": 56.013,
+      "end": 56.213,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 128,
+      "text": "waved",
+      "start": 56.44,
+      "end": 56.733,
+      "duration": 0.293,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 129,
+      "text": "goodbye",
+      "start": 56.733,
+      "end": 57.3,
+      "duration": 0.567,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 130,
+      "text": "and",
+      "start": 58.18,
+      "end": 58.58,
+      "duration": 0.4,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 131,
+      "text": "slipped",
+      "start": 58.88,
+      "end": 59.374,
+      "duration": 0.494,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 132,
+      "text": "the",
+      "start": 59.45,
+      "end": 59.534,
+      "duration": 0.084,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 133,
+      "text": "surly",
+      "start": 59.534,
+      "end": 59.894,
+      "duration": 0.36,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 134,
+      "text": "bonds",
+      "start": 59.894,
+      "end": 60.254,
+      "duration": 0.36,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 135,
+      "text": "of",
+      "start": 60.254,
+      "end": 60.374,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 136,
+      "text": "earth",
+      "start": 60.374,
+      "end": 60.75,
+      "duration": 0.376,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 137,
+      "text": "to",
+      "start": 61.83,
+      "end": 61.894,
+      "duration": 0.064,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 138,
+      "text": "touch",
+      "start": 61.894,
+      "end": 62.154,
+      "duration": 0.26,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 139,
+      "text": "the",
+      "start": 62.154,
+      "end": 62.275,
+      "duration": 0.121,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 140,
+      "text": "face",
+      "start": 62.275,
+      "end": 62.595,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 141,
+      "text": "of",
+      "start": 62.595,
+      "end": 62.715,
+      "duration": 0.12,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 142,
+      "text": "God",
+      "start": 62.715,
+      "end": 63.11,
+      "duration": 0.395,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 143,
+      "text": "Thank",
+      "start": 64.83,
+      "end": 64.995,
+      "duration": 0.165,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 144,
+      "text": "you",
+      "start": 64.995,
+      "end": 65.215,
+      "duration": 0.22,
+      "punctuation": ".",
+      "has_punctuation": true
+    }
+  ],
+  "phonemes": []
+}

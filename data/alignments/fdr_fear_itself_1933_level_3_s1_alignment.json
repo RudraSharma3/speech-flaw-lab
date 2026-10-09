@@ -1,0 +1,708 @@
+{
+  "engine_used": "torchaudio_mms_fa",
+  "words": [
+    {
+      "index": 0,
+      "text": "Let",
+      "start": 0.77,
+      "end": 1.0,
+      "duration": 0.23,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 1,
+      "text": "me",
+      "start": 1.04,
+      "end": 1.201,
+      "duration": 0.161,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 2,
+      "text": "assert",
+      "start": 1.201,
+      "end": 1.861,
+      "duration": 0.66,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 3,
+      "text": "my",
+      "start": 1.89,
+      "end": 2.241,
+      "duration": 0.351,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 4,
+      "text": "firm",
+      "start": 2.241,
+      "end": 2.681,
+      "duration": 0.44,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 5,
+      "text": "belief",
+      "start": 2.681,
+      "end": 3.181,
+      "duration": 0.5,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 6,
+      "text": "that",
+      "start": 4.242,
+      "end": 4.442,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 7,
+      "text": "the",
+      "start": 4.52,
+      "end": 4.622,
+      "duration": 0.102,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 8,
+      "text": "only",
+      "start": 4.622,
+      "end": 5.142,
+      "duration": 0.52,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 9,
+      "text": "thing",
+      "start": 5.142,
+      "end": 5.582,
+      "duration": 0.44,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 10,
+      "text": "we",
+      "start": 5.582,
+      "end": 5.92,
+      "duration": 0.338,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 11,
+      "text": "have",
+      "start": 5.92,
+      "end": 6.323,
+      "duration": 0.403,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 12,
+      "text": "to",
+      "start": 6.323,
+      "end": 6.59,
+      "duration": 0.267,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 13,
+      "text": "fear",
+      "start": 6.643,
+      "end": 7.3,
+      "duration": 0.657,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 14,
+      "text": "is",
+      "start": 7.3,
+      "end": 7.763,
+      "duration": 0.463,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 15,
+      "text": "fear",
+      "start": 8.824,
+      "end": 9.364,
+      "duration": 0.54,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 16,
+      "text": "itself",
+      "start": 9.364,
+      "end": 10.064,
+      "duration": 0.7,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 17,
+      "text": "nameless",
+      "start": 11.15,
+      "end": 11.825,
+      "duration": 0.675,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 18,
+      "text": "unreasoning",
+      "start": 11.98,
+      "end": 12.925,
+      "duration": 0.945,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 19,
+      "text": "unjustified",
+      "start": 12.925,
+      "end": 14.086,
+      "duration": 1.161,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 20,
+      "text": "terror",
+      "start": 14.086,
+      "end": 14.59,
+      "duration": 0.504,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 21,
+      "text": "which",
+      "start": 15.51,
+      "end": 15.786,
+      "duration": 0.276,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 22,
+      "text": "paralyzes",
+      "start": 15.786,
+      "end": 16.887,
+      "duration": 1.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 23,
+      "text": "needed",
+      "start": 16.887,
+      "end": 17.267,
+      "duration": 0.38,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 24,
+      "text": "efforts",
+      "start": 17.267,
+      "end": 17.767,
+      "duration": 0.5,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 25,
+      "text": "to",
+      "start": 18.247,
+      "end": 18.448,
+      "duration": 0.2,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 26,
+      "text": "convert",
+      "start": 18.448,
+      "end": 19.188,
+      "duration": 0.74,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 27,
+      "text": "retreat",
+      "start": 19.19,
+      "end": 19.848,
+      "duration": 0.658,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 28,
+      "text": "into",
+      "start": 20.43,
+      "end": 20.728,
+      "duration": 0.298,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 29,
+      "text": "advance",
+      "start": 20.728,
+      "end": 21.449,
+      "duration": 0.721,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 30,
+      "text": "In",
+      "start": 22.64,
+      "end": 22.729,
+      "duration": 0.089,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 31,
+      "text": "every",
+      "start": 22.729,
+      "end": 23.029,
+      "duration": 0.3,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 32,
+      "text": "dark",
+      "start": 23.029,
+      "end": 23.43,
+      "duration": 0.401,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 33,
+      "text": "hour",
+      "start": 23.44,
+      "end": 23.73,
+      "duration": 0.29,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 34,
+      "text": "of",
+      "start": 23.73,
+      "end": 23.87,
+      "duration": 0.14,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 35,
+      "text": "our",
+      "start": 23.87,
+      "end": 24.13,
+      "duration": 0.26,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 36,
+      "text": "national",
+      "start": 24.13,
+      "end": 24.63,
+      "duration": 0.5,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 37,
+      "text": "life",
+      "start": 24.63,
+      "end": 25.05,
+      "duration": 0.42,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 38,
+      "text": "a",
+      "start": 25.97,
+      "end": 26.171,
+      "duration": 0.201,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 39,
+      "text": "leadership",
+      "start": 26.171,
+      "end": 26.771,
+      "duration": 0.6,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 40,
+      "text": "of",
+      "start": 26.95,
+      "end": 27.151,
+      "duration": 0.201,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 41,
+      "text": "frankness",
+      "start": 27.151,
+      "end": 27.811,
+      "duration": 0.66,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 42,
+      "text": "and",
+      "start": 27.96,
+      "end": 28.091,
+      "duration": 0.131,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 43,
+      "text": "a",
+      "start": 28.091,
+      "end": 28.252,
+      "duration": 0.161,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 44,
+      "text": "fitter",
+      "start": 28.29,
+      "end": 28.72,
+      "duration": 0.43,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 45,
+      "text": "has",
+      "start": 29.57,
+      "end": 29.872,
+      "duration": 0.302,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 46,
+      "text": "met",
+      "start": 29.872,
+      "end": 30.172,
+      "duration": 0.3,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 47,
+      "text": "with",
+      "start": 30.19,
+      "end": 30.392,
+      "duration": 0.202,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 48,
+      "text": "that",
+      "start": 30.392,
+      "end": 30.773,
+      "duration": 0.381,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 49,
+      "text": "understanding",
+      "start": 30.773,
+      "end": 31.733,
+      "duration": 0.96,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 50,
+      "text": "and",
+      "start": 31.733,
+      "end": 31.913,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 51,
+      "text": "support",
+      "start": 31.913,
+      "end": 32.553,
+      "duration": 0.64,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 52,
+      "text": "of",
+      "start": 32.553,
+      "end": 32.653,
+      "duration": 0.1,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 53,
+      "text": "the",
+      "start": 32.653,
+      "end": 32.813,
+      "duration": 0.16,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 54,
+      "text": "people",
+      "start": 32.813,
+      "end": 33.153,
+      "duration": 0.34,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 55,
+      "text": "themselves",
+      "start": 33.153,
+      "end": 34.12,
+      "duration": 0.967,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 56,
+      "text": "which",
+      "start": 34.66,
+      "end": 34.874,
+      "duration": 0.214,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 57,
+      "text": "is",
+      "start": 34.874,
+      "end": 35.054,
+      "duration": 0.18,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 58,
+      "text": "essential",
+      "start": 35.054,
+      "end": 35.735,
+      "duration": 0.681,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 59,
+      "text": "to",
+      "start": 35.735,
+      "end": 35.955,
+      "duration": 0.22,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 60,
+      "text": "victory",
+      "start": 35.955,
+      "end": 36.55,
+      "duration": 0.595,
+      "punctuation": ".",
+      "has_punctuation": true
+    },
+    {
+      "index": 61,
+      "text": "And",
+      "start": 38.28,
+      "end": 38.496,
+      "duration": 0.216,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 62,
+      "text": "I",
+      "start": 38.496,
+      "end": 38.576,
+      "duration": 0.08,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 63,
+      "text": "am",
+      "start": 38.576,
+      "end": 38.716,
+      "duration": 0.14,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 64,
+      "text": "convinced",
+      "start": 38.716,
+      "end": 39.356,
+      "duration": 0.64,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 65,
+      "text": "to",
+      "start": 39.43,
+      "end": 39.496,
+      "duration": 0.066,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 66,
+      "text": "show",
+      "start": 39.496,
+      "end": 40.05,
+      "duration": 0.554,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 67,
+      "text": "a",
+      "start": 40.43,
+      "end": 40.577,
+      "duration": 0.147,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 68,
+      "text": "game",
+      "start": 40.577,
+      "end": 41.117,
+      "duration": 0.54,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 69,
+      "text": "give",
+      "start": 41.63,
+      "end": 41.797,
+      "duration": 0.167,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 70,
+      "text": "that",
+      "start": 41.797,
+      "end": 42.077,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 71,
+      "text": "support",
+      "start": 42.077,
+      "end": 42.78,
+      "duration": 0.703,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 72,
+      "text": "to",
+      "start": 42.977,
+      "end": 43.258,
+      "duration": 0.28,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 73,
+      "text": "leadership",
+      "start": 43.258,
+      "end": 43.918,
+      "duration": 0.66,
+      "punctuation": ",",
+      "has_punctuation": true
+    },
+    {
+      "index": 74,
+      "text": "in",
+      "start": 44.41,
+      "end": 44.578,
+      "duration": 0.168,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 75,
+      "text": "these",
+      "start": 44.578,
+      "end": 44.898,
+      "duration": 0.32,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 76,
+      "text": "critical",
+      "start": 44.898,
+      "end": 45.338,
+      "duration": 0.44,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 77,
+      "text": "days",
+      "start": 45.338,
+      "end": 45.859,
+      "duration": 0.521,
+      "punctuation": ".",
+      "has_punctuation": true
+    }
+  ],
+  "phonemes": []
+}

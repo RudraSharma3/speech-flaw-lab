@@ -31,6 +31,7 @@ build/
 data/raw/*
 data/processed/*
 data/alignments/*
+!data/alignments/*.json
 data/population_norms/*
 !data/population_norms/*.json
 data/cached_results/*
