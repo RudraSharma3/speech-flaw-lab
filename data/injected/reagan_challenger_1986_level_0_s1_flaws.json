@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_challenger_1986_level_0_s1",
+  "speech_id": "reagan_challenger_1986",
+  "level": 0,
+  "seed": 1,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 64.357,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 6.6,
+      "end_s": 8.002,
+      "start_word_idx": 14,
+      "end_word_idx": 22,
+      "words": "and we know of your anguish We share it",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 35.709,
+      "end_s": 35.709,
+      "start_word_idx": 83,
+      "end_word_idx": 83,
+      "words": "their [pause] dedication",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 45.372,
+      "end_s": 51.354,
+      "start_word_idx": 110,
+      "end_word_idx": 118,
+      "words": "forget them nor the last time we saw them",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 58.496,
+      "end_s": 61.72,
+      "start_word_idx": 134,
+      "end_word_idx": 142,
+      "words": "bonds of earth to touch the face of God",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

@@ -4,23 +4,24 @@ Unit tests for Pydantic v2 schemas and mock result contract validation.
 
 import json
 import os
-from backend.schemas.api import AnalysisResult, JobStatus, SampleRecording
+
+from backend.schemas.api import AnalysisResult, JobStatus
 
 
-def test_mock_result_conforms_to_schema():
-    mock_path = os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "src", "mock", "mock_result.json")
-    assert os.path.exists(mock_path), "mock_result.json must exist"
+def test_cached_result_conforms_to_schema():
+    cached_path = os.path.join(os.path.dirname(__file__), "..", "..", "data", "cached_results", "jfk_moon_1962_level_1.json")
+    assert os.path.exists(cached_path), "Cached result must exist"
 
-    with open(mock_path, "r", encoding="utf-8") as f:
+    with open(cached_path, encoding="utf-8") as f:
         data = json.load(f)
 
     # Validate against AnalysisResult schema
     result = AnalysisResult.model_validate(data)
-    assert result.meta.analysis_id == "demo_jfk_moon_level1_flawed"
+    assert len(result.meta.analysis_id) > 0
     assert len(result.words) > 0
     assert len(result.series.t) > 0
-    assert len(result.flaws) == 3
-    assert result.scores.overall == 46.5
+    assert len(result.flaws) > 0
+    assert 0.0 <= result.scores.overall <= 100.0
     assert len(result.scores.dimensions) == 5
 
 

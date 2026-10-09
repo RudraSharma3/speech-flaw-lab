@@ -1,0 +1,72 @@
+{
+  "recording_id": "jfk_moon_1962_level_0",
+  "speech_id": "jfk_moon_1962",
+  "level": 0,
+  "seed": 0,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 74.686,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 5.48,
+      "end_s": 12.72,
+      "start_word_idx": 9,
+      "end_word_idx": 15,
+      "words": "a giant rocket more than 300 feet",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 18.682,
+      "end_s": 20.12,
+      "start_word_idx": 29,
+      "end_word_idx": 29,
+      "words": "of [pause] which",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 50.404,
+      "end_s": 54.524,
+      "start_word_idx": 94,
+      "end_word_idx": 101,
+      "words": "of over 25000 miles per hour causing heat",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 54.85,
+      "end_s": 55.585,
+      "start_word_idx": 103,
+      "end_word_idx": 109,
+      "words": "half that on the temperature of the",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

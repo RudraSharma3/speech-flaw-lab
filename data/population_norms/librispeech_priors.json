@@ -1,0 +1,45 @@
+{
+  "dataset": "LibriSpeech dev-clean",
+  "source_url": "https://www.openslr.org/resources/12/dev-clean.tar.gz",
+  "num_utterances_computed": 200,
+  "f0_range_st": {
+    "median": 9.94,
+    "mad": 3.53,
+    "p10": 5.39,
+    "p90": 24.39,
+    "description": "Pitch range P90-P10 in semitones re speaker median"
+  },
+  "articulation_rate": {
+    "median": 4.2,
+    "mad": 0.28,
+    "p10": 3.82,
+    "p90": 4.58,
+    "description": "Syllables per second during active speech"
+  },
+  "energy_contrast_db": {
+    "median": 37.03,
+    "mad": 2.91,
+    "p10": 32.43,
+    "p90": 48.48,
+    "description": "Energy dynamic range P90-P10 in dB"
+  },
+  "hnr_mean_db": {
+    "median": 18.49,
+    "mad": 1.42,
+    "p10": 16.59,
+    "p90": 20.4,
+    "description": "Harmonics-to-Noise Ratio (dB)"
+  },
+  "unpunctuated_pause_s": {
+    "median": 0.05,
+    "mad": 0.04,
+    "threshold_flag_s": 0.35,
+    "description": "Inter-word pause duration without syntactic punctuation"
+  },
+  "punctuated_pause_s": {
+    "median": 0.52,
+    "mad": 0.16,
+    "min_expected_s": 0.15,
+    "description": "Syntactic pause duration at punctuation boundaries"
+  }
+}

@@ -1,23 +1,25 @@
 """
 Acoustic feature extraction module.
 Integrates Parselmouth (Praat), Librosa, and Scipy for mathematically rigorous frame and word-level features.
+Filters HNR strictly to voiced frames and computes speech rate excluding pauses >= 250ms.
 """
 
 import os
-import yaml
+import re
+from typing import Any
+
+import librosa
 import numpy as np
 import parselmouth
+import yaml
 from parselmouth.praat import call
-import librosa
-from scipy.signal import find_peaks
-from typing import Dict, Any, List, Optional, Tuple
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "thresholds.yaml")
 
 
-def load_features_config() -> Dict[str, Any]:
+def load_features_config() -> dict[str, Any]:
     if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, "r") as f:
+        with open(CONFIG_PATH) as f:
             return yaml.safe_load(f).get("features", {})
     return {
         "frame_step_s": 0.010,
@@ -30,10 +32,11 @@ def load_features_config() -> Dict[str, Any]:
 
 def extract_frame_features_praat(
     audio_arr: np.ndarray, sr: int = 16000
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Extracts frame-level F0, intensity, and HNR using Parselmouth (Praat C engine).
     Implements a two-pass speaker-adaptive pitch floor/ceiling calculation.
+    Filters HNR strictly to voiced frames (excludes Praat -200 dB / undefined).
     """
     cfg = load_features_config()
     hop_s = cfg.get("frame_step_s", 0.010)
@@ -94,38 +97,51 @@ def extract_frame_features_praat(
     except Exception:
         harmonicity_obj = None
 
-    # Construct unified frame time series (10ms grid)
+    # Construct unified frame time series (10ms grid) via fast vectorized interpolation
     num_frames = int(total_dur / hop_s)
     times = [i * hop_s for i in range(num_frames)]
+    times_np = np.asarray(times, dtype=np.float64)
     
-    f0_hz_arr = []
-    intensity_db_arr = []
-    hnr_db_arr = []
+    # Vectorized F0 interpolation
+    p_xs = pitch_pass2.xs()
+    p_freqs = pitch_pass2.selected_array["frequency"]
+    if len(p_xs) > 0 and len(p_freqs) > 0:
+        f0_interp = np.interp(times_np, p_xs, p_freqs, left=0.0, right=0.0)
+        f0_hz_arr = [float(f) if f > 0 else None for f in f0_interp]
+    else:
+        f0_hz_arr = [None] * num_frames
 
-    for t in times:
-        # F0
-        f0_val = pitch_pass2.get_value_at_time(t)
-        if f0_val is None or np.isnan(f0_val) or f0_val <= 0:
-            f0_hz_arr.append(None)
-        else:
-            f0_hz_arr.append(float(f0_val))
+    # Vectorized Intensity interpolation
+    i_xs = intensity_obj.xs()
+    i_vals = intensity_obj.values[0]
+    if len(i_xs) > 0 and len(i_vals) > 0:
+        int_interp = np.interp(times_np, i_xs, i_vals, left=30.0, right=30.0)
+        intensity_db_arr = [float(val) for val in int_interp]
+    else:
+        intensity_db_arr = [30.0] * num_frames
 
-        # Intensity
-        int_val = intensity_obj.get_value(t)
-        if int_val is None or np.isnan(int_val):
-            intensity_db_arr.append(30.0)
+    # Vectorized HNR interpolation (voiced frames only; exclude unvoiced / Praat -200 dB)
+    if harmonicity_obj is not None:
+        h_xs = harmonicity_obj.xs()
+        h_vals = harmonicity_obj.values[0]
+        if len(h_xs) > 0 and len(h_vals) > 0:
+            hnr_interp = np.interp(times_np, h_xs, h_vals, left=-100.0, right=-100.0)
+            hnr_db_arr = [
+                float(h) if (f is not None and h > -50.0) else None
+                for f, h in zip(f0_hz_arr, hnr_interp, strict=True)
+            ]
         else:
-            intensity_db_arr.append(float(int_val))
+            hnr_db_arr = [None] * num_frames
+    else:
+        hnr_db_arr = [None] * num_frames
 
-        # HNR
-        if harmonicity_obj:
-            hnr_val = harmonicity_obj.get_value(t)
-            if hnr_val is None or np.isnan(hnr_val):
-                hnr_db_arr.append(15.0)
-            else:
-                hnr_db_arr.append(float(hnr_val))
-        else:
-            hnr_db_arr.append(15.0)
+    # Calculate voiced frame metrics
+    voiced_frame_count = sum(1 for f in f0_hz_arr if f is not None)
+    voiced_frame_fraction = voiced_frame_count / max(len(times), 1)
+    
+    valid_hnrs = [h for h in hnr_db_arr if h is not None]
+    speaker_median_hnr_db = float(np.median(valid_hnrs)) if valid_hnrs else 15.0
+    speaker_mean_hnr_db = float(np.mean(valid_hnrs)) if valid_hnrs else 15.0
 
     # Global voice quality metrics (Jitter & Shimmer)
     try:
@@ -143,6 +159,9 @@ def extract_frame_features_praat(
         "hnr_db": hnr_db_arr,
         "speaker_median_f0_hz": median_f0_hz,
         "speaker_median_intensity_db": float(np.median(intensity_db_arr)),
+        "speaker_median_hnr_db": speaker_median_hnr_db,
+        "speaker_mean_hnr_db": speaker_mean_hnr_db,
+        "voiced_frame_fraction": round(float(voiced_frame_fraction), 3),
         "jitter_local": float(local_jitter) if not np.isnan(local_jitter) else 0.015,
         "shimmer_local": float(local_shimmer) if not np.isnan(local_shimmer) else 0.035,
     }
@@ -150,7 +169,7 @@ def extract_frame_features_praat(
 
 def extract_spectral_features_librosa(
     audio_arr: np.ndarray, sr: int = 16000
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Extracts MFCCs (13 coeffs), spectral centroid, and spectral flux using Librosa.
     """
@@ -183,39 +202,86 @@ def extract_spectral_features_librosa(
 
 
 def count_syllables(word_text: str) -> int:
-    """Estimates syllable count using vowel nuclei heuristic."""
-    clean = word_text.lower().strip(".,!?:;\"'()[]")
+    """
+    Estimates syllable count using vowel nuclei heuristic with English orthographic rules.
+    """
+    clean = re.sub(r"[^a-z]", "", word_text.lower())
     if not clean:
         return 1
-    # Vowel group regex
-    import re
-    vowel_runs = re.findall(r"[aeiouy]+", clean)
-    count = len(vowel_runs)
-    # Silent 'e' at end
+    if len(clean) <= 3:
+        return 1
+    
+    vowels = "aeiouy"
+    count = 0
+    prev_is_vowel = False
+    for char in clean:
+        is_vowel = char in vowels
+        if is_vowel and not prev_is_vowel:
+            count += 1
+        prev_is_vowel = is_vowel
+        
+    # Orthographic adjustments
     if clean.endswith("e") and not clean.endswith("le") and count > 1:
-        count -= 1
+        if not clean.endswith("ee"):
+            count -= 1
+    elif clean.endswith("ed") and count > 1:
+        if not (clean.endswith("ted") or clean.endswith("ded")):
+            count -= 1
+    elif clean.endswith("es") and count > 1:
+        if clean.endswith("ies"):
+            pass  # 'ies' retains the syllabic nucleus from '-y' (e.g. energies, categories)
+        elif not (clean.endswith("ses") or clean.endswith("zes") or clean.endswith("ches") or clean.endswith("shes") or clean.endswith("ges")):
+            count -= 1
+        
     return max(1, count)
 
 
+def compute_speech_rate_excluding_pauses(
+    words: list[dict[str, Any]],
+    pause_threshold_s: float = 0.250,
+) -> dict[str, Any]:
+    """
+    Calculates overall articulation / speech rate as:
+    total_syllables / active_speech_time
+    where active_speech_time excludes all rhetorical pauses >= 250ms.
+    """
+    if not words:
+        return {"total_syllables": 0, "active_speech_time_s": 0.0, "speech_rate_syl_per_s": 0.0}
+    
+    total_syllables = sum(count_syllables(w["text"]) for w in words)
+    active_speech_time = sum(w["end"] - w["start"] for w in words)
+    for i in range(len(words) - 1):
+        gap = words[i + 1]["start"] - words[i]["end"]
+        if 0 < gap < pause_threshold_s:
+            active_speech_time += gap
+            
+    rate = total_syllables / max(active_speech_time, 0.1)
+    return {
+        "total_syllables": total_syllables,
+        "active_speech_time_s": round(active_speech_time, 3),
+        "speech_rate_syl_per_s": round(rate, 2),
+    }
+
+
 def aggregate_word_level_features(
-    words: List[Dict[str, Any]],
-    praat_feats: Dict[str, Any],
+    words: list[dict[str, Any]],
+    praat_feats: dict[str, Any],
     median_f0_hz: float,
     median_intensity_db: float,
-) -> List[Dict[str, Any]]:
+) -> list[dict[str, Any]]:
     """
     Aggregates frame features across exact aligned word boundaries:
     - F0 in semitones re speaker median: 12 * log2(F0 / median_f0)
-    - F0 range P90 - P10 (semitones)
-    - Mean F0 slope (semitones/sec)
+    - F0 range P90 - P10 (semitones) requiring min 4 voiced frames, else None/NaN
     - Mean & peak intensity (dB re speaker median)
-    - Articulation rate (syllables / sec)
+    - Articulation rate (syllables / sec) computed over a sliding window (>= 5 words / ~1s)
     - Pause before & after (sec)
+    - HNR (mean of voiced frames only)
     """
     times = np.array(praat_feats["times"])
     f0_arr = np.array([f if f is not None else np.nan for f in praat_feats["f0_hz"]])
     int_arr = np.array(praat_feats["intensity_db"])
-    hnr_arr = np.array(praat_feats["hnr_db"])
+    hnr_arr = np.array([h if h is not None else np.nan for h in praat_feats["hnr_db"]])
 
     # Convert F0 to semitones re median
     f0_st_arr = np.where(
@@ -224,13 +290,56 @@ def aggregate_word_level_features(
         12.0 * np.log2(np.maximum(f0_arr, 1.0) / median_f0_hz),
     )
 
-    aggregated_words = []
     num_words = len(words)
+    syllable_counts = [count_syllables(w["text"]) for w in words]
+    word_durs = [max(w["end"] - w["start"], 0.03) for w in words]
+
+    # Precompute sliding window articulation rate (window of +/- 2 words, total 5 words)
+    sliding_rates = []
+    for i in range(num_words):
+        w_start_idx = max(0, i - 2)
+        w_end_idx = min(num_words, i + 3)
+        total_syl = sum(syllable_counts[w_start_idx:w_end_idx])
+        total_active_dur = sum(word_durs[w_start_idx:w_end_idx])
+        rate_window = total_syl / max(total_active_dur, 0.2)
+        sliding_rates.append(rate_window)
+
+    # Precompute sliding phrase-window F0 metrics (at least 1.5s window or +/- 3 words)
+    sliding_f0_ranges = []
+    sliding_f0_stds = []
+    for i in range(num_words):
+        l_idx = i
+        r_idx = i
+        while (l_idx > 0 or r_idx < num_words - 1) and (words[r_idx]["end"] - words[l_idx]["start"] < 1.5):
+            if l_idx > 0:
+                l_idx -= 1
+            if r_idx < num_words - 1:
+                r_idx += 1
+        
+        win_start_t = words[l_idx]["start"]
+        win_end_t = words[r_idx]["end"]
+        win_mask = (times >= win_start_t) & (times <= win_end_t)
+        win_f0 = f0_st_arr[win_mask]
+        win_voiced = win_f0[~np.isnan(win_f0)]
+        
+        if len(win_voiced) >= 6:
+            p90 = float(np.percentile(win_voiced, 90))
+            p10 = float(np.percentile(win_voiced, 10))
+            win_range = p90 - p10
+            win_std = float(np.std(win_voiced))
+        else:
+            win_range = None
+            win_std = None
+            
+        sliding_f0_ranges.append(win_range)
+        sliding_f0_stds.append(win_std)
+
+    aggregated_words = []
 
     for i, w in enumerate(words):
         start_t = w["start"]
         end_t = w["end"]
-        dur = max(end_t - start_t, 0.05)
+        dur = word_durs[i]
 
         # Slice frame indices
         mask = (times >= start_t) & (times <= end_t)
@@ -239,20 +348,17 @@ def aggregate_word_level_features(
         w_f0_st = f0_st_arr[mask]
         voiced = w_f0_st[~np.isnan(w_f0_st)]
 
-        if len(voiced) >= 2:
+        if len(voiced) >= 4:
             f0_mean_st = float(np.mean(voiced))
-            f0_range_st = float(np.percentile(voiced, 90) - np.percentile(voiced, 10))
-            # Linear slope
             t_voiced = times[mask][~np.isnan(w_f0_st)]
-            slope = float(np.polyfit(t_voiced - start_t, voiced, 1)[0]) if len(voiced) >= 3 else 0.0
-        elif len(voiced) == 1:
-            f0_mean_st = float(voiced[0])
-            f0_range_st = 0.5
-            slope = 0.0
+            slope = float(np.polyfit(t_voiced - start_t, voiced, 1)[0])
         else:
-            f0_mean_st = 0.0
-            f0_range_st = 0.0
+            f0_mean_st = None
             slope = 0.0
+
+        # Assign phrase-window F0 range & std
+        f0_range_st = sliding_f0_ranges[i]
+        f0_std_st = sliding_f0_stds[i]
 
         # Word Intensity stats
         w_int = int_arr[mask]
@@ -261,17 +367,19 @@ def aggregate_word_level_features(
             int_peak = float(np.max(w_int))
             int_mean_re_median = float(int_mean - median_intensity_db)
         else:
-            int_mean = median_intensity_db
-            int_peak = median_intensity_db
             int_mean_re_median = 0.0
+            int_peak = median_intensity_db
 
-        # Word HNR
+        # Word HNR (voiced frames only)
         w_hnr = hnr_arr[mask]
-        hnr_mean = float(np.mean(w_hnr)) if len(w_hnr) > 0 else 15.0
+        w_hnr_valid = w_hnr[~np.isnan(w_hnr)]
+        if len(w_hnr_valid) > 0:
+            hnr_mean = float(np.mean(w_hnr_valid))
+        else:
+            hnr_mean = praat_feats.get("speaker_median_hnr_db", 15.0)
 
-        # Articulation rate
-        syllables = count_syllables(w["text"])
-        rate = syllables / dur
+        # Articulation rate from sliding window
+        rate = sliding_rates[i]
 
         # Pauses
         pause_before = round(start_t - words[i - 1]["end"], 3) if i > 0 else 0.0
@@ -285,9 +393,10 @@ def aggregate_word_level_features(
             "duration": round(dur, 3),
             "punctuation": w.get("punctuation", ""),
             "has_punctuation": w.get("has_punctuation", False),
-            "syllable_count": syllables,
-            "f0_mean_st": round(f0_mean_st, 2),
-            "f0_range_st": round(f0_range_st, 2),
+            "syllable_count": syllable_counts[i],
+            "f0_mean_st": round(f0_mean_st, 2) if f0_mean_st is not None else None,
+            "f0_range_st": round(f0_range_st, 2) if f0_range_st is not None else None,
+            "f0_std_st": round(f0_std_st, 2) if f0_std_st is not None else None,
             "f0_slope_st_per_s": round(slope, 2),
             "energy_mean_db": round(int_mean_re_median, 2),
             "energy_peak_db": round(int_peak - median_intensity_db, 2),
@@ -298,3 +407,4 @@ def aggregate_word_level_features(
         })
 
     return aggregated_words
+

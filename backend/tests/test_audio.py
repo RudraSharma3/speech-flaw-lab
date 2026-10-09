@@ -3,10 +3,11 @@ Unit tests for audio loading, 16 kHz resampling, and LUFS normalization.
 """
 
 import os
+import tempfile
+
 import numpy as np
 import soundfile as sf
-import tempfile
-from backend.pipeline.audio import load_and_preprocess_audio, save_canonical_wav
+from backend.pipeline.audio import load_and_preprocess_audio
 
 
 def test_audio_preprocessing_pipeline():

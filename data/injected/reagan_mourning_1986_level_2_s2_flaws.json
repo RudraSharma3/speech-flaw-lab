@@ -1,0 +1,43 @@
+{
+  "recording_id": "reagan_mourning_1986_level_2_s2",
+  "speech_id": "reagan_mourning_1986",
+  "level": 2,
+  "seed": 2,
+  "level_name": "Slightly Flawed",
+  "duration_s": 51.311,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 20.424,
+      "end_s": 21.965,
+      "start_word_idx": 63,
+      "end_word_idx": 69,
+      "words": "the people of our country This is",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 29.966,
+      "end_s": 31.587,
+      "start_word_idx": 89,
+      "end_word_idx": 92,
+      "words": "on the ground But",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

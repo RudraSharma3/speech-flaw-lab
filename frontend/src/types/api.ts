@@ -68,6 +68,7 @@ export interface GroundedFlaw {
   severity: number;
   rationale_text: string;
   why_it_hurts: string;
+  secondary_types?: Array<{ flaw_type: string; z_score: number }>;
 }
 
 export interface ScoreDimension {
@@ -83,6 +84,7 @@ export interface ScoreDimension {
 
 export interface OverallScores {
   overall: number;
+  raw_overall?: number;
   grade: string;
   quality_level_est: number;
   dimensions: ScoreDimension[];
@@ -105,8 +107,24 @@ export interface AnalysisMeta {
   speaker_energy_median_db: number;
   reference_id?: string | null;
   reference_type: 'ideal_take' | 'population_prior';
-  alignment_engine: 'mfa_arpa' | 'torchaudio_fallback';
+  alignment_engine: 'mfa_arpa' | 'torchaudio_ctc' | 'torchaudio_fallback';
   processed_at: string;
+}
+
+export interface GroundTruthEvalRow {
+  status: 'MATCHED' | 'FALSE_POSITIVE' | 'MISSED_GT';
+  detected_id?: string | null;
+  detected_type?: string | null;
+  detected_span?: [number, number] | null;
+  detected_words?: string | null;
+  gt_id?: string | null;
+  gt_type?: string | null;
+  gt_span?: [number, number] | null;
+  gt_words?: string | null;
+  iou: number;
+  start_error_ms?: number | null;
+  end_error_ms?: number | null;
+  type_match: boolean;
 }
 
 export interface AnalysisResult {
@@ -116,12 +134,15 @@ export interface AnalysisResult {
   flaws: GroundedFlaw[];
   scores: OverallScores;
   quality_flags: QualityFlag[];
+  ground_truth_flaws?: any[];
+  ground_truth_eval?: GroundTruthEvalRow[];
 }
 
 export interface JobStatus {
   job_id: string;
   status: 'queued' | 'processing' | 'completed' | 'failed';
   progress: number;
+  stage?: string | null;
   message: string;
   result_id?: string | null;
   error?: string | null;
@@ -138,5 +159,12 @@ export interface SampleRecording {
   description: string;
   flaws_count: number;
   audio_url: string;
+  transcript: string;
+}
+
+export interface ReferenceSpeech {
+  reference_id: string;
+  name: string;
+  speaker: string;
   transcript: string;
 }

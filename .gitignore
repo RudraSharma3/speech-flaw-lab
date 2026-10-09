@@ -32,7 +32,9 @@ data/raw/*
 data/processed/*
 data/alignments/*
 data/population_norms/*
+!data/population_norms/*.json
 data/cached_results/*
+!data/cached_results/*.json
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/alignments/.gitkeep

@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_mourning_1986_level_0",
+  "speech_id": "reagan_mourning_1986",
+  "level": 0,
+  "seed": 0,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 57.155,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 6.63,
+      "end_s": 8.11,
+      "start_word_idx": 21,
+      "end_word_idx": 21,
+      "words": "of [pause] earlier",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 12.14,
+      "end_s": 20.906,
+      "start_word_idx": 31,
+      "end_word_idx": 39,
+      "words": "Today is a day for morning and remembering Nancy",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 25.247,
+      "end_s": 29.048,
+      "start_word_idx": 57,
+      "end_word_idx": 69,
+      "words": "share this pain with all of the people of our country This is",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 33.829,
+      "end_s": 34.949,
+      "start_word_idx": 79,
+      "end_word_idx": 86,
+      "words": "the day we lost three astronauts in a",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,879 @@
+{
+  "metadata": {
+    "title": "Track C: Contrastive Speech Analytics Benchmark",
+    "evaluated_recordings": 75,
+    "evaluation_mode": "contrastive (primary) and reference-free (coarse screening)",
+    "miss_penalty_ms": 2000.0
+  },
+  "gates": {
+    "null_injection_control": {
+      "status": "PASS",
+      "total_flags": 1,
+      "total_duration_s": 290.0,
+      "fp_rate_flags_per_min": 0.21,
+      "flags_by_speech": {
+        "jfk_moon_1962": [
+          {
+            "type": "drag_slow",
+            "start_s": 58.297,
+            "end_s": 59.737,
+            "z": -1.78
+          }
+        ],
+        "reagan_challenger_1986": [],
+        "fdr_fear_itself_1933": [],
+        "reagan_mourning_1986": [],
+        "jfk_we_choose_1962": []
+      }
+    },
+    "l01_recall_target_80": {
+      "achieved_recall_03": 74.3,
+      "achieved_recall_05": 68.6,
+      "target": 80.0,
+      "status": "FAIL"
+    },
+    "level4_false_positives": {
+      "tuning_rate_flags_per_min": 0.0,
+      "heldout_rate_flags_per_min": 0.0,
+      "target": 2.0,
+      "status": "PASS"
+    }
+  },
+  "boundary_accuracy": {
+    "single_regions": {
+      "count": 53,
+      "median_start_ms": 200.0,
+      "p90_start_ms": 928.2,
+      "median_end_ms": 200.0,
+      "p90_end_ms": 1030.2
+    },
+    "merged_regions": {
+      "count": 32,
+      "median_start_ms": 223.0,
+      "p90_start_ms": 1506.2,
+      "median_end_ms": 260.0,
+      "p90_end_ms": 1312.2
+    },
+    "matched_ious_03": {
+      "count": 85,
+      "mean_iou": 0.776,
+      "median_iou": 0.81
+    },
+    "all_gt_flaws_penalized": {
+      "count": 150,
+      "mean_iou": 0.44,
+      "median_start_ms": 1005.0,
+      "p90_start_ms": 2000.0,
+      "median_end_ms": 1070.5,
+      "p90_end_ms": 2000.0
+    }
+  },
+  "type_accuracy_among_matches": {
+    "at_iou_03": {
+      "total_matched": 85,
+      "correct_type": 78,
+      "accuracy_percent": 91.8
+    },
+    "at_iou_05": {
+      "total_matched": 76,
+      "correct_type": 70,
+      "accuracy_percent": 92.1
+    }
+  },
+  "by_quality_level": {
+    "level_0": {
+      "gt_count": 60,
+      "det_count": 57,
+      "matched_03": 43,
+      "precision_03": 75.4,
+      "recall_03": 71.7,
+      "f1_03": 73.5,
+      "matched_05": 40,
+      "precision_05": 70.2,
+      "recall_05": 66.7,
+      "f1_05": 68.4
+    },
+    "level_1": {
+      "gt_count": 45,
+      "det_count": 43,
+      "matched_03": 35,
+      "precision_03": 81.4,
+      "recall_03": 77.8,
+      "f1_03": 79.5,
+      "matched_05": 32,
+      "precision_05": 74.4,
+      "recall_05": 71.1,
+      "f1_05": 72.7
+    },
+    "level_2": {
+      "gt_count": 30,
+      "det_count": 14,
+      "matched_03": 7,
+      "precision_03": 50.0,
+      "recall_03": 23.3,
+      "f1_03": 31.8,
+      "matched_05": 4,
+      "precision_05": 28.6,
+      "recall_05": 13.3,
+      "f1_05": 18.2
+    },
+    "level_3": {
+      "gt_count": 15,
+      "det_count": 1,
+      "matched_03": 0,
+      "precision_03": 0.0,
+      "recall_03": 0.0,
+      "f1_03": 0.0,
+      "matched_05": 0,
+      "precision_05": 0.0,
+      "recall_05": 0.0,
+      "f1_05": 0.0
+    }
+  },
+  "by_flaw_type": {
+    "monotone": {
+      "gt_count": 60,
+      "det_count": 16,
+      "strict_matched_03": 17,
+      "strict_precision_03": 100.0,
+      "strict_recall_03": 28.3,
+      "strict_f1_03": 44.1,
+      "strict_matched_05": 14,
+      "strict_precision_05": 87.5,
+      "strict_recall_05": 23.3,
+      "strict_f1_05": 36.8,
+      "det_matched_any_gt_03": 15,
+      "det_precision_agnostic_03": 93.8,
+      "gt_matched_any_det_03": 17,
+      "gt_recall_agnostic_03": 28.3
+    },
+    "rushed": {
+      "gt_count": 45,
+      "det_count": 28,
+      "strict_matched_03": 27,
+      "strict_precision_03": 96.4,
+      "strict_recall_03": 60.0,
+      "strict_f1_03": 74.0,
+      "strict_matched_05": 24,
+      "strict_precision_05": 85.7,
+      "strict_recall_05": 53.3,
+      "strict_f1_05": 65.7,
+      "det_matched_any_gt_03": 24,
+      "det_precision_agnostic_03": 85.7,
+      "gt_matched_any_det_03": 32,
+      "gt_recall_agnostic_03": 71.1
+    },
+    "drag_slow": {
+      "gt_count": 30,
+      "det_count": 30,
+      "strict_matched_03": 25,
+      "strict_precision_03": 83.3,
+      "strict_recall_03": 83.3,
+      "strict_f1_03": 83.3,
+      "strict_matched_05": 24,
+      "strict_precision_05": 80.0,
+      "strict_recall_05": 80.0,
+      "strict_f1_05": 80.0,
+      "det_matched_any_gt_03": 20,
+      "det_precision_agnostic_03": 66.7,
+      "gt_matched_any_det_03": 27,
+      "gt_recall_agnostic_03": 90.0
+    },
+    "inappropriate_pause": {
+      "gt_count": 15,
+      "det_count": 20,
+      "strict_matched_03": 9,
+      "strict_precision_03": 45.0,
+      "strict_recall_03": 60.0,
+      "strict_f1_03": 51.4,
+      "strict_matched_05": 8,
+      "strict_precision_05": 40.0,
+      "strict_recall_05": 53.3,
+      "strict_f1_05": 45.7,
+      "det_matched_any_gt_03": 16,
+      "det_precision_agnostic_03": 80.0,
+      "gt_matched_any_det_03": 9,
+      "gt_recall_agnostic_03": 60.0
+    }
+  },
+  "pairwise_ranking_l0_l3": {
+    "total_pairs": 90,
+    "violations": 2,
+    "accuracy_percent": 97.78,
+    "cluster_bootstrap_95_ci": [
+      95.83,
+      100.0
+    ]
+  },
+  "score_tables": {
+    "reference_free_uncalibrated": {
+      "jfk_moon_1962": [
+        95.1,
+        95.1,
+        95.1,
+        95.1,
+        90.2
+      ],
+      "reagan_challenger_1986": [
+        93.1,
+        93.1,
+        93.5,
+        91.4,
+        91.5
+      ],
+      "fdr_fear_itself_1933": [
+        94.6,
+        94.6,
+        94.6,
+        93.9,
+        83.2
+      ],
+      "reagan_mourning_1986": [
+        93.6,
+        93.5,
+        93.7,
+        93.4,
+        86.4
+      ],
+      "jfk_we_choose_1962": [
+        94.0,
+        94.0,
+        94.1,
+        81.4,
+        82.5
+      ]
+    },
+    "contrastive_uncalibrated": {
+      "jfk_moon_1962": [
+        96.5,
+        94.9,
+        88.5,
+        71.4,
+        70.4
+      ],
+      "reagan_challenger_1986": [
+        96.5,
+        96.4,
+        94.1,
+        72.9,
+        67.7
+      ],
+      "fdr_fear_itself_1933": [
+        96.5,
+        96.4,
+        93.2,
+        72.4,
+        53.4
+      ],
+      "reagan_mourning_1986": [
+        96.5,
+        96.2,
+        94.5,
+        81.6,
+        55.9
+      ],
+      "jfk_we_choose_1962": [
+        96.5,
+        96.2,
+        91.9,
+        67.8,
+        55.0
+      ]
+    },
+    "contrastive_isotonic_calibrated": {
+      "jfk_moon_1962": [
+        94.9,
+        84.5,
+        75.0,
+        45.0,
+        38.3
+      ],
+      "reagan_challenger_1986": [
+        94.9,
+        92.6,
+        76.7,
+        45.0,
+        37.5
+      ],
+      "fdr_fear_itself_1933": [
+        94.9,
+        90.3,
+        76.7,
+        45.0,
+        27.5
+      ],
+      "reagan_mourning_1986": [
+        94.9,
+        88.0,
+        78.0,
+        55.0,
+        27.5
+      ],
+      "jfk_we_choose_1962": [
+        94.9,
+        85.8,
+        75.9,
+        40.8,
+        30.8
+      ]
+    }
+  },
+  "unmatched_detections_audit": {
+    "total_count": 30,
+    "detections": [
+      {
+        "rec_id": "jfk_moon_1962_level_3",
+        "level": 3,
+        "flaw_type": "drag_slow",
+        "span": [
+          58.297,
+          59.737
+        ],
+        "z": -1.78,
+        "dist_to_gt_s": 0.33,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_2",
+        "level": 2,
+        "flaw_type": "drag_slow",
+        "span": [
+          57.906,
+          59.366
+        ],
+        "z": -1.8,
+        "dist_to_gt_s": 16.64,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_0",
+        "level": 0,
+        "flaw_type": "drag_slow",
+        "span": [
+          62.965,
+          64.425
+        ],
+        "z": -1.8,
+        "dist_to_gt_s": 7.38,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_2_s1",
+        "level": 2,
+        "flaw_type": "drag_slow",
+        "span": [
+          57.414,
+          58.874
+        ],
+        "z": -1.74,
+        "dist_to_gt_s": 30.03,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_1_s1",
+        "level": 1,
+        "flaw_type": "drag_slow",
+        "span": [
+          58.227,
+          59.687
+        ],
+        "z": -1.81,
+        "dist_to_gt_s": 4.0,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_2_s2",
+        "level": 2,
+        "flaw_type": "drag_slow",
+        "span": [
+          57.447,
+          58.907
+        ],
+        "z": -1.81,
+        "dist_to_gt_s": 30.02,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_moon_1962_level_0_s2",
+        "level": 0,
+        "flaw_type": "drag_slow",
+        "span": [
+          64.439,
+          65.899
+        ],
+        "z": -1.9,
+        "dist_to_gt_s": 19.89,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "reagan_challenger_1986_level_1",
+        "level": 1,
+        "flaw_type": "inappropriate_pause",
+        "span": [
+          54.928,
+          56.89
+        ],
+        "z": 3.21,
+        "dist_to_gt_s": 0.4,
+        "nearest_gt_type": "drag_slow"
+      },
+      {
+        "rec_id": "reagan_challenger_1986_level_1",
+        "level": 1,
+        "flaw_type": "drag_slow",
+        "span": [
+          57.528,
+          58.448
+        ],
+        "z": -1.79,
+        "dist_to_gt_s": 3.0,
+        "nearest_gt_type": "drag_slow"
+      },
+      {
+        "rec_id": "reagan_challenger_1986_level_0",
+        "level": 0,
+        "flaw_type": "missing_pause",
+        "span": [
+          53.097,
+          53.17
+        ],
+        "z": -2.5,
+        "dist_to_gt_s": 0.2,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "reagan_challenger_1986_level_0_s2",
+        "level": 0,
+        "flaw_type": "inappropriate_pause",
+        "span": [
+          31.83,
+          33.188
+        ],
+        "z": 4.58,
+        "dist_to_gt_s": 0.12,
+        "nearest_gt_type": "inappropriate_pause"
+      },
+      {
+        "rec_id": "fdr_fear_itself_1933_level_0",
+        "level": 0,
+        "flaw_type": "monotone",
+        "span": [
+          29.906,
+          32.867
+        ],
+        "z": -2.06,
+        "dist_to_gt_s": 2.21,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "fdr_fear_itself_1933_level_1_s1",
+        "level": 1,
+        "flaw_type": "rushed",
+        "span": [
+          35.389,
+          43.611
+        ],
+        "z": 3.81,
+        "dist_to_gt_s": 0.64,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "fdr_fear_itself_1933_level_0_s2",
+        "level": 0,
+        "flaw_type": "drag_slow",
+        "span": [
+          37.22,
+          39.447
+        ],
+        "z": -2.03,
+        "dist_to_gt_s": 3.02,
+        "nearest_gt_type": "inappropriate_pause"
+      },
+      {
+        "rec_id": "fdr_fear_itself_1933_level_0_s2",
+        "level": 0,
+        "flaw_type": "missing_pause",
+        "span": [
+          52.79,
+          52.83
+        ],
+        "z": -1.52,
+        "dist_to_gt_s": 1.5,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "reagan_mourning_1986_level_2_s2",
+        "level": 2,
+        "flaw_type": "rushed",
+        "span": [
+          20.364,
+          20.764
+        ],
+        "z": 2.8,
+        "dist_to_gt_s": 0.06,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "reagan_mourning_1986_level_2_s2",
+        "level": 2,
+        "flaw_type": "missing_pause",
+        "span": [
+          21.124,
+          21.124
+        ],
+        "z": -2.57,
+        "dist_to_gt_s": 0.7,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "reagan_mourning_1986_level_0_s2",
+        "level": 0,
+        "flaw_type": "inappropriate_pause",
+        "span": [
+          10.71,
+          12.102
+        ],
+        "z": 4.69,
+        "dist_to_gt_s": 0.1,
+        "nearest_gt_type": "inappropriate_pause"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_1",
+        "level": 1,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.82
+        ],
+        "z": -1.42,
+        "dist_to_gt_s": 13.07,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0",
+        "level": 0,
+        "flaw_type": "rushed",
+        "span": [
+          0.0,
+          1.6
+        ],
+        "z": 4.12,
+        "dist_to_gt_s": 0.73,
+        "nearest_gt_type": "drag_slow"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0",
+        "level": 0,
+        "flaw_type": "missing_pause",
+        "span": [
+          17.403,
+          17.46
+        ],
+        "z": -2.02,
+        "dist_to_gt_s": 0.82,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0",
+        "level": 0,
+        "flaw_type": "rushed",
+        "span": [
+          17.923,
+          18.583
+        ],
+        "z": 3.72,
+        "dist_to_gt_s": 0.3,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0",
+        "level": 0,
+        "flaw_type": "inappropriate_pause",
+        "span": [
+          19.24,
+          20.623
+        ],
+        "z": 4.66,
+        "dist_to_gt_s": 0.12,
+        "nearest_gt_type": "inappropriate_pause"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_2_s1",
+        "level": 2,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.82
+        ],
+        "z": -1.42,
+        "dist_to_gt_s": 12.58,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_1_s1",
+        "level": 1,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.83
+        ],
+        "z": -1.38,
+        "dist_to_gt_s": 6.15,
+        "nearest_gt_type": "monotone"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_1_s1",
+        "level": 1,
+        "flaw_type": "missing_pause",
+        "span": [
+          20.642,
+          20.642
+        ],
+        "z": -1.32,
+        "dist_to_gt_s": 1.38,
+        "nearest_gt_type": "drag_slow"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0_s1",
+        "level": 0,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.82
+        ],
+        "z": -1.42,
+        "dist_to_gt_s": 11.74,
+        "nearest_gt_type": "inappropriate_pause"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_2_s2",
+        "level": 2,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.82
+        ],
+        "z": -1.42,
+        "dist_to_gt_s": 9.22,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_1_s2",
+        "level": 1,
+        "flaw_type": "drag_slow",
+        "span": [
+          16.06,
+          18.403
+        ],
+        "z": -2.0,
+        "dist_to_gt_s": 0.2,
+        "nearest_gt_type": "rushed"
+      },
+      {
+        "rec_id": "jfk_we_choose_1962_level_0_s2",
+        "level": 0,
+        "flaw_type": "missing_pause",
+        "span": [
+          0.8,
+          0.82
+        ],
+        "z": -1.42,
+        "dist_to_gt_s": 11.74,
+        "nearest_gt_type": "inappropriate_pause"
+      }
+    ]
+  },
+  "old_15_subset_regression": {
+    "gt_count": 30,
+    "matched_03": 18,
+    "recall_03": 60.0,
+    "median_start_err_ms": 70.5,
+    "p90_start_err_ms": 807.0
+  },
+  "self_recordings_evaluation": {
+    "take_b_fp_control": {
+      "take_file": "take_b.wav",
+      "duration_s": 46.959,
+      "flags_count": 0,
+      "flags_per_min": 0.0,
+      "status": "PASS",
+      "flaws": []
+    },
+    "flawed_takes": {
+      "monotone": {
+        "total_flaws": 2,
+        "monotone_flaws_count": 0,
+        "score": 73.6,
+        "flaws": [
+          {
+            "region_id": "flaw_01_rushed",
+            "start_s": 22.523,
+            "end_s": 24.663,
+            "start_word_idx": 30,
+            "end_word_idx": 38,
+            "words": "In every dark hour of our national life a",
+            "flaw_type": "rushed",
+            "feature": "articulation_rate",
+            "baseline_value": 4.2,
+            "observed_value": 7.64,
+            "delta": 3.44,
+            "unit": "syllables/sec",
+            "z_score": 4.0,
+            "severity": 11.98,
+            "rationale_text": "Articulation rate surged from baseline 4.2 to 7.6 syllables/sec (+3.4 syl/s, z=+4.0) across words 'In every dark hour of our national life a'.",
+            "why_it_hurts": "Compressing word durations and swallowing vowel nuclei prevents listeners from parsing key ideas and conveys nervous urgency.",
+            "secondary_types": [
+              {
+                "flaw_type": "volume_drop",
+                "z_score": -2.21
+              }
+            ],
+            "_is_merged": true
+          },
+          {
+            "region_id": "flaw_02_drag_slow",
+            "start_s": 34.024,
+            "end_s": 42.1,
+            "start_word_idx": 59,
+            "end_word_idx": 67,
+            "words": "to victory And I am convinced to show a",
+            "flaw_type": "drag_slow",
+            "feature": "articulation_rate",
+            "baseline_value": 4.2,
+            "observed_value": 2.86,
+            "delta": -1.34,
+            "unit": "syllables/sec",
+            "z_score": -2.16,
+            "severity": 20.93,
+            "rationale_text": "Speech tempo slowed from baseline 4.2 to 2.9 syllables/sec (-1.3 syl/s, z=-2.2) across 'to victory And I am convinced to show a'.",
+            "why_it_hurts": "Excessively lengthened phones break sentence cadence and dilute rhetorical momentum, causing listener fatigue.",
+            "secondary_types": [],
+            "_is_merged": false
+          }
+        ]
+      },
+      "rushed": {
+        "total_flaws": 1,
+        "rushed_flaws_count": 0,
+        "score": 91.7,
+        "flaws": [
+          {
+            "region_id": "flaw_01_volume_drop",
+            "start_s": 8.762,
+            "end_s": 10.942,
+            "start_word_idx": 15,
+            "end_word_idx": 17,
+            "words": "fear itself nameless",
+            "flaw_type": "volume_drop",
+            "feature": "intensity_db",
+            "baseline_value": 0.0,
+            "observed_value": 3.07,
+            "delta": 3.07,
+            "unit": "dB",
+            "z_score": -1.33,
+            "severity": 3.19,
+            "rationale_text": "Vocal energy plummeted by 3.1 dB relative to speaker median (observed 3.1 dB vs baseline 0.0 dB, z=-1.3).",
+            "why_it_hurts": "Abrupt loss of acoustic power creates trailing-off phrases where word endings become inaudible or sound unconfident.",
+            "secondary_types": [],
+            "_is_merged": false
+          }
+        ]
+      },
+      "odd_pauses": {
+        "total_flaws": 3,
+        "detected_pause_flaws_count": 2,
+        "noted_targets_count": 2,
+        "matched_targets_count": 1,
+        "noted_pause_recall_pct": 50.0,
+        "target_word_matches": [
+          {
+            "target_word": "terror",
+            "status": "MISSED"
+          },
+          {
+            "target_word": "support",
+            "word_index": 51,
+            "word_end_s": 33.793,
+            "flaw_region_id": "flaw_02_inappropriate_pause",
+            "flaw_start_s": 33.793,
+            "flaw_end_s": 34.94,
+            "status": "MATCHED"
+          }
+        ],
+        "flaws": [
+          {
+            "region_id": "flaw_01_drag_slow",
+            "start_s": 29.16,
+            "end_s": 31.372,
+            "start_word_idx": 42,
+            "end_word_idx": 46,
+            "words": "and a fitter has met",
+            "flaw_type": "drag_slow",
+            "feature": "articulation_rate",
+            "baseline_value": 4.2,
+            "observed_value": 2.76,
+            "delta": -1.44,
+            "unit": "syllables/sec",
+            "z_score": -2.04,
+            "severity": 5.41,
+            "rationale_text": "Speech tempo slowed from baseline 4.2 to 2.8 syllables/sec (-1.4 syl/s, z=-2.0) across 'and a fitter has met'.",
+            "why_it_hurts": "Excessively lengthened phones break sentence cadence and dilute rhetorical momentum, causing listener fatigue.",
+            "secondary_types": [],
+            "_is_merged": false
+          },
+          {
+            "region_id": "flaw_02_inappropriate_pause",
+            "start_s": 33.793,
+            "end_s": 34.94,
+            "start_word_idx": 51,
+            "end_word_idx": 52,
+            "words": "support [pause] of",
+            "flaw_type": "inappropriate_pause",
+            "feature": "pause_duration",
+            "baseline_value": 0.05,
+            "observed_value": 1.147,
+            "delta": 1.097,
+            "unit": "seconds (s)",
+            "z_score": 3.87,
+            "severity": 7.1,
+            "rationale_text": "Disruptive 1.15s unpunctuated pause detected between words 'support' and 'of' (expected <= 0.05s).",
+            "why_it_hurts": "Inserting hesitations mid-phrase fractures syntactic chunking and introduces cognitive processing friction for the listener.",
+            "secondary_types": [],
+            "_is_merged": false
+          },
+          {
+            "region_id": "flaw_03_missing_pause",
+            "start_s": 48.01,
+            "end_s": 48.01,
+            "start_word_idx": 73,
+            "end_word_idx": 74,
+            "words": "leadership [pause] in",
+            "flaw_type": "missing_pause",
+            "feature": "pause_duration",
+            "baseline_value": 0.5,
+            "observed_value": 0.0,
+            "delta": -0.5,
+            "unit": "seconds (s)",
+            "z_score": -1.66,
+            "severity": 0.22,
+            "rationale_text": "Syntactic pause omitted after punctuation ',' at word 'leadership' (0.00s vs expected baseline 0.50s).",
+            "why_it_hurts": "Running through punctuation boundaries denies listeners cognitive processing time to digest completed thematic units.",
+            "secondary_types": [],
+            "_is_merged": false
+          }
+        ]
+      }
+    },
+    "cross_speaker_control": {
+      "orator_speech_id": "fdr_fear_itself_1933",
+      "orator_speaker": "Franklin D. Roosevelt",
+      "orator_f0_median_hz": 244.6,
+      "take_a_f0_median_hz": 244.6,
+      "f0_shift_hz": 0.0,
+      "flags_count": 0,
+      "flags_per_min": 0.0,
+      "note": "Cross-speaker evaluation reflects speaker-idiosyncratic cadence and pitch baseline shifts, reported separately from within-speaker controls.",
+      "flaws": []
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_challenger_1986_level_0",
+  "speech_id": "reagan_challenger_1986",
+  "level": 0,
+  "seed": 0,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 64.24,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 4.361,
+      "end_s": 9.903,
+      "start_word_idx": 9,
+      "end_word_idx": 15,
+      "words": "and impressed us for decades and we",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 20.627,
+      "end_s": 22.97,
+      "start_word_idx": 38,
+      "end_word_idx": 38,
+      "words": "Drake [pause] died",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 52.056,
+      "end_s": 53.297,
+      "start_word_idx": 116,
+      "end_word_idx": 122,
+      "words": "we saw them this morning as they",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 58.038,
+      "end_s": 61.079,
+      "start_word_idx": 133,
+      "end_word_idx": 140,
+      "words": "surly bonds of earth to touch the face",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

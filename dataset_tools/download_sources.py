@@ -4,10 +4,8 @@ Curates prominent public-domain speeches (US federal government / NASA archives)
 and downloads LibriSpeech clean utterances for population priors.
 """
 
-import os
 import json
-import urllib.request
-from typing import List, Dict, Any
+import os
 
 MANIFEST_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "manifests")
 RAW_AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "raw")

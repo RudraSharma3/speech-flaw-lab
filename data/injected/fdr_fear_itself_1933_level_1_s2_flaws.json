@@ -1,0 +1,59 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_1_s2",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 1,
+  "seed": 2,
+  "level_name": "Flawed",
+  "duration_s": 47.879,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 2.681,
+      "end_s": 9.364,
+      "start_word_idx": 5,
+      "end_word_idx": 15,
+      "words": "belief that the only thing we have to fear is fear",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 27.051,
+      "end_s": 29.952,
+      "start_word_idx": 41,
+      "end_word_idx": 50,
+      "words": "frankness and a fitter has met with that understanding and",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 37.995,
+      "end_s": 45.818,
+      "start_word_idx": 68,
+      "end_word_idx": 75,
+      "words": "game give that support to leadership in these",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

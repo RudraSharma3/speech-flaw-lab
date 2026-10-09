@@ -4,17 +4,17 @@ Extracts speech segments and pauses using Silero VAD (with energy-based fallback
 """
 
 import os
-import yaml
+from typing import Any
+
 import numpy as np
-import torch
-from typing import List, Dict, Tuple, Any
+import yaml
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "thresholds.yaml")
 
 
-def load_vad_config() -> Dict[str, Any]:
+def load_vad_config() -> dict[str, Any]:
     if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, "r") as f:
+        with open(CONFIG_PATH) as f:
             return yaml.safe_load(f).get("vad", {})
     return {
         "silero_threshold": 0.45,
@@ -31,7 +31,7 @@ def get_speech_timestamps_energy(
     threshold_db: float = -35.0,
     min_speech_ms: int = 150,
     min_silence_ms: int = 200,
-) -> List[Dict[str, float]]:
+) -> list[dict[str, float]]:
     """
     Robust adaptive energy-based VAD fallback.
     Calculates frame RMS energy and applies hysteresis to determine speech boundaries.
@@ -89,7 +89,7 @@ def get_speech_timestamps_energy(
 
 def detect_speech_and_pauses(
     audio_arr: np.ndarray, sr: int = 16000
-) -> Tuple[List[Dict[str, float]], List[Dict[str, float]], np.ndarray]:
+) -> tuple[list[dict[str, float]], list[dict[str, float]], np.ndarray]:
     """
     Detects speech intervals and pauses, returning:
     (speech_segments, pause_segments, frame_pause_mask)

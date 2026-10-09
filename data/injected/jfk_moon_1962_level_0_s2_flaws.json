@@ -1,0 +1,72 @@
+{
+  "recording_id": "jfk_moon_1962_level_0_s2",
+  "speech_id": "jfk_moon_1962",
+  "level": 0,
+  "seed": 2,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 76.142,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 20.406,
+      "end_s": 22.727,
+      "start_word_idx": 43,
+      "end_word_idx": 49,
+      "words": "times more than have ever been experienced",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 22.727,
+      "end_s": 32.77,
+      "start_word_idx": 50,
+      "end_word_idx": 60,
+      "words": "pitted together with a precision better than the finest watch carrying",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 33.15,
+      "end_s": 34.63,
+      "start_word_idx": 61,
+      "end_word_idx": 61,
+      "words": "all [pause] the",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 35.32,
+      "end_s": 44.553,
+      "start_word_idx": 64,
+      "end_word_idx": 79,
+      "words": "needed for propulsion guidance control communication food and survival on an untried mission to an unknown",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

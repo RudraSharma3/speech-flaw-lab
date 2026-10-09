@@ -3,22 +3,23 @@ Audio ingestion, normalization, and quality validation module.
 Enforces canonical 16 kHz mono WAV 16-bit format, LUFS normalization, and clipping checks.
 """
 
-import os
-import io
 import hashlib
-import numpy as np
-import soundfile as sf
+import io
+import os
+from typing import Any
+
 import librosa
+import numpy as np
 import pyloudnorm as pyln
+import soundfile as sf
 import yaml
-from typing import Tuple, Dict, Any, Optional
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "thresholds.yaml")
 
 
-def load_audio_config() -> Dict[str, Any]:
+def load_audio_config() -> dict[str, Any]:
     if os.path.exists(CONFIG_PATH):
-        with open(CONFIG_PATH, "r") as f:
+        with open(CONFIG_PATH) as f:
             return yaml.safe_load(f).get("audio", {})
     return {
         "canonical_sample_rate": 16000,
@@ -36,7 +37,7 @@ def compute_sha256(audio_bytes: bytes) -> str:
 
 def load_and_preprocess_audio(
     audio_source: Any, target_sr: int = 16000, target_lufs: float = -20.0
-) -> Tuple[np.ndarray, int, str, Dict[str, Any]]:
+) -> tuple[np.ndarray, int, str, dict[str, Any]]:
     """
     Loads any input audio (bytes, file-like, or path), converts to mono,
     resamples to 16kHz, performs BS.1770 LUFS loudness normalization,
@@ -49,22 +50,50 @@ def load_and_preprocess_audio(
     if isinstance(audio_source, bytes):
         raw_bytes = audio_source
         bio = io.BytesIO(raw_bytes)
-        y, sr = sf.read(bio)
+        try:
+            y, sr = sf.read(bio)
+        except Exception:
+            bio.seek(0)
+            try:
+                import torchaudio
+                t_waveform, t_sr = torchaudio.load(bio)
+                y = t_waveform.numpy()
+                sr = t_sr
+                if y.ndim > 1:
+                    y = np.mean(y, axis=0)
+            except Exception:
+                bio.seek(0)
+                y, sr = librosa.load(bio, sr=None)
     elif isinstance(audio_source, str) and os.path.exists(audio_source):
         with open(audio_source, "rb") as f:
             raw_bytes = f.read()
-        y, sr = sf.read(audio_source)
+        try:
+            y, sr = sf.read(audio_source)
+        except Exception:
+            y, sr = librosa.load(audio_source, sr=None)
     else:
         # File-like object
         raw_bytes = audio_source.read()
         bio = io.BytesIO(raw_bytes)
-        y, sr = sf.read(bio)
+        try:
+            y, sr = sf.read(bio)
+        except Exception:
+            bio.seek(0)
+            y, sr = librosa.load(bio, sr=None)
 
     sha256_hash = compute_sha256(raw_bytes)
 
-    # Convert to mono if multi-channel
+    # Convert to mono if multi-channel (handles stereo/surround)
     if y.ndim > 1:
-        y = np.mean(y, axis=1)
+        if y.shape[0] <= 8 and y.shape[1] > y.shape[0]:
+            y = np.mean(y, axis=0)
+        else:
+            y = np.mean(y, axis=1)
+
+    # Silence check: reject silent files
+    rms = float(np.sqrt(np.mean(y**2)))
+    if rms < 1e-4:
+        raise ValueError("Audio is completely silent (RMS < 1e-4). Cannot extract speech contours or perform alignment.")
 
     # Resample to 16kHz if necessary
     if sr != target_sr:
@@ -72,6 +101,14 @@ def load_and_preprocess_audio(
         sr = target_sr
 
     duration_s = float(len(y)) / sr
+
+    # Max duration check: reject files > max_audio_duration_s (e.g. 10-minute files)
+    max_dur = cfg.get("max_audio_duration_s", 300.0)
+    if duration_s > max_dur:
+        raise ValueError(
+            f"Audio duration {duration_s:.1f}s exceeds maximum allowed duration ({max_dur:.0f}s / 5 minutes). "
+            f"Please trim audio before analysis."
+        )
 
     # Quality metrics: clipping detection
     clipping_thresh = 10.0 ** (cfg.get("clipping_threshold_dbfs", -0.5) / 20.0)

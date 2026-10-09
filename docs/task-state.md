@@ -6,63 +6,27 @@ This document captures the current work in progress, goals, acceptance criteria,
 
 ## 1. Goal
 
-Execute **Day 1 Milestone** for **Track C: Contrastive Speech Analytics & Temporal Flaw Grounding** (Multimodal AI Hackathon 2026):
-1. Establish containerized architecture (`Dockerfile.backend`, `Dockerfile.frontend`, `docker-compose.yml`, `environment.yml`).
-2. Implement frozen Pydantic v2 schemas (`backend/schemas/api.py`) and synchronized TypeScript interfaces (`frontend/src/types/api.ts`).
-3. Build configuration contracts (`configs/rubric.yaml`, `configs/flaw_rules.yaml`, `configs/injector_levels.yaml`, `configs/thresholds.yaml`).
-4. Curate public-domain baselines (`jfk_moon_1962`, `reagan_challenger_1986`, `fdr_fear_itself_1933`) and LibriSpeech population priors (`data/population_norms/librispeech_priors.json`).
-5. Develop core pipeline modules v1: 16kHz LUFS audio ingestion, VAD, forced alignment (MFA + fallback), Parselmouth Praat + Librosa feature extraction, speaker normalization, temporal flaw grounding snapped to word boundaries, causal explainability, and rubric scoring.
-6. Build full-featured React + Vite + TypeScript dashboard with Wavesurfer.js v7, Plotly stacked subplots, word-level heat-strip, causal explanation card, rubric score card, and 5-tier gradient comparison view.
-7. Generate pre-cached demo catalog (`data/cached_results/`) across all 5 quality levels for a zero-fail live demo.
+Execute **Final Evaluation, Integration, Dataset Packaging & Documentation Gate** for **Track C: Contrastive Speech Analytics & Temporal Flaw Grounding** under the strict detector threshold freeze.
 
 ---
 
-## 2. Acceptance Criteria (Day 1)
+## 2. Acceptance Criteria & Final Verification
 
-- [x] Docker setup with micromamba base, Montreal Forced Aligner 3.x, Python 3.11, and Node 20.
-- [x] Pydantic v2 schemas and TypeScript types frozen and tested against mock result contract.
-- [x] Public domain speech baselines curated with license provenance in [`data/manifests/sources_manifest.json`](file:///c:/Users/HP/OneDrive/Desktop/Speech/data/manifests/sources_manifest.json).
-- [x] LibriSpeech population priors generated in [`data/population_norms/librispeech_priors.json`](file:///c:/Users/HP/OneDrive/Desktop/Speech/data/population_norms/librispeech_priors.json).
-- [x] Dataset validator [`dataset_tools/validate_dataset.py`](file:///c:/Users/HP/OneDrive/Desktop/Speech/dataset_tools/validate_dataset.py) passes with zero errors.
-- [x] Deterministic pipeline runner [`backend/pipeline/orchestrator.py`](file:///c:/Users/HP/OneDrive/Desktop/Speech/backend/pipeline/orchestrator.py) wired to FastAPI.
-- [x] Interactive React dashboard with Wavesurfer flaw regions, Plotly synchronized curves, token heat-strip, and 5-tier gradient view.
-- [x] All parameters in [`configs/`](file:///c:/Users/HP/OneDrive/Desktop/Speech/configs), zero LLM in the scoring path.
-- [x] Running status tracking in [`docs/status.md`](file:///c:/Users/HP/OneDrive/Desktop/Speech/docs/status.md) and ADR in [`docs/decisions/001-pipeline-architecture.md`](file:///c:/Users/HP/OneDrive/Desktop/Speech/docs/decisions/001-pipeline-architecture.md).
-
----
-
-## 3. Implementation Plan & Progress
-
-- [x] Step 1: Initialize directory tree, Dockerfile.backend, Dockerfile.frontend, docker-compose.yml.
-- [x] Step 2: Create YAML configs for rubric, flaw rules, injector levels, and thresholds.
-- [x] Step 3: Implement Pydantic v2 schemas and TypeScript API interfaces.
-- [x] Step 4: Build backend pipeline modules (audio, vad, align, features, normalize, grounding, explain, scoring).
-- [x] Step 5: Implement FastAPI server with background job queue, SHA-256 caching, and sample endpoints.
-- [x] Step 6: Create dataset curation tools and validate dataset integrity.
-- [x] Step 7: Build React + Vite + Tailwind + Wavesurfer + Plotly frontend components.
-- [x] Step 8: Verify build, schemas, and dataset integrity checks.
+- [x] **Item 1: Metrics Bug Fixed**: Re-implemented 1-to-1 Hungarian matching (`scipy.optimize.linear_sum_assignment`) in `dataset_tools/run_benchmark.py`. Precision $\le 100\%$ everywhere; write to `results/benchmark.json`.
+- [x] **Item 2: Diagnostic & Flaw Disabling**: Full-chain identity null control (0.21 flags/min). 23 of 33 far-from-GT detections were `breathy_unclear` triggered on vintage noise. Disabled in contrastive mode; documented in `docs/decisions/007-disable-breathy-in-contrastive.md`.
+- [x] **Item 3: Boundary Accuracy & Edge Trimming**: Trimming merged regions strictly to flagged words. Single regions: median start/end 200.0 ms. Merged regions: median start 223.0 ms, median end 260.0 ms. All-GT flaws penalized (2000 ms penalty on misses): median start error 1005.0 ms.
+- [x] **Item 4: Isotonic Score Calibration**: Monotone isotonic calibration fit on Tuning speeches only, evaluated on Held-Out FDR speech. Pairwise ranking accuracy on L0–L3: 97.78% (95% CI: [95.83%, 100.0%], 2 violations / 90 comparisons).
+- [x] **Item 5: Dashboard Revamp**: Removed all mock data. Replaced plotly bundle with `plotly.js-basic-dist`. Built hatched GT bars in `WaveformViewer.tsx`, `GroundTruthTable.tsx`, `CompareGradientView.tsx`, `LimitationsPanel.tsx`, and secondary merged deviations in `CausalExplanationCard.tsx`. Production build verified in 42.6s.
+- [x] **Item 6: Live Upload Path**: End-to-end async API flow verified (`/analyze` $\to$ `/jobs/{id}` $\to$ `/results/{id}`). All failure cases handled (silent file, 10-minute file, stereo downmix, transcript mismatch, WAV/MP3/M4A). 60s CPU latency without cache is 110.51s (FAIL vs <60s CPU target); with SHA-256 precomputation cache: 0.01s (PASS).
+- [x] **Item 7: Dataset Packaging**: Generated 95 Praat `.TextGrid` files. Packaged 75 recordings into `dist/speech_prosody_benchmark_v1.zip` (113.59 MB, SHA-256: `4ba0eac057e013b14a97c2c2e99de5154834b9bdc5dbb7e527172e1871d64e6b`). `validate_dataset.py` run on all 75 files and self-recordings protocol (ALL PASSED).
+- [x] **Item 8: Technical Documentation (Facts Only)**: `dataset_tools/generate_technical_doc.py` created `docs/technical_doc.md` reading strictly from `results/benchmark.json`. Includes Mermaid architecture diagram and documented failures. Exported to PDF `docs/technical_doc.pdf` (259,195 bytes) via Microsoft Edge headless print-to-pdf.
+- [x] **Item 9: Reproducibility & Docker Status**: Dependencies pinned in `requirements.txt`; seeds fixed (0, 1, 2); fresh clone test instructions in `README.md`. Docker Desktop daemon status honestly reported as NOT RUN. Updated `docs/status.md`.
 
 ---
 
-## 4. Current Status & Decisions
+## 3. Active Handoff Notes
 
-- **Status**: Day 1 milestone 100% completed and verified.
-- **Decisions**:
-  - Implemented ADR 001: 100% deterministic DSP + Forced Alignment + Robust Statistics architecture with zero LLMs in the evaluation path.
-  - Sourced public domain speeches under 17 U.S.C. § 105.
-  - Pre-cached 5-tier gradient samples in [`data/cached_results/`](file:///c:/Users/HP/OneDrive/Desktop/Speech/data/cached_results) ensuring demo resilience.
-
----
-
-## 5. Handoff Notes
-
-- **Verified Working**:
-  - `python -m dataset_tools.download_sources` ➔ Generated sources manifest & LibriSpeech priors.
-  - `python -m dataset_tools.validate_dataset` ➔ 5 cached gradient levels & manifests validated.
-  - `python -c "import backend.tests.test_schemas as ts; ts.test_mock_result_conforms_to_schema()"` ➔ Pydantic v2 schemas validated.
-  - Frontend bundle compiled cleanly with TypeScript & Vite.
-- **Next Phase (Day 2)**:
-  - Implement batch parameterized flaw injector (`dataset_tools/inject_flaws.py`) across all speech baselines.
-  - Implement re-alignment and ground-truth mapping verification.
-  - Wire live recording ingest and complete Day 2 milestone tag.
-
+- **Single Source of Truth**: All benchmark metrics reside in `results/benchmark.json` generated by `python -m dataset_tools.run_benchmark`.
+- **Pre-Cached Demo Results**: All 75 gradient files across all 5 speeches and 3 seeds are pre-computed in `data/cached_results/`.
+- **Frontend Production Bundle**: `frontend/dist/` is pre-compiled and verified.
+- **Dataset Archive**: `dist/speech_prosody_benchmark_v1.zip` is ready for release distribution.

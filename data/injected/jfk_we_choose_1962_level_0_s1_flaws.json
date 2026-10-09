@@ -1,0 +1,72 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_0_s1",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 0,
+  "seed": 1,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 73.73,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 12.562,
+      "end_s": 14.042,
+      "start_word_idx": 27,
+      "end_word_idx": 27,
+      "words": "because [pause] that",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 20.22,
+      "end_s": 44.286,
+      "start_word_idx": 43,
+      "end_word_idx": 54,
+      "words": "and one we intend to win and the others too It is",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 45.887,
+      "end_s": 49.967,
+      "start_word_idx": 58,
+      "end_word_idx": 69,
+      "words": "that I regard the decision last year to shift our efforts in",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 56.96,
+      "end_s": 73.75,
+      "start_word_idx": 88,
+      "end_word_idx": 94,
+      "words": "incumbency in the Office of the Presidency",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

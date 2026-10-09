@@ -1,0 +1,59 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_1",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 1,
+  "seed": 0,
+  "level_name": "Flawed",
+  "duration_s": 59.864,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 13.886,
+      "end_s": 15.846,
+      "start_word_idx": 32,
+      "end_word_idx": 40,
+      "words": "that we're willing to accept one we are unwilling",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 30.132,
+      "end_s": 33.874,
+      "start_word_idx": 60,
+      "end_word_idx": 69,
+      "words": "regard the decision last year to shift our efforts in",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 37.18,
+      "end_s": 40.236,
+      "start_word_idx": 77,
+      "end_word_idx": 82,
+      "words": "among the most important decisions that",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

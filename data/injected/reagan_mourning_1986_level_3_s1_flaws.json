@@ -1,0 +1,27 @@
+{
+  "recording_id": "reagan_mourning_1986_level_3_s1",
+  "speech_id": "reagan_mourning_1986",
+  "level": 3,
+  "seed": 1,
+  "level_name": "Near Perfect",
+  "duration_s": 52.0,
+  "flaw_count": 1,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 8.963,
+      "end_s": 11.264,
+      "start_word_idx": 30,
+      "end_word_idx": 32,
+      "words": "plans Today is",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.65,
+        "duration_words": [
+          3,
+          6
+        ]
+      }
+    }
+  ]
+}

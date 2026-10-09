@@ -1,0 +1,59 @@
+{
+  "recording_id": "reagan_challenger_1986_level_1",
+  "speech_id": "reagan_challenger_1986",
+  "level": 1,
+  "seed": 0,
+  "level_name": "Flawed",
+  "duration_s": 62.969,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 5.001,
+      "end_s": 6.57,
+      "start_word_idx": 12,
+      "end_word_idx": 17,
+      "words": "for decades and we know of",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 10.181,
+      "end_s": 15.342,
+      "start_word_idx": 24,
+      "end_word_idx": 35,
+      "words": "a coincidence today On this day 390 years ago the great explorer",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 54.528,
+      "end_s": 62.209,
+      "start_word_idx": 136,
+      "end_word_idx": 143,
+      "words": "earth to touch the face of God Thank",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

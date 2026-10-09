@@ -1,0 +1,59 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_1",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 1,
+  "seed": 0,
+  "level_name": "Flawed",
+  "duration_s": 48.486,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 5.141,
+      "end_s": 10.081,
+      "start_word_idx": 9,
+      "end_word_idx": 16,
+      "words": "thing we have to fear is fear itself",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 22.523,
+      "end_s": 25.123,
+      "start_word_idx": 30,
+      "end_word_idx": 39,
+      "words": "In every dark hour of our national life a leadership",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 34.024,
+      "end_s": 42.1,
+      "start_word_idx": 59,
+      "end_word_idx": 67,
+      "words": "to victory And I am convinced to show a",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

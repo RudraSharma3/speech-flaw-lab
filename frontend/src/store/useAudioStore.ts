@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import { AnalysisResult, GroundedFlaw, WordMetric } from '../types/api';
-import mockData from '../mock/mock_result.json';
 
 interface AudioStoreState {
   resultData: AnalysisResult | null;
@@ -27,16 +26,15 @@ interface AudioStoreState {
   setActiveTab: (tab: 'overview' | 'acoustic_plots' | 'compare_gradient') => void;
   setIsAnalyzing: (isAnalyzing: boolean, progress?: number, message?: string) => void;
   seekTo: (timeSeconds: number) => void;
-  loadMockData: () => void;
 }
 
 export const useAudioStore = create<AudioStoreState>((set, get) => ({
-  resultData: mockData as unknown as AnalysisResult,
-  audioUrl: '/api/audio/jfk_moon_level1_flawed.wav',
+  resultData: null,
+  audioUrl: null,
   currentTime: 0.0,
-  duration: 17.5,
+  duration: 0.0,
   isPlaying: false,
-  selectedRegion: (mockData.flaws && mockData.flaws.length > 0) ? (mockData.flaws[0] as unknown as GroundedFlaw) : null,
+  selectedRegion: null,
   hoveredWord: null,
   selectedWord: null,
   activeTab: 'overview',
@@ -70,16 +68,5 @@ export const useAudioStore = create<AudioStoreState>((set, get) => ({
     set({ currentTime: timeSeconds });
     // Custom event dispatched so wavesurfer instances sync instantly
     window.dispatchEvent(new CustomEvent('speech_seek', { detail: { time: timeSeconds } }));
-  },
-
-  loadMockData: () => {
-    const data = mockData as unknown as AnalysisResult;
-    set({
-      resultData: data,
-      audioUrl: '/api/audio/jfk_moon_level1_flawed.wav',
-      duration: data.meta.duration_s,
-      currentTime: 0.0,
-      selectedRegion: data.flaws.length > 0 ? data.flaws[0] : null,
-    });
   },
 }));

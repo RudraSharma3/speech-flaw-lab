@@ -99,25 +99,84 @@ docker compose up --build
 
 ---
 
-## 🛠️ CLI & Makefile-Free Development Commands
+## 💾 Dataset Download (CSAD-2026)
+
+The full 75-recording dataset package, including 16kHz WAV audio, JSON annotations, and Praat TextGrids, is packaged as a standalone archive:
+
+- **Download Link**: `[Google Drive Dataset Archive Placeholder: https://drive.google.com/file/d/PLACEHOLDER_CSAD_2026/view?usp=sharing]`
+- **Local Path**: `dist/speech_prosody_benchmark_v1.zip`
+- **File Size**: `119,109,722 bytes` (113.59 MB)
+- **SHA-256 Checksum**: `4ba0eac057e013b14a97c2c2e99de5154834b9bdc5dbb7e527172e1871d64e6b`
+
+To verify integrity after downloading:
+```bash
+# On Linux / macOS:
+sha256sum speech_prosody_benchmark_v1.zip
+
+# On Windows PowerShell:
+Get-FileHash dist/speech_prosody_benchmark_v1.zip -Algorithm SHA256
+```
+
+---
+
+## 🛠️ CLI & Reproduction Commands
 
 Run all pipeline tools directly using standard Python commands:
 
 ```bash
-# 1. Curate public domain baseline manifest & LibriSpeech priors
-python -m dataset_tools.download_sources
+# 1. Run full 75-recording benchmark & generate results/benchmark.json
+python -m dataset_tools.run_benchmark
 
-# 2. Run dataset integrity and alignment validation
+# 2. Run dataset integrity and alignment validation across all 75 files
 python -m dataset_tools.validate_dataset
 
-# 3. Execute backend test suite
+# 3. Generate technical documentation from benchmark facts
+python -m dataset_tools.generate_technical_doc
+
+# 4. Ingest and score out-of-distribution self-recordings
+python -m dataset_tools.ingest_self_recordings
+
+# 5. Execute backend test suite
 pytest backend/tests/ -v
 
-# 4. Build and preview frontend
+# 6. Build and preview frontend
 cd frontend
 npm install
 npm run build
 ```
+
+---
+
+## 💻 Fresh Clone Setup (Non-OneDrive Environment)
+
+To test a clean setup on a new machine without pre-existing environment state:
+
+1. **Prerequisites**: Python 3.11+, Node.js 20+, Git.
+2. **Clone & Virtual Environment**:
+   ```bash
+   git clone https://github.com/your-org/speech.git
+   cd speech
+   python -m venv .venv
+   # Windows:
+   .venv\Scripts\activate
+   # Linux/macOS:
+   source .venv/bin/activate
+   ```
+3. **Install Dependencies**:
+   ```bash
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+4. **Run Benchmark**:
+   ```bash
+   python -m dataset_tools.run_benchmark
+   ```
+5. **Run Frontend**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
 
 ---
 
@@ -137,8 +196,10 @@ $$\text{Score}_{\text{overall}} = 0.25 \cdot S_{\text{Pacing}} + 0.25 \cdot S_{\
 
 ## 📄 Documentation Links
 
-- [Technical Documentation (6-Page Report)](docs/technical_doc.md)
+- [Technical Documentation (Report & Audit)](docs/technical_doc.md)
+- [Technical Documentation PDF Export](docs/technical_doc.pdf)
 - [Dataset Card (CSAD-2026)](docs/dataset_card.md)
 - [Video Demonstration Script](docs/video_script.md)
 - [ADR 001: Architecture Decision](docs/decisions/001-pipeline-architecture.md)
+- [ADR 007: Disable Breathy in Contrastive Mode](docs/decisions/007-disable-breathy-in-contrastive.md)
 - [Project Status & Roadmap Tracking](docs/status.md)

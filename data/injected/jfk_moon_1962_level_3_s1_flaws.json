@@ -1,0 +1,27 @@
+{
+  "recording_id": "jfk_moon_1962_level_3_s1",
+  "speech_id": "jfk_moon_1962",
+  "level": 3,
+  "seed": 1,
+  "level_name": "Near Perfect",
+  "duration_s": 70.0,
+  "flaw_count": 1,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 5.49,
+      "end_s": 7.322,
+      "start_word_idx": 9,
+      "end_word_idx": 12,
+      "words": "a giant rocket more",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.65,
+        "duration_words": [
+          3,
+          6
+        ]
+      }
+    }
+  ]
+}

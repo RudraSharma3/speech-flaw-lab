@@ -1,0 +1,59 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_1_s1",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 1,
+  "seed": 1,
+  "level_name": "Flawed",
+  "duration_s": 48.792,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 15.51,
+      "end_s": 24.226,
+      "start_word_idx": 21,
+      "end_word_idx": 28,
+      "words": "which paralyzes needed efforts to convert retreat into",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 36.029,
+      "end_s": 38.39,
+      "start_word_idx": 52,
+      "end_word_idx": 60,
+      "words": "of the people themselves which is essential to victory",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 41.17,
+      "end_s": 45.091,
+      "start_word_idx": 65,
+      "end_word_idx": 72,
+      "words": "to show a game give that support to",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

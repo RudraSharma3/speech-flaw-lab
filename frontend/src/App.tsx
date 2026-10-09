@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useAudioStore } from './store/useAudioStore';
 import { WaveformViewer } from './components/WaveformViewer';
 import { AcousticPlots } from './components/AcousticPlots';
@@ -7,7 +7,10 @@ import { CausalExplanationCard } from './components/CausalExplanationCard';
 import { ScoreCard } from './components/ScoreCard';
 import { UploadPanel } from './components/UploadPanel';
 import { CompareGradientView } from './components/CompareGradientView';
-import { Mic2, Activity, Layers, Radio, ShieldCheck, Github, Cpu } from 'lucide-react';
+import { GroundTruthTable } from './components/GroundTruthTable';
+import { LimitationsPanel } from './components/LimitationsPanel';
+import { ClarityPanel } from './components/ClarityPanel';
+import { Mic2, Activity, Layers, Cpu } from 'lucide-react';
 
 export const App: React.FC = () => {
   const { activeTab, setActiveTab } = useAudioStore();
@@ -99,8 +102,11 @@ export const App: React.FC = () => {
           <>
             <ScoreCard />
             <WaveformViewer />
+            <GroundTruthTable />
             <CausalExplanationCard />
             <TranscriptHeatmap />
+            <ClarityPanel />
+            <LimitationsPanel />
           </>
         )}
 
@@ -109,8 +115,11 @@ export const App: React.FC = () => {
           <>
             <WaveformViewer />
             <AcousticPlots />
+            <GroundTruthTable />
             <CausalExplanationCard />
             <TranscriptHeatmap />
+            <ClarityPanel />
+            <LimitationsPanel />
           </>
         )}
 
@@ -120,7 +129,10 @@ export const App: React.FC = () => {
             <CompareGradientView />
             <ScoreCard />
             <WaveformViewer />
+            <GroundTruthTable />
             <CausalExplanationCard />
+            <ClarityPanel />
+            <LimitationsPanel />
           </>
         )}
       </main>

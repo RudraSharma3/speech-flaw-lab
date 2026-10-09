@@ -1,0 +1,59 @@
+{
+  "recording_id": "reagan_mourning_1986_level_1_s2",
+  "speech_id": "reagan_mourning_1986",
+  "level": 1,
+  "seed": 2,
+  "level_name": "Flawed",
+  "duration_s": 52.763,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 8.364,
+      "end_s": 11.365,
+      "start_word_idx": 28,
+      "end_word_idx": 33,
+      "words": "change those plans Today is a",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 29.033,
+      "end_s": 29.993,
+      "start_word_idx": 84,
+      "end_word_idx": 88,
+      "words": "astronauts in a terrible accident",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 33.215,
+      "end_s": 36.756,
+      "start_word_idx": 98,
+      "end_word_idx": 102,
+      "words": "in flight We've never had",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_moon_1962_level_2",
+  "speech_id": "jfk_moon_1962",
+  "level": 2,
+  "seed": 0,
+  "level_name": "Slightly Flawed",
+  "duration_s": 69.627,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 28.503,
+      "end_s": 29.323,
+      "start_word_idx": 62,
+      "end_word_idx": 65,
+      "words": "the equipment needed for",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 37.504,
+      "end_s": 41.264,
+      "start_word_idx": 79,
+      "end_word_idx": 86,
+      "words": "unknown celestial body and then return it safely",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

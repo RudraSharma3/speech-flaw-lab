@@ -1,0 +1,43 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_2_s1",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 2,
+  "seed": 1,
+  "level_name": "Slightly Flawed",
+  "duration_s": 45.984,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 4.602,
+      "end_s": 6.804,
+      "start_word_idx": 8,
+      "end_word_idx": 14,
+      "words": "only thing we have to fear is",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 11.01,
+      "end_s": 15.908,
+      "start_word_idx": 18,
+      "end_word_idx": 22,
+      "words": "unreasoning unjustified terror which paralyzes",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_moon_1962_level_2_s1",
+  "speech_id": "jfk_moon_1962",
+  "level": 2,
+  "seed": 1,
+  "level_name": "Slightly Flawed",
+  "duration_s": 69.137,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 15.424,
+      "end_s": 17.324,
+      "start_word_idx": 34,
+      "end_word_idx": 38,
+      "words": "been embedded capable of standing",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 24.846,
+      "end_s": 27.387,
+      "start_word_idx": 57,
+      "end_word_idx": 60,
+      "words": "the finest watch carrying",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

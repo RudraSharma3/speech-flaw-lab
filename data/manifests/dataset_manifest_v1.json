@@ -1,0 +1,4142 @@
+[
+  {
+    "recording_id": "jfk_moon_1962_level_4",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 0,
+    "duration_s": 70.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_moon_1962_level_4.wav",
+      "sha256": "84cf16d5525f3ced3611206ec2ab0cd95f3409c6268205706c1d50645235e564",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_4_flaws.json",
+      "sha256": "5dcd17d64a383560411392c989eb64694b4117ed3ba6deee4a2803d03c46f804",
+      "size_bytes": 204
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_4_alignment.json",
+      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "textgrid_file": "jfk_moon_1962_level_4.TextGrid",
+      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_3",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 0,
+    "duration_s": 70.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_moon_1962_level_3.wav",
+      "sha256": "309d3b9dd416c01cd4c5a5d47b35c88bae884fb68e109591aea77d313347e8c5",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_3_flaws.json",
+      "sha256": "2b05f425a993318e92222b5c919021b637e8ada31507856c5ffbdf00272d0ae9",
+      "size_bytes": 559
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_3_alignment.json",
+      "json_sha256": "0a6decfb5804301b87e946bea49286134e06162ee863b3f6d790bdbf4ad8e268",
+      "textgrid_file": "jfk_moon_1962_level_3.TextGrid",
+      "textgrid_sha256": "aa16b06b1a25548d8fee7112b9a18b830d479f25f2b0619f030da2cf05381980"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 59.41,
+        "end_s": 60.197,
+        "words": "if all this thick",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 0,
+    "duration_s": 69.627,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_moon_1962_level_2.wav",
+      "sha256": "ce3044f51d565d2516e88e2cff4156c90773c08512771a5f999697d6f84614a8",
+      "size_bytes": 2228116
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_2_flaws.json",
+      "sha256": "b721dcb18016d6af41b5c22dd44eb057c505d9b9e77c2951f92ae3aa1a7afb9a",
+      "size_bytes": 942
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_2_alignment.json",
+      "json_sha256": "c3d372d781191fc533dd02a45eaf98fc64f020ce90adc3c5c0b3ce244b28b033",
+      "textgrid_file": "jfk_moon_1962_level_2.TextGrid",
+      "textgrid_sha256": "1e5fac617194ce3faa89e593f7255f474a837de06b451f931ed5848c29748cb5"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 28.503,
+        "end_s": 29.323,
+        "words": "the equipment needed for",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 37.504,
+        "end_s": 41.264,
+        "words": "unknown celestial body and then return it safely",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 0,
+    "duration_s": 70.388,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_moon_1962_level_1.wav",
+      "sha256": "343b272dcd788a430287a882bedc3373681ad8208df61098bcbb7f0b5b6de641",
+      "size_bytes": 2252452
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_1_flaws.json",
+      "sha256": "fe9a98851253c25f6ee147b7026439ff71e4c6753662e29dec537fcaa4a34dd3",
+      "size_bytes": 1314
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_1_alignment.json",
+      "json_sha256": "91ab6c603f2954a3ef991636b75d882fc88ccdf46643643d1eaaf4d6fa43d218",
+      "textgrid_file": "jfk_moon_1962_level_1.TextGrid",
+      "textgrid_sha256": "169c230ef78b5e101bd53413480bfc476efc91468af59496ae09528a8aa2b6b6"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 7.16,
+        "end_s": 8.661,
+        "words": "more than 300 feet tall the",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 11.641,
+        "end_s": 16.602,
+        "words": "metal alloys some of which have not yet been embedded capable of",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 56.92,
+        "end_s": 60.567,
+        "words": "and do it first if all this thick",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_0",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 0,
+    "duration_s": 74.686,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_moon_1962_level_0.wav",
+      "sha256": "8c10c24c99a64825c32f886e1445ac2fe6c34c52cdee04b1a74cdce71e6758cf",
+      "size_bytes": 2390000
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_0_flaws.json",
+      "sha256": "181f03470546510e24e8c029da1c5146e30bbb89224950f6a8e07bd26622fdf3",
+      "size_bytes": 1655
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_0_alignment.json",
+      "json_sha256": "e052fa4de1b5a8d5cb5f02aa2654dac37ba846757304883e33a56694da7dcc6a",
+      "textgrid_file": "jfk_moon_1962_level_0.TextGrid",
+      "textgrid_sha256": "e4c7b915535fc406f79ddccc7c9ff4d7729c28325fdd1a73fc3398d510c22e68"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 5.48,
+        "end_s": 12.72,
+        "words": "a giant rocket more than 300 feet",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 18.682,
+        "end_s": 20.12,
+        "words": "of [pause] which",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 50.404,
+        "end_s": 54.524,
+        "words": "of over 25000 miles per hour causing heat",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 54.85,
+        "end_s": 55.585,
+        "words": "half that on the temperature of the",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_4_s1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 1,
+    "duration_s": 70.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_moon_1962_level_4_s1.wav",
+      "sha256": "84cf16d5525f3ced3611206ec2ab0cd95f3409c6268205706c1d50645235e564",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_4_s1_flaws.json",
+      "sha256": "1c1a7755452f583615c978e6a8522415fc30b8b6eb0fce18dbaf8472028d4a09",
+      "size_bytes": 207
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_4_s1_alignment.json",
+      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "textgrid_file": "jfk_moon_1962_level_4_s1.TextGrid",
+      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_3_s1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 1,
+    "duration_s": 70.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_moon_1962_level_3_s1.wav",
+      "sha256": "e8873bfecc61effc1dcc74bf99272f0ac8a27e04a65f1924cc6d48ea5468d4a9",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_3_s1_flaws.json",
+      "sha256": "165c3e526feddcb4fd8529dee137873567287187954a14b85c15a6c7cff175d1",
+      "size_bytes": 559
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_3_s1_alignment.json",
+      "json_sha256": "8eb84dfc8e03bf8c3620adb038322921aa6cd3d726c8f0ccf8f330b32c756692",
+      "textgrid_file": "jfk_moon_1962_level_3_s1.TextGrid",
+      "textgrid_sha256": "1dd204ca44ba643bc8f0550c059b32dfedaf1992f08bb507d47d41910221ec48"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 5.49,
+        "end_s": 7.322,
+        "words": "a giant rocket more",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_2_s1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 1,
+    "duration_s": 69.137,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_moon_1962_level_2_s1.wav",
+      "sha256": "e2799cdda0c4744dec4c8599d650b1cb4c7e4dcfb9f0e1eec56c595800dd44f5",
+      "size_bytes": 2212426
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_2_s1_flaws.json",
+      "sha256": "4d79ed1162f7e26bf5d261304821d7d464c5b6267322703a1322337460ec17e6",
+      "size_bytes": 931
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_2_s1_alignment.json",
+      "json_sha256": "938b5cd0b17e4cfad85d8c7c343f2838de7a7b301ee0d03fa95e183d4c55d4e0",
+      "textgrid_file": "jfk_moon_1962_level_2_s1.TextGrid",
+      "textgrid_sha256": "2a937a188ac1e47b799fa885e8658a8bd232f0d91bc5a94eb5625d793af70f92"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 15.424,
+        "end_s": 17.324,
+        "words": "been embedded capable of standing",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 24.846,
+        "end_s": 27.387,
+        "words": "the finest watch carrying",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_1_s1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 1,
+    "duration_s": 69.948,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_moon_1962_level_1_s1.wav",
+      "sha256": "4245746b2ff05cd6c577add9fa19e6cb0c3f7d15b6549193f1f09dfc779c6a07",
+      "size_bytes": 2238374
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_1_s1_flaws.json",
+      "sha256": "b55d35b1a743f3cf898314aef5d33c87c35a5e4bba7b6a2f3f599c5b98f5bd49",
+      "size_bytes": 1307
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_1_s1_alignment.json",
+      "json_sha256": "71da91af162c32f788ed173872200075a2cda6b8096b2b445911cf2a8d8ea11b",
+      "textgrid_file": "jfk_moon_1962_level_1_s1.TextGrid",
+      "textgrid_sha256": "38273658f474f7c812b5c33fec16edcf1ab13ba6bbdbd48c09392d60b1647245"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 27.803,
+        "end_s": 30.723,
+        "words": "carrying all the equipment needed",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 45.485,
+        "end_s": 47.285,
+        "words": "at speeds of over 25000 miles per hour",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 51.62,
+        "end_s": 54.226,
+        "words": "almost as hot as it is here today and do",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_0_s1",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 1,
+    "duration_s": 72.57,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_moon_1962_level_0_s1.wav",
+      "sha256": "f9045ab48634b7e1f94633e875b718f7202eeea99c711ba32803fc634c648f47",
+      "size_bytes": 2322272
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_0_s1_flaws.json",
+      "sha256": "fb488efd10bf2b52e579917f38c17c2def2a2325b45b9da16e3bcac0d81ad209",
+      "size_bytes": 1672
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_0_s1_alignment.json",
+      "json_sha256": "ef91647eddd35b20449071a060293b6c81530dc9db6b709d2f8eba67a6d1b413",
+      "textgrid_file": "jfk_moon_1962_level_0_s1.TextGrid",
+      "textgrid_sha256": "3667d6e49e92adf27d8725951eeeaca59477d61adcea7fa453fd89b49cfa0574"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 7.521,
+        "end_s": 9.281,
+        "words": "300 feet tall the length of this football field",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 39.285,
+        "end_s": 40.825,
+        "words": "it [pause] safely",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 55.387,
+        "end_s": 60.84,
+        "words": "do all this and do it right and do",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 62.14,
+        "end_s": 64.509,
+        "words": "all this thick heat is out then we must",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_4_s2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 2,
+    "duration_s": 70.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_moon_1962_level_4_s2.wav",
+      "sha256": "84cf16d5525f3ced3611206ec2ab0cd95f3409c6268205706c1d50645235e564",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_4_s2_flaws.json",
+      "sha256": "1d4e7bafbb09f4b4f5e02b027723e20d69e792e9ad4f5d543952bd386659fe5e",
+      "size_bytes": 207
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_4_s2_alignment.json",
+      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "textgrid_file": "jfk_moon_1962_level_4_s2.TextGrid",
+      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_3_s2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 2,
+    "duration_s": 70.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_moon_1962_level_3_s2.wav",
+      "sha256": "d402165e23943c281180f7836124615bc3e071aa0c4c7b25db794b420be670dc",
+      "size_bytes": 2240044
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_3_s2_flaws.json",
+      "sha256": "fc74bf3a5f31cc7c3b503ab061dc4fd289f4eea2d7f00bf6e57b908d0954ff9e",
+      "size_bytes": 563
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_3_s2_alignment.json",
+      "json_sha256": "bd9f3e6e620024366e6c1483059fee2e96d62db61b5c8944ba7f5038e2c43190",
+      "textgrid_file": "jfk_moon_1962_level_3_s2.TextGrid",
+      "textgrid_sha256": "e760943b650c7b146c1de0848e04c88e658fc8ae1d8ef905a33f487e9380c17c"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 58.19,
+        "end_s": 59.757,
+        "words": "do it first if all",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_2_s2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 2,
+    "duration_s": 69.168,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_moon_1962_level_2_s2.wav",
+      "sha256": "06b7045aadc9ec9fbec26126d177e82488267ebde52ad02001301ca0f0bbe247",
+      "size_bytes": 2213418
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_2_s2_flaws.json",
+      "sha256": "a629b5fd0c7dc4a37dbf5613bd226782d0935ee818f6d396785addc453f760bf",
+      "size_bytes": 925
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_2_s2_alignment.json",
+      "json_sha256": "a6f6db6b62a7ab89cd671cfec2f35ec2983c1f71f60b420e0c979ba5eee3a08b",
+      "textgrid_file": "jfk_moon_1962_level_2_s2.TextGrid",
+      "textgrid_sha256": "cef2496f654bb9dfbf0b62d236635b062b882ffa7c1091f3b9f9c1d6ac1fac70"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 10.301,
+        "end_s": 12.381,
+        "words": "football field made of",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 25.543,
+        "end_s": 27.423,
+        "words": "than the finest watch carrying",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_1_s2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 2,
+    "duration_s": 69.521,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_moon_1962_level_1_s2.wav",
+      "sha256": "1a28d9441820947082e6e077206f24e90cb542b4f7905fa5557f5230e29d4292",
+      "size_bytes": 2224710
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_1_s2_flaws.json",
+      "sha256": "c5aa9e1849f81c88316bb83cc755f3df8ad992910977c6ef6977f8893bfb35fb",
+      "size_bytes": 1317
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_1_s2_alignment.json",
+      "json_sha256": "51e76cba423b8e03bf1c69f9fa90001917068452976b6e5b3c789712382114ee",
+      "textgrid_file": "jfk_moon_1962_level_1_s2.TextGrid",
+      "textgrid_sha256": "074b043762536054d309dd36a7be343d2d196bf45868e573fae59b1f30848bc2"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 5.49,
+        "end_s": 8.162,
+        "words": "a giant rocket more than 300 feet tall the length",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 50.27,
+        "end_s": 53.916,
+        "words": "as hot as it is here today and do all this and",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 54.196,
+        "end_s": 57.637,
+        "words": "all this and do it right and",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_moon_1962_level_0_s2",
+    "speech_id": "jfk_moon_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 2,
+    "duration_s": 76.142,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_moon_1962_level_0_s2.wav",
+      "sha256": "206540997abd98fbde3f2b9507f1086bc4139927c9e64bf6a362be5804c0883b",
+      "size_bytes": 2436594
+    },
+    "annotations": {
+      "file": "jfk_moon_1962_level_0_s2_flaws.json",
+      "sha256": "7016f079310a08b37ea430ecad68e721ace054c6d6dae2726004348b9547841b",
+      "size_bytes": 1765
+    },
+    "alignment": {
+      "json_file": "jfk_moon_1962_level_0_s2_alignment.json",
+      "json_sha256": "8a8354a6b9ebc7d74c8a6ba7a21567327d98aa994b37dbef56f3b69956e07e10",
+      "textgrid_file": "jfk_moon_1962_level_0_s2.TextGrid",
+      "textgrid_sha256": "82fba3e1c1a8afe43ff8af407d3f4e7227bbffde0f73adb5d4baa0e8f29b0384"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 20.406,
+        "end_s": 22.727,
+        "words": "times more than have ever been experienced",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 22.727,
+        "end_s": 32.77,
+        "words": "pitted together with a precision better than the finest watch carrying",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 33.15,
+        "end_s": 34.63,
+        "words": "all [pause] the",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 35.32,
+        "end_s": 44.553,
+        "words": "needed for propulsion guidance control communication food and survival on an untried mission to an unknown",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_4",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 0,
+    "duration_s": 61.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_challenger_1986_level_4.wav",
+      "sha256": "99c47cff42e82ebfb20c255e9dfe9182ac48c0103614ef5f5bb3ef9752f1ca89",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_4_flaws.json",
+      "sha256": "dfe7bf67b1962ca4c7e94236bd5636a540f6ae32eb1e88d271bccba3cf29c0a2",
+      "size_bytes": 222
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_4_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_4.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_3",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 0,
+    "duration_s": 61.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_challenger_1986_level_3.wav",
+      "sha256": "ea2889363f2e0cea8fe7c6a88596d9495f3cd4031434b1383bc3dec79f488bad",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_3_flaws.json",
+      "sha256": "605892a1636078c535cb01e2460fb6018c722535fa92b5d024086b8fd0da9a41",
+      "size_bytes": 584
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_3_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_3.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 42.934,
+        "end_s": 45.0,
+        "words": "they lived their lives We",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 0,
+    "duration_s": 60.572,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_challenger_1986_level_2.wav",
+      "sha256": "b64acb80ab1f51eeb48aeb3bb713a2ba3f273886a97d6839ee46077860f4b74f",
+      "size_bytes": 1938360
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_2_flaws.json",
+      "sha256": "dca8859ae62a63b26e07622fb38b74568f39be88155cb33a6d347c73d241684b",
+      "size_bytes": 923
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_2_alignment.json",
+      "json_sha256": "657de5ce05ac16d2561cab51f4d3ea6c62fd416de1c32257ca50f3ac7cd8dba1",
+      "textgrid_file": "reagan_challenger_1986_level_2.TextGrid",
+      "textgrid_sha256": "e7f3aa5b6e557578567c90a6d13f30ab4bbc7a16181c51acf1115cc6bdfee946"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 24.35,
+        "end_s": 25.305,
+        "words": "and a historian later",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 26.165,
+        "end_s": 27.006,
+        "words": "he lived by the",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 0,
+    "duration_s": 62.969,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_challenger_1986_level_1.wav",
+      "sha256": "12f64cb0245b40e79be9c2b99a72af956f25af364c4223ff83d7301c9792bacd",
+      "size_bytes": 2015056
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_1_flaws.json",
+      "sha256": "e335c975d3b9d4ce08333108d096f9bb946c67df57ff0dbbfd57b91de4afcfda",
+      "size_bytes": 1335
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_1_alignment.json",
+      "json_sha256": "11ad854d6397a54829376a62b36186328ab99e45bb827c18126a85b29d3f1f7b",
+      "textgrid_file": "reagan_challenger_1986_level_1.TextGrid",
+      "textgrid_sha256": "6e0de7c9f08584aa255cba6f006434894cfaf1a29a2b512956bcc6128d750cb1"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 5.001,
+        "end_s": 6.57,
+        "words": "for decades and we know of",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 10.181,
+        "end_s": 15.342,
+        "words": "a coincidence today On this day 390 years ago the great explorer",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 54.528,
+        "end_s": 62.209,
+        "words": "earth to touch the face of God Thank",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_0",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 0,
+    "duration_s": 64.24,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_challenger_1986_level_0.wav",
+      "sha256": "4cdea69a762495cfc3b5675647b819ee018c12db92fbd262f68c201eb6bc3b49",
+      "size_bytes": 2055734
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_0_flaws.json",
+      "sha256": "a1c69145e700df66679778da286c1df437c84a2d8d7a142aff159648c0e4b5e6",
+      "size_bytes": 1673
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_0_alignment.json",
+      "json_sha256": "1086bec99108a47b002427ff0f4cbb04e02c42ddc8db034457a8a0a23e707e20",
+      "textgrid_file": "reagan_challenger_1986_level_0.TextGrid",
+      "textgrid_sha256": "57121fdc970f3d5288f78ce656fc6de7247eedf3ddbcbbc4f98106cae4a7e5e2"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 4.361,
+        "end_s": 9.903,
+        "words": "and impressed us for decades and we",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 20.627,
+        "end_s": 22.97,
+        "words": "Drake [pause] died",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 52.056,
+        "end_s": 53.297,
+        "words": "we saw them this morning as they",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 58.038,
+        "end_s": 61.079,
+        "words": "surly bonds of earth to touch the face",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_4_s1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 1,
+    "duration_s": 61.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_challenger_1986_level_4_s1.wav",
+      "sha256": "99c47cff42e82ebfb20c255e9dfe9182ac48c0103614ef5f5bb3ef9752f1ca89",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_4_s1_flaws.json",
+      "sha256": "c37d57af4821508579a6980f1222d420c8fa76b4890f5dff6fea3d79800cd109",
+      "size_bytes": 225
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_4_s1_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_4_s1.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_3_s1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 1,
+    "duration_s": 61.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_challenger_1986_level_3_s1.wav",
+      "sha256": "fb7619db7e66865a37aaf19767565203e92efa9d4e2c7659255b0f8d278c2cf4",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_3_s1_flaws.json",
+      "sha256": "4f2d9eaaeb006ee8aadf6159b5f665efb42bc6743fdd545f335c944fdcedfae3",
+      "size_bytes": 578
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_3_s1_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_3_s1.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 53.43,
+        "end_s": 54.798,
+        "words": "and slipped the",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_2_s1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 1,
+    "duration_s": 60.565,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_challenger_1986_level_2_s1.wav",
+      "sha256": "b8ba9230339fcb5db72cdaf662724e0f2233aa233e3eccb79e4d38f512ff9d1a",
+      "size_bytes": 1938130
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_2_s1_flaws.json",
+      "sha256": "498de2de5c97637521cb0bbd83db753aac44c3a82b7879caf652995d9e408fb5",
+      "size_bytes": 929
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_2_s1_alignment.json",
+      "json_sha256": "a86ad152ccfdf96ff6af2be2e26222194689075390ef02ed483a051cb6da30ec",
+      "textgrid_file": "reagan_challenger_1986_level_2_s1.TextGrid",
+      "textgrid_sha256": "6f32eee7ab4e97e75540378e8ef127ebbba8d0b0163a75ecb1151c6ccaa24466"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 28.402,
+        "end_s": 29.683,
+        "words": "on it and was",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 40.763,
+        "end_s": 41.744,
+        "words": "challenger honored us for",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_1_s1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 1,
+    "duration_s": 60.817,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_challenger_1986_level_1_s1.wav",
+      "sha256": "69e6cb3d15463ed50564a7bf928c97319808849302edb05c5cea11184a49b59f",
+      "size_bytes": 1946184
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_1_s1_flaws.json",
+      "sha256": "8d3c713361798338a7d743568a2f946bca6543743b8dbd9a26dee5f8ff72daed",
+      "size_bytes": 1330
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_1_s1_alignment.json",
+      "json_sha256": "cf1803502e8159b45f1df0510a00b5dadacbd7a7ef3c3492bcb6055c187e73d5",
+      "textgrid_file": "reagan_challenger_1986_level_1_s1.TextGrid",
+      "textgrid_sha256": "ab6d0d79aa6b9969317965b3cccaaf07aec3b2a74913f60e5865e0d57d82ae78"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 15.004,
+        "end_s": 17.445,
+        "words": "years ago the great explorer",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 21.006,
+        "end_s": 25.21,
+        "words": "Panama In his lifetime the great frontiers were the oceans",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 26.687,
+        "end_s": 28.388,
+        "words": "said he lived by the sea died on",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_0_s1",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 1,
+    "duration_s": 64.357,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_challenger_1986_level_0_s1.wav",
+      "sha256": "8d9a8109e224ee53fe09bd318c345f1f4ae627012a64f59fbe522932cdbcf611",
+      "size_bytes": 2059470
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_0_s1_flaws.json",
+      "sha256": "ff7a9097031c199f9381bc84be4c3b6e1a645d476b2ba92c071aa9dbf9a984db",
+      "size_bytes": 1696
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_0_s1_alignment.json",
+      "json_sha256": "5486f22932fef1f6e272d7b186c369ae48c0efe9cad2b0ce3635425a880aa1e8",
+      "textgrid_file": "reagan_challenger_1986_level_0_s1.TextGrid",
+      "textgrid_sha256": "a99ec97640423ea23bf7128da5a859eda367f31dbb5054c82a938d9c577275d4"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 6.6,
+        "end_s": 8.002,
+        "words": "and we know of your anguish We share it",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 35.709,
+        "end_s": 35.709,
+        "words": "their [pause] dedication",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 45.372,
+        "end_s": 51.354,
+        "words": "forget them nor the last time we saw them",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 58.496,
+        "end_s": 61.72,
+        "words": "bonds of earth to touch the face of God",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_4_s2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 2,
+    "duration_s": 61.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_challenger_1986_level_4_s2.wav",
+      "sha256": "99c47cff42e82ebfb20c255e9dfe9182ac48c0103614ef5f5bb3ef9752f1ca89",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_4_s2_flaws.json",
+      "sha256": "9ad2d1d850365056acdd680bcd4130ba884e1c7508c5b7d4a602c31a9f43e125",
+      "size_bytes": 225
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_4_s2_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_4_s2.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_3_s2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 2,
+    "duration_s": 61.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_challenger_1986_level_3_s2.wav",
+      "sha256": "97efd18597064c955c2d6c92971c5acd0e9153654e1a73ae1eac2c2a6c8cf25d",
+      "size_bytes": 1952044
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_3_s2_flaws.json",
+      "sha256": "b12c048355be0636acea15345d9e07bb2e3a5c4626295d2fcbff3a02c6564419",
+      "size_bytes": 586
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_3_s2_alignment.json",
+      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "textgrid_file": "reagan_challenger_1986_level_3_s2.TextGrid",
+      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 54.13,
+        "end_s": 55.498,
+        "words": "slipped the surly bonds",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_2_s2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 2,
+    "duration_s": 60.308,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_challenger_1986_level_2_s2.wav",
+      "sha256": "5097e66c089a5f2c3dac890bc2c36dbafdbb70e4f7767095b387f0992c7d8eb7",
+      "size_bytes": 1929908
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_2_s2_flaws.json",
+      "sha256": "cd82e19bf3c3c9f5e266991ad0ec886e261e4ec3be9b0e3bfb251c304fbb8a3e",
+      "size_bytes": 936
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_2_s2_alignment.json",
+      "json_sha256": "97554943ba2832efa891a4831f457f850cf5634491b08a1975b51b2af7e94001",
+      "textgrid_file": "reagan_challenger_1986_level_2_s2.TextGrid",
+      "textgrid_sha256": "6121530ba3566bf7051242212c8fdf3ea4b45b9f4a8720b0a3bb18c1857681f1"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 9.081,
+        "end_s": 11.66,
+        "words": "share it There's a",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 24.763,
+        "end_s": 26.404,
+        "words": "historian later said he lived",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_1_s2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 2,
+    "duration_s": 61.336,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_challenger_1986_level_1_s2.wav",
+      "sha256": "af4dff32cd3e87da0fa6e2a162c6503877db8b5e8793c6ca549a0c0caa83977b",
+      "size_bytes": 1962780
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_1_s2_flaws.json",
+      "sha256": "c1826a6d8eafc648f532ecf0085142fbd23f996fac950b7a61bd7a4cfe467420",
+      "size_bytes": 1314
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_1_s2_alignment.json",
+      "json_sha256": "bc941e1a1e996aa05dea296a420f72598d5c7cb585c7d2786d6454fd6e0ef616",
+      "textgrid_file": "reagan_challenger_1986_level_1_s2.TextGrid",
+      "textgrid_sha256": "700fdc41d134e7e67656a858725ef97a6df87bba9c367a244393e0c1bc58ddc1"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 21.57,
+        "end_s": 23.206,
+        "words": "his lifetime the great frontiers were the oceans",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 26.98,
+        "end_s": 30.528,
+        "words": "died on it and was buried in",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 33.49,
+        "end_s": 34.749,
+        "words": "we can say of the challenger",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_challenger_1986_level_0_s2",
+    "speech_id": "reagan_challenger_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 2,
+    "duration_s": 65.755,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_challenger_1986_level_0_s2.wav",
+      "sha256": "ec22f093dd639cfe7a755096880ebc5d42e2af9bf9f7ae7a8927545c9f0f2b4f",
+      "size_bytes": 2104214
+    },
+    "annotations": {
+      "file": "reagan_challenger_1986_level_0_s2_flaws.json",
+      "sha256": "ef3b540a1ccfd06379e8efb2665c72bf936625beb1f5f2236a14fa2b4019297e",
+      "size_bytes": 1760
+    },
+    "alignment": {
+      "json_file": "reagan_challenger_1986_level_0_s2_alignment.json",
+      "json_sha256": "7e6d43ef66d76e5f1c0a8987f5e91e3682ce52e8da9a3a95845ab82d197ce5a4",
+      "textgrid_file": "reagan_challenger_1986_level_0_s2.TextGrid",
+      "textgrid_sha256": "29dca1ea917565bb19dc0be76e8636f9ce6479e29da515e29d015ef6c925eca9"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 15.584,
+        "end_s": 17.024,
+        "words": "the great explorer Sir Francis Drake died",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 20.165,
+        "end_s": 28.98,
+        "words": "lifetime the great frontiers were the oceans and a historian later",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 33.308,
+        "end_s": 33.31,
+        "words": "on [pause] it",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 44.55,
+        "end_s": 48.251,
+        "words": "crew of the space shuttle challenger honored us for the manner in which they lived their",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_4",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 0,
+    "duration_s": 46.959,
+    "flaw_count": 0,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_4.wav",
+      "sha256": "78588dbf8a68a63e97b3e80192e0ec3d060fbae423c8cf8ce269f223eb6c0b74",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_4_flaws.json",
+      "sha256": "1a415e206605cf6327f3ada1ee0a299960c10f5868687fa8a49f34e950a6ef02",
+      "size_bytes": 220
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_4_alignment.json",
+      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "textgrid_file": "fdr_fear_itself_1933_level_4.TextGrid",
+      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_3",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 0,
+    "duration_s": 46.959,
+    "flaw_count": 1,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_3.wav",
+      "sha256": "db9c8edf605048b2bab22d21a450002750954de7ad5343f0dcb1c7ace2c6b05a",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_3_flaws.json",
+      "sha256": "f7d5ab80c21729b8c71958c15bcd8909307ec42bdb698253e109f7fefa91183c",
+      "size_bytes": 585
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_3_alignment.json",
+      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "textgrid_file": "fdr_fear_itself_1933_level_3.TextGrid",
+      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 11.98,
+        "end_s": 14.59,
+        "words": "unreasoning unjustified terror",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 0,
+    "duration_s": 45.17,
+    "flaw_count": 2,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_2.wav",
+      "sha256": "e56177f0df66fe79a0a77cc7d58178df6c1c58f42b914f14a04fd4cd96fcd6aa",
+      "size_bytes": 1445472
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_2_flaws.json",
+      "sha256": "7354e20cbb698487449bcbcd4022e60ed0e0125c19327402f7410d5b8d61bb98",
+      "size_bytes": 961
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_2_alignment.json",
+      "json_sha256": "3d240d3032e39879f74f025cd6c20836be012ee9ad74f2f5bd555896df921590",
+      "textgrid_file": "fdr_fear_itself_1933_level_2.TextGrid",
+      "textgrid_sha256": "76fc00155578a85c386e4d7320aa2507aaf74249ac45e7c9672facb1ce2a217d"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 8.762,
+        "end_s": 12.8,
+        "words": "fear itself nameless unreasoning unjustified terror",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 22.845,
+        "end_s": 26.126,
+        "words": "life a leadership of frankness",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 0,
+    "duration_s": 48.486,
+    "flaw_count": 3,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_1.wav",
+      "sha256": "a0e88c9d6c681a54ca984e4af8baf63fe25b30a98d8db0d17f51b73af2ee84e5",
+      "size_bytes": 1551598
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_1_flaws.json",
+      "sha256": "874949fdeb69c1f835fae7b55742ae422eeff0c569f0482e9a2c4c17c6048269",
+      "size_bytes": 1329
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_1_alignment.json",
+      "json_sha256": "4de3ee59ceaddb4d38980d02297cb1f8d85ba3eb6169ce170af2aaad3c6f1ca5",
+      "textgrid_file": "fdr_fear_itself_1933_level_1.TextGrid",
+      "textgrid_sha256": "1b953c7fddce26b2fd781663d3ded7d32aa19805654f7aac7b4f2a77b2ad7709"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 5.141,
+        "end_s": 10.081,
+        "words": "thing we have to fear is fear itself",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 22.523,
+        "end_s": 25.123,
+        "words": "In every dark hour of our national life a leadership",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 34.024,
+        "end_s": 42.1,
+        "words": "to victory And I am convinced to show a",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_0",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 0,
+    "duration_s": 49.49,
+    "flaw_count": 4,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_0.wav",
+      "sha256": "1aa10d4c8b67492f92b22f978fb64892e7d15fecdb9fc3de1f90acfab2403ddf",
+      "size_bytes": 1583738
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_0_flaws.json",
+      "sha256": "236d2ac64a63dee2979d68787d3882cbaead8d31a5e7c845ea717ab0cb28dc4b",
+      "size_bytes": 1759
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_0_alignment.json",
+      "json_sha256": "91f1dc45b3ca50d2262772246f6345c44ee0f04b3910e4e6be21c5dc7e1a8354",
+      "textgrid_file": "fdr_fear_itself_1933_level_0.TextGrid",
+      "textgrid_sha256": "657fe6108594c3d6f2ff121e7511538cf22655bd128741260ff85565a1d705d9"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 2.621,
+        "end_s": 5.841,
+        "words": "belief that the only thing we have to fear is fear",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 10.542,
+        "end_s": 12.083,
+        "words": "unjustified [pause] terror",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 24.95,
+        "end_s": 32.12,
+        "words": "of frankness and a fitter has met with that understanding and support of the people themselves",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 39.548,
+        "end_s": 47.91,
+        "words": "give that support to leadership in these critical",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_4_s1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 1,
+    "duration_s": 46.959,
+    "flaw_count": 0,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_4_s1.wav",
+      "sha256": "78588dbf8a68a63e97b3e80192e0ec3d060fbae423c8cf8ce269f223eb6c0b74",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_4_s1_flaws.json",
+      "sha256": "cab7be9c259b68d9a642b913ad6f0e30ffc7d8609e0f8a103d486b4fcbed193b",
+      "size_bytes": 223
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_4_s1_alignment.json",
+      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "textgrid_file": "fdr_fear_itself_1933_level_4_s1.TextGrid",
+      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_3_s1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 1,
+    "duration_s": 46.959,
+    "flaw_count": 1,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_3_s1.wav",
+      "sha256": "43823a78c38fcb818429730cfc8611de3acd6d1e677de4f767c5ec3679ebc8ab",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_3_s1_flaws.json",
+      "sha256": "98ae28ffc1d7852eda01345943b69b4c0a7d51342e0eaba834c136d0cd706164",
+      "size_bytes": 576
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_3_s1_alignment.json",
+      "json_sha256": "ae3194a90f1b2a60b9b5a8d64d0f6019d865f7f4ddff015420f9a80770843358",
+      "textgrid_file": "fdr_fear_itself_1933_level_3_s1.TextGrid",
+      "textgrid_sha256": "78906de35a12dc32c7f21e141d223b88a4da2e20b5ff5baffc9bf8008ef8a0f7"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 39.496,
+        "end_s": 41.797,
+        "words": "show a game give",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_2_s1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 1,
+    "duration_s": 45.984,
+    "flaw_count": 2,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_2_s1.wav",
+      "sha256": "63ae50b40243b2ed9056a318d23b414aef26956907d858de838f78c293c74008",
+      "size_bytes": 1471540
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_2_s1_flaws.json",
+      "sha256": "8a77735ce6924303fab69cb5608481441e9b3762faf728d0ecdcec8c05e207de",
+      "size_bytes": 958
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_2_s1_alignment.json",
+      "json_sha256": "26bbe3a4e2547112f703f047c23d7cde5b3a4394a95ba19437dd38e24cff8780",
+      "textgrid_file": "fdr_fear_itself_1933_level_2_s1.TextGrid",
+      "textgrid_sha256": "917247fb151de72281d8a0c1cfd3afcaf150c6db1052bd6b410beca66fecdbe7"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 4.602,
+        "end_s": 6.804,
+        "words": "only thing we have to fear is",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 11.01,
+        "end_s": 15.908,
+        "words": "unreasoning unjustified terror which paralyzes",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_1_s1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 1,
+    "duration_s": 48.792,
+    "flaw_count": 3,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_1_s1.wav",
+      "sha256": "ed926ba3971d49b735add64630104ae9a63b5eca497d449958323da16884faa2",
+      "size_bytes": 1561384
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_1_s1_flaws.json",
+      "sha256": "ec906fc36864d645940af0664437993cd834107c62cf903e33c09c64bbe1867c",
+      "size_bytes": 1349
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_1_s1_alignment.json",
+      "json_sha256": "b189956aec151528ddda40be47813c5940b47a7d81cb3388672fdc61b7fa73a7",
+      "textgrid_file": "fdr_fear_itself_1933_level_1_s1.TextGrid",
+      "textgrid_sha256": "d0d602c125cd01207dbfa632315e8cc78e4bc441eea12884668d8f24b3bd4afe"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 15.51,
+        "end_s": 24.226,
+        "words": "which paralyzes needed efforts to convert retreat into",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 36.029,
+        "end_s": 38.39,
+        "words": "of the people themselves which is essential to victory",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 41.17,
+        "end_s": 45.091,
+        "words": "to show a game give that support to",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_0_s1",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 1,
+    "duration_s": 51.527,
+    "flaw_count": 4,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_0_s1.wav",
+      "sha256": "7ff7a9101d3454db9feefb9c560b238a08829dab0a90d2d7a54860adbce394a3",
+      "size_bytes": 1648910
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_0_s1_flaws.json",
+      "sha256": "a54e62caccb922f4ac30797a6999f6e146466c523f6d665fbec2c407e5af661b",
+      "size_bytes": 1744
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_0_s1_alignment.json",
+      "json_sha256": "5f2a1d5e5b300234e3e6ffe052fd82e4b0485c9fffde791aa1bb926285facf79",
+      "textgrid_file": "fdr_fear_itself_1933_level_0_s1.TextGrid",
+      "textgrid_sha256": "f94eba1246e3853e2ce8cca4e0250615e1c341ac95bfe08f499ae284c087e815"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 19.043,
+        "end_s": 22.503,
+        "words": "retreat into advance In every dark hour of our national life a",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 23.69,
+        "end_s": 35.705,
+        "words": "frankness and a fitter has met with that understanding and support of",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 37.945,
+        "end_s": 39.43,
+        "words": "which [pause] is",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 46.346,
+        "end_s": 50.407,
+        "words": "that support to leadership in these critical days",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_4_s2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 2,
+    "duration_s": 46.959,
+    "flaw_count": 0,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_4_s2.wav",
+      "sha256": "78588dbf8a68a63e97b3e80192e0ec3d060fbae423c8cf8ce269f223eb6c0b74",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_4_s2_flaws.json",
+      "sha256": "f0855614c25cd54c61ce2d8974674fbbc4941fd28e88203c33e44edfc38f9d7f",
+      "size_bytes": 223
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_4_s2_alignment.json",
+      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "textgrid_file": "fdr_fear_itself_1933_level_4_s2.TextGrid",
+      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_3_s2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 2,
+    "duration_s": 46.959,
+    "flaw_count": 1,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_3_s2.wav",
+      "sha256": "0ef15efd5ae5e4fdd6cf3039a3b4676901de0bec1c952fe12d302e0dc32602df",
+      "size_bytes": 1502734
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_3_s2_flaws.json",
+      "sha256": "58d73e0c104ee60309edd0e2ea59de9aa2f752bd4714243c046cd12eebdf6341",
+      "size_bytes": 581
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_3_s2_alignment.json",
+      "json_sha256": "7492d8f29e23c3d4e7d63154ddfed986ce50be4d84017f72ae3d08c53702d7ac",
+      "textgrid_file": "fdr_fear_itself_1933_level_3_s2.TextGrid",
+      "textgrid_sha256": "9005c6bb641833a585a52100dc4b1ad638f14b897b77e160e67b87faa363af38"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 38.496,
+        "end_s": 40.05,
+        "words": "I am convinced to show",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_2_s2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 2,
+    "duration_s": 46.081,
+    "flaw_count": 2,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_2_s2.wav",
+      "sha256": "a6ab102719630a8a4ad3111d6b2d57e1d17273af9fbeb8cd1c4b3afd6e5a384e",
+      "size_bytes": 1474650
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_2_s2_flaws.json",
+      "sha256": "ec80c641b3c59155151a98d0dc2789bb70d02df8cb4007c5ef2799152221879f",
+      "size_bytes": 948
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_2_s2_alignment.json",
+      "json_sha256": "b1c7452febaa9b0b0bede5a46b63cf64423ba867fc6cedf4a9c3debf17d12187",
+      "textgrid_file": "fdr_fear_itself_1933_level_2_s2.TextGrid",
+      "textgrid_sha256": "79bbde5c80af24d72661483cc7606b2d9c8d606fa621c3023d984b249408bb09"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 23.731,
+        "end_s": 27.153,
+        "words": "of our national life a leadership of",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 39.759,
+        "end_s": 42.4,
+        "words": "a game give that support to",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_1_s2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 2,
+    "duration_s": 47.879,
+    "flaw_count": 3,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_1_s2.wav",
+      "sha256": "047756ebb253fe8dbe359cc388dd58c2bd56de048279d43f00e20529723041a8",
+      "size_bytes": 1532170
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_1_s2_flaws.json",
+      "sha256": "2e155bec6deeb7731a7d7054be45c59c94f95125e3c28a6c2cda417ccd1d0a79",
+      "size_bytes": 1359
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_1_s2_alignment.json",
+      "json_sha256": "dc64a3f838c8b6430bfc1b052a3cd489dc8b1547ad51d5b7fd4878e86ee2b537",
+      "textgrid_file": "fdr_fear_itself_1933_level_1_s2.TextGrid",
+      "textgrid_sha256": "3158eea1fbb680b9fd2be0cb965a2c148e8f775965722ed63ffb1cf00fc6cec2"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 2.681,
+        "end_s": 9.364,
+        "words": "belief that the only thing we have to fear is fear",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 27.051,
+        "end_s": 29.952,
+        "words": "frankness and a fitter has met with that understanding and",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 37.995,
+        "end_s": 45.818,
+        "words": "game give that support to leadership in these",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "fdr_fear_itself_1933_level_0_s2",
+    "speech_id": "fdr_fear_itself_1933",
+    "speaker": "Franklin D. Roosevelt",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 2,
+    "duration_s": 55.39,
+    "flaw_count": 4,
+    "audio": {
+      "file": "fdr_fear_itself_1933_level_0_s2.wav",
+      "sha256": "0a805b5609e76ee2fcd7b254faeb2bfcc7f78106770b442d397995fa22f655e7",
+      "size_bytes": 1772522
+    },
+    "annotations": {
+      "file": "fdr_fear_itself_1933_level_0_s2_flaws.json",
+      "sha256": "f960267c8bc0e46b7a05bb4de3233cccde196383c3cf42f9788379e6e906d8a9",
+      "size_bytes": 1725
+    },
+    "alignment": {
+      "json_file": "fdr_fear_itself_1933_level_0_s2_alignment.json",
+      "json_sha256": "57cf5ce2882effb6440b58683b79260ab91d8d26645eb3c20e867a8e00991330",
+      "textgrid_file": "fdr_fear_itself_1933_level_0_s2.TextGrid",
+      "textgrid_sha256": "d8f2281c1d6d957b9ea5a20191fef2e16243ca51df0d06687069007181dbc45b"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 4.301,
+        "end_s": 21.124,
+        "words": "that the only thing we have to fear is fear itself nameless",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 42.468,
+        "end_s": 43.028,
+        "words": "people [pause] themselves",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 43.428,
+        "end_s": 47.929,
+        "words": "essential to victory And I am convinced to",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 50.04,
+        "end_s": 54.29,
+        "words": "give that support to leadership in these critical days",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_4",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 0,
+    "duration_s": 52.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_mourning_1986_level_4.wav",
+      "sha256": "42a9c0a55555490325118405ceb71a33c9b8805729105e9cfb58d9f57a65c18d",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_4_flaws.json",
+      "sha256": "6fb575387a6960caa4f2b348e2c001ced91a8a305dddf224087a34018c6cf641",
+      "size_bytes": 218
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_4_alignment.json",
+      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "textgrid_file": "reagan_mourning_1986_level_4.TextGrid",
+      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_3",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 0,
+    "duration_s": 52.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_mourning_1986_level_3.wav",
+      "sha256": "8373782e64e2d44f50baff7c9bfc80db8ef643d1fc772ffb24c7e84900c927fb",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_3_flaws.json",
+      "sha256": "a69ed1df355523d79139bb0171440fb216c90834973d6b3fcb0a7c87f8da76de",
+      "size_bytes": 579
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_3_alignment.json",
+      "json_sha256": "1300cf94802c83507299f31db82fae2934ba0c0b1846c148d4f42b9a6bc6d72c",
+      "textgrid_file": "reagan_mourning_1986_level_3.TextGrid",
+      "textgrid_sha256": "f5f9999bb879a0cd995ae7c104b3961b21fcb8e4c61f6e812b9d331abac4958c"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 18.847,
+        "end_s": 20.388,
+        "words": "share this pain with all",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 0,
+    "duration_s": 50.802,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_mourning_1986_level_2.wav",
+      "sha256": "fdee7dbbb39b3331354ffb0b779ef1cc4ad761f498d6286d59ba9a82d0bf7742",
+      "size_bytes": 1625700
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_2_flaws.json",
+      "sha256": "0e6500d9d33d012ac785c0a564e49a49e3b001daa21f2547cc582dc3eb5f894b",
+      "size_bytes": 950
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_2_alignment.json",
+      "json_sha256": "c758cb48fd1c1be1f3ffb9f02580353b76a5089e966c0da84e9ca7b6f4d74b9d",
+      "textgrid_file": "reagan_mourning_1986_level_2.TextGrid",
+      "textgrid_sha256": "6b6c3e9fb6e5eb061542a607a3ab1cfdfde2042ec73406fbe1843bec39dd0b31"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 20.389,
+        "end_s": 21.489,
+        "words": "of the people of our country",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 22.47,
+        "end_s": 25.151,
+        "words": "is truly a national loss Nineteen years",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 0,
+    "duration_s": 52.547,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_mourning_1986_level_1.wav",
+      "sha256": "e04e4c34088f04d61895fcb3aae9ea78cb22f87acb4bb9332e37079c99491ba5",
+      "size_bytes": 1681552
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_1_flaws.json",
+      "sha256": "8edb37188bd95b31bb4c50421377336301604c304d558037cd51eb24c7a3cd10",
+      "size_bytes": 1298
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_1_alignment.json",
+      "json_sha256": "80b66b24766bb74dca272c025ce2c12fa5018a44a3bc03d43f027397e3bda7eb",
+      "textgrid_file": "reagan_mourning_1986_level_1.TextGrid",
+      "textgrid_sha256": "1b28b7f36c5cea4313d8aa37e8853fb24b100d0b0f4d7e4b0a4bd91ae2332ade"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 2.98,
+        "end_s": 4.21,
+        "words": "tonight to report on the State of the Union",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 6.441,
+        "end_s": 8.101,
+        "words": "have led me to change those",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 26.1,
+        "end_s": 29.604,
+        "words": "almost to the day we lost three",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_0",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 0,
+    "duration_s": 57.155,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_mourning_1986_level_0.wav",
+      "sha256": "c9e85c9f3ae59c5e5eb2b529913e0df6d1a289202e1bf4019e12d8c2f6acc1ae",
+      "size_bytes": 1829008
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_0_flaws.json",
+      "sha256": "c26574da1b484c79fa70f3eefd742cbf18b92cd053801131d3912f9ccd09c0ee",
+      "size_bytes": 1706
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_0_alignment.json",
+      "json_sha256": "566541631e2c68fa19fc08d7c162b6a24fad6b4cff55a53ced302b30b7b79cc7",
+      "textgrid_file": "reagan_mourning_1986_level_0.TextGrid",
+      "textgrid_sha256": "44f0e88d7d0434b5d0ae2f4133bb6ab15a73ec7a5afa1509834082a8e4045e39"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 6.63,
+        "end_s": 8.11,
+        "words": "of [pause] earlier",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 12.14,
+        "end_s": 20.906,
+        "words": "Today is a day for morning and remembering Nancy",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 25.247,
+        "end_s": 29.048,
+        "words": "share this pain with all of the people of our country This is",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 33.829,
+        "end_s": 34.949,
+        "words": "the day we lost three astronauts in a",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_4_s1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 1,
+    "duration_s": 52.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_mourning_1986_level_4_s1.wav",
+      "sha256": "42a9c0a55555490325118405ceb71a33c9b8805729105e9cfb58d9f57a65c18d",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_4_s1_flaws.json",
+      "sha256": "07caffa562df24a3777b413f61cb54d31e50633a4da947e9a9904c0b2ffef3c8",
+      "size_bytes": 221
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_4_s1_alignment.json",
+      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "textgrid_file": "reagan_mourning_1986_level_4_s1.TextGrid",
+      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_3_s1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 1,
+    "duration_s": 52.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_mourning_1986_level_3_s1.wav",
+      "sha256": "7d91b43fc165eecfa1d6ef8bd83c3833bb9f76637603879e92952356996a62f4",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_3_s1_flaws.json",
+      "sha256": "1af64fec67c84105c55e37b1a8078ab856988bf51481dfb32d35373cf3569071",
+      "size_bytes": 571
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_3_s1_alignment.json",
+      "json_sha256": "0053d39d4f131f8d94aadcd63e8117844f85ce34297d97c87fbc5c4cfa336b71",
+      "textgrid_file": "reagan_mourning_1986_level_3_s1.TextGrid",
+      "textgrid_sha256": "1ca97d801a17fe5463f8bb059a21b5b4c08ee44248122cbfc1943969962c6a3a"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 8.963,
+        "end_s": 11.264,
+        "words": "plans Today is",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_2_s1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 1,
+    "duration_s": 51.361,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_mourning_1986_level_2_s1.wav",
+      "sha256": "3748bdaf602888b8d92c02f4acbee1b34493abdf2ec2aa29c2c8e6ebe3242653",
+      "size_bytes": 1643586
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_2_s1_flaws.json",
+      "sha256": "30d22135ac23c0fbaeba39b4e5c11fb4046136fa0033787d664fcf6eebc91fc5",
+      "size_bytes": 932
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_2_s1_alignment.json",
+      "json_sha256": "54dd90070d73f77cf9f3396d590e5bf2c91999a28da8b787d1a7abbcc51c5cbe",
+      "textgrid_file": "reagan_mourning_1986_level_2_s1.TextGrid",
+      "textgrid_sha256": "baa6387153f6349be4583b324dd89ba2882e123c23e7b189206a875784c37f12"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 27.571,
+        "end_s": 28.992,
+        "words": "day we lost three astronauts",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 30.012,
+        "end_s": 31.653,
+        "words": "on the ground But",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_1_s1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 1,
+    "duration_s": 53.382,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_mourning_1986_level_1_s1.wav",
+      "sha256": "630e4569bfbedd81def4378042e96aa3c7c64d0caa8be8d84ffb842ace2a144c",
+      "size_bytes": 1708278
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_1_s1_flaws.json",
+      "sha256": "a0f32dc12dc7906561b32460374ab3fc0e5da354fd3431b74fed936dc6a4cee2",
+      "size_bytes": 1302
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_1_s1_alignment.json",
+      "json_sha256": "4ab617c34bd2d718ed9a699bdda61f1e7bb3fd6795b4809692a8fd275196b6c8",
+      "textgrid_file": "reagan_mourning_1986_level_1_s1.TextGrid",
+      "textgrid_sha256": "fa0f6a1ade7ba6be073889c3e995afca948028d0ae5145ebc406781750d44b5b"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 4.062,
+        "end_s": 6.063,
+        "words": "on the State of the Union but",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 14.746,
+        "end_s": 15.507,
+        "words": "I are paying to the core of",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 32.494,
+        "end_s": 37.15,
+        "words": "lost an astronaut in flight We've never",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_0_s1",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 1,
+    "duration_s": 56.882,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_mourning_1986_level_0_s1.wav",
+      "sha256": "272146dc6689ce3581f68c841890d603cc481e1d1d09c19a4e504d0152a40712",
+      "size_bytes": 1820282
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_0_s1_flaws.json",
+      "sha256": "b4609da5abad90ff2c20503fb9acb8a11b7489750834e9166c7ea0ce54b5361a",
+      "size_bytes": 1711
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_0_s1_alignment.json",
+      "json_sha256": "8bf92c76716cf37780289e1aa81762202de735c1053b0cd465f9a7d6d3654eea",
+      "textgrid_file": "reagan_mourning_1986_level_0_s1.TextGrid",
+      "textgrid_sha256": "1a12010060558498aac9029c95e621afc7de0eb737dabf8dad68aa63fc7a36a3"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 15.446,
+        "end_s": 16.306,
+        "words": "paying [pause] to",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 16.687,
+        "end_s": 18.73,
+        "words": "tragedy of the Shuttle Challenger We",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 20.908,
+        "end_s": 29.08,
+        "words": "people of our country This is truly a national loss",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 38.135,
+        "end_s": 42.037,
+        "words": "an astronaut in flight We've never had a tragedy like this",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_4_s2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 2,
+    "duration_s": 52.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "reagan_mourning_1986_level_4_s2.wav",
+      "sha256": "42a9c0a55555490325118405ceb71a33c9b8805729105e9cfb58d9f57a65c18d",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_4_s2_flaws.json",
+      "sha256": "36ed8d0987a6cdb40f3d4edfd9f245707162ba1ebfb797230421dded4370673b",
+      "size_bytes": 221
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_4_s2_alignment.json",
+      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "textgrid_file": "reagan_mourning_1986_level_4_s2.TextGrid",
+      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_3_s2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 2,
+    "duration_s": 52.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "reagan_mourning_1986_level_3_s2.wav",
+      "sha256": "59583f6dd786ae56f3155076ab2e547d7980d191f74c1d5524c4f980df037ff5",
+      "size_bytes": 1664044
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_3_s2_flaws.json",
+      "sha256": "aad411f7ce8cb0d383b46bc0c9f9283e3fb2000abe62c13b5e6f4853b09879ac",
+      "size_bytes": 581
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_3_s2_alignment.json",
+      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "textgrid_file": "reagan_mourning_1986_level_3_s2.TextGrid",
+      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 30.652,
+        "end_s": 32.713,
+        "words": "on the ground But we've",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_2_s2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 2,
+    "duration_s": 51.311,
+    "flaw_count": 2,
+    "audio": {
+      "file": "reagan_mourning_1986_level_2_s2.wav",
+      "sha256": "d355289d8b66a7fc807f1115c900cabf0378c73217eea25087bc154c785cab04",
+      "size_bytes": 1641988
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_2_s2_flaws.json",
+      "sha256": "958f4d2d06da7c2634b47d8e962b01cb372428fcb23f4c266ebfbc883549ab0b",
+      "size_bytes": 937
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_2_s2_alignment.json",
+      "json_sha256": "a9134ba1be357e6d396ab0ad9c02da0fbf571194a765fe93ebf63a41c2024661",
+      "textgrid_file": "reagan_mourning_1986_level_2_s2.TextGrid",
+      "textgrid_sha256": "ef54d172022d9878baeaa9edfea830e7f7537c918d378131a9fc9e99e7666285"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 20.424,
+        "end_s": 21.965,
+        "words": "the people of our country This is",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 29.966,
+        "end_s": 31.587,
+        "words": "on the ground But",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_1_s2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 2,
+    "duration_s": 52.763,
+    "flaw_count": 3,
+    "audio": {
+      "file": "reagan_mourning_1986_level_1_s2.wav",
+      "sha256": "aef73bc87602d1b16505e67552c8bdab9757bd3c7828e70e62bdbcb151af5810",
+      "size_bytes": 1688460
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_1_s2_flaws.json",
+      "sha256": "f1da653032c871491f72ef2de0eb302e9035373fa79fd9d72755f256dd3cbb69",
+      "size_bytes": 1296
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_1_s2_alignment.json",
+      "json_sha256": "43d188328529a2e633f2c6b7b204c0d4a761e51573123e5da125e8331835187d",
+      "textgrid_file": "reagan_mourning_1986_level_1_s2.TextGrid",
+      "textgrid_sha256": "1f0dd2af51d15cf3941bd1f0f3a87215375a241554f956c6e1f80f812e36c291"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 8.364,
+        "end_s": 11.365,
+        "words": "change those plans Today is a",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 29.033,
+        "end_s": 29.993,
+        "words": "astronauts in a terrible accident",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 33.215,
+        "end_s": 36.756,
+        "words": "in flight We've never had",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "reagan_mourning_1986_level_0_s2",
+    "speech_id": "reagan_mourning_1986",
+    "speaker": "Ronald Reagan",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 2,
+    "duration_s": 53.949,
+    "flaw_count": 4,
+    "audio": {
+      "file": "reagan_mourning_1986_level_0_s2.wav",
+      "sha256": "294b6e7d159e6770a97616e689d68311e0d6a1418b40723b090956245d7b7dce",
+      "size_bytes": 1726426
+    },
+    "annotations": {
+      "file": "reagan_mourning_1986_level_0_s2_flaws.json",
+      "sha256": "c78e7a8d051c768a59145252faf428205407fd8d040ddb07b1810c78e2ae32c2",
+      "size_bytes": 1714
+    },
+    "alignment": {
+      "json_file": "reagan_mourning_1986_level_0_s2_alignment.json",
+      "json_sha256": "4c512d2b2136d097168af02fce9f371e9b058532531bdc5821eac1b83e794407",
+      "textgrid_file": "reagan_mourning_1986_level_0_s2.TextGrid",
+      "textgrid_sha256": "8b9e3b656cadb0dab71f0048dcd82dd99ebc4a634e7e8e30df860be2201b886c"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 4.44,
+        "end_s": 8.522,
+        "words": "State of the Union but the",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 12.202,
+        "end_s": 12.202,
+        "words": "to [pause] change",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 23.224,
+        "end_s": 27.725,
+        "words": "pain with all of the people of our country This is truly a national",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 33.426,
+        "end_s": 35.186,
+        "words": "in a terrible accident on the ground But we've never lost",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_4",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 0,
+    "duration_s": 60.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_4.wav",
+      "sha256": "8b9832f37a71a393639bfb11e968476a866471f0e09db1bb027123f088b78266",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_4_flaws.json",
+      "sha256": "3afd1c7a0012cf649549fea9b93ad0a3499b92cee7bdcd06dfd39683fb7a5fa1",
+      "size_bytes": 214
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_4_alignment.json",
+      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "textgrid_file": "jfk_we_choose_1962_level_4.TextGrid",
+      "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_3",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 0,
+    "duration_s": 60.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_3.wav",
+      "sha256": "879bd3ce4407334e53bf2905a55b731ee9075729d57730207f9513ef955d6cc6",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_3_flaws.json",
+      "sha256": "39e91b69ba57a77e0a0ecbe4855bf6d8e92b61067af4ddc00629a00cb8fcb8f9",
+      "size_bytes": 570
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_3_alignment.json",
+      "json_sha256": "d9f88836e871915bb40669023d5ddfc17084d998c00f077207e9e108d8dbd127",
+      "textgrid_file": "jfk_we_choose_1962_level_3.TextGrid",
+      "textgrid_sha256": "cadaa2f225d7a8c2c29f36fe6b5b87fd4b32772dd179238037973327a8afa076"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 31.491,
+        "end_s": 32.511,
+        "words": "regard the decision",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 0,
+    "duration_s": 59.199,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_2.wav",
+      "sha256": "c685b3f4cea2b9348a8bf574e322039692856fdedcd71949065c03b298103712",
+      "size_bytes": 1894422
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_2_flaws.json",
+      "sha256": "caeefc2411bac9b92c9ec351afa076ba48e785ab965888a3ae53e7dac374bd3e",
+      "size_bytes": 942
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_2_alignment.json",
+      "json_sha256": "be2097632a4cd065bd104a3568d67b6609d0de0710c5d7ca438eddcd7199d826",
+      "textgrid_file": "jfk_we_choose_1962_level_2.TextGrid",
+      "textgrid_sha256": "94e7a587da737326dc7631e0f7132cc30dfb840753b2fcd506627a005e1de10d"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 7.562,
+        "end_s": 9.343,
+        "words": "organize and measure the best of",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 16.565,
+        "end_s": 19.51,
+        "words": "postpone and one we intend to win",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 0,
+    "duration_s": 59.864,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_1.wav",
+      "sha256": "2c347128213b9923987bbc1e0bbe5ec64987890f867522f63b8adc70fc5b4e5f",
+      "size_bytes": 1915702
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_1_flaws.json",
+      "sha256": "93abcdca3386169f88cffbf4987a3ff4a83737f9fa8acd026cd9281e9fe0c136",
+      "size_bytes": 1342
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_1_alignment.json",
+      "json_sha256": "d788b0b5c784897ddc98d46605970c29d15608a76176731a403106aa32547ca8",
+      "textgrid_file": "jfk_we_choose_1962_level_1.TextGrid",
+      "textgrid_sha256": "b275c77ed33252d2ce6874e4b8ed3a0857f8ed74b6f6cf1d321d8178cdd3a01b"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 13.886,
+        "end_s": 15.846,
+        "words": "that we're willing to accept one we are unwilling",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 30.132,
+        "end_s": 33.874,
+        "words": "regard the decision last year to shift our efforts in",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 37.18,
+        "end_s": 40.236,
+        "words": "among the most important decisions that",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_0",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 0,
+    "duration_s": 65.951,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_0.wav",
+      "sha256": "1fa468948f8aac5aa2b6c004d67e0b033a9c6b5bdd4160def8d884d76819217b",
+      "size_bytes": 2110470
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_0_flaws.json",
+      "sha256": "d630acf01c350297cf67b806c72868806d2e875accc65a1c0034f92c4cacf90b",
+      "size_bytes": 1707
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_0_alignment.json",
+      "json_sha256": "5e03fecc2a68e091471015eada2fca15131ea2872593e866347a54f7ba6647a3",
+      "textgrid_file": "jfk_we_choose_1962_level_0.TextGrid",
+      "textgrid_sha256": "8fd55739b26d1ad0506a9e90ff7eeff680db4b7efc844ae9da5fa6aeace7cff7"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 0.87,
+        "end_s": 13.62,
+        "words": "but because they are hard because that goal will serve to",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 16.363,
+        "end_s": 18.223,
+        "words": "energies and skills because that challenge",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 20.743,
+        "end_s": 20.743,
+        "words": "to [pause] accept",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 46.128,
+        "end_s": 49.208,
+        "words": "that will be made during my incumbency in the Office",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_4_s1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 1,
+    "duration_s": 60.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_4_s1.wav",
+      "sha256": "8b9832f37a71a393639bfb11e968476a866471f0e09db1bb027123f088b78266",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_4_s1_flaws.json",
+      "sha256": "a02c0477be0b5c1567d0cc872100819f29576c4f9122d83d7915775c852b7aba",
+      "size_bytes": 217
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_4_s1_alignment.json",
+      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "textgrid_file": "jfk_we_choose_1962_level_4_s1.TextGrid",
+      "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_3_s1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 1,
+    "duration_s": 60.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_3_s1.wav",
+      "sha256": "b4ee0dc2e4dac1e4d712f4a3c2d26c308d5cde1ee4cb25cf435e3ed183ba53b7",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_3_s1_flaws.json",
+      "sha256": "e0a7f95ba4335f1cc7993ff6a6d7c5f8b383e09cbe1cecdd212c4c77ea5e959f",
+      "size_bytes": 578
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_3_s1_alignment.json",
+      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "textgrid_file": "jfk_we_choose_1962_level_3_s1.TextGrid",
+      "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 36.412,
+        "end_s": 38.493,
+        "words": "from low to high gear as",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_2_s1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 1,
+    "duration_s": 59.384,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_2_s1.wav",
+      "sha256": "b4a20729851e56a3e3d7f74d0492004a2c771c51c54e11b8e4f159b8e7a77358",
+      "size_bytes": 1900330
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_2_s1_flaws.json",
+      "sha256": "125b380821c57038d1b5d6e321f69af17117861619df11d08ce25dc7487c6ec9",
+      "size_bytes": 963
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_2_s1_alignment.json",
+      "json_sha256": "6e539bada8bde3eea05877ce8ad22ad1c64d9fef3108adbb2c2fc37ca208dad6",
+      "textgrid_file": "jfk_we_choose_1962_level_2_s1.TextGrid",
+      "textgrid_sha256": "9631037c0cc73b4ae2a0fe2c6d11ba7d7097f37fbd441040eeff3ecf92339893"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 13.4,
+        "end_s": 14.766,
+        "words": "is one that we're willing to accept",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 36.755,
+        "end_s": 39.736,
+        "words": "gear as among the most important decisions that",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_1_s1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 1,
+    "duration_s": 65.968,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_1_s1.wav",
+      "sha256": "66c12ee7816d5b19c08275e920d9fe27bbfd9427d1eb83121cf6ebd3c85b091f",
+      "size_bytes": 2111010
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_1_s1_flaws.json",
+      "sha256": "487ea92dc583069964428d7aabf13e53bf703bb011fd99168a118da6eb35ffbc",
+      "size_bytes": 1323
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_1_s1_alignment.json",
+      "json_sha256": "23c7c45faee4b55c8584473c77de6e1dba4ad6f046f35b0043d3f11ea4bc5495",
+      "textgrid_file": "jfk_we_choose_1962_level_1_s1.TextGrid",
+      "textgrid_sha256": "da80cdf5b054e0db41d862741065011e96dc1cb4fa75ba4f69f59bc859ca1442"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 6.981,
+        "end_s": 10.141,
+        "words": "serve to organize and measure the best of",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 19.26,
+        "end_s": 36.184,
+        "words": "we intend to win and the others too It",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 45.17,
+        "end_s": 46.325,
+        "words": "as among the most important decisions that",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_0_s1",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 1,
+    "duration_s": 73.73,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_0_s1.wav",
+      "sha256": "218d6059bb58fd7b83f29a149fc30b467b1e93fe2a08937d919a65d7444d2b88",
+      "size_bytes": 2359418
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_0_s1_flaws.json",
+      "sha256": "84de4745d87187435dd7b389984c339a148f7d712740062d2e2a99e70a79df96",
+      "size_bytes": 1713
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_0_s1_alignment.json",
+      "json_sha256": "e4e1c728f035cc93aae59895b2495e75233a115146a9b31fc808b679b7f9eb53",
+      "textgrid_file": "jfk_we_choose_1962_level_0_s1.TextGrid",
+      "textgrid_sha256": "91c103390919aea0e0e3b1d1a6482b738f078a6c8471877f9dda1935bfbcef35"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 12.562,
+        "end_s": 14.042,
+        "words": "because [pause] that",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 20.22,
+        "end_s": 44.286,
+        "words": "and one we intend to win and the others too It is",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 45.887,
+        "end_s": 49.967,
+        "words": "that I regard the decision last year to shift our efforts in",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 56.96,
+        "end_s": 73.75,
+        "words": "incumbency in the Office of the Presidency",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_4_s2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 4,
+    "level_name": "Ideal Reference",
+    "seed": 2,
+    "duration_s": 60.0,
+    "flaw_count": 0,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_4_s2.wav",
+      "sha256": "8b9832f37a71a393639bfb11e968476a866471f0e09db1bb027123f088b78266",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_4_s2_flaws.json",
+      "sha256": "1b4e06259b37eab438e4f3f166828a78add10c02562349e37bf0b58aa49418d8",
+      "size_bytes": 217
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_4_s2_alignment.json",
+      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "textgrid_file": "jfk_we_choose_1962_level_4_s2.TextGrid",
+      "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
+    },
+    "injector_flaw_parameters": []
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_3_s2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 3,
+    "level_name": "Near Perfect",
+    "seed": 2,
+    "duration_s": 60.0,
+    "flaw_count": 1,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_3_s2.wav",
+      "sha256": "34d2deea7699088a64cd9a617717a50ed4d6ce5bac467006ae4c77ee4ef240f9",
+      "size_bytes": 1920044
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_3_s2_flaws.json",
+      "sha256": "7b4df59abce2fe1f3a6162d867afc7e34c0e4e353f3b6a7963a0a821f7e96eac",
+      "size_bytes": 571
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_3_s2_alignment.json",
+      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "textgrid_file": "jfk_we_choose_1962_level_3_s2.TextGrid",
+      "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 14.785,
+        "end_s": 16.686,
+        "words": "accept one we are",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.65,
+          "duration_words": [
+            3,
+            6
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_2_s2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 2,
+    "level_name": "Slightly Flawed",
+    "seed": 2,
+    "duration_s": 59.552,
+    "flaw_count": 2,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_2_s2.wav",
+      "sha256": "70c22b88d3b4421a7907d270014bb7cb5378ec5377b47ff5d20f9a5aa2d27353",
+      "size_bytes": 1905704
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_2_s2_flaws.json",
+      "sha256": "bb30be2cb766a86d7c22fff89933457c8fffd1becada34282e4279a5c8a68cb3",
+      "size_bytes": 948
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_2_s2_alignment.json",
+      "json_sha256": "fe89686aa294e99c32e47c577c023878a047672cbd42295f3754e3103978df75",
+      "textgrid_file": "jfk_we_choose_1962_level_2_s2.TextGrid",
+      "textgrid_sha256": "2458504fc0b1de21bac389b68c6cfac89c01df5e2b718be43351815ceb95c2f8"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "rushed",
+        "start_s": 10.04,
+        "end_s": 11.062,
+        "words": "of our energies and skills",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.45,
+          "duration_words": [
+            4,
+            7
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 39.908,
+        "end_s": 42.508,
+        "words": "will be made during my incumbency in the",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.4,
+          "duration_words": [
+            4,
+            8
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_1_s2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 1,
+    "level_name": "Flawed",
+    "seed": 2,
+    "duration_s": 64.611,
+    "flaw_count": 3,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_1_s2.wav",
+      "sha256": "4418376fd5ad81c4563754d8a0fdca6786e08267189727ada19c81da0e54dd0a",
+      "size_bytes": 2067608
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_1_s2_flaws.json",
+      "sha256": "761df1e521d0a6437f98e04d7712eed7b49ddb43981041063d639d2f9e6de61b",
+      "size_bytes": 1306
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_1_s2_alignment.json",
+      "json_sha256": "7a3a9ec31daa2ea558cf24c8a86f156d59a710c77be31f1634c11f66f2f98a51",
+      "textgrid_file": "jfk_we_choose_1962_level_1_s2.TextGrid",
+      "textgrid_sha256": "b4b42a1d7fbeb0eee2cc4ed457df0a222a70b6d61f54ee3422705e55724bd6b5"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "monotone",
+        "start_s": 4.701,
+        "end_s": 7.561,
+        "words": "because that goal will serve to",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.2,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 16.263,
+        "end_s": 33.506,
+        "words": "we are unwilling to postpone and one we intend",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 1.7,
+          "duration_words": [
+            5,
+            10
+          ]
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 33.826,
+        "end_s": 34.586,
+        "words": "others too It is for these",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.6,
+          "duration_words": [
+            5,
+            9
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "recording_id": "jfk_we_choose_1962_level_0_s2",
+    "speech_id": "jfk_we_choose_1962",
+    "speaker": "John F. Kennedy",
+    "quality_level": 0,
+    "level_name": "Egregiously Wrong",
+    "seed": 2,
+    "duration_s": 62.575,
+    "flaw_count": 4,
+    "audio": {
+      "file": "jfk_we_choose_1962_level_0_s2.wav",
+      "sha256": "7c80def5f638306b49440e8ceeb68e2d10a80aaa01f49056ae8958204e014d04",
+      "size_bytes": 2002440
+    },
+    "annotations": {
+      "file": "jfk_we_choose_1962_level_0_s2_flaws.json",
+      "sha256": "2d9788903fadc43bded4230bc8a9a26b83d6a2aab5bca0602c127171b8a6165f",
+      "size_bytes": 1712
+    },
+    "alignment": {
+      "json_file": "jfk_we_choose_1962_level_0_s2_alignment.json",
+      "json_sha256": "030875f0c2d0bebe90c05c07f97f478e4b116fd2ba8d1649413eb502d0250e26",
+      "textgrid_file": "jfk_we_choose_1962_level_0_s2.TextGrid",
+      "textgrid_sha256": "40c19c93274014f7d08584ac33ae5cc420e52951b100c9f53d1deb48a608ad98"
+    },
+    "injector_flaw_parameters": [
+      {
+        "flaw_type": "inappropriate_pause",
+        "start_s": 12.563,
+        "end_s": 14.043,
+        "words": "because [pause] that",
+        "profile": {
+          "type": "inappropriate_pause",
+          "pause_duration_s": 1.5,
+          "locations": "non_punctuation"
+        }
+      },
+      {
+        "flaw_type": "drag_slow",
+        "start_s": 15.7,
+        "end_s": 22.365,
+        "words": "we're willing to accept one we are unwilling",
+        "profile": {
+          "type": "drag_slow",
+          "tempo_factor": 0.45,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      },
+      {
+        "flaw_type": "monotone",
+        "start_s": 24.346,
+        "end_s": 34.868,
+        "words": "we intend to win and the others too It is for",
+        "profile": {
+          "type": "monotone",
+          "f0_compression_ratio": 0.05,
+          "duration_words": [
+            8,
+            16
+          ]
+        }
+      },
+      {
+        "flaw_type": "rushed",
+        "start_s": 37.18,
+        "end_s": 39.629,
+        "words": "decision last year to shift our efforts in space from low to",
+        "profile": {
+          "type": "rushed",
+          "tempo_factor": 2.1,
+          "duration_words": [
+            6,
+            12
+          ]
+        }
+      }
+    ]
+  }
+]

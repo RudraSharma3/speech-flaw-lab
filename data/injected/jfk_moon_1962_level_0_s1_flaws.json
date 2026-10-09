@@ -1,0 +1,72 @@
+{
+  "recording_id": "jfk_moon_1962_level_0_s1",
+  "speech_id": "jfk_moon_1962",
+  "level": 0,
+  "seed": 1,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 72.57,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 7.521,
+      "end_s": 9.281,
+      "start_word_idx": 14,
+      "end_word_idx": 22,
+      "words": "300 feet tall the length of this football field",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 39.285,
+      "end_s": 40.825,
+      "start_word_idx": 85,
+      "end_word_idx": 85,
+      "words": "it [pause] safely",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 55.387,
+      "end_s": 60.84,
+      "start_word_idx": 124,
+      "end_word_idx": 132,
+      "words": "do all this and do it right and do",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 62.14,
+      "end_s": 64.509,
+      "start_word_idx": 136,
+      "end_word_idx": 144,
+      "words": "all this thick heat is out then we must",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

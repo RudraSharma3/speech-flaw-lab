@@ -1,0 +1,43 @@
+{
+  "recording_id": "reagan_challenger_1986_level_2",
+  "speech_id": "reagan_challenger_1986",
+  "level": 2,
+  "seed": 0,
+  "level_name": "Slightly Flawed",
+  "duration_s": 60.572,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 24.35,
+      "end_s": 25.305,
+      "start_word_idx": 56,
+      "end_word_idx": 59,
+      "words": "and a historian later",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 26.165,
+      "end_s": 27.006,
+      "start_word_idx": 61,
+      "end_word_idx": 64,
+      "words": "he lived by the",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

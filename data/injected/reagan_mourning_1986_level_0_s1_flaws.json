@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_mourning_1986_level_0_s1",
+  "speech_id": "reagan_mourning_1986",
+  "level": 0,
+  "seed": 1,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 56.882,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 15.446,
+      "end_s": 16.306,
+      "start_word_idx": 43,
+      "end_word_idx": 43,
+      "words": "paying [pause] to",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 16.687,
+      "end_s": 18.73,
+      "start_word_idx": 49,
+      "end_word_idx": 54,
+      "words": "tragedy of the Shuttle Challenger We",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 20.908,
+      "end_s": 29.08,
+      "start_word_idx": 64,
+      "end_word_idx": 73,
+      "words": "people of our country This is truly a national loss",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 38.135,
+      "end_s": 42.037,
+      "start_word_idx": 96,
+      "end_word_idx": 106,
+      "words": "an astronaut in flight We've never had a tragedy like this",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

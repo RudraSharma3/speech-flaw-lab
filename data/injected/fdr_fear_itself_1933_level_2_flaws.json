@@ -1,0 +1,43 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_2",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 2,
+  "seed": 0,
+  "level_name": "Slightly Flawed",
+  "duration_s": 45.17,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 8.762,
+      "end_s": 12.8,
+      "start_word_idx": 15,
+      "end_word_idx": 20,
+      "words": "fear itself nameless unreasoning unjustified terror",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 22.845,
+      "end_s": 26.126,
+      "start_word_idx": 37,
+      "end_word_idx": 41,
+      "words": "life a leadership of frankness",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

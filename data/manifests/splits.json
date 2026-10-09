@@ -1,0 +1,31 @@
+{
+  "dataset_version": "1.0.0",
+  "splits": {
+    "tuning": {
+      "description": "Historical speeches used for prior estimation and threshold calibration",
+      "speech_ids": [
+        "jfk_moon_1962",
+        "jfk_we_choose_1962",
+        "reagan_challenger_1986",
+        "reagan_mourning_1986"
+      ],
+      "file_count": 60,
+      "levels": [0, 1, 2, 3, 4],
+      "seeds": [0, 1, 2]
+    },
+    "held_out": {
+      "description": "Completely held-out historical speech strictly reserved for unbiased benchmark evaluation",
+      "speech_ids": [
+        "fdr_fear_itself_1933"
+      ],
+      "file_count": 15,
+      "levels": [0, 1, 2, 3, 4],
+      "seeds": [0, 1, 2]
+    },
+    "out_of_distribution": {
+      "description": "User self-recordings and participant takes with non-vintage acoustics",
+      "directory": "data/self_recordings",
+      "status": "protocol_active"
+    }
+  }
+}

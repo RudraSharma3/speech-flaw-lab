@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_challenger_1986_level_0_s2",
+  "speech_id": "reagan_challenger_1986",
+  "level": 0,
+  "seed": 2,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 65.755,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 15.584,
+      "end_s": 17.024,
+      "start_word_idx": 33,
+      "end_word_idx": 39,
+      "words": "the great explorer Sir Francis Drake died",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 20.165,
+      "end_s": 28.98,
+      "start_word_idx": 49,
+      "end_word_idx": 59,
+      "words": "lifetime the great frontiers were the oceans and a historian later",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 33.308,
+      "end_s": 33.31,
+      "start_word_idx": 67,
+      "end_word_idx": 67,
+      "words": "on [pause] it",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 44.55,
+      "end_s": 48.251,
+      "start_word_idx": 90,
+      "end_word_idx": 105,
+      "words": "crew of the space shuttle challenger honored us for the manner in which they lived their",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

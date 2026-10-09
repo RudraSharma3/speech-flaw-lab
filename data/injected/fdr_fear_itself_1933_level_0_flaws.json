@@ -1,0 +1,72 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_0",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 0,
+  "seed": 0,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 49.49,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 2.621,
+      "end_s": 5.841,
+      "start_word_idx": 5,
+      "end_word_idx": 15,
+      "words": "belief that the only thing we have to fear is fear",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 10.542,
+      "end_s": 12.083,
+      "start_word_idx": 19,
+      "end_word_idx": 19,
+      "words": "unjustified [pause] terror",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 24.95,
+      "end_s": 32.12,
+      "start_word_idx": 40,
+      "end_word_idx": 55,
+      "words": "of frankness and a fitter has met with that understanding and support of the people themselves",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 39.548,
+      "end_s": 47.91,
+      "start_word_idx": 69,
+      "end_word_idx": 76,
+      "words": "give that support to leadership in these critical",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

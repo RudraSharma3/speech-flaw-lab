@@ -1,0 +1,27 @@
+{
+  "recording_id": "reagan_mourning_1986_level_3",
+  "speech_id": "reagan_mourning_1986",
+  "level": 3,
+  "seed": 0,
+  "level_name": "Near Perfect",
+  "duration_s": 52.0,
+  "flaw_count": 1,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 18.847,
+      "end_s": 20.388,
+      "start_word_idx": 57,
+      "end_word_idx": 61,
+      "words": "share this pain with all",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.65,
+        "duration_words": [
+          3,
+          6
+        ]
+      }
+    }
+  ]
+}

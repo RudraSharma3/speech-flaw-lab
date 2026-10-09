@@ -93,6 +93,26 @@ export const CausalExplanationCard: React.FC = () => {
         <span className="text-indigo-300 font-medium font-sans text-sm">"{currentFlaw.words}"</span>
       </div>
 
+      {/* Secondary Deviations in Merged Regions */}
+      {currentFlaw.secondary_types && currentFlaw.secondary_types.length > 0 && (
+        <div className="bg-indigo-950/40 p-3.5 rounded-xl border border-indigo-500/30 mb-4 text-xs">
+          <span className="text-indigo-400 font-bold uppercase text-[10px] tracking-wider block mb-1.5">
+            Secondary Deviations (Co-Occurring Merged Flaws)
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {currentFlaw.secondary_types.map((sec, sidx) => (
+              <span
+                key={sidx}
+                className="px-2.5 py-1 rounded-lg bg-indigo-900/60 border border-indigo-700/60 text-indigo-200 font-mono text-[11px] flex items-center gap-1.5"
+              >
+                <span className="font-sans font-semibold capitalize">{sec.flaw_type.replace('_', ' ')}</span>
+                <span className="text-indigo-400">z = {sec.z_score > 0 ? `+${sec.z_score.toFixed(1)}` : sec.z_score.toFixed(1)}σ</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Exact Quantitative Metrics Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
         <div className="bg-slate-900/80 p-3 rounded-xl border border-slate-800">

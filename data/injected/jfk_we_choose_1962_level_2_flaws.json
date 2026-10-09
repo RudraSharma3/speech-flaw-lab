@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_2",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 2,
+  "seed": 0,
+  "level_name": "Slightly Flawed",
+  "duration_s": 59.199,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 7.562,
+      "end_s": 9.343,
+      "start_word_idx": 17,
+      "end_word_idx": 22,
+      "words": "organize and measure the best of",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 16.565,
+      "end_s": 19.51,
+      "start_word_idx": 42,
+      "end_word_idx": 48,
+      "words": "postpone and one we intend to win",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

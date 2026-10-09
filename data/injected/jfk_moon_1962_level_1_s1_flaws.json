@@ -1,0 +1,59 @@
+{
+  "recording_id": "jfk_moon_1962_level_1_s1",
+  "speech_id": "jfk_moon_1962",
+  "level": 1,
+  "seed": 1,
+  "level_name": "Flawed",
+  "duration_s": 69.948,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 27.803,
+      "end_s": 30.723,
+      "start_word_idx": 60,
+      "end_word_idx": 64,
+      "words": "carrying all the equipment needed",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 45.485,
+      "end_s": 47.285,
+      "start_word_idx": 92,
+      "end_word_idx": 99,
+      "words": "at speeds of over 25000 miles per hour",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 51.62,
+      "end_s": 54.226,
+      "start_word_idx": 111,
+      "end_word_idx": 120,
+      "words": "almost as hot as it is here today and do",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

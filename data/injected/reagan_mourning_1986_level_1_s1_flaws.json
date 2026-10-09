@@ -1,0 +1,59 @@
+{
+  "recording_id": "reagan_mourning_1986_level_1_s1",
+  "speech_id": "reagan_mourning_1986",
+  "level": 1,
+  "seed": 1,
+  "level_name": "Flawed",
+  "duration_s": 53.382,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 4.062,
+      "end_s": 6.063,
+      "start_word_idx": 12,
+      "end_word_idx": 18,
+      "words": "on the State of the Union but",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 14.746,
+      "end_s": 15.507,
+      "start_word_idx": 41,
+      "end_word_idx": 47,
+      "words": "I are paying to the core of",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 32.494,
+      "end_s": 37.15,
+      "start_word_idx": 95,
+      "end_word_idx": 101,
+      "words": "lost an astronaut in flight We've never",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

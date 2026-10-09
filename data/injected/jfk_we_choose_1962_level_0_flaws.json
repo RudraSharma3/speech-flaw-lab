@@ -1,0 +1,72 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_0",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 0,
+  "seed": 0,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 65.951,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 0.87,
+      "end_s": 13.62,
+      "start_word_idx": 6,
+      "end_word_idx": 16,
+      "words": "but because they are hard because that goal will serve to",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 16.363,
+      "end_s": 18.223,
+      "start_word_idx": 24,
+      "end_word_idx": 29,
+      "words": "energies and skills because that challenge",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 20.743,
+      "end_s": 20.743,
+      "start_word_idx": 35,
+      "end_word_idx": 35,
+      "words": "to [pause] accept",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 46.128,
+      "end_s": 49.208,
+      "start_word_idx": 82,
+      "end_word_idx": 91,
+      "words": "that will be made during my incumbency in the Office",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

@@ -3,7 +3,10 @@ Unit tests for acoustic feature extraction, normalization, and scoring.
 """
 
 import numpy as np
-from backend.pipeline.features import extract_frame_features_praat, extract_spectral_features_librosa, count_syllables
+from backend.pipeline.features import (
+    count_syllables,
+    extract_frame_features_praat,
+)
 from backend.pipeline.normalize import compute_robust_z
 from backend.pipeline.scoring import evaluate_piecewise_linear, evaluate_sigmoid_symmetric
 

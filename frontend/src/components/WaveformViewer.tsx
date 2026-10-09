@@ -137,6 +137,26 @@ export const WaveformViewer: React.FC = () => {
     if (!regionsPlugin || !resultData) return;
     regionsPlugin.clearRegions();
 
+    // 1. Draw Injected Ground-Truth Flaw Regions (Hatched Bars Under Detected Regions)
+    if (resultData.ground_truth_flaws && resultData.ground_truth_flaws.length > 0) {
+      resultData.ground_truth_flaws.forEach((gt: any, idx: number) => {
+        const gtType = gt.flaw_type || gt.type || 'ground_truth';
+        regionsPlugin.addRegion({
+          id: gt.flaw_id || `gt_region_${idx}`,
+          start: gt.start_s,
+          end: gt.end_s,
+          color: 'rgba(234, 179, 8, 0.20)',
+          drag: false,
+          resize: false,
+          attributes: {
+            style: 'border-bottom: 3px dashed #eab308; background: repeating-linear-gradient(45deg, rgba(234, 179, 8, 0.22), rgba(234, 179, 8, 0.22) 6px, rgba(0, 0, 0, 0.25) 6px, rgba(0, 0, 0, 0.25) 12px); border-radius: 4px; pointer-events: none;',
+            title: `Ground Truth Flaw: ${gtType} [${gt.start_s}s - ${gt.end_s}s]`,
+          },
+        });
+      });
+    }
+
+    // 2. Draw Detected Flaw Regions (Solid Bordered Overlays)
     resultData.flaws.forEach((flaw: GroundedFlaw) => {
       const color = FLAW_COLORS[flaw.flaw_type] || 'rgba(99, 102, 241, 0.3)';
       const borderColor = FLAW_BORDER_COLORS[flaw.flaw_type] || '#6366f1';
@@ -158,10 +178,14 @@ export const WaveformViewer: React.FC = () => {
 
   // Zoom control update
   useEffect(() => {
-    if (wsRef.current) {
-      wsRef.current.zoom(zoom);
+    if (wsRef.current && audioUrl) {
+      try {
+        wsRef.current.zoom(zoom);
+      } catch {
+        // Audio not decoded yet
+      }
     }
-  }, [zoom]);
+  }, [zoom, audioUrl]);
 
   // Toggle Playback
   const handlePlayPause = () => {
@@ -198,6 +222,10 @@ export const WaveformViewer: React.FC = () => {
 
         {/* Legend */}
         <div className="flex flex-wrap items-center gap-2 text-xs">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-950/40 border border-amber-600/60 text-amber-300 font-semibold">
+            <span className="w-3.5 h-2.5 rounded border border-amber-400 bg-[repeating-linear-gradient(45deg,#eab308,#eab308_2px,transparent_2px,transparent_4px)]" />
+            GT Flaw (Hatched Bar)
+          </span>
           {Object.entries(FLAW_BORDER_COLORS).map(([type, color]) => (
             <span
               key={type}

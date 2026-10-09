@@ -1,0 +1,43 @@
+{
+  "recording_id": "reagan_mourning_1986_level_2_s1",
+  "speech_id": "reagan_mourning_1986",
+  "level": 2,
+  "seed": 1,
+  "level_name": "Slightly Flawed",
+  "duration_s": 51.361,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 27.571,
+      "end_s": 28.992,
+      "start_word_idx": 80,
+      "end_word_idx": 84,
+      "words": "day we lost three astronauts",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 30.012,
+      "end_s": 31.653,
+      "start_word_idx": 89,
+      "end_word_idx": 92,
+      "words": "on the ground But",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

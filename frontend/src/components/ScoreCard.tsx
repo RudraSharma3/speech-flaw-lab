@@ -30,7 +30,10 @@ export const ScoreCard: React.FC = () => {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
         <div className="flex items-center gap-4">
           {/* Circular / Badge Grade Display */}
-          <div className={`w-20 h-20 rounded-2xl flex flex-col items-center justify-center border ${getScoreColor(scores.overall)}`}>
+          <div
+            className={`w-20 h-20 rounded-2xl flex flex-col items-center justify-center border ${getScoreColor(scores.overall)} cursor-help transition-all hover:scale-105`}
+            title={`Raw Rubric Score: ${scores.raw_overall !== undefined ? scores.raw_overall.toFixed(1) : scores.overall.toFixed(1)} / 100 (Uncalibrated)`}
+          >
             <span className="text-2xl font-black tracking-tight">{scores.grade}</span>
             <span className="text-xs font-mono font-bold">{scores.overall.toFixed(1)}/100</span>
           </div>
@@ -43,6 +46,14 @@ export const ScoreCard: React.FC = () => {
               </h2>
               <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-800 border border-slate-700 text-slate-300">
                 Tier Level {scores.quality_level_est} / 4
+              </span>
+            </div>
+            <div className="flex items-center gap-2 mt-1.5">
+              <span
+                className="px-2.5 py-0.5 rounded text-[11px] font-medium bg-indigo-950/70 border border-indigo-700/60 text-indigo-300 cursor-help"
+                title={`Raw Uncalibrated Score: ${scores.raw_overall !== undefined ? scores.raw_overall.toFixed(1) : scores.overall.toFixed(1)} / 100`}
+              >
+                calibrated on the injected gradient (tuning speeches)
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-1">

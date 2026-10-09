@@ -1,0 +1,27 @@
+{
+  "recording_id": "jfk_moon_1962_level_3",
+  "speech_id": "jfk_moon_1962",
+  "level": 3,
+  "seed": 0,
+  "level_name": "Near Perfect",
+  "duration_s": 70.0,
+  "flaw_count": 1,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 59.41,
+      "end_s": 60.197,
+      "start_word_idx": 135,
+      "end_word_idx": 138,
+      "words": "if all this thick",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.65,
+        "duration_words": [
+          3,
+          6
+        ]
+      }
+    }
+  ]
+}

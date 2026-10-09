@@ -1,0 +1,59 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_1_s1",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 1,
+  "seed": 1,
+  "level_name": "Flawed",
+  "duration_s": 65.968,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 6.981,
+      "end_s": 10.141,
+      "start_word_idx": 15,
+      "end_word_idx": 22,
+      "words": "serve to organize and measure the best of",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 19.26,
+      "end_s": 36.184,
+      "start_word_idx": 45,
+      "end_word_idx": 53,
+      "words": "we intend to win and the others too It",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 45.17,
+      "end_s": 46.325,
+      "start_word_idx": 76,
+      "end_word_idx": 82,
+      "words": "as among the most important decisions that",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    }
+  ]
+}

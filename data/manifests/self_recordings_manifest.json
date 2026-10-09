@@ -1,0 +1,27 @@
+{
+  "dataset_name": "speech_self_recordings_v1",
+  "description": "User self-recordings for out-of-distribution prosodic evaluation",
+  "transcript": "Let me assert my firm belief, that the only thing we have to fear is fear itself, nameless, unreasoning, unjustified terror, which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life, a leadership of frankness and a fitter has met with that understanding and support of the people themselves, which is essential to victory. And I am convinced to show a game, give that support, to leadership, in these critical days.",
+  "recordings": {
+    "take_a": {
+      "file": "take_a.wav",
+      "duration_s": 46.959
+    },
+    "take_b": {
+      "file": "take_b.wav"
+    },
+    "monotone": {
+      "file": "monotone.wav"
+    },
+    "rushed": {
+      "file": "rushed.wav"
+    },
+    "odd_pauses": {
+      "file": "odd_pauses.wav"
+    }
+  },
+  "noted_pause_words": [
+    "terror",
+    "support"
+  ]
+}

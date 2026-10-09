@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_2_s2",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 2,
+  "seed": 2,
+  "level_name": "Slightly Flawed",
+  "duration_s": 59.552,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 10.04,
+      "end_s": 11.062,
+      "start_word_idx": 22,
+      "end_word_idx": 26,
+      "words": "of our energies and skills",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 39.908,
+      "end_s": 42.508,
+      "start_word_idx": 83,
+      "end_word_idx": 90,
+      "words": "will be made during my incumbency in the",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

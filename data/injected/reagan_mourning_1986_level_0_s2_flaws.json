@@ -1,0 +1,72 @@
+{
+  "recording_id": "reagan_mourning_1986_level_0_s2",
+  "speech_id": "reagan_mourning_1986",
+  "level": 0,
+  "seed": 2,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 53.949,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 4.44,
+      "end_s": 8.522,
+      "start_word_idx": 14,
+      "end_word_idx": 19,
+      "words": "State of the Union but the",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 12.202,
+      "end_s": 12.202,
+      "start_word_idx": 27,
+      "end_word_idx": 27,
+      "words": "to [pause] change",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 23.224,
+      "end_s": 27.725,
+      "start_word_idx": 59,
+      "end_word_idx": 72,
+      "words": "pain with all of the people of our country This is truly a national",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 33.426,
+      "end_s": 35.186,
+      "start_word_idx": 85,
+      "end_word_idx": 95,
+      "words": "in a terrible accident on the ground But we've never lost",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    }
+  ]
+}

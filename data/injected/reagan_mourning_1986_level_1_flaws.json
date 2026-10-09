@@ -1,0 +1,59 @@
+{
+  "recording_id": "reagan_mourning_1986_level_1",
+  "speech_id": "reagan_mourning_1986",
+  "level": 1,
+  "seed": 0,
+  "level_name": "Flawed",
+  "duration_s": 52.547,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 2.98,
+      "end_s": 4.21,
+      "start_word_idx": 9,
+      "end_word_idx": 17,
+      "words": "tonight to report on the State of the Union",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 6.441,
+      "end_s": 8.101,
+      "start_word_idx": 24,
+      "end_word_idx": 29,
+      "words": "have led me to change those",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 26.1,
+      "end_s": 29.604,
+      "start_word_idx": 77,
+      "end_word_idx": 83,
+      "words": "almost to the day we lost three",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_1_s2",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 1,
+  "seed": 2,
+  "level_name": "Flawed",
+  "duration_s": 64.611,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 4.701,
+      "end_s": 7.561,
+      "start_word_idx": 11,
+      "end_word_idx": 16,
+      "words": "because that goal will serve to",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 16.263,
+      "end_s": 33.506,
+      "start_word_idx": 38,
+      "end_word_idx": 46,
+      "words": "we are unwilling to postpone and one we intend",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 33.826,
+      "end_s": 34.586,
+      "start_word_idx": 51,
+      "end_word_idx": 56,
+      "words": "others too It is for these",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    }
+  ]
+}

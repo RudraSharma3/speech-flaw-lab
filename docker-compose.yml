@@ -1,30 +1,17 @@
 services:
-  backend:
+  speech-app:
     build:
       context: .
-      dockerfile: Dockerfile.backend
-    container_name: speech_backend
+      dockerfile: Dockerfile
+    container_name: speech_app
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     environment:
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
-
-  frontend:
-    build:
-      context: .
-      dockerfile: Dockerfile.frontend
-    container_name: speech_frontend
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    environment:
-      - VITE_API_URL=http://localhost:8000
-    depends_on:
-      - backend
-    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3

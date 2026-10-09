@@ -1,0 +1,59 @@
+{
+  "recording_id": "reagan_challenger_1986_level_1_s1",
+  "speech_id": "reagan_challenger_1986",
+  "level": 1,
+  "seed": 1,
+  "level_name": "Flawed",
+  "duration_s": 60.817,
+  "flaw_count": 3,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 15.004,
+      "end_s": 17.445,
+      "start_word_idx": 31,
+      "end_word_idx": 35,
+      "words": "years ago the great explorer",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.6,
+        "duration_words": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 21.006,
+      "end_s": 25.21,
+      "start_word_idx": 46,
+      "end_word_idx": 55,
+      "words": "Panama In his lifetime the great frontiers were the oceans",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.2,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 26.687,
+      "end_s": 28.388,
+      "start_word_idx": 60,
+      "end_word_idx": 67,
+      "words": "said he lived by the sea died on",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.7,
+        "duration_words": [
+          5,
+          10
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "recording_id": "reagan_mourning_1986_level_2",
+  "speech_id": "reagan_mourning_1986",
+  "level": 2,
+  "seed": 0,
+  "level_name": "Slightly Flawed",
+  "duration_s": 50.802,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 20.389,
+      "end_s": 21.489,
+      "start_word_idx": 62,
+      "end_word_idx": 67,
+      "words": "of the people of our country",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 22.47,
+      "end_s": 25.151,
+      "start_word_idx": 69,
+      "end_word_idx": 75,
+      "words": "is truly a national loss Nineteen years",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    }
+  ]
+}

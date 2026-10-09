@@ -1,0 +1,72 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_0_s2",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 0,
+  "seed": 2,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 55.39,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 4.301,
+      "end_s": 21.124,
+      "start_word_idx": 6,
+      "end_word_idx": 17,
+      "words": "that the only thing we have to fear is fear itself nameless",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 42.468,
+      "end_s": 43.028,
+      "start_word_idx": 54,
+      "end_word_idx": 54,
+      "words": "people [pause] themselves",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 43.428,
+      "end_s": 47.929,
+      "start_word_idx": 58,
+      "end_word_idx": 65,
+      "words": "essential to victory And I am convinced to",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 50.04,
+      "end_s": 54.29,
+      "start_word_idx": 69,
+      "end_word_idx": 77,
+      "words": "give that support to leadership in these critical days",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

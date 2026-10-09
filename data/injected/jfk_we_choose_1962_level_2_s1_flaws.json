@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_2_s1",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 2,
+  "seed": 1,
+  "level_name": "Slightly Flawed",
+  "duration_s": 59.384,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 13.4,
+      "end_s": 14.766,
+      "start_word_idx": 30,
+      "end_word_idx": 36,
+      "words": "is one that we're willing to accept",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 36.755,
+      "end_s": 39.736,
+      "start_word_idx": 75,
+      "end_word_idx": 82,
+      "words": "gear as among the most important decisions that",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    }
+  ]
+}

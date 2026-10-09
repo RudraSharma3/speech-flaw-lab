@@ -1,0 +1,72 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_0_s1",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 0,
+  "seed": 1,
+  "level_name": "Egregiously Wrong",
+  "duration_s": 51.527,
+  "flaw_count": 4,
+  "flaws": [
+    {
+      "flaw_type": "rushed",
+      "start_s": 19.043,
+      "end_s": 22.503,
+      "start_word_idx": 27,
+      "end_word_idx": 38,
+      "words": "retreat into advance In every dark hour of our national life a",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 2.1,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "drag_slow",
+      "start_s": 23.69,
+      "end_s": 35.705,
+      "start_word_idx": 41,
+      "end_word_idx": 52,
+      "words": "frankness and a fitter has met with that understanding and support of",
+      "profile": {
+        "type": "drag_slow",
+        "tempo_factor": 0.45,
+        "duration_words": [
+          6,
+          12
+        ]
+      }
+    },
+    {
+      "flaw_type": "inappropriate_pause",
+      "start_s": 37.945,
+      "end_s": 39.43,
+      "start_word_idx": 56,
+      "end_word_idx": 56,
+      "words": "which [pause] is",
+      "profile": {
+        "type": "inappropriate_pause",
+        "pause_duration_s": 1.5,
+        "locations": "non_punctuation"
+      }
+    },
+    {
+      "flaw_type": "monotone",
+      "start_s": 46.346,
+      "end_s": 50.407,
+      "start_word_idx": 70,
+      "end_word_idx": 77,
+      "words": "that support to leadership in these critical days",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.05,
+        "duration_words": [
+          8,
+          16
+        ]
+      }
+    }
+  ]
+}

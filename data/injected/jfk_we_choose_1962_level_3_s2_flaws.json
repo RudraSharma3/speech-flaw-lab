@@ -1,0 +1,27 @@
+{
+  "recording_id": "jfk_we_choose_1962_level_3_s2",
+  "speech_id": "jfk_we_choose_1962",
+  "level": 3,
+  "seed": 2,
+  "level_name": "Near Perfect",
+  "duration_s": 60.0,
+  "flaw_count": 1,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 14.785,
+      "end_s": 16.686,
+      "start_word_idx": 36,
+      "end_word_idx": 39,
+      "words": "accept one we are",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.65,
+        "duration_words": [
+          3,
+          6
+        ]
+      }
+    }
+  ]
+}

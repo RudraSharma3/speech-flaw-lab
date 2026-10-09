@@ -1,0 +1,43 @@
+{
+  "recording_id": "jfk_moon_1962_level_2_s2",
+  "speech_id": "jfk_moon_1962",
+  "level": 2,
+  "seed": 2,
+  "level_name": "Slightly Flawed",
+  "duration_s": 69.168,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 10.301,
+      "end_s": 12.381,
+      "start_word_idx": 21,
+      "end_word_idx": 24,
+      "words": "football field made of",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 25.543,
+      "end_s": 27.423,
+      "start_word_idx": 56,
+      "end_word_idx": 60,
+      "words": "than the finest watch carrying",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    }
+  ]
+}

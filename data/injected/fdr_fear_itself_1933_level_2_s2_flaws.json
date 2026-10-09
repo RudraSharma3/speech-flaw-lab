@@ -1,0 +1,43 @@
+{
+  "recording_id": "fdr_fear_itself_1933_level_2_s2",
+  "speech_id": "fdr_fear_itself_1933",
+  "level": 2,
+  "seed": 2,
+  "level_name": "Slightly Flawed",
+  "duration_s": 46.081,
+  "flaw_count": 2,
+  "flaws": [
+    {
+      "flaw_type": "monotone",
+      "start_s": 23.731,
+      "end_s": 27.153,
+      "start_word_idx": 34,
+      "end_word_idx": 40,
+      "words": "of our national life a leadership of",
+      "profile": {
+        "type": "monotone",
+        "f0_compression_ratio": 0.4,
+        "duration_words": [
+          4,
+          8
+        ]
+      }
+    },
+    {
+      "flaw_type": "rushed",
+      "start_s": 39.759,
+      "end_s": 42.4,
+      "start_word_idx": 67,
+      "end_word_idx": 72,
+      "words": "a game give that support to",
+      "profile": {
+        "type": "rushed",
+        "tempo_factor": 1.45,
+        "duration_words": [
+          4,
+          7
+        ]
+      }
+    }
+  ]
+}

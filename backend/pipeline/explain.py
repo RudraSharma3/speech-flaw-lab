@@ -5,23 +5,24 @@ Zero LLM dependencies in the scoring/explanation path.
 """
 
 import os
+from typing import Any
+
 import yaml
-from typing import List, Dict, Any
 
 RUBRIC_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "rubric.yaml")
 FLAW_RULES_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "flaw_rules.yaml")
 
 
-def load_flaw_rules() -> List[Dict[str, Any]]:
+def load_flaw_rules() -> list[dict[str, Any]]:
     if os.path.exists(FLAW_RULES_PATH):
-        with open(FLAW_RULES_PATH, "r") as f:
+        with open(FLAW_RULES_PATH) as f:
             return yaml.safe_load(f).get("rules", [])
     return []
 
 
-def load_severity_weights() -> Dict[str, float]:
+def load_severity_weights() -> dict[str, float]:
     if os.path.exists(RUBRIC_PATH):
-        with open(RUBRIC_PATH, "r") as f:
+        with open(RUBRIC_PATH) as f:
             return yaml.safe_load(f).get("severity_calculation", {}).get("type_weights", {})
     return {
         "monotone": 1.2,
@@ -34,7 +35,7 @@ def load_severity_weights() -> Dict[str, float]:
     }
 
 
-def generate_causal_explanations(raw_grounded_flaws: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def generate_causal_explanations(raw_grounded_flaws: list[dict[str, Any]]) -> list[dict[str, Any]]:
     """
     Interpolates statistical deltas into structured rationale and calculates severity.
     """
@@ -92,6 +93,8 @@ def generate_causal_explanations(raw_grounded_flaws: List[Dict[str, Any]]) -> Li
             "severity": severity,
             "rationale_text": rationale_text,
             "why_it_hurts": why_it_hurts,
+            "secondary_types": raw.get("secondary_types", []),
+            "_is_merged": raw.get("_is_merged", False),
         })
 
     # Sort flaws by temporal start time

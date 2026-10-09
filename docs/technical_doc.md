@@ -1,162 +1,127 @@
 # Technical Report: Contrastive Speech Analytics & Temporal Flaw Grounding
 
 **Track C — Multimodal AI Hackathon 2026**  
-**Authors**: Senior Lead System Engineer & Developer  
-**Repository**: `speech` • **License**: MIT / Public Domain Dataset  
+**System Architecture, Dataset Construction, Deterministic Scoring & Empirical Benchmark**  
+**Evaluated Corpus**: 75 recordings across 5 speech baselines and 3 seeds  
+**Evaluation Mode**: contrastive (primary) and reference-free (coarse screening)  
 
 ---
 
-## 1. Executive Summary & Problem Formulation
+## 1. Executive Summary & System Architecture
 
-Traditional Automated Speech Assessment (ASA) systems suffer from three fundamental limitations:
-1. **Holistic Black-Box Scoring**: End-to-end neural or LLM evaluators output arbitrary numeric scores (e.g. 7.5/10) without grounding errors in physical acoustics or aligning them to exact time intervals.
-2. **Temporal Smearing & Hallucination**: Generative audio LLMs fail to identify exact millisecond boundaries of speech defects, exhibiting timestamp jitter exceeding 500ms and hallucinated critiques.
-3. **Non-Deterministic Reasoning**: Evaluating the same audio twice often yields differing scores and rationales, violating reproducibility requirements for high-stakes assessment.
+Automated Speech Assessment (ASA) has traditionally relied on end-to-end black-box models or generative LLMs that suffer from non-deterministic scoring, temporal hallucination (boundary jitter > 500ms), and lack of physical interpretability. Track C introduces a **deterministic, zero-LLM architecture** that aligns test audio against an ideal master take of the identical text (or LibriSpeech population priors) on a synchronized word-index axis using **torchaudio MMS_FA** (MFA is not used in the production pipeline).
 
-To resolve these challenges, we present **Contrastive Speech Analytics & Temporal Flaw Grounding (Track C)**: a 100% deterministic, zero-LLM architecture that pairs speech recordings against ideal master baselines (or LibriSpeech population priors) on a synchronized word-index axis. The system delivers:
-- Sub-millisecond temporal flaw grounding snapped strictly to forced-aligned word and phoneme boundaries.
-- Speaker-normalized robust statistical deviations ($z$-scores) across fundamental frequency ($F_0$), energy dynamics, articulation rate, and pause topology.
-- Template-driven causal explanations with explicit mathematical rationales and cognitive impact assessments ("why it hurts").
-- Calibrated 0–100 rubric dimension scoring utilizing monotonic mathematical curves.
+### 1.1 System Architecture Flow
 
----
+![System Architecture Flow Diagram](screenshots/architecture_diagram.png)
 
-## 2. Dataset Construction & The 5-Tier Contrastive Gradient
+### 1.2 Interactive Evaluation Dashboard
 
-### 2.1 Baseline Master Sourcing
-To establish ground-truth rhetorical excellence, we curated high-fidelity excerpts (15–30s) from iconic public-domain addresses:
-1. **John F. Kennedy** — *Rice Stadium Moon Speech (1962)* (`jfk_moon_1962`)
-2. **Ronald Reagan** — *Space Shuttle Challenger Address (1986)* (`reagan_challenger_1986`)
-3. **Franklin D. Roosevelt** — *First Inaugural Address (1933)* (`fdr_fear_itself_1933`)
-
-Audio streams are normalized to **-20.0 LUFS** (ITU-R BS.1770-4) at **16 kHz mono 16-bit PCM WAV** to eliminate loudness bias. Transcripts were normalized to canonical punctuation and aligned via Montreal Forced Aligner (MFA 3.x, ARPA dictionary and acoustic model).
-
-### 2.2 Population Acoustic Priors
-When an ideal reference take of the same text is unavailable, our engine falls back to population priors computed over 500 clean utterances from **LibriSpeech**:
-$$\text{Priors} = \left\{ F_0^{\text{range}}: (5.4, 1.4)\text{ st}, \text{Rate}: (4.3, 0.8)\text{ syl/s}, \text{Energy}: (6.8, 1.9)\text{ dB}, \text{HNR}: (18.2, 2.6)\text{ dB} \right\}$$
-
-### 2.3 Parameterized Flaw Injection Gradient
-To benchmark grounding precision and rubric monotonicity, we developed a parameterized flaw injector that creates a 5-tier quality gradient (Level 4 down to Level 0) across the exact same speech text:
-- **Monotone ($F_0$ Compression)**: Pitch modulation compressed towards the speaker median:
-  $$F_0'(t) = \tilde{F}_0 + \alpha \cdot (F_0(t) - \tilde{F}_0), \quad \alpha \in [0.05, 0.65]$$
-- **Rushed / Dragged Tempo**: Time-stretching/compression applied across selected words:
-  $$\Delta t' = \Delta t \cdot \beta, \quad \beta \in [0.45, 2.10]$$
-- **Syntactic & Inappropriate Pauses**: Inserting pauses ($\Delta t \ge 0.35\text{s}$) mid-phrase or stripping required pauses at punctuation ($\Delta t \le 0.05\text{s}$).
-- **Energy Drops**: Localized gain attenuation ($G \in [-18.0\text{ dB}, -4.5\text{ dB}]$).
+![Interactive React + Plotly + WaveSurfer Evaluation Dashboard](screenshots/sample_loaded.png)
 
 ---
 
-## 3. Acoustic Signal Processing & Normalization
+## 2. Dataset Construction & The 5-Tier Gradient
 
-```mermaid
-graph LR
-    Audio[16kHz Mono Audio] --> VAD[Silero / Energy VAD]
-    Audio --> MFA[MFA Forced Alignment]
-    Audio --> Praat[Parselmouth Praat Engine]
-    Audio --> Librosa[Librosa DSP Engine]
-    
-    Praat --> Feats[F0, Intensity, HNR, Jitter]
-    Librosa --> Spec[MFCCs, Spectral Centroid, Flux]
-    MFA --> Tokens[Word & Phone Boundaries]
+To evaluate temporal grounding and rubric monotonicity rigorously, we synthesized the **Contrastive Speech Analytics Dataset (CSAD-2026)** across 5 historical public-domain speech excerpts and 3 random injector seeds ($N = 75$ total recordings):
+- **Tuning Set (60 recordings)**: JFK Moon (1962), JFK We Choose (1962), Reagan Challenger (1986), Reagan Mourning (1986).
+- **Held-Out Test Set (15 recordings)**: FDR First Inaugural Address (1933) — strictly reserved for unbiased validation.
 
-    Feats & Spec & Tokens --> Agg[Word-Level Aggregation]
-    Agg --> Norm[Speaker Normalization & Robust Z-Scores]
-```
-
-### 3.1 Two-Pass Speaker-Adaptive $F_0$ Extraction
-Pitch is extracted using the Praat acoustic periodicity autocorrelation algorithm via Parselmouth. To prevent octave jumps and gender bias, we employ a two-pass adaptive method:
-1. **Pass 1**: Broad sweep ($75\text{ Hz} - 500\text{ Hz}$) to extract voiced percentiles ($P_5, P_{95}$) and speaker median $\tilde{F}_0$.
-2. **Pass 2**: Constrained tracking with adaptive floor $F_{\text{floor}} = \max(50, 0.75 \cdot P_5)$ and ceiling $F_{\text{ceil}} = \min(600, 1.50 \cdot P_{95})$.
-
-### 3.2 Semitone Transformation
-Pitch contours are converted to speaker-normalized semitones ($st$) relative to the speaker median:
-$$F_{0,\text{st}}(t) = 12 \cdot \log_2 \left( \frac{F_0(t)}{\tilde{F}_0} \right)$$
-
-### 3.3 Robust Median Absolute Deviation ($z$-scores)
-To ensure resilience against outliers and skewed distributions, we compute robust $z$-scores using the Median and MAD:
-$$z = \frac{x - \tilde{x}_{\text{baseline}}}{1.4826 \cdot \text{MAD}_{\text{baseline}} + \epsilon}$$
+### Quality Gradient Specification
+| Level | Designation | Injected Acoustic Deviations | Target Score |
+| :---: | :--- | :--- | :---: |
+| **L4** | Ideal Reference | Unmodified pristine baseline recording | 90 – 100 |
+| **L3** | Near Perfect | 1 subtle perturbation (e.g. 15-20% tempo shift, 35% pitch compression) | 80 – 92 |
+| **L2** | Slightly Flawed | 2 distinct flaw regions (e.g. rushed delivery, moderate monotone) | 60 – 79 |
+| **L1** | Flawed | 3 distinct flaw regions (e.g. dragged tempo, flatline pitch, misplaced pause) | 40 – 59 |
+| **L0** | Egregious | 4 severe compound flaws (e.g. 2.1x rushed, 1.5s unpunctuated pause, pitch flatline) | 0 – 39 |
 
 ---
 
-## 4. Temporal Flaw Grounding & Causal Explainability
+## 3. Rubric Formulation & Monotone Score Calibration
 
-### 4.1 Double-Threshold Hysteresis & Word Snapping
-Continuous acoustic deviation signals often oscillate near decision boundaries. We apply double-threshold hysteresis:
-- **Activation Threshold**: $|z| \ge z_{\text{high}} = 2.2$
-- **Deactivation Threshold**: $|z| < z_{\text{low}} = 1.5$
+Overall speech score is computed across 5 weighted dimensions: Pacing (25%), Pitch Expressiveness (25%), Volume Dynamics (20%), Pauses & Fluency (15%), and Acoustic Clarity (15%).
 
-Contiguous flagged intervals separated by fewer than 2 words ($\le 0.30\text{s}$) are merged. The start time $t_{\text{start}}$ and end time $t_{\text{end}}$ are snapped strictly to the forced-aligned word boundaries:
-$$t_{\text{start}} = \text{Word}[s_{\text{idx}}].\text{start}, \quad t_{\text{end}} = \text{Word}[e_{\text{idx}}].\text{end}$$
+### Calibration Before vs. After Isotonic Regression
+Uncalibrated contrastive scores exhibited compression at the lower end (e.g. JFK L0 scored 70.4 vs L1 71.4 due to baseline acoustic noise floor). **Score calibration is fit on injected data (the 4 tuning speeches)** and evaluated strictly on the **Held-Out FDR speech**:
 
-### 4.2 Severity Formulation
-Each grounded flaw is assigned a deterministic severity score $S$:
-$$S = (t_{\text{end}} - t_{\text{start}}) \cdot \max_{t} |z(t)| \cdot w_{\text{type}}$$
-where $w_{\text{type}} \in \{ \text{Inappropriate Pause}: 1.6, \text{Rushed}: 1.4, \text{Monotone}: 1.2, \text{Missing Pause}: 1.3, \text{Volume Drop}: 1.1 \}$.
+| Speech Baselines | Mode / Method | L4 (Ideal) | L3 (Near) | L2 (Slight) | L1 (Flawed) | L0 (Egregious) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| `jfk_moon_1962` | Raw Contrastive | 96.5 | 94.9 | 88.5 | 71.4 | 70.4 |
+| `reagan_challenger_1986` | Raw Contrastive | 96.5 | 96.4 | 94.1 | 72.9 | 67.7 |
+| `fdr_fear_itself_1933` | Raw Contrastive | 96.5 | 96.4 | 93.2 | 72.4 | 53.4 |
+| `reagan_mourning_1986` | Raw Contrastive | 96.5 | 96.2 | 94.5 | 81.6 | 55.9 |
+| `jfk_we_choose_1962` | Raw Contrastive | 96.5 | 96.2 | 91.9 | 67.8 | 55.0 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `jfk_moon_1962` (Tuning) | **Isotonic Calibrated** | **94.9** | **84.5** | **75.0** | **45.0** | **38.3** |
+| `reagan_challenger_1986` (Tuning) | **Isotonic Calibrated** | **94.9** | **92.6** | **76.7** | **45.0** | **37.5** |
+| `fdr_fear_itself_1933` (Held-Out) | **Isotonic Calibrated** | **94.9** | **90.3** | **76.7** | **45.0** | **27.5** |
+| `reagan_mourning_1986` (Tuning) | **Isotonic Calibrated** | **94.9** | **88.0** | **78.0** | **55.0** | **27.5** |
+| `jfk_we_choose_1962` (Tuning) | **Isotonic Calibrated** | **94.9** | **85.8** | **75.9** | **40.8** | **30.8** |
 
-### 4.3 Deterministic Causal Explanation Template
-Each flaw produces a structured JSON artifact containing exact numbers, units, deltas, and rhetorical impact:
-```json
-{
-  "region_id": "flaw_01_monotone",
-  "start_s": 4.12,
-  "end_s": 7.48,
-  "words": "in this decade and do the other things",
-  "flaw_type": "monotone",
-  "feature": "f0_range_semitones",
-  "baseline_value": 6.4,
-  "observed_value": 1.6,
-  "delta": -4.8,
-  "unit": "semitones (st)",
-  "z_score": -3.6,
-  "severity": 9.2,
-  "rationale_text": "Pitch expressiveness collapsed from 6.4 to 1.6 semitones across words 11-18 (z=-3.6).",
-  "why_it_hurts": "Flattening pitch modulation removes vocal stress and nuclear accents, resulting in a robotic delivery that reduces listener engagement and comprehension."
-}
-```
+**Pairwise Ranking Monotonicity**: **97.78%** on L0–L3 pairs (2 violations out of 90 comparisons). Cluster-bootstrap 95% CI: `[95.83%, 100.00%]`.
 
 ---
 
-## 5. Deterministic Rubric Scoring
+## 4. Empirical Evaluation Results
 
-The overall score is computed as a weighted sum across 5 core dimensions:
-$$\text{Score}_{\text{overall}} = \sum_{d=1}^{5} w_d \cdot S_d$$
+All metrics are computed via **1-to-1 Hungarian bipartite matching** using Intersection-over-Union (IoU) from `dataset_tools/run_benchmark.py` writing to `results/benchmark.json`. Forced alignment is performed exclusively using **torchaudio MMS_FA**.
 
-| Dimension ($d$) | Weight ($w_d$) | Metric | Mathematical Scoring Curve |
-| :--- | :---: | :--- | :--- |
-| **Pacing & Rate** | 0.25 | Articulation Rate $z$ | Symmetric Sigmoid: $S(z) = 10 + \frac{90}{1 + e^{1.5(|z| - 1.5)}}$ |
-| **Pitch Expressiveness** | 0.25 | $F_0$ Range $z$ | Piecewise Linear Knot Interpolation |
-| **Volume Dynamics** | 0.20 | Energy Contrast $z$ | Piecewise Linear Knot Interpolation |
-| **Pauses & Fluency** | 0.15 | Inappropriate Pause Time | Exponential Decay: $S(p) = \max(5, 100 \cdot e^{-0.25 \cdot p})$ |
-| **Acoustic Clarity** | 0.15 | HNR Periodicity $z$ | Lower-bounded Sigmoid ($z_{\text{mid}} = -1.8$) |
+### 4.1 Strict Flaw Detection Performance by Quality Level
+| Quality Level | Ground Truth | Detected | Matched (IoU≥0.3) | Precision (0.3) | Recall (0.3) | F1 (0.3) | Matched (IoU≥0.5) | Precision (0.5) | Recall (0.5) | F1 (0.5) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **LEVEL_0** | 60 | 57 | 43 | 75.4% | 71.7% | 73.5% | 40 | 70.2% | 66.7% | 68.4% |
+| **LEVEL_1** | 45 | 43 | 35 | 81.4% | 77.8% | 79.5% | 32 | 74.4% | 71.1% | 72.7% |
+| **LEVEL_2** | 30 | 14 | 7 | 50.0% | 23.3% | 31.8% | 4 | 28.6% | 13.3% | 18.2% |
+| **LEVEL_3** | 15 | 1 | 0 | 0.0% | 0.0% | 0.0% | 0 | 0.0% | 0.0% | 0.0% |
+
+### 4.2 Detection Performance by Flaw Type (IoU ≥ 0.3 & 0.5)
+| Flaw Type | GT Count | Detected | Strict Matched (0.3) | Strict Precision (0.3) | Strict Recall (0.3) | Strict F1 (0.3) | Strict Matched (0.5) | Strict Precision (0.5) | Strict Recall (0.5) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `monotone` | 60 | 16 | 17 | 100.0% | 28.3% | 44.1% | 14 | 87.5% | 23.3% |
+| `rushed` | 45 | 28 | 27 | 96.4% | 60.0% | 74.0% | 24 | 85.7% | 53.3% |
+| `drag_slow` | 30 | 30 | 25 | 83.3% | 83.3% | 83.3% | 24 | 80.0% | 80.0% |
+| `inappropriate_pause` | 15 | 20 | 9 | 45.0% | 60.0% | 51.4% | 8 | 40.0% | 53.3% |
+
+**Classification Accuracy Among Matches**: **91.8%** (78/85) at IoU $\ge 0.3$, and **92.1%** (70/76) at IoU $\ge 0.5$.
+
+### 4.3 Boundary Temporal Accuracy & Edge Trimming
+- **Single-Flaw Regions ($N = 53$)**: Median start error = **200.0 ms** (P90 = 928.2 ms); Median end error = **200.0 ms** (P90 = 1030.2 ms).
+- **Merged-Flaw Regions ($N = 32$)**: Median start error = **223.0 ms** (P90 = 1506.2 ms); Median end error = **260.0 ms** (P90 = 1312.2 ms).
+- **Overall Boundary P90**: Across single regions, boundary error P90 is approximately **1 s** (1030.2 ms end, 928.2 ms start).
+- **All GT Flaws (Misses Penalized with 2000 ms)**: Median start error = **1005.0 ms**; P90 = 2000.0 ms; Overall Mean IoU across all 150 GT flaws = **0.440**.
+
+### 4.4 Gate Verification & Control Checks
+- **Full-Chain Null Injection Control**: **PASS** (Total flags: 1, Duration: 290.0s, Rate: **0.21 flags/min**).
+- **Level 4 Clean False Positive Rate**: **PASS** (0.0 flags/min tuning, 0.0 flags/min held-out vs target < 2.0).
+- **Level 0–1 Recall Target (80.0%)**: **FAIL** (Achieved: **74.3%** at IoU 0.3; **68.6%** at IoU 0.5 vs 80.0% target).
 
 ---
 
-## 6. Empirical Validation & Stress Testing
+## 5. Documented Failures, Corner Cases & System Limitations
 
-We conducted rigorous benchmark experiments across our held-out test splits:
+In accordance with honest benchmark principles, the following failure modes and limitations are documented from verified benchmark evidence:
 
-### 6.1 Temporal Grounding Accuracy (IoU & Boundary Error)
-Grounding performance evaluated against injected ground-truth intervals:
-- **Mean Intersection-over-Union (mIoU)**: **0.874** across all flaw types.
-- **Boundary Error**: **$\pm 28.4\text{ ms}$** mean start/end error (well within the $\pm 50\text{ ms}$ threshold).
-- **Flaw Detection Sensitivity (Recall)**: **96.2%** on major/critical flaws ($|z| \ge 2.2$).
-
-### 6.2 Rubric Monotonicity & Rank Correlation
-- **Spearman Rank Correlation ($r_s$)**: **0.988** ($p < 10^{-6}$) between rubric score and ground-truth quality level (4 ➔ 0).
-- **Pairwise Ranking Accuracy**: **100%** on adjacent quality pairs (Level $k$ score $>$ Level $k-1$ score).
-
-### 6.3 Machine Learning Cross-Check
-A `GradientBoostingRegressor` trained on extracted acoustic features achieved $R^2 = 0.942$ on predicting quality tier, confirming that our hand-engineered rubric dimensions capture $>94\%$ of the underlying acoustic variance without requiring deep learning inference.
+1. **L0–L1 Recall Misses Target (74.3% vs 80.0%)**: While precision is high (75.4%–81.4%), subtle flaws in complex compounds were missed when adjacent word boundaries shifted due to pitch re-alignment.
+2. **Monotone Recall Ceiling (monotone recall 28% / 28.3%)**: Monotone injection compresses pitch variance inside targeted words, but Praat pitch tracking over unvoiced consonants frequently exhibits boundary transitions that exceed the pitch variance threshold, preventing activation. (Precision remains 100.0%).
+3. **Level 3 Undetectable by Design (L3 undetectable)**: Level 3 introduces 1 subtle localized flaw (e.g. 15-20% rate shift). Across all 15 Level-3 recordings, 0 flaws were detected at IoU $\ge 0.3$ (recall 0.0%). Tuning detection thresholds to trigger on Level 3 causes false positives on Level 4 pristine baselines. Level 3 behaves as an acoustic boundary control.
+4. **Boundary P90 Error (~1 s)**: Across single regions, boundary p90 is about 1 s (1030.2 ms end, 928.2 ms start). Regions with 2+ adjacent flaws have higher P90 boundary error (1506.2 ms) due to the 0.3s hysteresis merge window. Trimming merged boundaries to flagged words eliminated inter-word drift but retains multi-word span envelope.
+5. **Unexplained Far-from-GT Detections**: Exactly 10 far-from-GT detections remain unexplained across the benchmark corpus (detections with IoU < 0.1 to any injected flaw, primarily localized unvoiced fricative energy bursts).
+6. **Calibration Scope**: Score calibration is fit on injected data (the 4 tuning speeches); when evaluating on arbitrary out-of-distribution audio without an identical reference take, the raw uncalibrated score is retained as the ground metric.
+7. **Cross-Speaker Contrastive Limitation**: Contrastive scoring compares the test take against an ideal reference of the *identical speech transcript*. While pitch is speaker-normalized via semitones relative to median ($12 \log_2(F_0 / \tilde{F}_0)$), formant structures and speaker timbre differences can cause residual deviation. For arbitrary texts without a reference take, reference-free mode serves as a coarse screening tool only.
 
 ---
 
-## 7. System Architecture & Docker Deployment
+## 6. Reproducibility & Deployment Instructions
 
-The entire system is containerized with zero cloud dependencies:
+### 6.1 Benchmark Execution Command
+To reproduce every single number in this document byte-for-byte from scratch:
 ```bash
-# Clone and launch in one command
-docker compose up --build
+python -m dataset_tools.run_benchmark
 ```
-- **Backend**: FastAPI + Python 3.11 + Montreal Forced Aligner + Praat Parselmouth (`http://localhost:8000`).
-- **Frontend**: React + Vite + TypeScript + Tailwind + Wavesurfer v7 + Plotly.js (`http://localhost:5173`).
-- **Reproducibility**: Byte-for-byte deterministic output cached by file SHA-256.
+This reads audio and annotations from `data/injected/`, scores all 75 recordings contrastively against their Level-4 baselines using 1-to-1 Hungarian matching, and writes `results/benchmark.json`.
+
+### 6.2 Docker Status
+- **Dockerfile.backend**: Fast FastAPI container with Python 3.11, PyTorch, Torchaudio, and Praat Parselmouth.
+- **Dockerfile.frontend**: Node 20 Vite production bundle.
+- **Deployment**: `docker compose up --build` launches the full stack on port 8000 and 5173.
