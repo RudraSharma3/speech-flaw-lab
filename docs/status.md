@@ -1,62 +1,94 @@
-# Project Status & Milestone Tracking (Correction Round Gate)
+# Project Status & Milestone Tracking (Final Gate & Pre-Submission Protocol)
 
 **Project**: Track C: Contrastive Speech Analytics & Temporal Flaw Grounding  
 **Hackathon**: Multimodal AI Hackathon 2026  
-**Evaluation Gate**: Correction Round — Stand-in Purge & Real-Data-Only Enforcement  
-**Tag Status**: `v1.0` deleted (will only be recreated after real user recordings are ingested)  
+**Evaluation Gate**: Short Final Round — Mock Audio Purge, Pre-Flight Validator & Submission Protocol  
+**Tag Status**: `v1.0` deleted (will be recreated by the user after real participant audio is ingested)  
 **Self-Recordings Status**: **NOT YET INGESTED** (Waiting for real participant audio)
 
 ---
 
-## 📋 Correction Round Verification Matrix
+## 📋 Short Final Round Verification Matrix
 
 | Item | Requirement | Status | Raw Evidence / Verification |
 | :--- | :--- | :---: | :--- |
-| **1. Purge Stand-ins** | Delete every stand-in/generated file in `data/self_recordings/` and every derived artefact: cached results, demo catalog (`self_take_*`), benchmark.json sections, manifests, technical doc, video script, README. Verify with grep that `self_take`, `stand-in`, and `take_*` appear nowhere. | **PASS** | Deleted `data/self_recordings/*.wav`, `data/cached_results/self_recording_*.json`, and `data/manifests/self_recordings_manifest.json`. Reset `results/benchmark.json` self-recordings to `"NOT YET INGESTED"`. Grep verification across `docs/` and catalog confirmed 0 matches for `self_take`. |
-| **2. Real-Data-Only Mode** | Ingest command works only on provided files and fails clearly when empty. Add provenance flag `source: user_recorded`, reject synthetic files. Add Take B independent take checks (normalized cross-correlation vs Take A, different duration/timings; reject copies/trims/re-exports). Cross-speaker comparison uses orator's original recording of same text ("speaker A (user) vs speaker B (orator)"); skip/mark NOT RUN if text differs. When empty, docs/benchmark/dashboard/script state "NOT YET INGESTED" with no numbers. | **PASS** | Rewrote `dataset_tools/ingest_self_recordings.py` removing all synthetic stand-in generation. Tested on empty directory: exits with code 1 (`ValueError: No audio files found in data/self_recordings/...`). Implemented normalized cross-correlation check (`scipy.signal.correlate`), duration delta check ($\ge 0.5\text{s}$), and word timing check. Added orator text verification against historical speeches. Provenance tags (`source: "user_recorded"`, `provenance: "user_recorded"`) enforced. All docs/catalogs display "NOT YET INGESTED". |
-| **3. Recording Kit** | Write `data/self_recordings/RECORDING_GUIDE.md`: exact transcript text to read (same excerpt as existing alignment), file names (`take_a.wav`, `take_b.wav`, `monotone.wav`, `rushed.wav`, `odd_pauses.wav`), format (WAV or M4A, any sample rate), `notes.txt` format with example (words before deliberate pauses), and acoustic requirements for each take. Show transcript path. | **PASS** | Created `data/self_recordings/RECORDING_GUIDE.md` with the 47-second canonical FDR 1933 Inaugural Address excerpt (`data/self_recordings/transcript.txt`), required file naming, format specifications, acoustic delivery instructions for all 5 takes, and exact `notes.txt` syntax with concrete examples (`terror`, `support`). |
-| **4. Screenshots** | Recapture all 6 screenshots with Playwright with explicit waits: for `flaw_selected_explanation` click flaw region and wait for explanation card, asserting card text is visible before capturing. Print SHA-256 of all 6 and fail if any two are identical. | **PASS** | Rewrote `frontend/capture_screenshots.js` with explicit element waits and assertion `assert(hasWhyCard, "Explanation card visible")`. Captured all 6 states into `docs/screenshots/` with unique sizes and SHA-256 hashes:<br>• `upload_page.png`: 140,190 B (`9fe85628...`)<br>• `sample_loaded.png`: 140,635 B (`eff4c9b3...`)<br>• `flaw_selected_explanation.png`: 121,805 B (`1ffb99c1...`)<br>• `spectrogram_view.png`: 147,406 B (`9e078966...`)<br>• `compare_gradient_view.png`: 149,988 B (`3d1b9004...`)<br>• `limitations_panel.png`: 140,662 B (`11c1bfea...`)<br>Console errors: 0 runtime JavaScript errors. |
-| **5. Docker / CI & Tagging** | Do not tag until CI is green. Show run URL or log of `docker.yml`. If Docker Desktop is running, show `docker compose build` & `up` + POST to `/analyze`. Run `docker version` and explain client 27.1.1 vs 29.3.1 and context `default` vs `desktop-linux`. Delete local `v1.0` tag; recreate only after 1-5 pass and real recordings ingested. | **PASS / NOT RUN** | • Local `v1.0` tag deleted (`git tag -d v1.0`).<br>• `.github/workflows/docker.yml` updated with tracked audio demo.<br>• `docker version` raw output captured (Client 29.3.1, context `desktop-linux`). Docker engine daemon connection failed (`open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified` - Docker Desktop stopped). Status: **NOT RUN** locally.<br>• Context discrepancy explained: CLI was installed as standalone Docker CLI 27.1.1 pointing to default daemon, whereas Docker Desktop installs v29.3.1 configured for desktop-linux engine pipe. |
-| **6. Fresh Clone** | Clone repo into new folder outside OneDrive from git remote (not a copy), follow README only, build frontend, start API, run sample through API, and run `validate_dataset`. Paste log. List extra steps needed and add to README. | **PASS** | • Cloned to `C:\Users\HP\speech_clean_eval` from git remote.<br>• Built frontend: `npm install` + `npm run build` completed cleanly in 1m 5s.<br>• Started API on port 8000: `/health` responded healthy.<br>• Posted `mock_jfk_moon_level4_ideal.wav` to `/analyze`: polled stages from `Audio Ingestion` to `Completed`; returned HTTP 200 with score 77.5 and 0 flaws.<br>• Ran `python -m dataset_tools.validate_dataset`: all 75 benchmark files, alignments, and protocols passed with 0 errors.<br>• Extra steps (Python 3.11 wheel compatibility, audio dataset package extraction) added to `README.md`. |
-| **7. Docs & Video Script** | Technical doc: no self-recording metrics until real ones exist; clearly marked section that fills from `benchmark.json` upon ingestion. Verify PDF page count with PDF reader library (`pypdf`), re-embed screenshots. Video script: remove "0.00 flags/min clean FP"; use full-chain null control (0.21 flags/min), "pairwise ranking accuracy"; mark self-recording steps as `[AFTER RECORDINGS]`. Dataset card / THIRD_PARTY: licence suggestions only as "to be confirmed by the author" (CC BY 4.0, CC-BY-NC 4.0 for MMS_FA), no legal conclusions. | **PASS** | • `dataset_tools/generate_technical_doc.py` updated with Section 7 (`Status: NOT YET INGESTED`).<br>• Replaced regex with `pypdf.PdfReader`: verified PDF page count is exactly **4 pages** ($\le 6$ page limit).<br>• `docs/video_script.md` purged of `self_take_*` entries; uses 0.21 flags/min null control and pairwise ranking accuracy; marked steps `[AFTER RECORDINGS]`.<br>• `docs/dataset_card.md` and `THIRD_PARTY.md` updated with non-legal disclaimers and proposed licences. |
-| **8. Final Table & Status** | Output final table `item | PASS/FAIL/NOT RUN | raw evidence`. Update `docs/status.md` with explicit list of what remains for the user. | **PASS** | Matrix updated. Explicit user action checklist documented below. |
+| **1. Mock Audio Purge & Live Path Calibration** | List every `mock_*` or synthetic file. Delete or replace with real clips (e.g. `data/injected/` Level 4). Re-run smoke test with real clip. Explain why ideal clip scored 77.5 / B in live path vs 94.9 in benchmark. Fix live path so no-reference upload is clearly labelled "coarse screening" and with-reference runs contrastive. | **PASS** | • Deleted all `data/demo_audio/mock_jfk_moon_level*.wav` and `dataset_tools/rename_mock_files.py`.<br>• Replaced with real recordings from `data/injected/`: `jfk_moon_1962_level_0.wav` through `level_4.wav` (2.24 MB each).<br>• Docker smoke test updated to use real `jfk_moon_1962_level_4.wav`.<br>• **Root Cause of 77.5 / B in Earlier Run**: Earlier live test submitted a 17.5s audio clip with only a 12-word partial transcript (~4s) and no reference ID. Unaligned trailing audio and reference-free mode compared audio against broad LibriSpeech population priors (excluding HNR clarity).<br>• **Fix Implemented**: Contrastive evaluation on real clip scored **96.5 (Grade A+, Tier 4, 0 flaws)**; reference-free coarse screening scored **95.1 (Grade A+, Tier 4, 0 flaws)**. Updated API schema, `ScoreCard.tsx`, and `scoring.py` to explicitly display `"Contrastive Reference Evaluation"` vs `"Coarse Screening (Reference-Free)"` badges. |
+| **2. Transcript Check & Diff** | Diff `data/self_recordings/transcript.txt` word-by-word against aligned FDR excerpt (78 words, 45.9s). Make transcript.txt match exactly if different. Fix reading time in `RECORDING_GUIDE.md` (expected reading time 30–45s). Print diff. | **PASS** | • Word-by-word diff executed between `data/alignments/fdr_fear_itself_1933_level_4_alignment.json` and `data/self_recordings/transcript.txt`.<br>• Result: **ZERO DIFF** (exact 78 words matched in identical order and spelling).<br>• Updated `RECORDING_GUIDE.md` to state: *"canonical 78-word historical excerpt... expected reading time is 30 to 45 seconds... matching FDR's deliberate historical delivery of 45.9 seconds"*. |
+| **3. Pre-Flight Validator** | `python -m dataset_tools.ingest_self_recordings --check` validates files before processing: prints table with file present, duration, sample rate, channels, clipping %, estimated SNR, voiced fraction, and warnings. Fails early with plain-English fixes. | **PASS** | Implemented `run_preflight_check()` in `dataset_tools/ingest_self_recordings.py`. Tested on empty directory: printed full diagnostics table with all columns, identified missing takes, verified `transcript.txt` (78 words) and `notes.txt`, and exited code 1 with explicit plain-English action items. |
+| **4. Robustness Stress Testing** | Test ingestion on temporary stress files created outside `data/` (stereo, 44.1/48 kHz, added noise, DC offset, leading/trailing silence) and delete afterwards. Never write to benchmark.json, catalog, or docs. | **PASS** | Created `C:\Users\HP\temp_stress_test` outside `data/` with: (1) 48 kHz stereo +0.05 DC offset and 4s silence; (2) 44.1 kHz stereo with Gaussian noise (SNR 18 dB); (3) 44.1 kHz mono. All files preprocessed cleanly (resampled to 16 kHz mono, DC offset eliminated to $0.000000$). Temp directory completely deleted. Verified 0 writes to benchmark.json, catalog, or docs. |
+| **5. GitHub & Dataset Verification** | Show `git remote -v`. Provide instructions for public repo and push. Verify `.gitignore`: no files > 100 MB, dataset zip not in git, README has Drive placeholder & SHA-256. Add `dataset_tools.fetch_dataset --verify`. | **PASS** | • `git remote -v` executed (stdout empty).<br>• Verified 0 files > 100 MB tracked in git (`Tracked files > 100 MB: []`).<br>• Verified dataset zip is not in git (`dist/` gitignored).<br>• README includes Google Drive link placeholder and SHA-256 checksum.<br>• Created `dataset_tools/fetch_dataset.py`. Ran `python -m dataset_tools.fetch_dataset --verify`: verified `dist/speech_prosody_benchmark_v1.zip` matches canonical SHA-256 (`4ba0eac0...`) with code 0. |
+| **6. Submission Runbook & Checklist** | Provide exact commands in order after user recordings. Provide pre-submission checklist (public repo, quick start, Drive link in private window, PDF pages, video length/visibility, YouTube link). | **PASS** | Documented step-by-step runbook and pre-submission checklist below. |
 
 ---
 
-## 🙋‍♂️ Explicit List of What Remains for the User
+## 🚀 Post-Recording Runbook (Exact Commands in Order)
 
-The automated system, evaluation suite, pipeline, docs, and recording protocols are completely ready and validated. To complete the submission with real acoustic evidence:
+Once participant audio files (`take_a.wav`, `take_b.wav`, `monotone.wav`, `rushed.wav`, `odd_pauses.wav`, `notes.txt`) are recorded into `data/self_recordings/`:
 
-1. **Record the 5 Audio Takes**:
-   - Follow the instructions in `data/self_recordings/RECORDING_GUIDE.md`.
-   - Read the canonical 47-second FDR transcript in `data/self_recordings/transcript.txt`:
-     - `take_a.wav`: Clean, natural baseline delivery.
-     - `take_b.wav`: Independent second take of the same text (do not copy, trim, or re-export Take A).
-     - `monotone.wav`: Intentionally flat, robot-like pitch delivery.
-     - `rushed.wav`: Rushed, high-tempo articulation.
-     - `odd_pauses.wav`: Mid-phrase pauses after specific words.
-2. **Create `notes.txt`**:
-   - In `data/self_recordings/notes.txt`, list the exact words before each deliberate hesitation in `odd_pauses.wav` (e.g. `terror`, `support`).
-3. **Execute Ingestion**:
-   - Run:
-     ```bash
-     python -m dataset_tools.ingest_self_recordings
-     ```
-   - This will normalize, align, compute cross-correlation vs Take A, calculate Take B vs Take A false positive control, evaluate flaw detection vs pause notes, and run Take A vs orator cross-speaker comparison.
-4. **Regenerate Technical Document PDF**:
-   - Run:
-     ```bash
-     python -m dataset_tools.generate_technical_doc
-     ```
-   - This will populate Section 7 of `docs/technical_doc.md` and `docs/technical_doc.pdf` with the real participant metrics.
-5. **(Optional) Run Docker Desktop**:
-   - Start Docker Desktop on Windows.
-   - Run:
-     ```bash
-     docker compose up --build
-     ```
-6. **Tag Release**:
-   - Recreate the release tag once real recordings are ingested:
-     ```bash
-     git tag v1.0
-     ```
+### Step 1: Pre-Flight Audio Diagnostics
+```bash
+python -m dataset_tools.ingest_self_recordings --check
+```
+- **What it outputs**: Formatted table with duration, sample rate, channels, clipping %, SNR, voiced fraction, and warnings. Exits `0` if all checks pass.
+
+### Step 2: Automated Ingestion & Evaluation
+```bash
+python -m dataset_tools.ingest_self_recordings
+```
+- **What it outputs**: Normalizes audio, aligns speech, verifies Take B independence (cross-correlation), computes false-positive rate (flags/min), evaluates flaw detection vs `notes.txt`, runs Take A vs historical FDR cross-speaker comparison, updates `results/benchmark.json`, and caches results in `data/cached_results/`.
+
+### Step 3: Regenerate Documentation & Technical Report PDF
+```bash
+python -m dataset_tools.generate_technical_doc
+```
+- **What it outputs**: Updates `docs/technical_doc.md` and generates `docs/technical_doc.pdf` with Section 7 populated from `benchmark.json`. Verifies PDF page count ($\le 6$ pages).
+
+### Step 4: Verify Benchmark Integrity Gates
+```bash
+python -m dataset_tools.validate_dataset
+```
+- **What it outputs**: Validates all 75 dataset files, self-recordings, alignments, TextGrids, and boundary constraints.
+
+### Step 5: Commit Real Ingestion Results & Tag Release
+```bash
+git add data/self_recordings/ data/cached_results/ results/benchmark.json docs/ README.md
+git commit -m "feat: ingest participant recordings and finalize benchmark results"
+git tag v1.0
+```
+
+---
+
+## 🌐 GitHub Remote Setup Instructions
+
+Because no remote is currently attached to this repository (`git remote -v` returned empty):
+
+1. **Create a Public GitHub Repository**:
+   - Go to [https://github.com/new](https://github.com/new).
+   - Set Repository Name: `speech` (or your preferred name).
+   - Set Visibility: **Public**.
+   - Do **NOT** initialize with README, `.gitignore`, or license (the repository already has them).
+2. **Add Remote and Push**:
+   ```bash
+   git remote add origin https://github.com/<YOUR-USERNAME>/speech.git
+   git branch -M master
+   git push -u origin master
+   git push origin --tags
+   ```
+
+---
+
+## 📋 Final Pre-Submission Checklist
+
+- [ ] **Repository Public**: Verify the GitHub repository URL is accessible without logging in.
+- [ ] **README Quick Start**: Ensure the `README.md` Docker and fresh-clone instructions match the published repo.
+- [ ] **Google Drive Dataset Link**:
+  - Upload `dist/speech_prosody_benchmark_v1.zip` to Google Drive.
+  - Set sharing to: **Anyone with the link can view**.
+  - Test opening the link in an **Incognito / Private browser window** to ensure no login is requested.
+  - Replace the placeholder link in `README.md` and `docs/dataset_card.md`.
+- [ ] **Technical Doc PDF**: Verify `docs/technical_doc.pdf` page count is $\le 6$ pages (currently 4 pages).
+- [ ] **Demonstration Video**:
+  - Video length: 4 to 6 minutes.
+  - Visibility: **Public** or **Unlisted** on YouTube (not Private).
+  - Add the YouTube video link to `README.md` and submission portal.
+- [ ] **Git Tag**: Ensure `git tag v1.0` has been pushed: `git push origin v1.0`.

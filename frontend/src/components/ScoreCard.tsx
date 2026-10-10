@@ -48,12 +48,23 @@ export const ScoreCard: React.FC = () => {
                 Tier Level {scores.quality_level_est} / 4
               </span>
             </div>
-            <div className="flex items-center gap-2 mt-1.5">
+            <div className="flex items-center gap-2 mt-1.5 flex-wrap">
+              {meta.reference_type === 'ideal_take' || meta.reference_id ? (
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-emerald-950/80 border border-emerald-600/70 text-emerald-300">
+                  Contrastive Reference Evaluation ({meta.reference_id})
+                </span>
+              ) : (
+                <span className="px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-950/80 border border-amber-600/70 text-amber-300">
+                  Coarse Screening (Reference-Free Population Priors)
+                </span>
+              )}
               <span
                 className="px-2.5 py-0.5 rounded text-[11px] font-medium bg-indigo-950/70 border border-indigo-700/60 text-indigo-300 cursor-help"
                 title={`Raw Uncalibrated Score: ${scores.raw_overall !== undefined ? scores.raw_overall.toFixed(1) : scores.overall.toFixed(1)} / 100`}
               >
-                calibrated on the injected gradient (tuning speeches)
+                {meta.reference_type === 'ideal_take' || meta.reference_id
+                  ? 'calibrated on the injected gradient (tuning speeches)'
+                  : 'uncalibrated broad distribution (coarse screening)'}
               </span>
             </div>
             <p className="text-xs text-slate-400 mt-1">

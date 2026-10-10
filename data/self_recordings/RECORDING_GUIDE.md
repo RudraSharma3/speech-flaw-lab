@@ -6,11 +6,11 @@ This directory (`data/self_recordings/`) is reserved for participant-recorded au
 
 ## 📄 Canonical Transcript to Read
 
-Read the exact text below (canonical 47-second historical excerpt from Franklin D. Roosevelt's 1933 Inaugural Address):
+Read the exact text below (canonical 78-word historical excerpt from Franklin D. Roosevelt's 1933 Inaugural Address; expected reading time is **30 to 45 seconds** depending on natural speaking pace, matching FDR's deliberate historical delivery of 45.9 seconds):
 
 > *"Let me assert my firm belief, that the only thing we have to fear is fear itself, nameless, unreasoning, unjustified terror, which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life, a leadership of frankness and a fitter has met with that understanding and support of the people themselves, which is essential to victory. And I am convinced to show a game, give that support, to leadership, in these critical days."*
 
-- **Transcript File Location**: `data/self_recordings/transcript.txt`
+- **Transcript File Location**: `data/self_recordings/transcript.txt` (exact 78 words, verified against aligned benchmark dataset)
 
 ---
 

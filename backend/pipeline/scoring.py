@@ -226,6 +226,9 @@ def calculate_overall_scores(
         "overall": overall_score,
         "grade": grade,
         "quality_level_est": quality_level,
+        "mode": "contrastive" if is_contrastive else "coarse_screening",
+        "mode_label": "Contrastive Reference Evaluation" if is_contrastive else "Coarse Screening (Reference-Free)",
+        "calibration_label": "Calibrated against ideal reference baseline" if is_contrastive else "LibriSpeech population priors (coarse screening)",
         "dimensions": dim_results,
     }
 

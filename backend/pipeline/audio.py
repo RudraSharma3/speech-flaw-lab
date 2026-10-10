@@ -90,6 +90,9 @@ def load_and_preprocess_audio(
         else:
             y = np.mean(y, axis=1)
 
+    # Remove DC bias/offset
+    y = y - np.mean(y)
+
     # Silence check: reject silent files
     rms = float(np.sqrt(np.mean(y**2)))
     if rms < 1e-4:

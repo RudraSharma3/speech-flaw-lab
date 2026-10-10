@@ -5,6 +5,7 @@ Computes Median Absolute Deviation (MAD) robust z-scores against baseline refere
 
 import json
 import os
+import re
 from typing import Any
 
 import numpy as np
@@ -71,11 +72,35 @@ def normalize_words_against_baseline(
     Uses exact word correspondence from forced alignment when baseline is available,
     falling back to population priors when no ideal reference take is supplied.
     """
-    priors = load_population_priors()
-    has_ideal = baseline_words is not None and len(baseline_words) == len(observed_words)
-    ref_type = "ideal_take" if has_ideal else "population_prior"
+    has_ideal = False
+    aligned_baseline: list[dict[str, Any] | None] = []
 
-    base_dist = calculate_baseline_distribution(baseline_words) if has_ideal else {}
+    if baseline_words is not None and len(baseline_words) > 0:
+        if len(baseline_words) == len(observed_words):
+            aligned_baseline = list(baseline_words)
+            has_ideal = True
+        else:
+            # Subsequence matching to align observed words to baseline words
+            obs_texts = [re.sub(r'[^a-z0-9]', '', w.get("text", "").lower()) for w in observed_words]
+            base_texts = [re.sub(r'[^a-z0-9]', '', w.get("text", "").lower()) for w in baseline_words]
+            best_offset = 0
+            best_matches = -1
+            max_search = max(1, len(base_texts) - len(obs_texts) + 1)
+            for offset in range(max_search):
+                matches = sum(1 for j, ot in enumerate(obs_texts) if offset + j < len(base_texts) and base_texts[offset + j] == ot)
+                if matches > best_matches:
+                    best_matches = matches
+                    best_offset = offset
+            if best_matches >= max(1, int(len(obs_texts) * 0.4)):
+                aligned_baseline = [
+                    baseline_words[best_offset + j] if (best_offset + j < len(baseline_words)) else None
+                    for j in range(len(obs_texts))
+                ]
+                has_ideal = True
+
+    ref_type = "ideal_take" if has_ideal else "population_prior"
+    base_dist = calculate_baseline_distribution([b for b in aligned_baseline if b is not None]) if has_ideal else {}
+    priors = load_population_priors()
 
     normalized_words = []
 
@@ -83,8 +108,8 @@ def normalize_words_against_baseline(
         w_norm = dict(w)
         z_dict = {}
 
-        if has_ideal:
-            b_w = baseline_words[i]
+        b_w = aligned_baseline[i] if (has_ideal and i < len(aligned_baseline)) else None
+        if has_ideal and b_w is not None:
             
             # F0 range deviation and range ratio vs baseline window
             f0_r = w.get("f0_range_st")
