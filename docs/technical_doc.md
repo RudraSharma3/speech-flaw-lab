@@ -125,3 +125,11 @@ This reads audio and annotations from `data/injected/`, scores all 75 recordings
 - **Dockerfile.backend**: Fast FastAPI container with Python 3.11, PyTorch, Torchaudio, and Praat Parselmouth.
 - **Dockerfile.frontend**: Node 20 Vite production bundle.
 - **Deployment**: `docker compose up --build` launches the full stack on port 8000 and 5173.
+
+---
+
+## 7. Out-of-Distribution Participant Self-Recordings
+
+> **Status: NOT YET INGESTED**  
+> Participant audio recordings are pending collection as outlined in `data/self_recordings/RECORDING_GUIDE.md`. No stand-in or synthetic numbers are reported in this benchmark. Upon execution of `python -m dataset_tools.ingest_self_recordings`, independent-take false-positive rates (Take B vs Take A) and cross-speaker deviations against the historical orator will be automatically populated here.
+

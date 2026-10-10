@@ -164,6 +164,24 @@ def generate_doc():
     md.append("- **Dockerfile.backend**: Fast FastAPI container with Python 3.11, PyTorch, Torchaudio, and Praat Parselmouth.")
     md.append("- **Dockerfile.frontend**: Node 20 Vite production bundle.")
     md.append("- **Deployment**: `docker compose up --build` launches the full stack on port 8000 and 5173.")
+    md.append("")
+    md.append("---")
+    md.append("")
+
+    # Section 7: Out-of-Distribution Participant Self-Recordings
+    md.append("## 7. Out-of-Distribution Participant Self-Recordings")
+    md.append("")
+    if bm.get("self_recordings") == "NOT YET INGESTED" or "self_recordings_evaluation" not in bm:
+        md.append("> **Status: NOT YET INGESTED**  ")
+        md.append("> Participant audio recordings are pending collection as outlined in `data/self_recordings/RECORDING_GUIDE.md`. No stand-in or synthetic numbers are reported in this benchmark. Upon execution of `python -m dataset_tools.ingest_self_recordings`, independent-take false-positive rates (Take B vs Take A) and cross-speaker deviations against the historical orator will be automatically populated here.")
+    else:
+        s_eval = bm["self_recordings_evaluation"]
+        md.append(f"**Ingestion Source**: `{s_eval.get('source', 'user_recorded')}`  ")
+        tb = s_eval.get("take_b_fp_control", {})
+        md.append(f"- **Take B vs Take A FP Control**: {tb.get('flags_per_min', 'N/A')} flags/min (Status: {tb.get('status', 'N/A')}).")
+        cs = s_eval.get("cross_speaker_control", {})
+        md.append(f"- **Cross-Speaker Comparison**: {cs.get('comparison', 'N/A')} (Orator: {cs.get('orator_speaker', 'N/A')}, F0 Shift: {cs.get('f0_shift_hz', 'N/A')} Hz).")
+    md.append("")
 
     content = "\n".join(md) + "\n"
     with open(TECH_DOC_MD, "w", encoding="utf-8") as f:
@@ -179,53 +197,53 @@ def generate_doc():
 <style>
   @page {{
     size: letter;
-    margin: 1.8cm 1.5cm;
+    margin: 1.5cm 1.4cm;
     @bottom-right {{
       content: counter(page);
     }}
   }}
   body {{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.45;
+    font-size: 10pt;
+    line-height: 1.4;
     color: #1e293b;
     margin: 0;
     padding: 0;
   }}
   h1 {{
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight: 800;
     color: #0f172a;
     border-bottom: 2px solid #3b82f6;
-    padding-bottom: 6px;
+    padding-bottom: 5px;
     margin-top: 0;
   }}
   h2 {{
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: 700;
     color: #1e3a8a;
     border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 4px;
-    margin-top: 18px;
+    padding-bottom: 3px;
+    margin-top: 14px;
     page-break-after: avoid;
   }}
   h3 {{
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 600;
     color: #334155;
-    margin-top: 12px;
+    margin-top: 10px;
     page-break-after: avoid;
   }}
   table {{
     width: 100%;
     border-collapse: collapse;
-    font-size: 8.5pt;
-    margin: 10px 0;
+    font-size: 8pt;
+    margin: 8px 0;
     page-break-inside: avoid;
   }}
   th, td {{
     border: 1px solid #cbd5e1;
-    padding: 5px 8px;
+    padding: 4px 6px;
     text-align: left;
   }}
   th {{
@@ -238,18 +256,18 @@ def generate_doc():
   }}
   code {{
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 8.5pt;
+    font-size: 8pt;
     background-color: #f1f5f9;
-    padding: 2px 4px;
+    padding: 1px 3px;
     border-radius: 3px;
     color: #0f172a;
   }}
   pre {{
     background-color: #0f172a;
     color: #f8fafc;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 8pt;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 7.5pt;
     overflow-x: auto;
     page-break-inside: avoid;
   }}
@@ -260,31 +278,31 @@ def generate_doc():
   }}
   blockquote {{
     border-left: 3px solid #3b82f6;
-    margin: 8px 0;
-    padding: 4px 12px;
+    margin: 6px 0;
+    padding: 3px 10px;
     background-color: #eff6ff;
     color: #1e40af;
-    font-size: 9.5pt;
+    font-size: 9pt;
   }}
   hr {{
     border: 0;
     height: 1px;
     background: #e2e8f0;
-    margin: 16px 0;
+    margin: 12px 0;
   }}
   .badge-pass {{
     color: #166534;
     background: #dcfce7;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 2px 5px;
+    border-radius: 3px;
   }}
   .badge-fail {{
     color: #991b1b;
     background: #fee2e2;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 2px 5px;
+    border-radius: 3px;
   }}
 </style>
 </head>
@@ -331,7 +349,7 @@ def generate_doc():
         img_match = re.match(r"!\[(.*?)\]\((.*?)\)", line.strip())
         if img_match:
             alt, src = img_match.groups()
-            body_html.append(f'<div style="text-align: center; margin: 10px 0;"><img src="{src}" alt="{alt}" style="max-width: 95%; max-height: 250px; border: 1px solid #cbd5e1; border-radius: 6px;"/><div style="font-size: 8pt; color: #64748b; margin-top: 2px;"><em>{alt}</em></div></div>')
+            body_html.append(f'<div style="text-align: center; margin: 8px 0;"><img src="{src}" alt="{alt}" style="max-width: 90%; max-height: 220px; border: 1px solid #cbd5e1; border-radius: 4px;"/><div style="font-size: 7.5pt; color: #64748b; margin-top: 2px;"><em>{alt}</em></div></div>')
             continue
 
         if line.startswith("# "):
@@ -378,6 +396,13 @@ def generate_doc():
         res = subprocess.run(cmd, capture_output=True, text=True)
         if TECH_DOC_PDF.exists():
             print(f"[OK] Successfully exported PDF: {TECH_DOC_PDF} ({TECH_DOC_PDF.stat().st_size} bytes)")
+            # Strict page count verification using pypdf
+            import pypdf
+            reader = pypdf.PdfReader(str(TECH_DOC_PDF))
+            page_count = len(reader.pages)
+            print(f"[PAGE COUNT VERIFIED via pypdf]: {page_count} pages (Limit <= 6)")
+            if page_count > 6:
+                raise ValueError(f"CRITICAL: PDF page count {page_count} exceeds maximum of 6 pages!")
         else:
             print(f"[WARN] Edge PDF command failed: {res.stderr}")
     else:
@@ -386,3 +411,4 @@ def generate_doc():
 
 if __name__ == "__main__":
     generate_doc()
+

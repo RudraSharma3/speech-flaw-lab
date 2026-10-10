@@ -80,3 +80,12 @@ Each master baseline excerpt is transformed across 5 quality tiers:
 1. **Speaker Demographics**: Baseline speeches originate from 3 historical 20th-century male U.S. presidents. Although fundamental frequency extraction uses speaker-adaptive boundaries ($F_0$ in semitones relative to speaker median), evaluations across female speakers, pediatric voices, or non-native accents should utilize reference-free population mode or provide an in-distribution reference take.
 2. **Vintage Acoustic Noise Floor**: 1930s–1960s audio contains shellac/optical recording surface noise. Flaws that rely on noise floor differentiation (e.g. `breathy_unclear`) were disabled in contrastive mode because window shifts on unvoiced consonants triggered false positives.
 3. **Subtle Flaw Sensitivity (Level 3)**: Natural human speech exhibits localized rate variations of 10–20%. Level 3 perturbations blend into baseline expressive variance and are intentionally filtered by hysteresis thresholds to prevent false positives on Level 4.
+
+---
+
+## 7. Licensing Suggestions (To be confirmed by the author)
+
+- **Annotations & Injector Metadata**: Propose **Creative Commons Attribution 4.0 (CC BY 4.0)** for synthesized flaw labels, TextGrid boundaries, and splits manifests.
+- **Historical Audio Sources**: Believed public domain based on official government and public archival records (see Section 3 URLs for provenance).
+- **Neural Weights**: MMS_FA forced alignment model weights are distributed under **CC-BY-NC 4.0** by Meta AI for non-commercial research evaluation.
+*(Note: These descriptions represent proposals to be confirmed by the repository author, not formal legal conclusions).*

@@ -22,12 +22,14 @@ This document catalogs all third-party software libraries, neural network weight
 
 ---
 
-## 2. Repository Licence Choice & Compatibility Rationale
+## 2. Repository Licence Suggestions (To be confirmed by the author)
 
-To maintain strict legal compatibility across all dependencies:
+The following licensing structure is proposed for consideration (not a formal legal conclusion):
 
-1. **Software Code**: Licensed under **GNU General Public License v3.0 (GPL-3.0)**:
-   - **Rationale**: `praat-parselmouth` incorporates and links directly against Praat's core C/C++ engine, which is licensed under **GPL-3.0**. Under the reciprocal copyleft requirements of GPL-3.0, any derivative work or application that statically or dynamically links to Parselmouth must itself be released under GPL-3.0 (or GPL-3.0-or-later). The permissive licences (MIT, BSD-2-Clause, BSD-3-Clause, ISC) are fully compatible with and subsumed by GPL-3.0.
+1. **Software Code**:
+   - Proposed Licence: **GNU General Public License v3.0 (GPL-3.0)** (or GPL-3.0-or-later).
+   - *Author Note*: `praat-parselmouth` links Praat's core C/C++ engine, which is distributed under GPL-3.0. Releasing the application code under GPL-3.0 provides seamless compatibility with Parselmouth's reciprocal terms, alongside the permissive components (MIT, BSD, ISC).
 
-2. **Benchmark Weights & Dataset Annotations**: Distributed under **CC-BY-NC 4.0**:
-   - **Rationale**: The pre-trained MMS_FA acoustic alignment weights are released by Meta AI under **CC-BY-NC 4.0**. The dataset audio files, TextGrids, and precomputed prosodic benchmark evaluation files are therefore limited to non-commercial research and hackathon evaluation purposes.
+2. **Dataset Annotations, Manifests & Injector Outputs**:
+   - Proposed Licence: **Creative Commons Attribution 4.0 International (CC BY 4.0)** for project annotations, manifests, metadata, and synthetic prosodic injector outputs.
+   - *Neural Model Weights*: If pre-trained MMS_FA forced alignment weights are distributed or bundled, Meta AI's upstream licensing indicates CC-BY-NC 4.0 for non-commercial research evaluation.

@@ -6,53 +6,53 @@
 <style>
   @page {
     size: letter;
-    margin: 1.8cm 1.5cm;
+    margin: 1.5cm 1.4cm;
     @bottom-right {
       content: counter(page);
     }
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 10.5pt;
-    line-height: 1.45;
+    font-size: 10pt;
+    line-height: 1.4;
     color: #1e293b;
     margin: 0;
     padding: 0;
   }
   h1 {
-    font-size: 18pt;
+    font-size: 16pt;
     font-weight: 800;
     color: #0f172a;
     border-bottom: 2px solid #3b82f6;
-    padding-bottom: 6px;
+    padding-bottom: 5px;
     margin-top: 0;
   }
   h2 {
-    font-size: 13pt;
+    font-size: 12pt;
     font-weight: 700;
     color: #1e3a8a;
     border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 4px;
-    margin-top: 18px;
+    padding-bottom: 3px;
+    margin-top: 14px;
     page-break-after: avoid;
   }
   h3 {
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 600;
     color: #334155;
-    margin-top: 12px;
+    margin-top: 10px;
     page-break-after: avoid;
   }
   table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 8.5pt;
-    margin: 10px 0;
+    font-size: 8pt;
+    margin: 8px 0;
     page-break-inside: avoid;
   }
   th, td {
     border: 1px solid #cbd5e1;
-    padding: 5px 8px;
+    padding: 4px 6px;
     text-align: left;
   }
   th {
@@ -65,18 +65,18 @@
   }
   code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 8.5pt;
+    font-size: 8pt;
     background-color: #f1f5f9;
-    padding: 2px 4px;
+    padding: 1px 3px;
     border-radius: 3px;
     color: #0f172a;
   }
   pre {
     background-color: #0f172a;
     color: #f8fafc;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 8pt;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 7.5pt;
     overflow-x: auto;
     page-break-inside: avoid;
   }
@@ -87,31 +87,31 @@
   }
   blockquote {
     border-left: 3px solid #3b82f6;
-    margin: 8px 0;
-    padding: 4px 12px;
+    margin: 6px 0;
+    padding: 3px 10px;
     background-color: #eff6ff;
     color: #1e40af;
-    font-size: 9.5pt;
+    font-size: 9pt;
   }
   hr {
     border: 0;
     height: 1px;
     background: #e2e8f0;
-    margin: 16px 0;
+    margin: 12px 0;
   }
   .badge-pass {
     color: #166534;
     background: #dcfce7;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 2px 5px;
+    border-radius: 3px;
   }
   .badge-fail {
     color: #991b1b;
     background: #fee2e2;
     font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 2px 5px;
+    border-radius: 3px;
   }
 </style>
 </head>
@@ -125,9 +125,9 @@
 <h2>1. Executive Summary & System Architecture</h2>
 <p>Automated Speech Assessment (ASA) has traditionally relied on end-to-end black-box models or generative LLMs that suffer from non-deterministic scoring, temporal hallucination (boundary jitter > 500ms), and lack of physical interpretability. Track C introduces a <strong>deterministic, zero-LLM architecture</strong> that aligns test audio against an ideal master take of the identical text (or LibriSpeech population priors) on a synchronized word-index axis using <strong>torchaudio MMS_FA</strong> (MFA is not used in the production pipeline).</p>
 <h3>1.1 System Architecture Flow</h3>
-<div style="text-align: center; margin: 10px 0;"><img src="screenshots/architecture_diagram.png" alt="System Architecture Flow Diagram" style="max-width: 95%; max-height: 250px; border: 1px solid #cbd5e1; border-radius: 6px;"/><div style="font-size: 8pt; color: #64748b; margin-top: 2px;"><em>System Architecture Flow Diagram</em></div></div>
+<div style="text-align: center; margin: 8px 0;"><img src="screenshots/architecture_diagram.png" alt="System Architecture Flow Diagram" style="max-width: 90%; max-height: 220px; border: 1px solid #cbd5e1; border-radius: 4px;"/><div style="font-size: 7.5pt; color: #64748b; margin-top: 2px;"><em>System Architecture Flow Diagram</em></div></div>
 <h3>1.2 Interactive Evaluation Dashboard</h3>
-<div style="text-align: center; margin: 10px 0;"><img src="screenshots/sample_loaded.png" alt="Interactive React + Plotly + WaveSurfer Evaluation Dashboard" style="max-width: 95%; max-height: 250px; border: 1px solid #cbd5e1; border-radius: 6px;"/><div style="font-size: 8pt; color: #64748b; margin-top: 2px;"><em>Interactive React + Plotly + WaveSurfer Evaluation Dashboard</em></div></div>
+<div style="text-align: center; margin: 8px 0;"><img src="screenshots/sample_loaded.png" alt="Interactive React + Plotly + WaveSurfer Evaluation Dashboard" style="max-width: 90%; max-height: 220px; border: 1px solid #cbd5e1; border-radius: 4px;"/><div style="font-size: 7.5pt; color: #64748b; margin-top: 2px;"><em>Interactive React + Plotly + WaveSurfer Evaluation Dashboard</em></div></div>
 <hr/>
 <h2>2. Dataset Construction & The 5-Tier Gradient</h2>
 <p>To evaluate temporal grounding and rubric monotonicity rigorously, we synthesized the <strong>Contrastive Speech Analytics Dataset (CSAD-2026)</strong> across 5 historical public-domain speech excerpts and 3 random injector seeds ($N = 75$ total recordings):</p>
@@ -212,5 +212,9 @@ python -m dataset_tools.run_benchmark
 <li><strong>Dockerfile.backend</strong>: Fast FastAPI container with Python 3.11, PyTorch, Torchaudio, and Praat Parselmouth.</li>
 <li><strong>Dockerfile.frontend</strong>: Node 20 Vite production bundle.</li>
 <li><strong>Deployment</strong>: <code>docker compose up --build</code> launches the full stack on port 8000 and 5173.</li>
+<hr/>
+<h2>7. Out-of-Distribution Participant Self-Recordings</h2>
+<p>> <strong>Status: NOT YET INGESTED</strong>  </p>
+<p>> Participant audio recordings are pending collection as outlined in <code>data/self_recordings/RECORDING_GUIDE.md</code>. No stand-in or synthetic numbers are reported in this benchmark. Upon execution of <code>python -m dataset_tools.ingest_self_recordings</code>, independent-take false-positive rates (Take B vs Take A) and cross-speaker deviations against the historical orator will be automatically populated here.</p>
 </body>
 </html>
