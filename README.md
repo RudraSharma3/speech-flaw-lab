@@ -151,7 +151,7 @@ npm run build
 
 To test a clean setup on a new machine without pre-existing environment state:
 
-1. **Prerequisites**: Python 3.11+, Node.js 20+, Git.
+1. **Prerequisites**: Python 3.11 (strictly recommended for PyTorch & Praat wheel compatibility), Node.js 20+, Git.
 2. **Clone & Virtual Environment**:
    ```bash
    git clone https://github.com/your-org/speech.git
@@ -167,16 +167,32 @@ To test a clean setup on a new machine without pre-existing environment state:
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
-4. **Run Benchmark**:
+4. **Dataset Audio Setup (for full 75-recording validation)**:
+   > *Note*: Git tracks demo audio in `data/demo_audio/` out of the box. To run the full benchmark validator across all 75 recordings, extract the audio package into `data/injected/`:
    ```bash
-   python -m dataset_tools.run_benchmark
+   # From project root, if speech_prosody_benchmark_v1.zip is downloaded to dist/:
+   python -c "import zipfile, os; os.makedirs('data/injected', exist_ok=True); [open(os.path.join('data/injected', os.path.basename(m)), 'wb').write(zf.open(m).read()) for zf in [zipfile.ZipFile('dist/speech_prosody_benchmark_v1.zip')] for m in zf.namelist() if m.startswith('audio/') and os.path.basename(m)]"
    ```
-5. **Run Frontend**:
+5. **Run Dataset Validator**:
+   ```bash
+   python -m dataset_tools.validate_dataset
+   ```
+6. **Build Frontend**:
    ```bash
    cd frontend
    npm install
-   npm run dev
+   npm run build
+   cd ..
    ```
+7. **Launch API & Interactive Dashboard**:
+   ```bash
+   # Start backend API (serves API and built static frontend)
+   python -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8000
+   
+   # Or run Vite dev server in parallel:
+   # cd frontend && npm run dev
+   ```
+   Open [http://127.0.0.1:8000](http://127.0.0.1:8000) or [http://localhost:5173](http://localhost:5173).
 
 ---
 
