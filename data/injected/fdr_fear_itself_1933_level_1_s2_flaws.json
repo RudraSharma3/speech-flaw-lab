@@ -29,7 +29,7 @@
       "end_s": 29.952,
       "start_word_idx": 41,
       "end_word_idx": 50,
-      "words": "frankness and a fitter has met with that understanding and",
+      "words": "frankness and of vigor has met with that understanding and",
       "profile": {
         "type": "rushed",
         "tempo_factor": 1.7,
@@ -41,11 +41,11 @@
     },
     {
       "flaw_type": "drag_slow",
-      "start_s": 37.995,
+      "start_s": 38.47,
       "end_s": 45.818,
       "start_word_idx": 68,
       "end_word_idx": 75,
-      "words": "game give that support to leadership in these",
+      "words": "again give that support to leadership in these",
       "profile": {
         "type": "drag_slow",
         "tempo_factor": 0.6,

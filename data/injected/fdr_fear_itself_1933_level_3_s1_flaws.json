@@ -9,11 +9,11 @@
   "flaws": [
     {
       "flaw_type": "monotone",
-      "start_s": 39.496,
+      "start_s": 39.6,
       "end_s": 41.797,
       "start_word_idx": 66,
       "end_word_idx": 69,
-      "words": "show a game give",
+      "words": "you will again give",
       "profile": {
         "type": "monotone",
         "f0_compression_ratio": 0.65,

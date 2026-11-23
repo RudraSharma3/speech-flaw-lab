@@ -1,9 +1,8 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
-      "text": "140000",
+      "text": "240000",
       "start": 0.0,
       "end": 1.36,
       "duration": 1.36,
@@ -318,7 +317,7 @@
     },
     {
       "index": 35,
-      "text": "embedded",
+      "text": "invented",
       "start": 13.682,
       "end": 14.25,
       "duration": 0.568,
@@ -453,7 +452,7 @@
     },
     {
       "index": 50,
-      "text": "pitted",
+      "text": "fitted",
       "start": 21.603,
       "end": 21.883,
       "duration": 0.28,
@@ -624,10 +623,10 @@
     },
     {
       "index": 69,
-      "text": "communication",
+      "text": "communications",
       "start": 30.064,
-      "end": 30.99,
-      "duration": 0.926,
+      "end": 31.004,
+      "duration": 0.94,
       "punctuation": ",",
       "has_punctuation": true
     },
@@ -948,7 +947,7 @@
     },
     {
       "index": 105,
-      "text": "on",
+      "text": "of",
       "start": 49.587,
       "end": 49.667,
       "duration": 0.08,
@@ -1105,8 +1104,8 @@
       "start": 54.127,
       "end": 54.467,
       "duration": 0.34,
-      "punctuation": "",
-      "has_punctuation": false
+      "punctuation": ",",
+      "has_punctuation": true
     },
     {
       "index": 123,
@@ -1141,8 +1140,8 @@
       "start": 56.528,
       "end": 57.288,
       "duration": 0.76,
-      "punctuation": "",
-      "has_punctuation": false
+      "punctuation": ",",
+      "has_punctuation": true
     },
     {
       "index": 127,
@@ -1218,24 +1217,15 @@
     },
     {
       "index": 135,
-      "text": "if",
-      "start": 61.97,
-      "end": 62.128,
-      "duration": 0.158,
+      "text": "before",
+      "start": 61.93,
+      "end": 62.308,
+      "duration": 0.378,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 136,
-      "text": "all",
-      "start": 62.14,
-      "end": 62.308,
-      "duration": 0.168,
-      "punctuation": "",
-      "has_punctuation": false
-    },
-    {
-      "index": 137,
       "text": "this",
       "start": 62.308,
       "end": 62.528,
@@ -1244,34 +1234,25 @@
       "has_punctuation": false
     },
     {
-      "index": 138,
-      "text": "thick",
+      "index": 137,
+      "text": "decade",
       "start": 62.528,
-      "end": 62.748,
-      "duration": 0.22,
+      "end": 62.988,
+      "duration": 0.46,
+      "punctuation": "",
+      "has_punctuation": false
+    },
+    {
+      "index": 138,
+      "text": "is",
+      "start": 62.988,
+      "end": 63.108,
+      "duration": 0.12,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 139,
-      "text": "heat",
-      "start": 62.81,
-      "end": 62.948,
-      "duration": 0.138,
-      "punctuation": "",
-      "has_punctuation": false
-    },
-    {
-      "index": 140,
-      "text": "is",
-      "start": 62.948,
-      "end": 63.108,
-      "duration": 0.16,
-      "punctuation": "",
-      "has_punctuation": false
-    },
-    {
-      "index": 141,
       "text": "out",
       "start": 63.108,
       "end": 63.388,
@@ -1280,7 +1261,7 @@
       "has_punctuation": true
     },
     {
-      "index": 142,
+      "index": 140,
       "text": "then",
       "start": 63.94,
       "end": 64.129,
@@ -1289,7 +1270,7 @@
       "has_punctuation": false
     },
     {
-      "index": 143,
+      "index": 141,
       "text": "we",
       "start": 64.129,
       "end": 64.269,
@@ -1298,7 +1279,7 @@
       "has_punctuation": false
     },
     {
-      "index": 144,
+      "index": 142,
       "text": "must",
       "start": 64.269,
       "end": 64.509,
@@ -1307,7 +1288,7 @@
       "has_punctuation": false
     },
     {
-      "index": 145,
+      "index": 143,
       "text": "be",
       "start": 64.58,
       "end": 64.689,
@@ -1316,8 +1297,8 @@
       "has_punctuation": false
     },
     {
-      "index": 146,
-      "text": "bald",
+      "index": 144,
+      "text": "bold",
       "start": 64.689,
       "end": 65.169,
       "duration": 0.48,
@@ -1325,5 +1306,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 145
 }

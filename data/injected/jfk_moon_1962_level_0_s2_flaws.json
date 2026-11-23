@@ -29,7 +29,7 @@
       "end_s": 32.77,
       "start_word_idx": 50,
       "end_word_idx": 60,
-      "words": "pitted together with a precision better than the finest watch carrying",
+      "words": "fitted together with a precision better than the finest watch carrying",
       "profile": {
         "type": "drag_slow",
         "tempo_factor": 0.45,
@@ -58,7 +58,7 @@
       "end_s": 44.553,
       "start_word_idx": 64,
       "end_word_idx": 79,
-      "words": "needed for propulsion guidance control communication food and survival on an untried mission to an unknown",
+      "words": "needed for propulsion guidance control communications food and survival on an untried mission to an unknown",
       "profile": {
         "type": "monotone",
         "f0_compression_ratio": 0.05,

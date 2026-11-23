@@ -39,10 +39,10 @@
     {
       "flaw_type": "rushed",
       "start_s": 43.428,
-      "end_s": 47.929,
+      "end_s": 47.969,
       "start_word_idx": 58,
       "end_word_idx": 65,
-      "words": "essential to victory And I am convinced to",
+      "words": "essential to victory And I am convinced that",
       "profile": {
         "type": "rushed",
         "tempo_factor": 2.1,

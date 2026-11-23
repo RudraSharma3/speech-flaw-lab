@@ -42,10 +42,10 @@
     {
       "flaw_type": "drag_slow",
       "start_s": 34.024,
-      "end_s": 42.1,
+      "end_s": 41.865,
       "start_word_idx": 59,
       "end_word_idx": 67,
-      "words": "to victory And I am convinced to show a",
+      "words": "to victory And I am convinced that you will",
       "profile": {
         "type": "drag_slow",
         "tempo_factor": 0.6,

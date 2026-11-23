@@ -3,9 +3,12 @@ Audio ingestion, normalization, and quality validation module.
 Enforces canonical 16 kHz mono WAV 16-bit format, LUFS normalization, and clipping checks.
 """
 
+import glob
 import hashlib
 import io
 import os
+import shutil
+import subprocess
 from typing import Any
 
 import librosa
@@ -15,6 +18,110 @@ import soundfile as sf
 import yaml
 
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "configs", "thresholds.yaml")
+
+
+def find_ffmpeg_executable() -> str:
+    """
+    Locates FFmpeg on Windows, Linux, or macOS.
+    Checks:
+    1. System PATH via shutil.which('ffmpeg')
+    2. Bundled imageio-ffmpeg binary (with alias fallback)
+    3. Common Windows installation directories (winget / Gyan.FFmpeg / scoop / chocolatey)
+    Configures PATH so that external sub-libraries can invoke ffmpeg directly.
+    Raises RuntimeError with actionable installation instructions if not found.
+    """
+    # 1. System PATH
+    cmd = shutil.which("ffmpeg")
+    if cmd:
+        return cmd
+
+    # 2. imageio-ffmpeg bundled binary
+    try:
+        import imageio_ffmpeg
+        exe = imageio_ffmpeg.get_ffmpeg_exe()
+        if exe and os.path.exists(exe):
+            exe_dir = os.path.dirname(exe)
+            alias_path = os.path.join(exe_dir, "ffmpeg.exe" if os.name == "nt" else "ffmpeg")
+            if not os.path.exists(alias_path):
+                try:
+                    shutil.copy2(exe, alias_path)
+                except Exception:
+                    pass
+            if exe_dir not in os.environ.get("PATH", ""):
+                os.environ["PATH"] = exe_dir + os.pathsep + os.environ.get("PATH", "")
+            final_bin = alias_path if os.path.exists(alias_path) else exe
+            return final_bin
+    except Exception:
+        pass
+
+    # 3. Common Windows winget / chocolatey / scoop paths
+    if os.name == "nt":
+        candidates = [
+            os.path.expandvars(r"%LOCALAPPDATA%\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-*\bin\ffmpeg.exe"),
+            r"C:\ProgramData\chocolatey\bin\ffmpeg.exe",
+            r"C:\ffmpeg\bin\ffmpeg.exe",
+        ]
+        for pat in candidates:
+            matches = glob.glob(pat)
+            if matches and os.path.exists(matches[0]):
+                bin_dir = os.path.dirname(matches[0])
+                if bin_dir not in os.environ.get("PATH", ""):
+                    os.environ["PATH"] = bin_dir + os.pathsep + os.environ.get("PATH", "")
+                return matches[0]
+
+    raise RuntimeError(
+        "FFmpeg is required for processing compressed audio formats (M4A, MP3, AAC), but was not found.\n"
+        "Please install FFmpeg:\n"
+        "  - On Windows: run 'winget install Gyan.FFmpeg' or install 'pip install imageio-ffmpeg'\n"
+        "  - On Linux: run 'sudo apt-get install ffmpeg'\n"
+        "  - On macOS: run 'brew install ffmpeg'"
+    )
+
+
+import tempfile
+
+
+def decode_compressed_audio(audio_source: bytes | str, target_sr: int = 16000) -> tuple[np.ndarray, int]:
+    """
+    Decodes compressed audio (M4A, MP3, AAC, OGG) via FFmpeg to 16kHz float32 PCM.
+    Uses seekable temp file for container formats requiring seekability (e.g. M4A/MP4).
+    """
+    ffmpeg_exe = find_ffmpeg_executable()
+    temp_file = None
+    if isinstance(audio_source, str) and os.path.exists(audio_source):
+        in_path = audio_source
+    else:
+        temp_file = tempfile.NamedTemporaryFile(suffix=".audio", delete=False)
+        temp_file.write(audio_source)
+        temp_file.close()
+        in_path = temp_file.name
+
+    try:
+        proc = subprocess.Popen(
+            [
+                ffmpeg_exe,
+                "-y",
+                "-i", in_path,
+                "-f", "f32le",
+                "-ac", "1",
+                "-ar", str(target_sr),
+                "pipe:1",
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+        )
+        out, err = proc.communicate()
+        if proc.returncode != 0 or len(out) == 0:
+            err_msg = err.decode("utf-8", errors="ignore")[:300]
+            raise ValueError(f"FFmpeg failed to decode audio: {err_msg}")
+        audio = np.frombuffer(out, dtype=np.float32)
+        return audio, target_sr
+    finally:
+        if temp_file is not None and os.path.exists(temp_file.name):
+            try:
+                os.remove(temp_file.name)
+            except Exception:
+                pass
 
 
 def load_audio_config() -> dict[str, Any]:
@@ -42,6 +149,7 @@ def load_and_preprocess_audio(
     Loads any input audio (bytes, file-like, or path), converts to mono,
     resamples to 16kHz, performs BS.1770 LUFS loudness normalization,
     and returns (audio_array, sample_rate, sha256_hash, metadata_dict).
+    Supports WAV, MP3, M4A, FLAC, OGG.
     """
     cfg = load_audio_config()
     target_sr = cfg.get("canonical_sample_rate", target_sr)
@@ -49,39 +157,32 @@ def load_and_preprocess_audio(
 
     if isinstance(audio_source, bytes):
         raw_bytes = audio_source
-        bio = io.BytesIO(raw_bytes)
-        try:
-            y, sr = sf.read(bio)
-        except Exception:
-            bio.seek(0)
-            try:
-                import torchaudio
-                t_waveform, t_sr = torchaudio.load(bio)
-                y = t_waveform.numpy()
-                sr = t_sr
-                if y.ndim > 1:
-                    y = np.mean(y, axis=0)
-            except Exception:
-                bio.seek(0)
-                y, sr = librosa.load(bio, sr=None)
     elif isinstance(audio_source, str) and os.path.exists(audio_source):
         with open(audio_source, "rb") as f:
             raw_bytes = f.read()
-        try:
-            y, sr = sf.read(audio_source)
-        except Exception:
-            y, sr = librosa.load(audio_source, sr=None)
     else:
         # File-like object
         raw_bytes = audio_source.read()
-        bio = io.BytesIO(raw_bytes)
-        try:
-            y, sr = sf.read(bio)
-        except Exception:
-            bio.seek(0)
-            y, sr = librosa.load(bio, sr=None)
 
     sha256_hash = compute_sha256(raw_bytes)
+
+    # Attempt fast standard soundfile decoding
+    bio = io.BytesIO(raw_bytes)
+    try:
+        y, sr = sf.read(bio)
+    except Exception:
+        # Fallback to direct FFmpeg pipe decoding (handles M4A, MP3, AAC, etc.)
+        try:
+            y, sr = decode_compressed_audio(raw_bytes, target_sr=target_sr)
+        except Exception as ffmpeg_err:
+            # Fallback to librosa/audioread
+            try:
+                bio.seek(0)
+                y, sr = librosa.load(bio, sr=target_sr)
+            except Exception as librosa_err:
+                raise ValueError(
+                    f"Failed to decode audio file. Neither SoundFile, FFmpeg, nor Librosa could parse it: {ffmpeg_err}"
+                ) from librosa_err
 
     # Convert to mono if multi-channel (handles stereo/surround)
     if y.ndim > 1:

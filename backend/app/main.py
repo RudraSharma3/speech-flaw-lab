@@ -94,10 +94,12 @@ def process_audio_job_async(job_id: str, audio_bytes: bytes, filename: str, tran
 
         # Load reference baseline words if reference_id provided
         ref_words = None
+        ref_sha256 = None
         if reference_id:
             cached_ref = get_cached_result_by_id(reference_id) or RESULTS_CACHE.get(reference_id)
             if cached_ref:
                 ref_words = cached_ref.get("words")
+                ref_sha256 = cached_ref.get("meta", {}).get("audio_sha256")
 
         # Execute pipeline with real-time stage progress reporting
         result_payload = run_speech_pipeline(
@@ -106,6 +108,7 @@ def process_audio_job_async(job_id: str, audio_bytes: bytes, filename: str, tran
             filename=filename,
             reference_words=ref_words,
             reference_id=reference_id,
+            reference_sha256=ref_sha256,
             progress_callback=on_progress,
         )
 

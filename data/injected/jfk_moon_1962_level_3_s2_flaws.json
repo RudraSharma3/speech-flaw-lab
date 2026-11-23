@@ -10,10 +10,10 @@
     {
       "flaw_type": "monotone",
       "start_s": 58.19,
-      "end_s": 59.757,
+      "end_s": 59.957,
       "start_word_idx": 132,
       "end_word_idx": 136,
-      "words": "do it first if all",
+      "words": "do it first before this",
       "profile": {
         "type": "monotone",
         "f0_compression_ratio": 0.65,

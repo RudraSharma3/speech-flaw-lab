@@ -10,10 +10,10 @@
     {
       "flaw_type": "monotone",
       "start_s": 38.496,
-      "end_s": 40.05,
+      "end_s": 39.676,
       "start_word_idx": 62,
       "end_word_idx": 66,
-      "words": "I am convinced to show",
+      "words": "I am convinced that you",
       "profile": {
         "type": "monotone",
         "f0_compression_ratio": 0.65,

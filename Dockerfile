@@ -17,6 +17,8 @@ WORKDIR /app
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     KMP_DUPLICATE_LIB_OK=TRUE \
+    TORCH_HOME=/app/.cache/torch \
+    HF_HOME=/app/.cache/huggingface \
     PYTHONPATH=/app
 
 # Install system dependencies
@@ -28,8 +30,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python requirements
+# Install Python requirements with CPU-only PyTorch wheels (reduces image size from ~5GB to ~1.4GB)
 COPY requirements.txt .
+RUN pip install --no-cache-dir torch==2.3.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cpu
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Bake Torchaudio MMS_FA aligner weights into the Docker image

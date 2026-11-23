@@ -9,11 +9,11 @@
   "flaws": [
     {
       "flaw_type": "inappropriate_pause",
-      "start_s": 15.446,
-      "end_s": 16.306,
+      "start_s": 15.466,
+      "end_s": 16.346,
       "start_word_idx": 43,
       "end_word_idx": 43,
-      "words": "paying [pause] to",
+      "words": "pained [pause] to",
       "profile": {
         "type": "inappropriate_pause",
         "pause_duration_s": 1.5,
@@ -22,7 +22,7 @@
     },
     {
       "flaw_type": "rushed",
-      "start_s": 16.687,
+      "start_s": 16.747,
       "end_s": 18.73,
       "start_word_idx": 49,
       "end_word_idx": 54,

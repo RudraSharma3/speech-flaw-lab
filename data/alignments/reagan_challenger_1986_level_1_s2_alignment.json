@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -205,7 +204,7 @@
       "start": 9.362,
       "end": 9.542,
       "duration": 0.18,
-      "punctuation": ".\"",
+      "punctuation": ".",
       "has_punctuation": true
     },
     {
@@ -732,7 +731,7 @@
     },
     {
       "index": 81,
-      "text": "challenger",
+      "text": "Challenger",
       "start": 34.209,
       "end": 34.749,
       "duration": 0.54,
@@ -858,7 +857,7 @@
     },
     {
       "index": 95,
-      "text": "challenger",
+      "text": "Challenger",
       "start": 41.11,
       "end": 41.72,
       "duration": 0.61,
@@ -932,17 +931,17 @@
       "index": 103,
       "text": "they",
       "start": 43.271,
-      "end": 43.431,
-      "duration": 0.16,
+      "end": 43.451,
+      "duration": 0.18,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 104,
       "text": "lived",
-      "start": 43.431,
+      "start": 43.451,
       "end": 43.651,
-      "duration": 0.22,
+      "duration": 0.2,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -1307,5 +1306,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 145
 }

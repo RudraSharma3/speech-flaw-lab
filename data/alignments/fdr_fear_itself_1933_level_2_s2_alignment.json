@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -390,7 +389,7 @@
     },
     {
       "index": 43,
-      "text": "a",
+      "text": "of",
       "start": 28.093,
       "end": 28.253,
       "duration": 0.16,
@@ -399,7 +398,7 @@
     },
     {
       "index": 44,
-      "text": "fitter",
+      "text": "vigor",
       "start": 28.253,
       "end": 28.72,
       "duration": 0.467,
@@ -588,55 +587,55 @@
     },
     {
       "index": 65,
-      "text": "to",
+      "text": "that",
       "start": 39.43,
-      "end": 39.498,
-      "duration": 0.068,
+      "end": 39.538,
+      "duration": 0.108,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 66,
-      "text": "show",
-      "start": 39.498,
-      "end": 39.759,
-      "duration": 0.261,
+      "text": "you",
+      "start": 39.6,
+      "end": 39.678,
+      "duration": 0.078,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 67,
-      "text": "a",
-      "start": 39.759,
-      "end": 39.959,
-      "duration": 0.2,
+      "text": "will",
+      "start": 39.678,
+      "end": 40.06,
+      "duration": 0.382,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 68,
-      "text": "game",
-      "start": 39.959,
-      "end": 40.519,
-      "duration": 0.56,
-      "punctuation": ",",
-      "has_punctuation": true
+      "text": "again",
+      "start": 40.43,
+      "end": 40.819,
+      "duration": 0.389,
+      "punctuation": "",
+      "has_punctuation": false
     },
     {
       "index": 69,
       "text": "give",
-      "start": 40.57,
-      "end": 40.939,
-      "duration": 0.369,
+      "start": 40.819,
+      "end": 41.319,
+      "duration": 0.5,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 70,
       "text": "that",
-      "start": 41.29,
+      "start": 41.319,
       "end": 41.519,
-      "duration": 0.229,
+      "duration": 0.2,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -704,5 +703,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 78
 }

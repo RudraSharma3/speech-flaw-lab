@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -39,7 +38,7 @@
     },
     {
       "index": 4,
-      "text": "plan",
+      "text": "planned",
       "start": 2.0,
       "end": 2.32,
       "duration": 0.32,
@@ -166,8 +165,8 @@
     {
       "index": 18,
       "text": "but",
-      "start": 8.28,
-      "end": 8.381,
+      "start": 8.3,
+      "end": 8.401,
       "duration": 0.101,
       "punctuation": "",
       "has_punctuation": false
@@ -175,9 +174,9 @@
     {
       "index": 19,
       "text": "the",
-      "start": 8.381,
+      "start": 8.401,
       "end": 8.522,
-      "duration": 0.141,
+      "duration": 0.121,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -327,7 +326,7 @@
     },
     {
       "index": 36,
-      "text": "morning",
+      "text": "mourning",
       "start": 15.623,
       "end": 16.16,
       "duration": 0.537,
@@ -390,19 +389,19 @@
     },
     {
       "index": 43,
-      "text": "paying",
+      "text": "pained",
       "start": 18.963,
-      "end": 19.243,
-      "duration": 0.28,
+      "end": 19.263,
+      "duration": 0.3,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 44,
       "text": "to",
-      "start": 19.243,
+      "start": 19.263,
       "end": 19.323,
-      "duration": 0.08,
+      "duration": 0.06,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -419,17 +418,17 @@
       "index": 46,
       "text": "core",
       "start": 19.443,
-      "end": 19.763,
-      "duration": 0.32,
+      "end": 19.723,
+      "duration": 0.28,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 47,
-      "text": "of",
-      "start": 19.763,
+      "text": "by",
+      "start": 19.723,
       "end": 19.843,
-      "duration": 0.08,
+      "duration": 0.12,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -965,5 +964,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 107
 }

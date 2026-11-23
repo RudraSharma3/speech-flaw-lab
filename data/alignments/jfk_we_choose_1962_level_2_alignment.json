@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -857,5 +856,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 95
 }

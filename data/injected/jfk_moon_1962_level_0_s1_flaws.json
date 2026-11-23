@@ -54,11 +54,11 @@
     },
     {
       "flaw_type": "monotone",
-      "start_s": 62.14,
+      "start_s": 61.93,
       "end_s": 64.509,
-      "start_word_idx": 136,
-      "end_word_idx": 144,
-      "words": "all this thick heat is out then we must",
+      "start_word_idx": 135,
+      "end_word_idx": 142,
+      "words": "before this decade is out then we must",
       "profile": {
         "type": "monotone",
         "f0_compression_ratio": 0.05,

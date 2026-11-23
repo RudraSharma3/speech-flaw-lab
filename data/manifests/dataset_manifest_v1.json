@@ -20,9 +20,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_4_alignment.json",
-      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "json_sha256": "6cc8ff6c45bd603cf35400271e55ab0788d9575b620bedb5bc7e347f2ccae9ca",
       "textgrid_file": "jfk_moon_1962_level_4.TextGrid",
-      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+      "textgrid_sha256": "6a5d85440744c27adef301dc102cc343e3ae3a99ad82ce39609bf02604dcab2b"
     },
     "injector_flaw_parameters": []
   },
@@ -42,21 +42,21 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_3_flaws.json",
-      "sha256": "2b05f425a993318e92222b5c919021b637e8ada31507856c5ffbdf00272d0ae9",
-      "size_bytes": 559
+      "sha256": "c5b4ff918f04b299e43d017b258decceaae04e1edaee51153d0a5408139a238d",
+      "size_bytes": 560
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_3_alignment.json",
-      "json_sha256": "0a6decfb5804301b87e946bea49286134e06162ee863b3f6d790bdbf4ad8e268",
+      "json_sha256": "25adaf4e64d3c56a49708e96399b6ff2d32fe371318ccec8edff16276d600d48",
       "textgrid_file": "jfk_moon_1962_level_3.TextGrid",
-      "textgrid_sha256": "aa16b06b1a25548d8fee7112b9a18b830d479f25f2b0619f030da2cf05381980"
+      "textgrid_sha256": "e9ec4611ca99978fc160b8c67970988f8ad141a5a90903aa98179492bf94fe42"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "monotone",
-        "start_s": 59.41,
-        "end_s": 60.197,
-        "words": "if all this thick",
+        "start_s": 59.36,
+        "end_s": 60.417,
+        "words": "before this decade",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.65,
@@ -89,9 +89,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_2_alignment.json",
-      "json_sha256": "c3d372d781191fc533dd02a45eaf98fc64f020ce90adc3c5c0b3ce244b28b033",
+      "json_sha256": "d1a26f6d56e6c6519c14a91fe8e2349715f2cb363cd67d41b1fa364d563fabc0",
       "textgrid_file": "jfk_moon_1962_level_2.TextGrid",
-      "textgrid_sha256": "1e5fac617194ce3faa89e593f7255f474a837de06b451f931ed5848c29748cb5"
+      "textgrid_sha256": "791df80948a401731dac58644f227212e15adb2ece92adcac7d7fc6263ec1eda"
     },
     "injector_flaw_parameters": [
       {
@@ -140,14 +140,14 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_1_flaws.json",
-      "sha256": "fe9a98851253c25f6ee147b7026439ff71e4c6753662e29dec537fcaa4a34dd3",
-      "size_bytes": 1314
+      "sha256": "b2fe99a60a31f471871c6f96e50397b498568e9e1ee61b4a560f95e8d6280c9b",
+      "size_bytes": 1315
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_1_alignment.json",
-      "json_sha256": "91ab6c603f2954a3ef991636b75d882fc88ccdf46643643d1eaaf4d6fa43d218",
+      "json_sha256": "97708fcd38421fdee4d53f0d8218915cd286a793757c1cbc381af151acd7a20f",
       "textgrid_file": "jfk_moon_1962_level_1.TextGrid",
-      "textgrid_sha256": "169c230ef78b5e101bd53413480bfc476efc91468af59496ae09528a8aa2b6b6"
+      "textgrid_sha256": "bfc2bf7d6524df21cef1b138e797cb1a088fbcff689b514d18ba205070518557"
     },
     "injector_flaw_parameters": [
       {
@@ -168,7 +168,7 @@
         "flaw_type": "monotone",
         "start_s": 11.641,
         "end_s": 16.602,
-        "words": "metal alloys some of which have not yet been embedded capable of",
+        "words": "metal alloys some of which have not yet been invented capable of",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.2,
@@ -181,8 +181,8 @@
       {
         "flaw_type": "drag_slow",
         "start_s": 56.92,
-        "end_s": 60.567,
-        "words": "and do it first if all this thick",
+        "end_s": 60.807,
+        "words": "and do it first before this decade",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.6,
@@ -210,14 +210,14 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_0_flaws.json",
-      "sha256": "181f03470546510e24e8c029da1c5146e30bbb89224950f6a8e07bd26622fdf3",
+      "sha256": "2ba316b801b4e10911105cd87cb3e4a98e75c4a7af5303e45fa3131919b772a3",
       "size_bytes": 1655
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_0_alignment.json",
-      "json_sha256": "e052fa4de1b5a8d5cb5f02aa2654dac37ba846757304883e33a56694da7dcc6a",
+      "json_sha256": "b8794de2a0d496afa4cec150ca33d22addf30d7f693a3dcef131cb7c6aeb64a1",
       "textgrid_file": "jfk_moon_1962_level_0.TextGrid",
-      "textgrid_sha256": "e4c7b915535fc406f79ddccc7c9ff4d7729c28325fdd1a73fc3398d510c22e68"
+      "textgrid_sha256": "d450f64393e927b08d84ccee8bb1d33c7a800f8fdfd26f485912b3ee535271dd"
     },
     "injector_flaw_parameters": [
       {
@@ -263,7 +263,7 @@
         "flaw_type": "rushed",
         "start_s": 54.85,
         "end_s": 55.585,
-        "words": "half that on the temperature of the",
+        "words": "half that of the temperature of the",
         "profile": {
           "type": "rushed",
           "tempo_factor": 2.1,
@@ -296,9 +296,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_4_s1_alignment.json",
-      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "json_sha256": "6cc8ff6c45bd603cf35400271e55ab0788d9575b620bedb5bc7e347f2ccae9ca",
       "textgrid_file": "jfk_moon_1962_level_4_s1.TextGrid",
-      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+      "textgrid_sha256": "6a5d85440744c27adef301dc102cc343e3ae3a99ad82ce39609bf02604dcab2b"
     },
     "injector_flaw_parameters": []
   },
@@ -323,9 +323,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_3_s1_alignment.json",
-      "json_sha256": "8eb84dfc8e03bf8c3620adb038322921aa6cd3d726c8f0ccf8f330b32c756692",
+      "json_sha256": "c89b185c41ac81c4ee16ac2e1f0e9440d826f4bcf69e4e35d7068551d6d64c00",
       "textgrid_file": "jfk_moon_1962_level_3_s1.TextGrid",
-      "textgrid_sha256": "1dd204ca44ba643bc8f0550c059b32dfedaf1992f08bb507d47d41910221ec48"
+      "textgrid_sha256": "b63518f778e0235c1d7de7a3861169a4e29e61b1414d9840a916d63e0c300237"
     },
     "injector_flaw_parameters": [
       {
@@ -360,21 +360,21 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_2_s1_flaws.json",
-      "sha256": "4d79ed1162f7e26bf5d261304821d7d464c5b6267322703a1322337460ec17e6",
+      "sha256": "efe1a972fc64abebba8d44f53556057b430118b50e996d5059f0df96036b515a",
       "size_bytes": 931
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_2_s1_alignment.json",
-      "json_sha256": "938b5cd0b17e4cfad85d8c7c343f2838de7a7b301ee0d03fa95e183d4c55d4e0",
+      "json_sha256": "fd1a0dc770c539976234ba3d3d4f8e3cc0d3ff28564caf33c6742aca87a6e43e",
       "textgrid_file": "jfk_moon_1962_level_2_s1.TextGrid",
-      "textgrid_sha256": "2a937a188ac1e47b799fa885e8658a8bd232f0d91bc5a94eb5625d793af70f92"
+      "textgrid_sha256": "fea8343acbae4dd378c3ecd519e8b188f348edfba18514606c548a1b343fee8a"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "rushed",
         "start_s": 15.424,
         "end_s": 17.324,
-        "words": "been embedded capable of standing",
+        "words": "been invented capable of standing",
         "profile": {
           "type": "rushed",
           "tempo_factor": 1.45,
@@ -421,9 +421,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_1_s1_alignment.json",
-      "json_sha256": "71da91af162c32f788ed173872200075a2cda6b8096b2b445911cf2a8d8ea11b",
+      "json_sha256": "0e0080e09c0b3ae35549901e004c72fc6434832c99c8507303ab4f58800ddc88",
       "textgrid_file": "jfk_moon_1962_level_1_s1.TextGrid",
-      "textgrid_sha256": "38273658f474f7c812b5c33fec16edcf1ab13ba6bbdbd48c09392d60b1647245"
+      "textgrid_sha256": "689ad2d4175a79ec8e451613789bb2ffd318d68732433320c44a77813c03747a"
     },
     "injector_flaw_parameters": [
       {
@@ -486,14 +486,14 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_0_s1_flaws.json",
-      "sha256": "fb488efd10bf2b52e579917f38c17c2def2a2325b45b9da16e3bcac0d81ad209",
-      "size_bytes": 1672
+      "sha256": "104862a8eba082365bed42ee1821254ba92a0c4be16098fa302a342081b7d9f4",
+      "size_bytes": 1671
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_0_s1_alignment.json",
-      "json_sha256": "ef91647eddd35b20449071a060293b6c81530dc9db6b709d2f8eba67a6d1b413",
+      "json_sha256": "f6d14010ab20e844da742eec66419de6728222c65447e7fc7b936f8d8204b4f9",
       "textgrid_file": "jfk_moon_1962_level_0_s1.TextGrid",
-      "textgrid_sha256": "3667d6e49e92adf27d8725951eeeaca59477d61adcea7fa453fd89b49cfa0574"
+      "textgrid_sha256": "ec6b0ecff2d1b4536cad934dacff088813487c53787bf948715e70e3cb2420b2"
     },
     "injector_flaw_parameters": [
       {
@@ -537,9 +537,9 @@
       },
       {
         "flaw_type": "monotone",
-        "start_s": 62.14,
+        "start_s": 61.93,
         "end_s": 64.509,
-        "words": "all this thick heat is out then we must",
+        "words": "before this decade is out then we must",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.05,
@@ -572,9 +572,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_4_s2_alignment.json",
-      "json_sha256": "06e2b0d57391debe34fafe775a48fb987ed72db5faf4ed9dda40fe38e1e40216",
+      "json_sha256": "6cc8ff6c45bd603cf35400271e55ab0788d9575b620bedb5bc7e347f2ccae9ca",
       "textgrid_file": "jfk_moon_1962_level_4_s2.TextGrid",
-      "textgrid_sha256": "a69e7ad21322e95dcc0d47918632573efd6995fb9a68927ca0d5687b4be9f756"
+      "textgrid_sha256": "6a5d85440744c27adef301dc102cc343e3ae3a99ad82ce39609bf02604dcab2b"
     },
     "injector_flaw_parameters": []
   },
@@ -594,21 +594,21 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_3_s2_flaws.json",
-      "sha256": "fc74bf3a5f31cc7c3b503ab061dc4fd289f4eea2d7f00bf6e57b908d0954ff9e",
-      "size_bytes": 563
+      "sha256": "60e9c8f5235e04b3b4c46653d86a06761b2957d67535af61f49d99f67d77b64d",
+      "size_bytes": 568
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_3_s2_alignment.json",
-      "json_sha256": "bd9f3e6e620024366e6c1483059fee2e96d62db61b5c8944ba7f5038e2c43190",
+      "json_sha256": "dfbfc04471ef9f75d991758b5b5d6822ae1dc69e8cfb544116dff5fdbb6d7d2d",
       "textgrid_file": "jfk_moon_1962_level_3_s2.TextGrid",
-      "textgrid_sha256": "e760943b650c7b146c1de0848e04c88e658fc8ae1d8ef905a33f487e9380c17c"
+      "textgrid_sha256": "aaa65ed6ffc13402cafba6cd5db1ead28fbbe83a1a810c6b0a4329b7e6876f06"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "monotone",
         "start_s": 58.19,
-        "end_s": 59.757,
-        "words": "do it first if all",
+        "end_s": 59.957,
+        "words": "do it first before this",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.65,
@@ -641,9 +641,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_2_s2_alignment.json",
-      "json_sha256": "a6f6db6b62a7ab89cd671cfec2f35ec2983c1f71f60b420e0c979ba5eee3a08b",
+      "json_sha256": "75336910ebb837c6bff25c242a5314cc8ec1d701f498ab0d7453b9657f7d6a52",
       "textgrid_file": "jfk_moon_1962_level_2_s2.TextGrid",
-      "textgrid_sha256": "cef2496f654bb9dfbf0b62d236635b062b882ffa7c1091f3b9f9c1d6ac1fac70"
+      "textgrid_sha256": "2b695e6fad2e11ab023c9de71a6164159fa581d28804e8bf458272d7f13b4209"
     },
     "injector_flaw_parameters": [
       {
@@ -697,9 +697,9 @@
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_1_s2_alignment.json",
-      "json_sha256": "51e76cba423b8e03bf1c69f9fa90001917068452976b6e5b3c789712382114ee",
+      "json_sha256": "b829af2be665e78fff2601611af778e45b0d3adb513a2a3e1fdccd0184280fd5",
       "textgrid_file": "jfk_moon_1962_level_1_s2.TextGrid",
-      "textgrid_sha256": "074b043762536054d309dd36a7be343d2d196bf45868e573fae59b1f30848bc2"
+      "textgrid_sha256": "f64de3e82e1d8f0e1857dfbf7ff7f29e3c10ebf316972b003c66f468914ec8a7"
     },
     "injector_flaw_parameters": [
       {
@@ -762,14 +762,14 @@
     },
     "annotations": {
       "file": "jfk_moon_1962_level_0_s2_flaws.json",
-      "sha256": "7016f079310a08b37ea430ecad68e721ace054c6d6dae2726004348b9547841b",
-      "size_bytes": 1765
+      "sha256": "7ea0da28fd2d279501bcf542a51e6ee050e596ed8efb03356891508867c70115",
+      "size_bytes": 1766
     },
     "alignment": {
       "json_file": "jfk_moon_1962_level_0_s2_alignment.json",
-      "json_sha256": "8a8354a6b9ebc7d74c8a6ba7a21567327d98aa994b37dbef56f3b69956e07e10",
+      "json_sha256": "12a17fe9ca5d0438206f44cd560a838df32dd33cca49ea1958d049ddcb642f39",
       "textgrid_file": "jfk_moon_1962_level_0_s2.TextGrid",
-      "textgrid_sha256": "82fba3e1c1a8afe43ff8af407d3f4e7227bbffde0f73adb5d4baa0e8f29b0384"
+      "textgrid_sha256": "265b2fc8f8e9234c61b50be1d032d539dabc24bb78d00b9d6dcab36f70469b91"
     },
     "injector_flaw_parameters": [
       {
@@ -790,7 +790,7 @@
         "flaw_type": "drag_slow",
         "start_s": 22.727,
         "end_s": 32.77,
-        "words": "pitted together with a precision better than the finest watch carrying",
+        "words": "fitted together with a precision better than the finest watch carrying",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.45,
@@ -815,7 +815,7 @@
         "flaw_type": "monotone",
         "start_s": 35.32,
         "end_s": 44.553,
-        "words": "needed for propulsion guidance control communication food and survival on an untried mission to an unknown",
+        "words": "needed for propulsion guidance control communications food and survival on an untried mission to an unknown",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.05,
@@ -848,9 +848,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_4_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_4.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": []
   },
@@ -875,9 +875,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_3_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_3.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": [
       {
@@ -917,9 +917,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_2_alignment.json",
-      "json_sha256": "657de5ce05ac16d2561cab51f4d3ea6c62fd416de1c32257ca50f3ac7cd8dba1",
+      "json_sha256": "4caf9bc4bcc14b1c2b2bcd52096349b7d6856f83c86a1152ebb4cd85debabdf8",
       "textgrid_file": "reagan_challenger_1986_level_2.TextGrid",
-      "textgrid_sha256": "e7f3aa5b6e557578567c90a6d13f30ab4bbc7a16181c51acf1115cc6bdfee946"
+      "textgrid_sha256": "c8756b2c1e867e4cae32275ef7345885bb93b97b50e621891bd0a7e359c54fe9"
     },
     "injector_flaw_parameters": [
       {
@@ -973,9 +973,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_1_alignment.json",
-      "json_sha256": "11ad854d6397a54829376a62b36186328ab99e45bb827c18126a85b29d3f1f7b",
+      "json_sha256": "56df6f6a585a0f4cd1ebf584ce479265c32fffb5fcbc68500424413310bbd262",
       "textgrid_file": "reagan_challenger_1986_level_1.TextGrid",
-      "textgrid_sha256": "6e0de7c9f08584aa255cba6f006434894cfaf1a29a2b512956bcc6128d750cb1"
+      "textgrid_sha256": "2af46cc0ff98eb18f4c859727940b45864ecee7663533ffb9bfe4729b11c8437"
     },
     "injector_flaw_parameters": [
       {
@@ -1043,9 +1043,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_0_alignment.json",
-      "json_sha256": "1086bec99108a47b002427ff0f4cbb04e02c42ddc8db034457a8a0a23e707e20",
+      "json_sha256": "d9081ec275cdffbcae939ac899e43d67d5cd2f219d07044894263cf875c1b85e",
       "textgrid_file": "reagan_challenger_1986_level_0.TextGrid",
-      "textgrid_sha256": "57121fdc970f3d5288f78ce656fc6de7247eedf3ddbcbbc4f98106cae4a7e5e2"
+      "textgrid_sha256": "2c1039def26db7efdd93d36e999342edb345b32050c787fcee68924691116a93"
     },
     "injector_flaw_parameters": [
       {
@@ -1124,9 +1124,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_4_s1_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_4_s1.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": []
   },
@@ -1151,9 +1151,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_3_s1_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_3_s1.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": [
       {
@@ -1188,14 +1188,14 @@
     },
     "annotations": {
       "file": "reagan_challenger_1986_level_2_s1_flaws.json",
-      "sha256": "498de2de5c97637521cb0bbd83db753aac44c3a82b7879caf652995d9e408fb5",
+      "sha256": "bd0ff4d1126fd263983bacad160f2336b6cabc496434ad822b925711311a7ce3",
       "size_bytes": 929
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_2_s1_alignment.json",
-      "json_sha256": "a86ad152ccfdf96ff6af2be2e26222194689075390ef02ed483a051cb6da30ec",
+      "json_sha256": "2cfc3b062d17d41e7e97badfa423d81aff6428c31606ec5ce3bd31c971812358",
       "textgrid_file": "reagan_challenger_1986_level_2_s1.TextGrid",
-      "textgrid_sha256": "6f32eee7ab4e97e75540378e8ef127ebbba8d0b0163a75ecb1151c6ccaa24466"
+      "textgrid_sha256": "521323e8e99ea1dc5569c3918103df96909b0475f6277afe2253678c268787a0"
     },
     "injector_flaw_parameters": [
       {
@@ -1216,7 +1216,7 @@
         "flaw_type": "rushed",
         "start_s": 40.763,
         "end_s": 41.744,
-        "words": "challenger honored us for",
+        "words": "Challenger honored us for",
         "profile": {
           "type": "rushed",
           "tempo_factor": 1.45,
@@ -1249,9 +1249,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_1_s1_alignment.json",
-      "json_sha256": "cf1803502e8159b45f1df0510a00b5dadacbd7a7ef3c3492bcb6055c187e73d5",
+      "json_sha256": "e3500d726d3e91487b74db26b915428576590b1fa0faf723bc96b639c5edd87b",
       "textgrid_file": "reagan_challenger_1986_level_1_s1.TextGrid",
-      "textgrid_sha256": "ab6d0d79aa6b9969317965b3cccaaf07aec3b2a74913f60e5865e0d57d82ae78"
+      "textgrid_sha256": "c94776a58948d402410d4589e6832df3539737ea6ee542f9f92b33308de3f66e"
     },
     "injector_flaw_parameters": [
       {
@@ -1319,9 +1319,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_0_s1_alignment.json",
-      "json_sha256": "5486f22932fef1f6e272d7b186c369ae48c0efe9cad2b0ce3635425a880aa1e8",
+      "json_sha256": "0027c918833fa87dd7d864a8459b4b29b1ade73a4cb22f1abb70db3c9f0a9e98",
       "textgrid_file": "reagan_challenger_1986_level_0_s1.TextGrid",
-      "textgrid_sha256": "a99ec97640423ea23bf7128da5a859eda367f31dbb5054c82a938d9c577275d4"
+      "textgrid_sha256": "f8502c6d51f5a40f516f5143a95644810d19b7f421beb7809473237e939f47c0"
     },
     "injector_flaw_parameters": [
       {
@@ -1400,9 +1400,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_4_s2_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_4_s2.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": []
   },
@@ -1427,9 +1427,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_3_s2_alignment.json",
-      "json_sha256": "3efcafe93d6051b4cbd983f2ff95c7e012a92559403e87aefc342dc1026d0759",
+      "json_sha256": "5a065718551d3cad163a9de1f130fb646d56500f5ac7e109773e0ac668308987",
       "textgrid_file": "reagan_challenger_1986_level_3_s2.TextGrid",
-      "textgrid_sha256": "9110054b57d04a3efc082068d77156960c2daadedc9d00b08add8d1388c78fd5"
+      "textgrid_sha256": "323410e4a4079968f65c37c1e81b0cbe38529df477755b0fc082d18e3910e49a"
     },
     "injector_flaw_parameters": [
       {
@@ -1469,9 +1469,9 @@
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_2_s2_alignment.json",
-      "json_sha256": "97554943ba2832efa891a4831f457f850cf5634491b08a1975b51b2af7e94001",
+      "json_sha256": "e2aa69c2581ba374d9c1bf638387868c97c1c036a24e609ca420c77df70b6b69",
       "textgrid_file": "reagan_challenger_1986_level_2_s2.TextGrid",
-      "textgrid_sha256": "6121530ba3566bf7051242212c8fdf3ea4b45b9f4a8720b0a3bb18c1857681f1"
+      "textgrid_sha256": "035edccade60bf0184e5e8c08a73ac15445f5f988d3da14a77a5f06e101ced94"
     },
     "injector_flaw_parameters": [
       {
@@ -1520,14 +1520,14 @@
     },
     "annotations": {
       "file": "reagan_challenger_1986_level_1_s2_flaws.json",
-      "sha256": "c1826a6d8eafc648f532ecf0085142fbd23f996fac950b7a61bd7a4cfe467420",
+      "sha256": "bc0d3fc399cc954eb58b411962815edce07eed055641366290201e42c5dec5ba",
       "size_bytes": 1314
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_1_s2_alignment.json",
-      "json_sha256": "bc941e1a1e996aa05dea296a420f72598d5c7cb585c7d2786d6454fd6e0ef616",
+      "json_sha256": "28f475c03d11b58f399a4a75b67b1357245f9da4290c5fc55401ebdff85eb8bf",
       "textgrid_file": "reagan_challenger_1986_level_1_s2.TextGrid",
-      "textgrid_sha256": "700fdc41d134e7e67656a858725ef97a6df87bba9c367a244393e0c1bc58ddc1"
+      "textgrid_sha256": "ad1826b7681f2e55442d6b3cf38012185b20d8567017d077e00925555704a5f7"
     },
     "injector_flaw_parameters": [
       {
@@ -1562,7 +1562,7 @@
         "flaw_type": "monotone",
         "start_s": 33.49,
         "end_s": 34.749,
-        "words": "we can say of the challenger",
+        "words": "we can say of the Challenger",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.2,
@@ -1590,14 +1590,14 @@
     },
     "annotations": {
       "file": "reagan_challenger_1986_level_0_s2_flaws.json",
-      "sha256": "ef3b540a1ccfd06379e8efb2665c72bf936625beb1f5f2236a14fa2b4019297e",
+      "sha256": "33a9a3b928873735b2b4c577b3182a534189032d6d4038445306ef85cd121138",
       "size_bytes": 1760
     },
     "alignment": {
       "json_file": "reagan_challenger_1986_level_0_s2_alignment.json",
-      "json_sha256": "7e6d43ef66d76e5f1c0a8987f5e91e3682ce52e8da9a3a95845ab82d197ce5a4",
+      "json_sha256": "f8be98eabc53af4885c7da45e9adf2f9d971b91cdd8ef94866f73b7b398efef6",
       "textgrid_file": "reagan_challenger_1986_level_0_s2.TextGrid",
-      "textgrid_sha256": "29dca1ea917565bb19dc0be76e8636f9ce6479e29da515e29d015ef6c925eca9"
+      "textgrid_sha256": "a8f0d92e82ea094f337c5ed80b0a46e1afd4a3c8bf5271d1aac20de8c7966409"
     },
     "injector_flaw_parameters": [
       {
@@ -1643,7 +1643,7 @@
         "flaw_type": "monotone",
         "start_s": 44.55,
         "end_s": 48.251,
-        "words": "crew of the space shuttle challenger honored us for the manner in which they lived their",
+        "words": "crew of the space shuttle Challenger honored us for the manner in which they lived their",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.05,
@@ -1676,9 +1676,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_4_alignment.json",
-      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "json_sha256": "4640f371cf70ba04f36c258a1a20e16d3a1c4993c620ba382c6e5d180b202c39",
       "textgrid_file": "fdr_fear_itself_1933_level_4.TextGrid",
-      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+      "textgrid_sha256": "af9906885c3ee03ed44664cfb16fe90b41aeb6998ce50f120c4f54f5aa1598a3"
     },
     "injector_flaw_parameters": []
   },
@@ -1703,9 +1703,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_3_alignment.json",
-      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "json_sha256": "4640f371cf70ba04f36c258a1a20e16d3a1c4993c620ba382c6e5d180b202c39",
       "textgrid_file": "fdr_fear_itself_1933_level_3.TextGrid",
-      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+      "textgrid_sha256": "af9906885c3ee03ed44664cfb16fe90b41aeb6998ce50f120c4f54f5aa1598a3"
     },
     "injector_flaw_parameters": [
       {
@@ -1745,9 +1745,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_2_alignment.json",
-      "json_sha256": "3d240d3032e39879f74f025cd6c20836be012ee9ad74f2f5bd555896df921590",
+      "json_sha256": "892da4050a48d09357b7fbf9a58c9d6efec68da7e3fb1af27a511ca20972b3d4",
       "textgrid_file": "fdr_fear_itself_1933_level_2.TextGrid",
-      "textgrid_sha256": "76fc00155578a85c386e4d7320aa2507aaf74249ac45e7c9672facb1ce2a217d"
+      "textgrid_sha256": "b88c1534a0066296f73a5be5ae2e70d1504d1b4ff47b6a3a87e411f06a87ab56"
     },
     "injector_flaw_parameters": [
       {
@@ -1796,14 +1796,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_1_flaws.json",
-      "sha256": "874949fdeb69c1f835fae7b55742ae422eeff0c569f0482e9a2c4c17c6048269",
-      "size_bytes": 1329
+      "sha256": "4d086b4263f61ca69f074da8d7d4beebd460fe5224299159e1b00d8189068912",
+      "size_bytes": 1335
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_1_alignment.json",
-      "json_sha256": "4de3ee59ceaddb4d38980d02297cb1f8d85ba3eb6169ce170af2aaad3c6f1ca5",
+      "json_sha256": "5f805570d964107bbbd08a4730fd7e0b51b9128f7747f698d1087543db704f7f",
       "textgrid_file": "fdr_fear_itself_1933_level_1.TextGrid",
-      "textgrid_sha256": "1b953c7fddce26b2fd781663d3ded7d32aa19805654f7aac7b4f2a77b2ad7709"
+      "textgrid_sha256": "d9e186b982d305abc97cb3b1fe47eb167c53c53d7e9eaaa28942bd1ff0eb0aeb"
     },
     "injector_flaw_parameters": [
       {
@@ -1837,8 +1837,8 @@
       {
         "flaw_type": "drag_slow",
         "start_s": 34.024,
-        "end_s": 42.1,
-        "words": "to victory And I am convinced to show a",
+        "end_s": 41.865,
+        "words": "to victory And I am convinced that you will",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.6,
@@ -1866,14 +1866,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_0_flaws.json",
-      "sha256": "236d2ac64a63dee2979d68787d3882cbaead8d31a5e7c845ea717ab0cb28dc4b",
+      "sha256": "f0039c3a1a31d99ddd319e5c901ec02677842be69df7811c287bb47cc3180c24",
       "size_bytes": 1759
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_0_alignment.json",
-      "json_sha256": "91f1dc45b3ca50d2262772246f6345c44ee0f04b3910e4e6be21c5dc7e1a8354",
+      "json_sha256": "dec33858aeaef81f4ea6c0e9148735c207185c89527c3910b612a5e5e3828119",
       "textgrid_file": "fdr_fear_itself_1933_level_0.TextGrid",
-      "textgrid_sha256": "657fe6108594c3d6f2ff121e7511538cf22655bd128741260ff85565a1d705d9"
+      "textgrid_sha256": "f23007fd1e9c51f1f3d3bf55ab3cc5d863b83fd37d1aa65accd4880d896b59bd"
     },
     "injector_flaw_parameters": [
       {
@@ -1905,7 +1905,7 @@
         "flaw_type": "monotone",
         "start_s": 24.95,
         "end_s": 32.12,
-        "words": "of frankness and a fitter has met with that understanding and support of the people themselves",
+        "words": "of frankness and of vigor has met with that understanding and support of the people themselves",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.05,
@@ -1952,9 +1952,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_4_s1_alignment.json",
-      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "json_sha256": "4640f371cf70ba04f36c258a1a20e16d3a1c4993c620ba382c6e5d180b202c39",
       "textgrid_file": "fdr_fear_itself_1933_level_4_s1.TextGrid",
-      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+      "textgrid_sha256": "af9906885c3ee03ed44664cfb16fe90b41aeb6998ce50f120c4f54f5aa1598a3"
     },
     "injector_flaw_parameters": []
   },
@@ -1974,21 +1974,21 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_3_s1_flaws.json",
-      "sha256": "98ae28ffc1d7852eda01345943b69b4c0a7d51342e0eaba834c136d0cd706164",
-      "size_bytes": 576
+      "sha256": "cf3fc7adac2d3cfd29face3d5769de9e0fe09fdcb69fd10db3af038d7ae3dc79",
+      "size_bytes": 577
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_3_s1_alignment.json",
-      "json_sha256": "ae3194a90f1b2a60b9b5a8d64d0f6019d865f7f4ddff015420f9a80770843358",
+      "json_sha256": "e4d6a71e9dd2dff37958e55c53a24bdea1c204e77d40abee210306a890b127ec",
       "textgrid_file": "fdr_fear_itself_1933_level_3_s1.TextGrid",
-      "textgrid_sha256": "78906de35a12dc32c7f21e141d223b88a4da2e20b5ff5baffc9bf8008ef8a0f7"
+      "textgrid_sha256": "8631654b575ccf053766c8aed76418152eb8d7c8375d711f9ca721cc5ddc8329"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "monotone",
-        "start_s": 39.496,
+        "start_s": 39.6,
         "end_s": 41.797,
-        "words": "show a game give",
+        "words": "you will again give",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.65,
@@ -2021,9 +2021,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_2_s1_alignment.json",
-      "json_sha256": "26bbe3a4e2547112f703f047c23d7cde5b3a4394a95ba19437dd38e24cff8780",
+      "json_sha256": "279fbbcc518a64d00e19235ba36393e5155048ecaefc1fec6c662fff471145e4",
       "textgrid_file": "fdr_fear_itself_1933_level_2_s1.TextGrid",
-      "textgrid_sha256": "917247fb151de72281d8a0c1cfd3afcaf150c6db1052bd6b410beca66fecdbe7"
+      "textgrid_sha256": "75cb9aeddbb8581950203cda97219917b50fdcb9ba3d2ce030c2f32cb238539b"
     },
     "injector_flaw_parameters": [
       {
@@ -2072,14 +2072,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_1_s1_flaws.json",
-      "sha256": "ec906fc36864d645940af0664437993cd834107c62cf903e33c09c64bbe1867c",
-      "size_bytes": 1349
+      "sha256": "1d148add24be78e31e643d64ef877f462eb8671117f41948a1368443994894bd",
+      "size_bytes": 1354
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_1_s1_alignment.json",
-      "json_sha256": "b189956aec151528ddda40be47813c5940b47a7d81cb3388672fdc61b7fa73a7",
+      "json_sha256": "533173e017acb77445846aa5991b0a141e9becae75c9ea749065b24f02f9b9d8",
       "textgrid_file": "fdr_fear_itself_1933_level_1_s1.TextGrid",
-      "textgrid_sha256": "d0d602c125cd01207dbfa632315e8cc78e4bc441eea12884668d8f24b3bd4afe"
+      "textgrid_sha256": "6727ccae3a3d922254362084929e5a643fa3500745563273991ac3c25b52f14f"
     },
     "injector_flaw_parameters": [
       {
@@ -2114,7 +2114,7 @@
         "flaw_type": "monotone",
         "start_s": 41.17,
         "end_s": 45.091,
-        "words": "to show a game give that support to",
+        "words": "that you will again give that support to",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.2,
@@ -2142,14 +2142,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_0_s1_flaws.json",
-      "sha256": "a54e62caccb922f4ac30797a6999f6e146466c523f6d665fbec2c407e5af661b",
+      "sha256": "43a440e0cd5435d5a1bc149645cce793992017717ed758ed2371df3e2d9facc3",
       "size_bytes": 1744
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_0_s1_alignment.json",
-      "json_sha256": "5f2a1d5e5b300234e3e6ffe052fd82e4b0485c9fffde791aa1bb926285facf79",
+      "json_sha256": "4a93f20d4dac438ed8b05c2cf85b4a1f1180a6a88d1fe08a564d0463b54ebebd",
       "textgrid_file": "fdr_fear_itself_1933_level_0_s1.TextGrid",
-      "textgrid_sha256": "f94eba1246e3853e2ce8cca4e0250615e1c341ac95bfe08f499ae284c087e815"
+      "textgrid_sha256": "a108476f6fd0946aef975a3189256a6a5ff1c845688c5fb0e31780d91049de2e"
     },
     "injector_flaw_parameters": [
       {
@@ -2170,7 +2170,7 @@
         "flaw_type": "drag_slow",
         "start_s": 23.69,
         "end_s": 35.705,
-        "words": "frankness and a fitter has met with that understanding and support of",
+        "words": "frankness and of vigor has met with that understanding and support of",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.45,
@@ -2228,9 +2228,9 @@
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_4_s2_alignment.json",
-      "json_sha256": "59e6c76de1a8cc0ef772e0257e4d0cd955d4b8f8ed698d7404036453d1891b8a",
+      "json_sha256": "4640f371cf70ba04f36c258a1a20e16d3a1c4993c620ba382c6e5d180b202c39",
       "textgrid_file": "fdr_fear_itself_1933_level_4_s2.TextGrid",
-      "textgrid_sha256": "b0615a4adc6a59d0e8608db61c3c94df7ff7e4348b2e44157fa5396d0f5ecc20"
+      "textgrid_sha256": "af9906885c3ee03ed44664cfb16fe90b41aeb6998ce50f120c4f54f5aa1598a3"
     },
     "injector_flaw_parameters": []
   },
@@ -2250,21 +2250,21 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_3_s2_flaws.json",
-      "sha256": "58d73e0c104ee60309edd0e2ea59de9aa2f752bd4714243c046cd12eebdf6341",
-      "size_bytes": 581
+      "sha256": "446a21b86a55d6f5e5ace0ce3f7d35d6f6774c20a32a12064ff23f4a0c0bc9a5",
+      "size_bytes": 583
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_3_s2_alignment.json",
-      "json_sha256": "7492d8f29e23c3d4e7d63154ddfed986ce50be4d84017f72ae3d08c53702d7ac",
+      "json_sha256": "b0f77dc48d3c61b172222ab312bd4fc76b6db04e0b9b7caec6767147e3e36a41",
       "textgrid_file": "fdr_fear_itself_1933_level_3_s2.TextGrid",
-      "textgrid_sha256": "9005c6bb641833a585a52100dc4b1ad638f14b897b77e160e67b87faa363af38"
+      "textgrid_sha256": "e5495d1f74d8f2e399e982a5d4f19b861f7b6d9216cb7eb08ae4b2a2f25d6c1b"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "monotone",
         "start_s": 38.496,
-        "end_s": 40.05,
-        "words": "I am convinced to show",
+        "end_s": 39.676,
+        "words": "I am convinced that you",
         "profile": {
           "type": "monotone",
           "f0_compression_ratio": 0.65,
@@ -2292,14 +2292,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_2_s2_flaws.json",
-      "sha256": "ec80c641b3c59155151a98d0dc2789bb70d02df8cb4007c5ef2799152221879f",
-      "size_bytes": 948
+      "sha256": "a369dd0c1791ba5441d632c02afc956f6c0a42ec79f7254340e8d3109953e84b",
+      "size_bytes": 952
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_2_s2_alignment.json",
-      "json_sha256": "b1c7452febaa9b0b0bede5a46b63cf64423ba867fc6cedf4a9c3debf17d12187",
+      "json_sha256": "1eea01ccac64a212710942380c66a682b2eb6ef68230e55817b7c792949b9ff6",
       "textgrid_file": "fdr_fear_itself_1933_level_2_s2.TextGrid",
-      "textgrid_sha256": "79bbde5c80af24d72661483cc7606b2d9c8d606fa621c3023d984b249408bb09"
+      "textgrid_sha256": "5166ff16521f5bb37f6f4bf585a26f8c1dba3e6f32c790ba5e436ff7d7181e4d"
     },
     "injector_flaw_parameters": [
       {
@@ -2318,9 +2318,9 @@
       },
       {
         "flaw_type": "rushed",
-        "start_s": 39.759,
+        "start_s": 39.678,
         "end_s": 42.4,
-        "words": "a game give that support to",
+        "words": "will again give that support to",
         "profile": {
           "type": "rushed",
           "tempo_factor": 1.45,
@@ -2348,14 +2348,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_1_s2_flaws.json",
-      "sha256": "2e155bec6deeb7731a7d7054be45c59c94f95125e3c28a6c2cda417ccd1d0a79",
+      "sha256": "f1ca25979026ea6ec4e0f344fea1450f618a203ce739925296394b4b6551c60b",
       "size_bytes": 1359
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_1_s2_alignment.json",
-      "json_sha256": "dc64a3f838c8b6430bfc1b052a3cd489dc8b1547ad51d5b7fd4878e86ee2b537",
+      "json_sha256": "9c3ab9469c1ce9b32853fbbf1be861bc9bce31c9dd3c6ef0b0d454b1cc659936",
       "textgrid_file": "fdr_fear_itself_1933_level_1_s2.TextGrid",
-      "textgrid_sha256": "3158eea1fbb680b9fd2be0cb965a2c148e8f775965722ed63ffb1cf00fc6cec2"
+      "textgrid_sha256": "358abbd3c9fbe09b5af35510a942fbf3918964b7b8ce2f955226bc06e1ca257b"
     },
     "injector_flaw_parameters": [
       {
@@ -2376,7 +2376,7 @@
         "flaw_type": "rushed",
         "start_s": 27.051,
         "end_s": 29.952,
-        "words": "frankness and a fitter has met with that understanding and",
+        "words": "frankness and of vigor has met with that understanding and",
         "profile": {
           "type": "rushed",
           "tempo_factor": 1.7,
@@ -2388,9 +2388,9 @@
       },
       {
         "flaw_type": "drag_slow",
-        "start_s": 37.995,
+        "start_s": 38.47,
         "end_s": 45.818,
-        "words": "game give that support to leadership in these",
+        "words": "again give that support to leadership in these",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.6,
@@ -2418,14 +2418,14 @@
     },
     "annotations": {
       "file": "fdr_fear_itself_1933_level_0_s2_flaws.json",
-      "sha256": "f960267c8bc0e46b7a05bb4de3233cccde196383c3cf42f9788379e6e906d8a9",
-      "size_bytes": 1725
+      "sha256": "35a6bbc7fc54f02d38527bf41cb28b544379bfaf03109ef2611b157c945f2281",
+      "size_bytes": 1727
     },
     "alignment": {
       "json_file": "fdr_fear_itself_1933_level_0_s2_alignment.json",
-      "json_sha256": "57cf5ce2882effb6440b58683b79260ab91d8d26645eb3c20e867a8e00991330",
+      "json_sha256": "395cddac7bca459d094eac303dd4668318ec782cc8fb07cfcf5ee7c981b1e051",
       "textgrid_file": "fdr_fear_itself_1933_level_0_s2.TextGrid",
-      "textgrid_sha256": "d8f2281c1d6d957b9ea5a20191fef2e16243ca51df0d06687069007181dbc45b"
+      "textgrid_sha256": "c37a64cd4d268d76f927e0519f143f66c28dbf09dcacd26d3c3296209321f1f9"
     },
     "injector_flaw_parameters": [
       {
@@ -2456,8 +2456,8 @@
       {
         "flaw_type": "rushed",
         "start_s": 43.428,
-        "end_s": 47.929,
-        "words": "essential to victory And I am convinced to",
+        "end_s": 47.969,
+        "words": "essential to victory And I am convinced that",
         "profile": {
           "type": "rushed",
           "tempo_factor": 2.1,
@@ -2504,9 +2504,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_4_alignment.json",
-      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "json_sha256": "ccb67ffda2e25699a49b0b2673e71f9e3eb6e85560683115eab705ca17679713",
       "textgrid_file": "reagan_mourning_1986_level_4.TextGrid",
-      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+      "textgrid_sha256": "3cb8806dfb8fcd62cbde39f2c1175360285a15b8e1706a37a4d94913fe37e3d5"
     },
     "injector_flaw_parameters": []
   },
@@ -2531,9 +2531,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_3_alignment.json",
-      "json_sha256": "1300cf94802c83507299f31db82fae2934ba0c0b1846c148d4f42b9a6bc6d72c",
+      "json_sha256": "4b123b9ee1f8f6657fc20981a5f51303dd94f9838499ad2705927950b3533f9b",
       "textgrid_file": "reagan_mourning_1986_level_3.TextGrid",
-      "textgrid_sha256": "f5f9999bb879a0cd995ae7c104b3961b21fcb8e4c61f6e812b9d331abac4958c"
+      "textgrid_sha256": "2cb45522b36fd99f705150537c5c47d39704ce34395c7da144a95df730e052eb"
     },
     "injector_flaw_parameters": [
       {
@@ -2573,9 +2573,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_2_alignment.json",
-      "json_sha256": "c758cb48fd1c1be1f3ffb9f02580353b76a5089e966c0da84e9ca7b6f4d74b9d",
+      "json_sha256": "97ef5e8a6fc37d022283a68f489fd3c80328405c0adcd9023b8b92e388814c58",
       "textgrid_file": "reagan_mourning_1986_level_2.TextGrid",
-      "textgrid_sha256": "6b6c3e9fb6e5eb061542a607a3ab1cfdfde2042ec73406fbe1843bec39dd0b31"
+      "textgrid_sha256": "8a36968b0f6150f490aac40c981272dd8c3532a0549c437d07ade8a045360a44"
     },
     "injector_flaw_parameters": [
       {
@@ -2629,9 +2629,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_1_alignment.json",
-      "json_sha256": "80b66b24766bb74dca272c025ce2c12fa5018a44a3bc03d43f027397e3bda7eb",
+      "json_sha256": "78e911aa7b7da639cab1eb6fb174e818a624c6c735da7eb92a86aaf37fcd3bef",
       "textgrid_file": "reagan_mourning_1986_level_1.TextGrid",
-      "textgrid_sha256": "1b28b7f36c5cea4313d8aa37e8853fb24b100d0b0f4d7e4b0a4bd91ae2332ade"
+      "textgrid_sha256": "417c75539cd0c0654ea325ec2d5f7c00948df08c1c3c35e3fb1324780760415e"
     },
     "injector_flaw_parameters": [
       {
@@ -2694,14 +2694,14 @@
     },
     "annotations": {
       "file": "reagan_mourning_1986_level_0_flaws.json",
-      "sha256": "c26574da1b484c79fa70f3eefd742cbf18b92cd053801131d3912f9ccd09c0ee",
-      "size_bytes": 1706
+      "sha256": "29ed54d3c2cb8237a294027a9e39a18b71cb9f747414f99ac6cb890785ca2243",
+      "size_bytes": 1707
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_0_alignment.json",
-      "json_sha256": "566541631e2c68fa19fc08d7c162b6a24fad6b4cff55a53ced302b30b7b79cc7",
+      "json_sha256": "09d49f7db65ce07c5e920772d5e8b6b221c4a88f82e64947ec364816843302e9",
       "textgrid_file": "reagan_mourning_1986_level_0.TextGrid",
-      "textgrid_sha256": "44f0e88d7d0434b5d0ae2f4133bb6ab15a73ec7a5afa1509834082a8e4045e39"
+      "textgrid_sha256": "984eb67376d5cd854313a1a66d6f8aac8bc8089aab2afc38451743dadcd3b451"
     },
     "injector_flaw_parameters": [
       {
@@ -2719,7 +2719,7 @@
         "flaw_type": "drag_slow",
         "start_s": 12.14,
         "end_s": 20.906,
-        "words": "Today is a day for morning and remembering Nancy",
+        "words": "Today is a day for mourning and remembering Nancy",
         "profile": {
           "type": "drag_slow",
           "tempo_factor": 0.45,
@@ -2780,9 +2780,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_4_s1_alignment.json",
-      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "json_sha256": "ccb67ffda2e25699a49b0b2673e71f9e3eb6e85560683115eab705ca17679713",
       "textgrid_file": "reagan_mourning_1986_level_4_s1.TextGrid",
-      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+      "textgrid_sha256": "3cb8806dfb8fcd62cbde39f2c1175360285a15b8e1706a37a4d94913fe37e3d5"
     },
     "injector_flaw_parameters": []
   },
@@ -2807,9 +2807,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_3_s1_alignment.json",
-      "json_sha256": "0053d39d4f131f8d94aadcd63e8117844f85ce34297d97c87fbc5c4cfa336b71",
+      "json_sha256": "adbd6b5e407f07780773a2c76e5ec5794bde011b838073a799c93747db768f82",
       "textgrid_file": "reagan_mourning_1986_level_3_s1.TextGrid",
-      "textgrid_sha256": "1ca97d801a17fe5463f8bb059a21b5b4c08ee44248122cbfc1943969962c6a3a"
+      "textgrid_sha256": "9402f652c687b8a355ab207edd8309be568f23d002c42834c3bc3cb5da5d1522"
     },
     "injector_flaw_parameters": [
       {
@@ -2849,9 +2849,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_2_s1_alignment.json",
-      "json_sha256": "54dd90070d73f77cf9f3396d590e5bf2c91999a28da8b787d1a7abbcc51c5cbe",
+      "json_sha256": "1328ac23c146b02b84216624424d361027946ef73452be18d37a78201ee2adba",
       "textgrid_file": "reagan_mourning_1986_level_2_s1.TextGrid",
-      "textgrid_sha256": "baa6387153f6349be4583b324dd89ba2882e123c23e7b189206a875784c37f12"
+      "textgrid_sha256": "a836cadc273c1de5ae1a6470814da4fbbb2b5da9b51a70dc90998c9b13441f39"
     },
     "injector_flaw_parameters": [
       {
@@ -2900,14 +2900,14 @@
     },
     "annotations": {
       "file": "reagan_mourning_1986_level_1_s1_flaws.json",
-      "sha256": "a0f32dc12dc7906561b32460374ab3fc0e5da354fd3431b74fed936dc6a4cee2",
+      "sha256": "b29499c22288ec5f26d60c737a989a8a922f9fd6871854f02bc3028f14ae1a0b",
       "size_bytes": 1302
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_1_s1_alignment.json",
-      "json_sha256": "4ab617c34bd2d718ed9a699bdda61f1e7bb3fd6795b4809692a8fd275196b6c8",
+      "json_sha256": "76abb981696d3d2fe5454565fa2858b9413e4b6add8876c33f11b705bf47f14d",
       "textgrid_file": "reagan_mourning_1986_level_1_s1.TextGrid",
-      "textgrid_sha256": "fa0f6a1ade7ba6be073889c3e995afca948028d0ae5145ebc406781750d44b5b"
+      "textgrid_sha256": "6d282b9faaa0d36dd870f39620f7c502e9b3fd56977b91111f061882ffbac8d6"
     },
     "injector_flaw_parameters": [
       {
@@ -2928,7 +2928,7 @@
         "flaw_type": "rushed",
         "start_s": 14.746,
         "end_s": 15.507,
-        "words": "I are paying to the core of",
+        "words": "I are pained to the core by",
         "profile": {
           "type": "rushed",
           "tempo_factor": 1.7,
@@ -2970,21 +2970,21 @@
     },
     "annotations": {
       "file": "reagan_mourning_1986_level_0_s1_flaws.json",
-      "sha256": "b4609da5abad90ff2c20503fb9acb8a11b7489750834e9166c7ea0ce54b5361a",
+      "sha256": "9695a4bcd566fc56324ee257c41c46b98e69e5ead89b819089f192b61639e80c",
       "size_bytes": 1711
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_0_s1_alignment.json",
-      "json_sha256": "8bf92c76716cf37780289e1aa81762202de735c1053b0cd465f9a7d6d3654eea",
+      "json_sha256": "acf9e2aea2d37a924a63ec390e77f9eac861f05488af6cefa84c7c9e62b86c5d",
       "textgrid_file": "reagan_mourning_1986_level_0_s1.TextGrid",
-      "textgrid_sha256": "1a12010060558498aac9029c95e621afc7de0eb737dabf8dad68aa63fc7a36a3"
+      "textgrid_sha256": "1355574d3b82451fd7494bd59b7f3112b1c7f5223860ca2d4d3d90a9ab0cb18e"
     },
     "injector_flaw_parameters": [
       {
         "flaw_type": "inappropriate_pause",
-        "start_s": 15.446,
-        "end_s": 16.306,
-        "words": "paying [pause] to",
+        "start_s": 15.466,
+        "end_s": 16.346,
+        "words": "pained [pause] to",
         "profile": {
           "type": "inappropriate_pause",
           "pause_duration_s": 1.5,
@@ -2993,7 +2993,7 @@
       },
       {
         "flaw_type": "rushed",
-        "start_s": 16.687,
+        "start_s": 16.747,
         "end_s": 18.73,
         "words": "tragedy of the Shuttle Challenger We",
         "profile": {
@@ -3056,9 +3056,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_4_s2_alignment.json",
-      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "json_sha256": "ccb67ffda2e25699a49b0b2673e71f9e3eb6e85560683115eab705ca17679713",
       "textgrid_file": "reagan_mourning_1986_level_4_s2.TextGrid",
-      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+      "textgrid_sha256": "3cb8806dfb8fcd62cbde39f2c1175360285a15b8e1706a37a4d94913fe37e3d5"
     },
     "injector_flaw_parameters": []
   },
@@ -3083,9 +3083,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_3_s2_alignment.json",
-      "json_sha256": "2dda0f581b9f40ead19151b9bb671de0d62b4a749a71c03e150896dc2361cc9b",
+      "json_sha256": "ccb67ffda2e25699a49b0b2673e71f9e3eb6e85560683115eab705ca17679713",
       "textgrid_file": "reagan_mourning_1986_level_3_s2.TextGrid",
-      "textgrid_sha256": "31f2d0a9b3ec358c5ad0ba0ccf50134b628a5bfc2823b221bce26666625a4115"
+      "textgrid_sha256": "3cb8806dfb8fcd62cbde39f2c1175360285a15b8e1706a37a4d94913fe37e3d5"
     },
     "injector_flaw_parameters": [
       {
@@ -3125,9 +3125,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_2_s2_alignment.json",
-      "json_sha256": "a9134ba1be357e6d396ab0ad9c02da0fbf571194a765fe93ebf63a41c2024661",
+      "json_sha256": "970d36c8b92fa90db66ba0b8b446ae992e73d66326c8867d65d550380bc68eb3",
       "textgrid_file": "reagan_mourning_1986_level_2_s2.TextGrid",
-      "textgrid_sha256": "ef54d172022d9878baeaa9edfea830e7f7537c918d378131a9fc9e99e7666285"
+      "textgrid_sha256": "55b78a131dfc3d70b11a6bdaae217be1672eecbcf9b48781e99dd43415f0e3c4"
     },
     "injector_flaw_parameters": [
       {
@@ -3181,9 +3181,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_1_s2_alignment.json",
-      "json_sha256": "43d188328529a2e633f2c6b7b204c0d4a761e51573123e5da125e8331835187d",
+      "json_sha256": "3a5fcaf8e89ca42302f96c937f68c9bd54df230bd797f8091b9d3a187adfe774",
       "textgrid_file": "reagan_mourning_1986_level_1_s2.TextGrid",
-      "textgrid_sha256": "1f0dd2af51d15cf3941bd1f0f3a87215375a241554f956c6e1f80f812e36c291"
+      "textgrid_sha256": "b73e95f103134f2db92c1359e116fcdee1d4c8ca2d7f604eb1247a8e568056f2"
     },
     "injector_flaw_parameters": [
       {
@@ -3251,9 +3251,9 @@
     },
     "alignment": {
       "json_file": "reagan_mourning_1986_level_0_s2_alignment.json",
-      "json_sha256": "4c512d2b2136d097168af02fce9f371e9b058532531bdc5821eac1b83e794407",
+      "json_sha256": "2da6fc4db2510af790a5af097bada3ef6036372796b4c07ddfbf98cae68b526c",
       "textgrid_file": "reagan_mourning_1986_level_0_s2.TextGrid",
-      "textgrid_sha256": "8b9e3b656cadb0dab71f0048dcd82dd99ebc4a634e7e8e30df860be2201b886c"
+      "textgrid_sha256": "0dddee2625f8e2407f5051f8840ed9243b45de3d1bc5e0199f5d26fb3042b1e9"
     },
     "injector_flaw_parameters": [
       {
@@ -3332,7 +3332,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_4_alignment.json",
-      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "json_sha256": "9fa1e4ae90fcc4a4fe2e1b3e15a287fac800904c620555ba72a3e1ab2cdfcd2d",
       "textgrid_file": "jfk_we_choose_1962_level_4.TextGrid",
       "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
     },
@@ -3359,7 +3359,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_3_alignment.json",
-      "json_sha256": "d9f88836e871915bb40669023d5ddfc17084d998c00f077207e9e108d8dbd127",
+      "json_sha256": "f48eeb7653afbd67e0017b453f5ca7ff9c4d92f7fdd045de80e226c803552afe",
       "textgrid_file": "jfk_we_choose_1962_level_3.TextGrid",
       "textgrid_sha256": "cadaa2f225d7a8c2c29f36fe6b5b87fd4b32772dd179238037973327a8afa076"
     },
@@ -3401,7 +3401,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_2_alignment.json",
-      "json_sha256": "be2097632a4cd065bd104a3568d67b6609d0de0710c5d7ca438eddcd7199d826",
+      "json_sha256": "09b854a31b33f6a0c4730dd85ad5a7ad806f5dcee838c4d561dd6617ac5dfd53",
       "textgrid_file": "jfk_we_choose_1962_level_2.TextGrid",
       "textgrid_sha256": "94e7a587da737326dc7631e0f7132cc30dfb840753b2fcd506627a005e1de10d"
     },
@@ -3457,7 +3457,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_1_alignment.json",
-      "json_sha256": "d788b0b5c784897ddc98d46605970c29d15608a76176731a403106aa32547ca8",
+      "json_sha256": "9a27f1d00c6ef58e4134a839d986b171a31e02ac0553f0c57b06a6e671cfd396",
       "textgrid_file": "jfk_we_choose_1962_level_1.TextGrid",
       "textgrid_sha256": "b275c77ed33252d2ce6874e4b8ed3a0857f8ed74b6f6cf1d321d8178cdd3a01b"
     },
@@ -3527,7 +3527,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_0_alignment.json",
-      "json_sha256": "5e03fecc2a68e091471015eada2fca15131ea2872593e866347a54f7ba6647a3",
+      "json_sha256": "472fc7f46fd247a99144cf41a82df22c7daf4158fb5e15cca4e628bab231fccc",
       "textgrid_file": "jfk_we_choose_1962_level_0.TextGrid",
       "textgrid_sha256": "8fd55739b26d1ad0506a9e90ff7eeff680db4b7efc844ae9da5fa6aeace7cff7"
     },
@@ -3608,7 +3608,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_4_s1_alignment.json",
-      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "json_sha256": "9fa1e4ae90fcc4a4fe2e1b3e15a287fac800904c620555ba72a3e1ab2cdfcd2d",
       "textgrid_file": "jfk_we_choose_1962_level_4_s1.TextGrid",
       "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
     },
@@ -3635,7 +3635,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_3_s1_alignment.json",
-      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "json_sha256": "9fa1e4ae90fcc4a4fe2e1b3e15a287fac800904c620555ba72a3e1ab2cdfcd2d",
       "textgrid_file": "jfk_we_choose_1962_level_3_s1.TextGrid",
       "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
     },
@@ -3677,7 +3677,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_2_s1_alignment.json",
-      "json_sha256": "6e539bada8bde3eea05877ce8ad22ad1c64d9fef3108adbb2c2fc37ca208dad6",
+      "json_sha256": "01e750ec6e94dbe200a2dd6c0c264e60f63856d4680b001ee03d412ccf514e1f",
       "textgrid_file": "jfk_we_choose_1962_level_2_s1.TextGrid",
       "textgrid_sha256": "9631037c0cc73b4ae2a0fe2c6d11ba7d7097f37fbd441040eeff3ecf92339893"
     },
@@ -3733,7 +3733,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_1_s1_alignment.json",
-      "json_sha256": "23c7c45faee4b55c8584473c77de6e1dba4ad6f046f35b0043d3f11ea4bc5495",
+      "json_sha256": "21f7976b2fe4c1dd14016ee27f85854c85a90d196ef84df6bb0df730f3410601",
       "textgrid_file": "jfk_we_choose_1962_level_1_s1.TextGrid",
       "textgrid_sha256": "da80cdf5b054e0db41d862741065011e96dc1cb4fa75ba4f69f59bc859ca1442"
     },
@@ -3803,7 +3803,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_0_s1_alignment.json",
-      "json_sha256": "e4e1c728f035cc93aae59895b2495e75233a115146a9b31fc808b679b7f9eb53",
+      "json_sha256": "5b8cde73740c8cae11339a5e8cd7e9ffb244d2d981c960b07b571432fa1a3008",
       "textgrid_file": "jfk_we_choose_1962_level_0_s1.TextGrid",
       "textgrid_sha256": "91c103390919aea0e0e3b1d1a6482b738f078a6c8471877f9dda1935bfbcef35"
     },
@@ -3884,7 +3884,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_4_s2_alignment.json",
-      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "json_sha256": "9fa1e4ae90fcc4a4fe2e1b3e15a287fac800904c620555ba72a3e1ab2cdfcd2d",
       "textgrid_file": "jfk_we_choose_1962_level_4_s2.TextGrid",
       "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
     },
@@ -3911,7 +3911,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_3_s2_alignment.json",
-      "json_sha256": "daa15c2dd54f64a842a9afa9843f194b944d766915132ed867a59745ba3ce092",
+      "json_sha256": "9fa1e4ae90fcc4a4fe2e1b3e15a287fac800904c620555ba72a3e1ab2cdfcd2d",
       "textgrid_file": "jfk_we_choose_1962_level_3_s2.TextGrid",
       "textgrid_sha256": "5ae25d0e93e92b38736838ff3eba1fdb5da32a3b18ecc04891dde1c79446cc2e"
     },
@@ -3953,7 +3953,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_2_s2_alignment.json",
-      "json_sha256": "fe89686aa294e99c32e47c577c023878a047672cbd42295f3754e3103978df75",
+      "json_sha256": "e40ec69cf00d5313aef4ac7e629bd9e3ef456f909b9fe7201fd53b870467cdc8",
       "textgrid_file": "jfk_we_choose_1962_level_2_s2.TextGrid",
       "textgrid_sha256": "2458504fc0b1de21bac389b68c6cfac89c01df5e2b718be43351815ceb95c2f8"
     },
@@ -4009,7 +4009,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_1_s2_alignment.json",
-      "json_sha256": "7a3a9ec31daa2ea558cf24c8a86f156d59a710c77be31f1634c11f66f2f98a51",
+      "json_sha256": "2bb3fdbfea904d88a5a8732328146ab3064f640a82951fc22c858c06ac2d30b8",
       "textgrid_file": "jfk_we_choose_1962_level_1_s2.TextGrid",
       "textgrid_sha256": "b4b42a1d7fbeb0eee2cc4ed457df0a222a70b6d61f54ee3422705e55724bd6b5"
     },
@@ -4079,7 +4079,7 @@
     },
     "alignment": {
       "json_file": "jfk_we_choose_1962_level_0_s2_alignment.json",
-      "json_sha256": "030875f0c2d0bebe90c05c07f97f478e4b116fd2ba8d1649413eb502d0250e26",
+      "json_sha256": "cc827c1e882ecee004585a72ce372e75694908784515faa0e72c704f5a51faa0",
       "textgrid_file": "jfk_we_choose_1962_level_0_s2.TextGrid",
       "textgrid_sha256": "40c19c93274014f7d08584ac33ae5cc420e52951b100c9f53d1deb48a608ad98"
     },

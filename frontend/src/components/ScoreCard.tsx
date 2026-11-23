@@ -27,6 +27,26 @@ export const ScoreCard: React.FC = () => {
 
   return (
     <div className="glass-panel p-6 rounded-2xl mb-6">
+      {/* Prominent Transcript Coverage & Self-Comparison Banners */}
+      {(scores as any).transcript_coverage_warning && (
+        <div className="mb-5 p-3.5 rounded-xl bg-amber-950/80 border border-amber-500/70 text-amber-200 flex items-center gap-3">
+          <AlertCircle className="w-5 h-5 text-amber-400 shrink-0" />
+          <div className="text-sm">
+            <span className="font-bold">Transcript Coverage Warning: </span>
+            <span>{(scores as any).transcript_coverage_warning}</span>
+          </div>
+        </div>
+      )}
+      {(scores as any).self_comparison_warning && (
+        <div className="mb-5 p-3.5 rounded-xl bg-rose-950/80 border border-rose-500/70 text-rose-200 flex items-center gap-3">
+          <AlertCircle className="w-5 h-5 text-rose-400 shrink-0" />
+          <div className="text-sm">
+            <span className="font-bold">Self-Comparison Detected: </span>
+            <span>{(scores as any).self_comparison_warning}</span>
+          </div>
+        </div>
+      )}
+
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-800">
         <div className="flex items-center gap-4">
           {/* Circular / Badge Grade Display */}

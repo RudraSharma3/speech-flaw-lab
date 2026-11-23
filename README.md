@@ -81,40 +81,89 @@ graph TD
 
 ---
 
-## ⚡ Quick Start (Docker Desktop)
+## ⚡ Quick Start
 
-The entire platform runs inside Docker on standard Windows / Linux / macOS systems with no GPU required:
-
-```bash
-# 1. Clone repository
-git clone https://github.com/your-org/speech.git
-cd speech
-
-# 2. Build and launch with Docker Compose
-docker compose up --build
-```
-
-- **Interactive Dashboard**: Open [http://localhost:5173](http://localhost:5173) in your browser.
-- **FastAPI Documentation & Swagger UI**: Open [http://localhost:8000/docs](http://localhost:8000/docs).
+### 1. Prerequisites
+- **Python**: **Python 3.11** (recommended for deterministic PyTorch and Parselmouth Praat binary compatibility).
+- **FFmpeg**: Required for processing compressed audio (M4A, MP3, AAC).
+  - **Windows**: Install using Windows Package Manager:
+    ```powershell
+    winget install Gyan.FFmpeg
+    ```
+    *(Alternatively, the bundled `imageio-ffmpeg` package automatically locates an embedded Gyan.FFmpeg binary).*
+  - **Linux (Ubuntu/Debian)**: `sudo apt-get update && sudo apt-get install -y ffmpeg`
+  - **macOS**: `brew install ffmpeg`
+- **Node.js**: Node.js 20+ and `npm` (for the React frontend).
 
 ---
 
-## 💾 Dataset Download (CSAD-2026)
+### 2. Python Environment Setup
+```bash
+# Clone repository
+git clone https://github.com/your-org/speech.git
+cd speech
 
-The full 75-recording dataset package, including 16kHz WAV audio, JSON annotations, and Praat TextGrids, is packaged as a standalone archive:
+# Create virtual environment with Python 3.11
+python -m venv .venv
 
-- **Download Link**: `[Google Drive Dataset Archive Placeholder: https://drive.google.com/file/d/PLACEHOLDER_CSAD_2026/view?usp=sharing]`
-- **Local Path**: `dist/speech_prosody_benchmark_v1.zip`
-- **File Size**: `119,109,722 bytes` (113.59 MB)
+# Activate environment
+# On Windows PowerShell:
+.venv\Scripts\Activate.ps1
+# On Linux / macOS:
+source .venv/bin/activate
+
+# Install dependencies (CPU-only PyTorch first for fast lightweight install)
+pip install torch==2.3.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cpu
+pip install -r requirements.txt
+```
+
+---
+
+### 3. Frontend Build
+Compile the React/TypeScript/Plotly web dashboard:
+```bash
+cd frontend
+npm install
+npm run build
+cd ..
+```
+The compiled bundle is output to `frontend/dist/` and served automatically by FastAPI on the unified port.
+
+---
+
+### 4. Running the API & Dashboard
+Launch the unified server (FastAPI backend + static frontend):
+```bash
+uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
+```
+- **Unified Interactive Dashboard**: [http://localhost:8000](http://localhost:8000)
+- **Interactive Swagger API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs)
+- **Health Check Endpoint**: [http://localhost:8000/health](http://localhost:8000/health)
+
+---
+
+### 5. Running the Evaluation Benchmark
+Run the full 75-recording deterministic evaluation benchmark across all 5 quality levels and 3 seeds:
+```bash
+python -m dataset_tools.run_benchmark
+```
+Metrics and confusion matrices are written directly to `results/benchmark.json`.
+
+---
+
+### 6. Dataset Download (CSAD-2026)
+The complete 75-recording evaluation corpus (16kHz WAV audio, JSON flaw ground truth, alignment TextGrids, and manifests) is pre-packaged:
+- **Archive Path**: `dist/speech_prosody_benchmark_v1.zip`
+- **Package Size**: `119,109,722 bytes` (113.59 MB)
 - **SHA-256 Checksum**: `4ba0eac057e013b14a97c2c2e99de5154834b9bdc5dbb7e527172e1871d64e6b`
 
-To verify integrity after downloading:
-```bash
-# On Linux / macOS:
-sha256sum speech_prosody_benchmark_v1.zip
-
+Verify integrity:
+```powershell
 # On Windows PowerShell:
 Get-FileHash dist/speech_prosody_benchmark_v1.zip -Algorithm SHA256
+
+# On Linux / macOS:
+sha256sum dist/speech_prosody_benchmark_v1.zip
 ```
 
 ---

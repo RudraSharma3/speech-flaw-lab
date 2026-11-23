@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -31,15 +30,15 @@
     {
       "index": 3,
       "text": "I'd",
-      "start": 1.84,
+      "start": 1.86,
       "end": 2.001,
-      "duration": 0.161,
+      "duration": 0.141,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 4,
-      "text": "plan",
+      "text": "planned",
       "start": 2.001,
       "end": 2.321,
       "duration": 0.32,
@@ -167,17 +166,17 @@
       "index": 18,
       "text": "but",
       "start": 5.942,
-      "end": 6.062,
-      "duration": 0.12,
+      "end": 6.042,
+      "duration": 0.1,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 19,
       "text": "the",
-      "start": 6.062,
+      "start": 6.06,
       "end": 6.162,
-      "duration": 0.1,
+      "duration": 0.102,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -327,7 +326,7 @@
     },
     {
       "index": 36,
-      "text": "morning",
+      "text": "mourning",
       "start": 14.92,
       "end": 16.0,
       "duration": 1.08,
@@ -390,19 +389,19 @@
     },
     {
       "index": 43,
-      "text": "paying",
+      "text": "pained",
       "start": 21.506,
-      "end": 21.786,
-      "duration": 0.28,
+      "end": 21.806,
+      "duration": 0.3,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 44,
       "text": "to",
-      "start": 21.786,
+      "start": 21.806,
       "end": 21.866,
-      "duration": 0.08,
+      "duration": 0.06,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -419,17 +418,17 @@
       "index": 46,
       "text": "core",
       "start": 21.986,
-      "end": 22.306,
-      "duration": 0.32,
+      "end": 22.286,
+      "duration": 0.3,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 47,
-      "text": "of",
-      "start": 22.306,
+      "text": "by",
+      "start": 22.286,
       "end": 22.386,
-      "duration": 0.08,
+      "duration": 0.1,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -965,5 +964,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 107
 }

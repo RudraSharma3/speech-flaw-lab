@@ -7,10 +7,11 @@
     "location": "Rice Stadium, Houston, Texas",
     "source_url": "https://www.jfklibrary.org/asset-viewer/archives/JFKWHA/1962/JFKWHA-127-002",
     "audio_source_url": "https://archive.org/download/jfks19620912/jfks19620912.mp3",
-    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. § 105)",
+    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
     "processed_file": "jfk_rice_excerpt_real.wav",
     "duration_s": 70.0,
-    "transcript": "140,000 miles away from the control station in Houston, a giant rocket, more than 300 feet tall, the length of this football field, made of new metal alloys, some of which have not yet been embedded, capable of standing heat and stresses, several times more than have ever been experienced, pitted together with a precision better than the finest watch, carrying all the equipment needed for propulsion, guidance, control, communication, food and survival, on an untried mission to an unknown celestial body and then return it safely to earth, re-entering the atmosphere at speeds of over 25,000 miles per hour, causing heat about half that on the temperature of the sun, almost as hot as it is here today and do all this and do all this and do it right and do it first, if all this thick heat is out, then we must be bald."
+    "transcript": "240,000 miles away from the control station in Houston, a giant rocket, more than 300 feet tall, the length of this football field, made of new metal alloys, some of which have not yet been invented, capable of standing heat and stresses, several times more than have ever been experienced, fitted together with a precision better than the finest watch, carrying all the equipment needed for propulsion, guidance, control, communications, food and survival, on an untried mission to an unknown celestial body and then return it safely to earth, re-entering the atmosphere at speeds of over 25,000 miles per hour, causing heat about half that of the temperature of the sun, almost as hot as it is here today and do all this, and do all this, and do it right and do it first, before this decade is out, then we must be bold.",
+    "transcript_notes": "Retains spoken rhetorical repetition 'and do all this, and do all this' (54.0-56.7s in audio) verified against spoken delivery. Corrected 5 Whisper errors: '140,000' -> '240,000', 'embedded' -> 'invented', 'pitted' -> 'fitted', 'if all this thick heat is out' -> 'before this decade is out', 'bald' -> 'bold', plus 'communications' and 'that of the'."
   },
   {
     "speech_id": "reagan_challenger_1986",
@@ -20,10 +21,11 @@
     "location": "Oval Office, Washington, D.C.",
     "source_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
     "audio_source_url": "https://archive.org/download/ChallengerAddress/ReaganChallengerAddress.mp3",
-    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. § 105)",
+    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
     "processed_file": "reagan_challenger_excerpt_real.wav",
     "duration_s": 61.0,
-    "transcript": "and tell them, your dedication and professionalism have moved and impressed us for decades, and we know of your anguish. We share it.\" There's a coincidence today. On this day, 390 years ago, the great explorer Sir Francis Drake died aboard ship off the coast of Panama. In his lifetime, the great frontiers were the oceans, and a historian later said he lived by the sea, died on it, and was buried in it. Well, today, we can say of the challenger crew, their dedication was, like Drake's, complete. The crew of the space shuttle challenger honored us for the manner in which they lived their lives. We will never forget them, nor the last time we saw them this morning, as they prepared for their journey and waved goodbye, and slipped the surly bonds of earth to touch the face of God. Thank you."
+    "transcript": "and tell them, your dedication and professionalism have moved and impressed us for decades, and we know of your anguish. We share it. There's a coincidence today. On this day, 390 years ago, the great explorer Sir Francis Drake died aboard ship off the coast of Panama. In his lifetime, the great frontiers were the oceans, and a historian later said he lived by the sea, died on it, and was buried in it. Well, today, we can say of the Challenger crew, their dedication was, like Drake's, complete. The crew of the space shuttle Challenger honored us for the manner in which they lived their lives. We will never forget them, nor the last time we saw them this morning, as they prepared for their journey and waved goodbye, and slipped the surly bonds of earth to touch the face of God. Thank you.",
+    "transcript_notes": "Spoken audio exactly matches official text. Removed stray quote artifact ('We share it.\"') and normalized casing of 'Challenger'."
   },
   {
     "speech_id": "fdr_fear_itself_1933",
@@ -33,10 +35,11 @@
     "location": "U.S. Capitol, Washington, D.C.",
     "source_url": "https://www.archives.gov/milestone-documents/franklin-d-roosevelts-first-inaugural-address",
     "audio_source_url": "https://archive.org/download/FDR_First_Inaugural_Address/FDR_Inaugural.mp3",
-    "licence": "Believed Public Domain (U.S. National Archives sound recording - 17 U.S.C. § 105)",
+    "licence": "Believed Public Domain (U.S. National Archives sound recording - 17 U.S.C. \u00a7 105)",
     "processed_file": "fdr_fear_itself_excerpt_real.wav",
     "duration_s": 46.96,
-    "transcript": "Let me assert my firm belief, that the only thing we have to fear is fear itself, nameless, unreasoning, unjustified terror, which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life, a leadership of frankness and a fitter has met with that understanding and support of the people themselves, which is essential to victory. And I am convinced to show a game, give that support, to leadership, in these critical days."
+    "transcript": "Let me assert my firm belief, that the only thing we have to fear is fear itself, nameless, unreasoning, unjustified terror, which paralyzes needed efforts to convert retreat into advance. In every dark hour of our national life, a leadership of frankness and of vigor has met with that understanding and support of the people themselves, which is essential to victory. And I am convinced that you will again give that support, to leadership, in these critical days.",
+    "transcript_notes": "FDR spoken audio exactly delivers the official text: 'and of vigor' (Whisper misheard 'and a fitter') and 'that you will again give that support' (Whisper misheard 'to show a game, give that support'). Word count is identical (78 words)."
   },
   {
     "speech_id": "reagan_mourning_1986",
@@ -46,10 +49,11 @@
     "location": "Oval Office, Washington, D.C.",
     "source_url": "https://www.reaganlibrary.gov/archives/speech/address-nation-explosion-space-shuttle-challenger",
     "audio_source_url": "https://archive.org/download/ChallengerAddress/ReaganChallengerAddress.mp3",
-    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. § 105)",
+    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
     "processed_file": "reagan_mourning_excerpt_real.wav",
     "duration_s": 52.0,
-    "transcript": "Ladies and gentlemen, I'd plan to speak to you tonight to report on the State of the Union, but the events of earlier today have led me to change those plans. Today is a day for morning and remembering. Nancy and I are paying to the core of the tragedy of the Shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss. Nineteen years ago, almost to the day, we lost three astronauts in a terrible accident on the ground. But we've never lost an astronaut in flight. We've never had a tragedy like this."
+    "transcript": "Ladies and gentlemen, I'd planned to speak to you tonight to report on the State of the Union, but the events of earlier today have led me to change those plans. Today is a day for mourning and remembering. Nancy and I are pained to the core by the tragedy of the Shuttle Challenger. We know we share this pain with all of the people of our country. This is truly a national loss. Nineteen years ago, almost to the day, we lost three astronauts in a terrible accident on the ground. But we've never lost an astronaut in flight. We've never had a tragedy like this.",
+    "transcript_notes": "Spoken audio matches official text. Corrected Whisper errors: 'I'd plan' -> 'I'd planned', 'morning' -> 'mourning', and 'paying to the core of' -> 'pained to the core by'. Word counts identical (107 words)."
   },
   {
     "speech_id": "jfk_we_choose_1962",
@@ -59,9 +63,10 @@
     "location": "Rice Stadium, Houston, Texas",
     "source_url": "https://www.jfklibrary.org/asset-viewer/archives/JFKWHA/1962/JFKWHA-127-002",
     "audio_source_url": "https://archive.org/download/jfks19620912/jfks19620912.mp3",
-    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. § 105)",
+    "licence": "Believed Public Domain (U.S. Government Work - 17 U.S.C. \u00a7 105)",
     "processed_file": "jfk_we_choose_excerpt_real.wav",
     "duration_s": 60.0,
-    "transcript": "things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we're willing to accept, one we are unwilling to postpone, and one we intend to win, and the others too. It is, for these reasons, that I regard the decision last year to shift our efforts in space from low to high gear as among the most important decisions that will be made during my incumbency in the Office of the Presidency."
+    "transcript": "things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we're willing to accept, one we are unwilling to postpone, and one we intend to win, and the others too. It is, for these reasons, that I regard the decision last year to shift our efforts in space from low to high gear as among the most important decisions that will be made during my incumbency in the Office of the Presidency.",
+    "transcript_notes": "Spoken audio and Whisper transcript match official archive text completely. Zero word differences."
   }
 ]

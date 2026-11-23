@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -390,7 +389,7 @@
     },
     {
       "index": 43,
-      "text": "a",
+      "text": "of",
       "start": 37.347,
       "end": 37.507,
       "duration": 0.16,
@@ -399,7 +398,7 @@
     },
     {
       "index": 44,
-      "text": "fitter",
+      "text": "vigor",
       "start": 37.507,
       "end": 38.7,
       "duration": 1.193,
@@ -581,46 +580,46 @@
       "index": 64,
       "text": "convinced",
       "start": 45.5,
-      "end": 47.789,
-      "duration": 2.289,
+      "end": 47.629,
+      "duration": 2.129,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 65,
-      "text": "to",
-      "start": 47.789,
-      "end": 47.929,
-      "duration": 0.14,
+      "text": "that",
+      "start": 47.629,
+      "end": 47.969,
+      "duration": 0.34,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 66,
-      "text": "show",
-      "start": 47.929,
-      "end": 48.67,
-      "duration": 0.741,
+      "text": "you",
+      "start": 47.969,
+      "end": 48.109,
+      "duration": 0.14,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 67,
-      "text": "a",
-      "start": 48.86,
-      "end": 48.989,
-      "duration": 0.129,
+      "text": "will",
+      "start": 48.109,
+      "end": 48.67,
+      "duration": 0.561,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 68,
-      "text": "game",
-      "start": 48.989,
+      "text": "again",
+      "start": 48.86,
       "end": 49.86,
-      "duration": 0.871,
-      "punctuation": ",",
-      "has_punctuation": true
+      "duration": 1.0,
+      "punctuation": "",
+      "has_punctuation": false
     },
     {
       "index": 69,
@@ -704,5 +703,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 78
 }

@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -205,7 +204,7 @@
       "start": 7.882,
       "end": 8.002,
       "duration": 0.12,
-      "punctuation": ".\"",
+      "punctuation": ".",
       "has_punctuation": true
     },
     {
@@ -732,7 +731,7 @@
     },
     {
       "index": 81,
-      "text": "challenger",
+      "text": "Challenger",
       "start": 32.329,
       "end": 32.869,
       "duration": 0.54,
@@ -858,7 +857,7 @@
     },
     {
       "index": 95,
-      "text": "challenger",
+      "text": "Challenger",
       "start": 40.731,
       "end": 41.33,
       "duration": 0.599,
@@ -1307,5 +1306,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 145
 }

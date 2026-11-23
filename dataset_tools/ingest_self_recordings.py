@@ -44,12 +44,24 @@ def normalize_word_str(w: str) -> str:
     return re.sub(r"[^a-zA-Z0-9]", "", w).lower()
 
 
-def parse_notes_file(notes_path: Path) -> list[str]:
-    """Parses notes.txt to extract target words before deliberate pauses."""
+def inspect_notes_file(notes_path: Path) -> tuple[list[str], list[str]]:
+    """
+    Parses notes.txt to extract target words and inspects for templates/placeholders/obsolete words.
+    Returns (clean_words, error_messages).
+    """
     if not notes_path.exists():
-        return []
+        return [], ["notes.txt is missing"]
+
     with open(notes_path, "r", encoding="utf-8") as f:
         content = f.read()
+
+    errors = []
+    lower_content = content.lower()
+    if "[" in content or "]" in content or "your_pause_word" in lower_content or "placeholder" in lower_content:
+        errors.append("notes.txt contains unedited template placeholders (e.g. [YOUR_PAUSE_WORD])")
+
+    if "terror" in lower_content or "support" in lower_content:
+        errors.append("notes.txt contains obsolete example words ('terror' or 'support')")
 
     words = []
     for line in content.splitlines():
@@ -61,6 +73,13 @@ def parse_notes_file(notes_path: Path) -> list[str]:
             cl = normalize_word_str(t)
             if cl and cl not in ("words", "before", "each", "deliberate", "pause", "pauses"):
                 words.append(cl)
+
+    return words, errors
+
+
+def parse_notes_file(notes_path: Path) -> list[str]:
+    """Parses notes.txt to extract target words before deliberate pauses."""
+    words, _ = inspect_notes_file(notes_path)
     return words
 
 
@@ -437,7 +456,7 @@ def run_preflight_check() -> bool:
     transcript_words = set(transcript_tokens)
 
     notes_path = SELF_REC_DIR / "notes.txt"
-    notes_words = parse_notes_file(notes_path)
+    notes_words, notes_errors = inspect_notes_file(notes_path)
 
     take_paths: dict[str, Path | None] = {}
     for label, aliases in required_takes:
@@ -576,15 +595,48 @@ def run_preflight_check() -> bool:
         has_critical_errors = True
         action_items.append(f"Ensure data/self_recordings/transcript.txt contains the 78-word FDR excerpt.")
     
-    if not notes_path.exists() or not notes_words:
+    if not notes_path.exists():
         notes_warn.append("notes.txt missing (required for odd-pauses ground truth)")
-        action_items.append(f"Create data/self_recordings/notes.txt listing words before deliberate pauses in odd_pauses take.")
+        has_critical_errors = True
+        action_items.append("Create data/self_recordings/notes.txt listing words before deliberate pauses in odd_pauses take.")
     else:
-        missing_words = [nw for nw in notes_words if normalize_word_str(nw) not in transcript_words]
-        if missing_words:
-            notes_warn.append(f"Notes words not in transcript: {missing_words}")
+        if notes_errors:
+            for err in notes_errors:
+                notes_warn.append(err)
+                action_items.append(f"Fix notes.txt: {err}.")
             has_critical_errors = True
-            action_items.append(f"Correct words in notes.txt: {missing_words} do not appear in transcript.txt.")
+
+        if not notes_words:
+            notes_warn.append("notes.txt contains no valid target words")
+            has_critical_errors = True
+            action_items.append("Enter target pause words in notes.txt.")
+        else:
+            missing_words = [nw for nw in notes_words if normalize_word_str(nw) not in transcript_words]
+            if missing_words:
+                notes_warn.append(f"Notes words not in transcript: {missing_words}")
+                has_critical_errors = True
+                action_items.append(f"Correct words in notes.txt: {missing_words} do not appear in transcript.txt.")
+
+            # Check matching pause count in odd_pauses.wav if present
+            odd_p = take_paths.get("Odd Pauses Take")
+            if odd_p and odd_p.exists():
+                try:
+                    from backend.pipeline.vad import detect_speech_and_pauses
+                    y_odd, sr_odd, _, _ = load_and_preprocess_audio(str(odd_p))
+                    _, p_segs, _ = detect_speech_and_pauses(y_odd, sr=sr_odd)
+                    total_dur = len(y_odd) / sr_odd
+                    delib_pauses = [
+                        p for p in p_segs
+                        if (p["end_s"] - p["start_s"]) >= 0.35 and p["start_s"] > 0.5 and p["end_s"] < (total_dur - 0.5)
+                    ]
+                    detected_count = len(delib_pauses)
+                    if len(notes_words) != detected_count:
+                        notes_warn.append(
+                            f"[WARNING] Pause count difference: notes.txt lists {len(notes_words)} words, "
+                            f"while odd_pauses.wav has {detected_count} detected deliberate pauses (evaluation reports detected vs noted pause recall and timestamps without requiring matching counts)."
+                        )
+                except Exception as e:
+                    notes_warn.append(f"Could not analyze pauses in odd_pauses.wav: {e}")
 
     print(f"\n{'ROLE':<20} | {'FILE':<16} | {'DUR':<7} | {'SAMPLE RATE':<11} | {'CH':<6} | {'CLIP %':<8} | {'SNR':<8} | {'VOICED':<7} | {'STATUS / WARNINGS'}")
     print("-" * 120)

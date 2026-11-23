@@ -27,6 +27,7 @@ def run_speech_pipeline(
     filename: str = "uploaded_speech.wav",
     reference_words: list[dict[str, Any]] | None = None,
     reference_id: str | None = None,
+    reference_sha256: str | None = None,
     cached_context: dict[str, Any] | None = None,
     progress_callback: Any = None,
 ) -> dict[str, Any]:
@@ -164,6 +165,64 @@ def run_speech_pipeline(
             "message": f"Elevated vocal jitter ({praat_feats['jitter_local']*100:.1f}%) may indicate rough vocal quality or room resonance.",
             "metric_value": praat_feats["jitter_local"],
         })
+
+    # Transcript coverage & word rate plausibility
+    if raw_words:
+        first_w_start = raw_words[0]["start"]
+        last_w_end = raw_words[-1]["end"]
+        aligned_span_s = max(0.0, last_w_end - first_w_start)
+    else:
+        aligned_span_s = 0.0
+
+    coverage_fraction = float(aligned_span_s / max(duration_s, 0.001))
+    coverage_pct = round(coverage_fraction * 100.0, 1)
+    word_count = len(raw_words)
+    words_per_sec = round(float(word_count / max(duration_s, 0.001)), 2)
+
+    if coverage_fraction < 0.80 or words_per_sec < 0.80 or words_per_sec > 5.5:
+        warn_msg = (
+            f"Transcript covers only {coverage_pct:.1f}% of the audio "
+            f"({word_count} words in {duration_s:.1f}s, {words_per_sec:.2f} words/s)."
+        )
+        quality_flags.append({
+            "code": "LOW_TRANSCRIPT_COVERAGE",
+            "severity": "WARNING",
+            "message": warn_msg,
+            "metric_value": coverage_fraction,
+        })
+        scores["transcript_coverage_warning"] = warn_msg
+        scores["transcript_coverage_pct"] = coverage_pct
+        scores["words_per_second"] = words_per_sec
+
+    # Self-comparison (identity) validation
+    is_self_comparison = False
+    if reference_words is not None:
+        if reference_sha256 and sha256_hash == reference_sha256:
+            is_self_comparison = True
+        elif len(reference_words) == len(raw_words) and len(raw_words) > 0:
+            max_start_diff = max(
+                abs(w["start"] - ref_w.get("start", -999.0))
+                for w, ref_w in zip(raw_words, reference_words, strict=False)
+            )
+            max_end_diff = max(
+                abs(w["end"] - ref_w.get("end", -999.0))
+                for w, ref_w in zip(raw_words, reference_words, strict=False)
+            )
+            if max_start_diff < 0.05 and max_end_diff < 0.05:
+                is_self_comparison = True
+
+    if is_self_comparison:
+        self_warn = (
+            "Self-comparison detected: Reference audio and participant audio are the same file "
+            "or near-identical envelope. Contrastive evaluation against oneself is uninformative."
+        )
+        quality_flags.append({
+            "code": "SELF_COMPARISON_WARNING",
+            "severity": "WARNING",
+            "message": self_warn,
+            "metric_value": 1.0,
+        })
+        scores["self_comparison_warning"] = self_warn
 
     analysis_id = f"analysis_{sha256_hash[:16]}"
 

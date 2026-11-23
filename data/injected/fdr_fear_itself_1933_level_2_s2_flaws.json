@@ -25,11 +25,11 @@
     },
     {
       "flaw_type": "rushed",
-      "start_s": 39.759,
+      "start_s": 39.678,
       "end_s": 42.4,
       "start_word_idx": 67,
       "end_word_idx": 72,
-      "words": "a game give that support to",
+      "words": "will again give that support to",
       "profile": {
         "type": "rushed",
         "tempo_factor": 1.45,

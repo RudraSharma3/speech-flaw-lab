@@ -1,3 +1,5 @@
-# Words before deliberate pauses:
-terror
-support
+# Template: Replace the placeholders below with the exact words from the transcript
+# that you deliberately paused after in odd_pauses.wav (one word per line).
+# Do not leave template placeholders.
+[YOUR_PAUSE_WORD_1]
+[YOUR_PAUSE_WORD_2]

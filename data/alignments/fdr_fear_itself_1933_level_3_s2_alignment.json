@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -390,7 +389,7 @@
     },
     {
       "index": 43,
-      "text": "a",
+      "text": "of",
       "start": 28.091,
       "end": 28.252,
       "duration": 0.161,
@@ -399,7 +398,7 @@
     },
     {
       "index": 44,
-      "text": "fitter",
+      "text": "vigor",
       "start": 28.29,
       "end": 28.72,
       "duration": 0.43,
@@ -588,39 +587,39 @@
     },
     {
       "index": 65,
-      "text": "to",
+      "text": "that",
       "start": 39.336,
-      "end": 39.496,
-      "duration": 0.16,
+      "end": 39.536,
+      "duration": 0.2,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 66,
-      "text": "show",
-      "start": 39.496,
-      "end": 40.05,
-      "duration": 0.554,
+      "text": "you",
+      "start": 39.6,
+      "end": 39.676,
+      "duration": 0.076,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 67,
-      "text": "a",
-      "start": 40.43,
-      "end": 40.577,
-      "duration": 0.147,
+      "text": "will",
+      "start": 39.676,
+      "end": 40.05,
+      "duration": 0.374,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 68,
-      "text": "game",
-      "start": 40.577,
-      "end": 41.117,
-      "duration": 0.54,
-      "punctuation": ",",
-      "has_punctuation": true
+      "text": "again",
+      "start": 40.43,
+      "end": 41.11,
+      "duration": 0.68,
+      "punctuation": "",
+      "has_punctuation": false
     },
     {
       "index": 69,
@@ -704,5 +703,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 78
 }

@@ -8,18 +8,11 @@
   "gates": {
     "null_injection_control": {
       "status": "PASS",
-      "total_flags": 1,
+      "total_flags": 0,
       "total_duration_s": 290.0,
-      "fp_rate_flags_per_min": 0.21,
+      "fp_rate_flags_per_min": 0.0,
       "flags_by_speech": {
-        "jfk_moon_1962": [
-          {
-            "type": "drag_slow",
-            "start_s": 58.297,
-            "end_s": 59.737,
-            "z": -1.78
-          }
-        ],
+        "jfk_moon_1962": [],
         "reagan_challenger_1986": [],
         "fdr_fear_itself_1933": [],
         "reagan_mourning_1986": [],
@@ -27,7 +20,7 @@
       }
     },
     "l01_recall_target_80": {
-      "achieved_recall_03": 74.3,
+      "achieved_recall_03": 75.2,
       "achieved_recall_05": 68.6,
       "target": 80.0,
       "status": "FAIL"
@@ -41,28 +34,28 @@
   },
   "boundary_accuracy": {
     "single_regions": {
-      "count": 53,
-      "median_start_ms": 200.0,
-      "p90_start_ms": 928.2,
-      "median_end_ms": 200.0,
-      "p90_end_ms": 1030.2
+      "count": 54,
+      "median_start_ms": 260.0,
+      "p90_start_ms": 980.8,
+      "median_end_ms": 222.5,
+      "p90_end_ms": 1025.3
     },
     "merged_regions": {
-      "count": 32,
-      "median_start_ms": 223.0,
-      "p90_start_ms": 1506.2,
-      "median_end_ms": 260.0,
-      "p90_end_ms": 1312.2
+      "count": 31,
+      "median_start_ms": 200.0,
+      "p90_start_ms": 1520.0,
+      "median_end_ms": 280.0,
+      "p90_end_ms": 1338.0
     },
     "matched_ious_03": {
       "count": 85,
-      "mean_iou": 0.776,
+      "mean_iou": 0.769,
       "median_iou": 0.81
     },
     "all_gt_flaws_penalized": {
       "count": 150,
-      "mean_iou": 0.44,
-      "median_start_ms": 1005.0,
+      "mean_iou": 0.436,
+      "median_start_ms": 1010.0,
       "p90_start_ms": 2000.0,
       "median_end_ms": 1070.5,
       "p90_end_ms": 2000.0
@@ -76,50 +69,50 @@
     },
     "at_iou_05": {
       "total_matched": 76,
-      "correct_type": 70,
-      "accuracy_percent": 92.1
+      "correct_type": 69,
+      "accuracy_percent": 90.8
     }
   },
   "by_quality_level": {
     "level_0": {
       "gt_count": 60,
-      "det_count": 57,
+      "det_count": 55,
       "matched_03": 43,
-      "precision_03": 75.4,
+      "precision_03": 78.2,
       "recall_03": 71.7,
-      "f1_03": 73.5,
+      "f1_03": 74.8,
       "matched_05": 40,
-      "precision_05": 70.2,
+      "precision_05": 72.7,
       "recall_05": 66.7,
-      "f1_05": 68.4
+      "f1_05": 69.6
     },
     "level_1": {
       "gt_count": 45,
-      "det_count": 43,
-      "matched_03": 35,
-      "precision_03": 81.4,
-      "recall_03": 77.8,
-      "f1_03": 79.5,
+      "det_count": 42,
+      "matched_03": 36,
+      "precision_03": 85.7,
+      "recall_03": 80.0,
+      "f1_03": 82.8,
       "matched_05": 32,
-      "precision_05": 74.4,
+      "precision_05": 76.2,
       "recall_05": 71.1,
-      "f1_05": 72.7
+      "f1_05": 73.6
     },
     "level_2": {
       "gt_count": 30,
-      "det_count": 14,
-      "matched_03": 7,
-      "precision_03": 50.0,
-      "recall_03": 23.3,
-      "f1_03": 31.8,
+      "det_count": 10,
+      "matched_03": 6,
+      "precision_03": 60.0,
+      "recall_03": 20.0,
+      "f1_03": 30.0,
       "matched_05": 4,
-      "precision_05": 28.6,
+      "precision_05": 40.0,
       "recall_05": 13.3,
-      "f1_05": 18.2
+      "f1_05": 20.0
     },
     "level_3": {
       "gt_count": 15,
-      "det_count": 1,
+      "det_count": 0,
       "matched_03": 0,
       "precision_03": 0.0,
       "recall_03": 0.0,
@@ -149,49 +142,49 @@
     },
     "rushed": {
       "gt_count": 45,
-      "det_count": 28,
-      "strict_matched_03": 27,
-      "strict_precision_03": 96.4,
-      "strict_recall_03": 60.0,
-      "strict_f1_03": 74.0,
+      "det_count": 27,
+      "strict_matched_03": 28,
+      "strict_precision_03": 100.0,
+      "strict_recall_03": 62.2,
+      "strict_f1_03": 76.7,
       "strict_matched_05": 24,
-      "strict_precision_05": 85.7,
+      "strict_precision_05": 88.9,
       "strict_recall_05": 53.3,
-      "strict_f1_05": 65.7,
+      "strict_f1_05": 66.6,
       "det_matched_any_gt_03": 24,
-      "det_precision_agnostic_03": 85.7,
+      "det_precision_agnostic_03": 88.9,
       "gt_matched_any_det_03": 32,
       "gt_recall_agnostic_03": 71.1
     },
     "drag_slow": {
       "gt_count": 30,
-      "det_count": 30,
-      "strict_matched_03": 25,
-      "strict_precision_03": 83.3,
-      "strict_recall_03": 83.3,
-      "strict_f1_03": 83.3,
-      "strict_matched_05": 24,
-      "strict_precision_05": 80.0,
-      "strict_recall_05": 80.0,
-      "strict_f1_05": 80.0,
+      "det_count": 23,
+      "strict_matched_03": 24,
+      "strict_precision_03": 100.0,
+      "strict_recall_03": 80.0,
+      "strict_f1_03": 88.9,
+      "strict_matched_05": 23,
+      "strict_precision_05": 100.0,
+      "strict_recall_05": 76.7,
+      "strict_f1_05": 86.8,
       "det_matched_any_gt_03": 20,
-      "det_precision_agnostic_03": 66.7,
+      "det_precision_agnostic_03": 87.0,
       "gt_matched_any_det_03": 27,
       "gt_recall_agnostic_03": 90.0
     },
     "inappropriate_pause": {
       "gt_count": 15,
-      "det_count": 20,
+      "det_count": 19,
       "strict_matched_03": 9,
-      "strict_precision_03": 45.0,
+      "strict_precision_03": 47.4,
       "strict_recall_03": 60.0,
-      "strict_f1_03": 51.4,
+      "strict_f1_03": 53.0,
       "strict_matched_05": 8,
-      "strict_precision_05": 40.0,
+      "strict_precision_05": 42.1,
       "strict_recall_05": 53.3,
-      "strict_f1_05": 45.7,
-      "det_matched_any_gt_03": 16,
-      "det_precision_agnostic_03": 80.0,
+      "strict_f1_05": 47.0,
+      "det_matched_any_gt_03": 15,
+      "det_precision_agnostic_03": 78.9,
       "gt_matched_any_det_03": 9,
       "gt_recall_agnostic_03": 60.0
     }
@@ -208,9 +201,9 @@
   "score_tables": {
     "reference_free_uncalibrated": {
       "jfk_moon_1962": [
+        95.2,
         95.1,
-        95.1,
-        95.1,
+        95.2,
         95.1,
         90.2
       ],
@@ -222,9 +215,9 @@
         91.5
       ],
       "fdr_fear_itself_1933": [
+        94.7,
         94.6,
-        94.6,
-        94.6,
+        94.7,
         93.9,
         83.2
       ],
@@ -233,7 +226,7 @@
         93.5,
         93.7,
         93.4,
-        86.4
+        86.5
       ],
       "jfk_we_choose_1962": [
         94.0,
@@ -246,10 +239,10 @@
     "contrastive_uncalibrated": {
       "jfk_moon_1962": [
         96.5,
-        94.9,
-        88.5,
-        71.4,
-        70.4
+        96.3,
+        92.3,
+        76.7,
+        72.3
       ],
       "reagan_challenger_1986": [
         96.5,
@@ -261,16 +254,16 @@
       "fdr_fear_itself_1933": [
         96.5,
         96.4,
-        93.2,
-        72.4,
-        53.4
+        94.1,
+        73.3,
+        53.5
       ],
       "reagan_mourning_1986": [
         96.5,
         96.2,
-        94.5,
+        94.4,
         81.6,
-        55.9
+        54.4
       ],
       "jfk_we_choose_1962": [
         96.5,
@@ -283,128 +276,44 @@
     "contrastive_isotonic_calibrated": {
       "jfk_moon_1962": [
         94.9,
-        84.5,
+        88.0,
         75.0,
-        45.0,
-        38.3
+        47.7,
+        39.7
       ],
       "reagan_challenger_1986": [
         94.9,
         92.6,
-        76.7,
-        45.0,
+        75.0,
+        43.0,
         37.5
       ],
       "fdr_fear_itself_1933": [
         94.9,
         90.3,
-        76.7,
-        45.0,
+        75.0,
+        43.2,
         27.5
       ],
       "reagan_mourning_1986": [
         94.9,
         88.0,
-        78.0,
+        77.2,
         55.0,
         27.5
       ],
       "jfk_we_choose_1962": [
         94.9,
         85.8,
-        75.9,
-        40.8,
+        75.0,
+        38.8,
         30.8
       ]
     }
   },
   "unmatched_detections_audit": {
-    "total_count": 30,
+    "total_count": 22,
     "detections": [
-      {
-        "rec_id": "jfk_moon_1962_level_3",
-        "level": 3,
-        "flaw_type": "drag_slow",
-        "span": [
-          58.297,
-          59.737
-        ],
-        "z": -1.78,
-        "dist_to_gt_s": 0.33,
-        "nearest_gt_type": "monotone"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_2",
-        "level": 2,
-        "flaw_type": "drag_slow",
-        "span": [
-          57.906,
-          59.366
-        ],
-        "z": -1.8,
-        "dist_to_gt_s": 16.64,
-        "nearest_gt_type": "monotone"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_0",
-        "level": 0,
-        "flaw_type": "drag_slow",
-        "span": [
-          62.965,
-          64.425
-        ],
-        "z": -1.8,
-        "dist_to_gt_s": 7.38,
-        "nearest_gt_type": "rushed"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_2_s1",
-        "level": 2,
-        "flaw_type": "drag_slow",
-        "span": [
-          57.414,
-          58.874
-        ],
-        "z": -1.74,
-        "dist_to_gt_s": 30.03,
-        "nearest_gt_type": "monotone"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_1_s1",
-        "level": 1,
-        "flaw_type": "drag_slow",
-        "span": [
-          58.227,
-          59.687
-        ],
-        "z": -1.81,
-        "dist_to_gt_s": 4.0,
-        "nearest_gt_type": "monotone"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_2_s2",
-        "level": 2,
-        "flaw_type": "drag_slow",
-        "span": [
-          57.447,
-          58.907
-        ],
-        "z": -1.81,
-        "dist_to_gt_s": 30.02,
-        "nearest_gt_type": "rushed"
-      },
-      {
-        "rec_id": "jfk_moon_1962_level_0_s2",
-        "level": 0,
-        "flaw_type": "drag_slow",
-        "span": [
-          64.439,
-          65.899
-        ],
-        "z": -1.9,
-        "dist_to_gt_s": 19.89,
-        "nearest_gt_type": "monotone"
-      },
       {
         "rec_id": "reagan_challenger_1986_level_1",
         "level": 1,
@@ -461,21 +370,9 @@
           29.906,
           32.867
         ],
-        "z": -2.06,
+        "z": -1.94,
         "dist_to_gt_s": 2.21,
         "nearest_gt_type": "monotone"
-      },
-      {
-        "rec_id": "fdr_fear_itself_1933_level_1_s1",
-        "level": 1,
-        "flaw_type": "rushed",
-        "span": [
-          35.389,
-          43.611
-        ],
-        "z": 3.81,
-        "dist_to_gt_s": 0.64,
-        "nearest_gt_type": "rushed"
       },
       {
         "rec_id": "fdr_fear_itself_1933_level_0_s2",
@@ -689,6 +586,5 @@
     "recall_03": 60.0,
     "median_start_err_ms": 70.5,
     "p90_start_err_ms": 807.0
-  },
-  "self_recordings": "NOT YET INGESTED"
+  }
 }

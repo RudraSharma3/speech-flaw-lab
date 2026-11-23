@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -39,7 +38,7 @@
     },
     {
       "index": 4,
-      "text": "plan",
+      "text": "planned",
       "start": 2.0,
       "end": 2.32,
       "duration": 0.32,
@@ -327,7 +326,7 @@
     },
     {
       "index": 36,
-      "text": "morning",
+      "text": "mourning",
       "start": 10.901,
       "end": 11.45,
       "duration": 0.549,
@@ -390,19 +389,19 @@
     },
     {
       "index": 43,
-      "text": "paying",
+      "text": "pained",
       "start": 14.242,
-      "end": 14.522,
-      "duration": 0.28,
+      "end": 14.562,
+      "duration": 0.32,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 44,
       "text": "to",
-      "start": 14.522,
+      "start": 14.562,
       "end": 14.622,
-      "duration": 0.1,
+      "duration": 0.06,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -419,17 +418,17 @@
       "index": 46,
       "text": "core",
       "start": 14.742,
-      "end": 15.062,
-      "duration": 0.32,
+      "end": 15.022,
+      "duration": 0.28,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 47,
-      "text": "of",
-      "start": 15.062,
+      "text": "by",
+      "start": 15.022,
       "end": 15.142,
-      "duration": 0.08,
+      "duration": 0.12,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -965,5 +964,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 107
 }

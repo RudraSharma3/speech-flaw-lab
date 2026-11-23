@@ -1,5 +1,4 @@
 {
-  "engine_used": "torchaudio_mms_fa",
   "words": [
     {
       "index": 0,
@@ -390,19 +389,19 @@
     },
     {
       "index": 43,
-      "text": "a",
+      "text": "of",
       "start": 27.671,
-      "end": 27.721,
-      "duration": 0.05,
+      "end": 27.791,
+      "duration": 0.12,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 44,
-      "text": "fitter",
-      "start": 27.721,
+      "text": "vigor",
+      "start": 27.791,
       "end": 28.031,
-      "duration": 0.31,
+      "duration": 0.24,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -588,55 +587,55 @@
     },
     {
       "index": 65,
-      "text": "to",
+      "text": "that",
       "start": 37.47,
-      "end": 37.535,
-      "duration": 0.065,
+      "end": 37.575,
+      "duration": 0.105,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 66,
-      "text": "show",
-      "start": 37.535,
-      "end": 37.795,
-      "duration": 0.26,
+      "text": "you",
+      "start": 37.64,
+      "end": 37.735,
+      "duration": 0.095,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 67,
-      "text": "a",
-      "start": 37.795,
-      "end": 37.995,
-      "duration": 0.2,
+      "text": "will",
+      "start": 37.735,
+      "end": 38.09,
+      "duration": 0.355,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 68,
-      "text": "game",
-      "start": 37.995,
-      "end": 38.555,
-      "duration": 0.56,
-      "punctuation": ",",
-      "has_punctuation": true
+      "text": "again",
+      "start": 38.47,
+      "end": 39.196,
+      "duration": 0.726,
+      "punctuation": "",
+      "has_punctuation": false
     },
     {
       "index": 69,
       "text": "give",
-      "start": 38.555,
-      "end": 39.43,
-      "duration": 0.875,
+      "start": 39.196,
+      "end": 40.63,
+      "duration": 1.434,
       "punctuation": "",
       "has_punctuation": false
     },
     {
       "index": 70,
       "text": "that",
-      "start": 40.61,
+      "start": 40.63,
       "end": 41.116,
-      "duration": 0.506,
+      "duration": 0.486,
       "punctuation": "",
       "has_punctuation": false
     },
@@ -704,5 +703,5 @@
       "has_punctuation": true
     }
   ],
-  "phonemes": []
+  "word_count": 78
 }
