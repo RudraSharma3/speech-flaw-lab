@@ -28,3 +28,4 @@ dependencies:
       - pytest==8.2.2
       - httpx==0.27.0
       - ruff==0.4.9
+      - num2words==0.5.14
