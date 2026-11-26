@@ -11,6 +11,7 @@ import { GroundTruthTable } from './components/GroundTruthTable';
 import { LimitationsPanel } from './components/LimitationsPanel';
 import { ClarityPanel } from './components/ClarityPanel';
 import { Mic2, Activity, Layers, Cpu } from 'lucide-react';
+import { IS_STATIC_DEMO } from './lib/staticApi';
 
 export const App: React.FC = () => {
   const { activeTab, setActiveTab } = useAudioStore();
@@ -48,13 +49,20 @@ export const App: React.FC = () => {
 
           <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-800/60 text-xs text-emerald-300">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>MFA + Praat Active</span>
+            <span>MMS_FA aligner + Praat</span>
           </div>
         </div>
       </header>
 
       {/* Main Container */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
+        {IS_STATIC_DEMO && (
+          <div className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs text-amber-200 leading-relaxed">
+            <span className="font-bold">Read-only demo.</span> Every result shown here was computed by the
+            deterministic pipeline and exported from the backend unchanged. Uploading new audio needs the
+            Python backend, so it is turned off in this shared view.
+          </div>
+        )}
         {/* Navigation Tabs */}
         <div className="flex items-center gap-2 mb-6 border-b border-slate-800 pb-2">
           <button

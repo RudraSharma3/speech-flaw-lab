@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { AnalysisResult, GroundedFlaw, WordMetric } from '../types/api';
+import { resolveApiUrl } from '../lib/staticApi';
 
 interface AudioStoreState {
   resultData: AnalysisResult | null;
@@ -45,7 +46,7 @@ export const useAudioStore = create<AudioStoreState>((set, get) => ({
   setResultData: (data, audioUrl) => {
     set({
       resultData: data,
-      audioUrl: audioUrl || get().audioUrl,
+      audioUrl: audioUrl ? resolveApiUrl(audioUrl) : get().audioUrl,
       duration: data.meta.duration_s,
       currentTime: 0.0,
       selectedRegion: data.flaws.length > 0 ? data.flaws[0] : null,

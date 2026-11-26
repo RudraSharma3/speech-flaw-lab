@@ -33,6 +33,7 @@ export const WaveformViewer: React.FC = () => {
   const regionsPluginRef = useRef<any>(null);
 
   const [zoom, setZoom] = useState<number>(50);
+  const [audioError, setAudioError] = useState<boolean>(false);
   const {
     resultData,
     audioUrl,
@@ -89,8 +90,9 @@ export const WaveformViewer: React.FC = () => {
     wsRef.current = ws;
 
     // Load audio or synthetic buffer
+    setAudioError(false);
     if (audioUrl) {
-      ws.load(audioUrl);
+      ws.load(audioUrl).catch(() => setAudioError(true));
     }
 
     ws.on('ready', () => {
@@ -218,6 +220,11 @@ export const WaveformViewer: React.FC = () => {
           <p className="text-xs text-slate-400">
             Click on any highlighted flaw region to inspect acoustic delta, zoom timeline, and play localized audio.
           </p>
+          {audioError && (
+            <p className="mt-1 text-xs text-amber-300">
+              The audio for this recording could not be loaded, so the waveform is empty. The analysis below is unaffected.
+            </p>
+          )}
         </div>
 
         {/* Legend */}
