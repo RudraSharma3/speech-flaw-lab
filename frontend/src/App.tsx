@@ -1,165 +1,103 @@
 import React from 'react';
 import { useAudioStore } from './store/useAudioStore';
-import { WaveformViewer } from './components/WaveformViewer';
-import { AcousticPlots } from './components/AcousticPlots';
-import { TranscriptHeatmap } from './components/TranscriptHeatmap';
-import { CausalExplanationCard } from './components/CausalExplanationCard';
-import { ScoreCard } from './components/ScoreCard';
-import { UploadPanel } from './components/UploadPanel';
-import { CompareGradientView } from './components/CompareGradientView';
-import { GroundTruthTable } from './components/GroundTruthTable';
-import { LimitationsPanel } from './components/LimitationsPanel';
-import { ClarityPanel } from './components/ClarityPanel';
-import { Mic2, Activity, Layers, Cpu } from 'lucide-react';
 import { IS_STATIC_DEMO } from './lib/staticApi';
+import { Segmented } from './components/ui';
+import { RecordingPicker } from './components/RecordingPicker';
+import { SummaryStrip } from './components/SummaryStrip';
+import { WaveformViewer } from './components/WaveformViewer';
+import { FlawInspector } from './components/FlawInspector';
+import { GroundTruthTable } from './components/GroundTruthTable';
+import { TranscriptHeatmap } from './components/TranscriptHeatmap';
+import { AcousticPlots } from './components/AcousticPlots';
+import { RubricBreakdown } from './components/RubricBreakdown';
+import { ClarityPanel } from './components/ClarityPanel';
+import { UploadPanel } from './components/UploadPanel';
+import { BenchmarkView } from './components/BenchmarkView';
+
+const Logo: React.FC = () => (
+  <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden>
+    <rect width="22" height="22" rx="5" fill="#0f4c5c" />
+    {[4, 8, 12, 16].map((x, i) => {
+      const h = [6, 12, 8, 4][i];
+      return <rect key={x} x={x + 0.5} y={11 - h / 2} width="2" height={h} rx="1" fill="#ffffff" />;
+    })}
+  </svg>
+);
+
+const RecordingView: React.FC = () => {
+  const { resultData } = useAudioStore();
+  return (
+    <div className="space-y-5">
+      <div className="max-w-[78ch]">
+        <h1 className="text-[22px] font-semibold tracking-tight text-ink">Where does the delivery go wrong?</h1>
+        <p className="mt-1 text-[14px] leading-relaxed text-ink-2">
+          Speech Flaw Lab lines a recording up word by word against a reference take of the same text and marks the spans that
+          are rushed, too slow, monotone or badly paused. The recordings here are historical speeches with flaws injected at
+          known places, so every detection can be checked against the truth.
+          {IS_STATIC_DEMO && ' This shared copy shows stored pipeline results.'}
+        </p>
+      </div>
+
+      <RecordingPicker />
+
+      {resultData && (
+        <>
+          <SummaryStrip />
+          <WaveformViewer />
+          <FlawInspector />
+          <GroundTruthTable />
+          <TranscriptHeatmap />
+          <AcousticPlots />
+          <RubricBreakdown />
+          <ClarityPanel />
+        </>
+      )}
+
+      <UploadPanel />
+    </div>
+  );
+};
 
 export const App: React.FC = () => {
-  const { activeTab, setActiveTab } = useAudioStore();
+  const { view, setView } = useAudioStore();
 
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 flex flex-col">
-      {/* Top Navbar */}
-      <header className="sticky top-0 z-50 glass-panel border-b border-slate-800/80 px-6 py-3.5 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-primary to-brand-secondary flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <Mic2 className="w-5 h-5 text-white" />
+    <div className="flex min-h-screen flex-col bg-paper">
+      <header className="sticky z-30 border-b border-line bg-surface/95 backdrop-blur" style={{ top: 'env(safe-area-inset-top, 0px)' }}>
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-3 px-4 py-2.5 sm:px-6">
+          <div className="flex items-center gap-2.5">
+            <Logo />
+            <span className="text-[15px] font-semibold tracking-tight text-ink">Speech Flaw Lab</span>
+            {IS_STATIC_DEMO && (
+              <span className="hidden rounded border border-line px-1.5 py-0.5 text-[11px] text-ink-3 sm:inline">Read-only demo</span>
+            )}
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-base font-black tracking-tight text-white">
-                SPEECH CONTRASTIVE ANALYTICS
-              </h1>
-              <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                TRACK C
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-400">
-              Deterministic Temporal Flaw Grounding & Acoustic Deviation Engine
-            </p>
-          </div>
-        </div>
-
-        {/* Status Indicators & Hackathon Badge */}
-        <div className="flex items-center gap-4">
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/80 border border-slate-800 text-xs">
-            <Cpu className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="text-slate-400">Pipeline:</span>
-            <span className="text-slate-200 font-mono font-semibold">Deterministic / Zero-LLM</span>
-          </div>
-
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/40 border border-emerald-800/60 text-xs text-emerald-300">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span>MMS_FA aligner + Praat</span>
-          </div>
+          <Segmented<"recording" | "benchmark">
+            ariaLabel="View"
+            value={view}
+            onChange={(v) => {
+              setView(v);
+              window.scrollTo({ top: 0 });
+            }}
+            options={[
+              { value: 'recording', label: 'Recording' },
+              { value: 'benchmark', label: 'Benchmark' },
+            ]}
+          />
         </div>
       </header>
 
-      {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6">
-        {IS_STATIC_DEMO && (
-          <div className="mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-xs text-amber-200 leading-relaxed">
-            <span className="font-bold">Read-only demo.</span> Every result shown here was computed by the
-            deterministic pipeline and exported from the backend unchanged. Uploading new audio needs the
-            Python backend, so it is turned off in this shared view.
-          </div>
-        )}
-        {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 mb-6 border-b border-slate-800 pb-2">
-          <button
-            onClick={() => setActiveTab('overview')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'overview'
-                ? 'bg-brand-primary text-white shadow-lg shadow-indigo-500/25'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-            }`}
-          >
-            <Mic2 className="w-4 h-4" />
-            Dashboard & Grounding
-          </button>
-
-          <button
-            onClick={() => setActiveTab('acoustic_plots')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'acoustic_plots'
-                ? 'bg-brand-primary text-white shadow-lg shadow-indigo-500/25'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-            }`}
-          >
-            <Activity className="w-4 h-4" />
-            Acoustic Contours (Plotly)
-          </button>
-
-          <button
-            onClick={() => setActiveTab('compare_gradient')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
-              activeTab === 'compare_gradient'
-                ? 'bg-brand-primary text-white shadow-lg shadow-indigo-500/25'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/60'
-            }`}
-          >
-            <Layers className="w-4 h-4" />
-            Compare Gradient (Levels 4 ➔ 0)
-          </button>
-        </div>
-
-        {/* Upload & Sample Selector Panel */}
-        <UploadPanel />
-
-        {/* Tab 1: Overview */}
-        {activeTab === 'overview' && (
-          <>
-            <ScoreCard />
-            <WaveformViewer />
-            <GroundTruthTable />
-            <CausalExplanationCard />
-            <TranscriptHeatmap />
-            <ClarityPanel />
-            <LimitationsPanel />
-          </>
-        )}
-
-        {/* Tab 2: Acoustic Plots */}
-        {activeTab === 'acoustic_plots' && (
-          <>
-            <WaveformViewer />
-            <AcousticPlots />
-            <GroundTruthTable />
-            <CausalExplanationCard />
-            <TranscriptHeatmap />
-            <ClarityPanel />
-            <LimitationsPanel />
-          </>
-        )}
-
-        {/* Tab 3: Compare Gradient */}
-        {activeTab === 'compare_gradient' && (
-          <>
-            <CompareGradientView />
-            <ScoreCard />
-            <WaveformViewer />
-            <GroundTruthTable />
-            <CausalExplanationCard />
-            <ClarityPanel />
-            <LimitationsPanel />
-          </>
-        )}
+      <main className="mx-auto w-full max-w-[1180px] flex-1 px-4 py-6 sm:px-6">
+        {view === 'recording' ? <RecordingView /> : <BenchmarkView />}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-slate-800/80 glass-panel py-5 px-6 mt-12 text-xs text-slate-400">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span className="font-bold text-slate-300">Track C: Contrastive Speech Analytics</span> • Multimodal AI Hackathon 2026
-          </div>
-          <div className="flex items-center gap-4 text-slate-400">
-            <span>MFA 3.x Forced Alignment</span>
-            <span>•</span>
-            <span>Praat Parselmouth F0 / HNR</span>
-            <span>•</span>
-            <span>LUFS Normalization</span>
-            <span>•</span>
-            <span>Pydantic v2</span>
-          </div>
+      <footer className="border-t border-line bg-surface">
+        <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-5 text-[12px] text-ink-3 sm:px-6">
+          <span>Multimodal AI Hackathon 2026 · Track C</span>
+          <span>Alignment: torchaudio MMS_FA · Pitch and HNR: Praat (Parselmouth) · Scoring: deterministic, no LLM</span>
+          <a className="font-medium text-accent hover:underline" href="https://github.com/RudraSharma3/speech-flaw-lab">
+            Source on GitHub
+          </a>
         </div>
       </footer>
     </div>

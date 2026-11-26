@@ -1,181 +1,90 @@
 import React from 'react';
 import { useAudioStore } from '../store/useAudioStore';
-import { Target, CheckCircle2, AlertOctagon, AlertTriangle } from 'lucide-react';
 import { GroundTruthEvalRow } from '../types/api';
+import { FlawLabel, Panel, StatusBadge } from './ui';
 
+const span = (s?: [number, number] | null) => (s ? `${s[0].toFixed(2)}–${s[1].toFixed(2)} s` : null);
+
+/** Step 5: one-to-one match of detections against the injected ground truth. */
 export const GroundTruthTable: React.FC = () => {
   const { resultData, seekTo, setSelectedRegion } = useAudioStore();
+  const rows = resultData?.ground_truth_eval ?? [];
+  if (!resultData || rows.length === 0) return null;
 
-  const evalRows = resultData?.ground_truth_eval || [];
-  const gtFlaws = resultData?.ground_truth_flaws || [];
-
-  if (evalRows.length === 0 && gtFlaws.length === 0) {
-    return null;
-  }
-
-  const handleRowClick = (row: GroundTruthEvalRow) => {
-    if (row.detected_id && resultData?.flaws) {
-      const match = resultData.flaws.find((f) => f.region_id === row.detected_id);
-      if (match) {
-        setSelectedRegion(match);
-        seekTo(match.start_s);
-        return;
-      }
-    }
-    if (row.gt_span) {
+  const onRow = (row: GroundTruthEvalRow) => {
+    const match = row.detected_id ? resultData.flaws.find((f) => f.region_id === row.detected_id) : undefined;
+    if (match) {
+      setSelectedRegion(match);
+      seekTo(match.start_s);
+    } else if (row.gt_span) {
       seekTo(row.gt_span[0]);
-    } else if (row.detected_span) {
-      seekTo(row.detected_span[0]);
     }
   };
 
-  const matchedCount = evalRows.filter((r) => r.status === 'MATCHED').length;
-  const fpCount = evalRows.filter((r) => r.status === 'FALSE_POSITIVE').length;
-  const missedCount = evalRows.filter((r) => r.status === 'MISSED_GT').length;
-
   return (
-    <div className="glass-panel p-5 rounded-2xl mb-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
-        <div>
-          <h3 className="text-base font-bold text-white flex items-center gap-2">
-            <Target className="w-5 h-5 text-amber-400" />
-            Ground-Truth Flaw Alignment & Boundary Verification
-          </h3>
-          <p className="text-xs text-slate-400">
-            One-to-one bipartite Hungarian IoU matching against known injected flaw parameters (IoU threshold ≥ 0.3).
-          </p>
-        </div>
-
-        <div className="flex items-center gap-2 text-xs">
-          <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-semibold flex items-center gap-1">
-            <CheckCircle2 className="w-3.5 h-3.5" />
-            {matchedCount} Matched
-          </span>
-          <span className="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300 border border-rose-500/30 font-semibold flex items-center gap-1">
-            <AlertOctagon className="w-3.5 h-3.5" />
-            {fpCount} False Positives
-          </span>
-          <span className="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/30 font-semibold flex items-center gap-1">
-            <AlertTriangle className="w-3.5 h-3.5" />
-            {missedCount} Missed GT
-          </span>
-        </div>
-      </div>
-
-      <div className="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/70">
-        <table className="w-full text-left text-xs text-slate-300">
-          <thead className="bg-slate-900/90 text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800">
-            <tr>
-              <th className="py-2.5 px-3">Status</th>
-              <th className="py-2.5 px-3">Detected Flaw</th>
-              <th className="py-2.5 px-3">Ground Truth Flaw</th>
-              <th className="py-2.5 px-3">IoU</th>
-              <th className="py-2.5 px-3">Start Error</th>
-              <th className="py-2.5 px-3">End Error</th>
-              <th className="py-2.5 px-3">Affected Words</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-800/60 font-mono text-[11px]">
-            {evalRows.map((row, idx) => {
-              const isMatched = row.status === 'MATCHED';
-              const isFp = row.status === 'FALSE_POSITIVE';
-              const isMiss = row.status === 'MISSED_GT';
-
-              return (
-                <tr
-                  key={idx}
-                  onClick={() => handleRowClick(row)}
-                  className="hover:bg-slate-800/40 cursor-pointer transition-colors"
-                >
-                  <td className="py-2 px-3">
-                    {isMatched && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                        MATCHED
-                      </span>
-                    )}
-                    {isFp && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                        FALSE POS
-                      </span>
-                    )}
-                    {isMiss && (
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                        MISSED
-                      </span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3">
-                    {row.detected_type ? (
-                      <div>
-                        <span className="font-sans font-bold text-slate-200">
-                          {row.detected_type.replace('_', ' ')}
-                        </span>
-                        {row.detected_span && (
-                          <div className="text-[10px] text-slate-500">
-                            [{row.detected_span[0].toFixed(2)}s – {row.detected_span[1].toFixed(2)}s]
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-slate-600">—</span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3">
-                    {row.gt_type ? (
-                      <div>
-                        <span className="font-sans font-bold text-amber-300">
-                          {row.gt_type.replace('_', ' ')}
-                        </span>
-                        {row.gt_span && (
-                          <div className="text-[10px] text-slate-500">
-                            [{row.gt_span[0].toFixed(2)}s – {row.gt_span[1].toFixed(2)}s]
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-slate-600">—</span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3">
-                    {isMatched ? (
-                      <span className="font-bold text-emerald-400">{(row.iou * 100).toFixed(1)}%</span>
-                    ) : (
-                      <span className="text-slate-600">0.0%</span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3">
-                    {row.start_error_ms !== null && row.start_error_ms !== undefined ? (
-                      <span className={row.start_error_ms > 500 ? 'text-amber-400' : 'text-slate-300'}>
-                        {row.start_error_ms.toFixed(0)} ms
-                      </span>
-                    ) : (
-                      <span className="text-slate-600">—</span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3">
-                    {row.end_error_ms !== null && row.end_error_ms !== undefined ? (
-                      <span className={row.end_error_ms > 500 ? 'text-amber-400' : 'text-slate-300'}>
-                        {row.end_error_ms.toFixed(0)} ms
-                      </span>
-                    ) : (
-                      <span className="text-slate-600">—</span>
-                    )}
-                  </td>
-
-                  <td className="py-2 px-3 max-w-xs truncate font-sans text-slate-300">
-                    "{row.detected_words || row.gt_words || '—'}"
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <Panel
+      title="Check against injected ground truth"
+      subtitle="Each detection is paired with at most one injected flaw (Hungarian matching on time overlap, IoU ≥ 0.3). Click a row to jump to it."
+      bodyClassName="overflow-x-auto"
+    >
+      <table className="w-full min-w-[720px] text-left text-[13px]">
+        <thead>
+          <tr className="border-b border-line bg-surface-2/70 text-ink-3">
+            <th className="eyebrow px-4 py-2 font-medium">Result</th>
+            <th className="eyebrow px-4 py-2 font-medium">Detected</th>
+            <th className="eyebrow px-4 py-2 font-medium">Injected</th>
+            <th className="eyebrow px-4 py-2 text-right font-medium">IoU</th>
+            <th className="eyebrow px-4 py-2 text-right font-medium">Start error</th>
+            <th className="eyebrow px-4 py-2 text-right font-medium">End error</th>
+            <th className="eyebrow px-4 py-2 font-medium">Words</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, i) => {
+            const matched = row.status === 'MATCHED';
+            return (
+              <tr key={i} onClick={() => onRow(row)} className="cursor-pointer border-b border-line last:border-b-0 hover:bg-surface-2/60">
+                <td className="px-4 py-2.5 align-top">
+                  {matched && <StatusBadge tone="good">Found</StatusBadge>}
+                  {row.status === 'FALSE_POSITIVE' && <StatusBadge tone="crit">False alarm</StatusBadge>}
+                  {row.status === 'MISSED_GT' && <StatusBadge tone="warn">Missed</StatusBadge>}
+                  {matched && !row.type_match && <div className="mt-1 text-[11px] text-ink-3">type differs</div>}
+                </td>
+                <td className="px-4 py-2.5 align-top">
+                  {row.detected_type ? (
+                    <>
+                      <FlawLabel type={row.detected_type} className="text-ink" />
+                      <div className="num font-mono text-[11px] text-ink-3">{span(row.detected_span)}</div>
+                    </>
+                  ) : (
+                    <span className="text-ink-3">—</span>
+                  )}
+                </td>
+                <td className="px-4 py-2.5 align-top">
+                  {row.gt_type ? (
+                    <>
+                      <FlawLabel type={row.gt_type} className="text-ink" />
+                      <div className="num font-mono text-[11px] text-ink-3">{span(row.gt_span)}</div>
+                    </>
+                  ) : (
+                    <span className="text-ink-3">—</span>
+                  )}
+                </td>
+                <td className="num px-4 py-2.5 text-right align-top font-mono">{matched ? row.iou.toFixed(2) : '—'}</td>
+                <td className="num px-4 py-2.5 text-right align-top font-mono">
+                  {matched && row.start_error_ms != null ? `${row.start_error_ms.toFixed(0)} ms` : '—'}
+                </td>
+                <td className="num px-4 py-2.5 text-right align-top font-mono">
+                  {matched && row.end_error_ms != null ? `${row.end_error_ms.toFixed(0)} ms` : '—'}
+                </td>
+                <td className="max-w-[260px] truncate px-4 py-2.5 align-top text-ink-2" title={row.detected_words || row.gt_words || ''}>
+                  “{row.detected_words || row.gt_words || ''}”
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </Panel>
   );
 };

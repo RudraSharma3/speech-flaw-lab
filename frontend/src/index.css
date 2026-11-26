@@ -2,43 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Layout concept: a quiet measuring instrument. Paper-grey page, white panels with hairline
+ * borders, one deep petrol accent for controls, and colour reserved for the data
+ * (flaw types and pass/fail status).
+ */
+:root {
+  color-scheme: light;
+
+  --paper: #f4f5f7;
+  --surface: #ffffff;
+  --surface-2: #eef0f3;
+  --line: #e0e3e8;
+  --line-strong: #c4cad3;
+
+  --ink: #14181e;
+  --ink-2: #464e5a;
+  --ink-3: #69717d;
+
+  --accent: #0f4c5c;
+  --accent-hover: #0a3a47;
+  --accent-soft: #e4eef0;
+
+  --good: #146c37;
+  --good-soft: #e7f3eb;
+  --warn: #8a5300;
+  --warn-soft: #fbf0dc;
+  --crit: #b42318;
+  --crit-soft: #fcebe9;
+}
+
 @layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
   body {
-    @apply bg-[#0b0f19] text-slate-100 font-sans;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 }
 
-/* Glassmorphism Card Style */
-.glass-panel {
-  background: rgba(17, 24, 39, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+@layer components {
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase text-ink-3;
+    letter-spacing: 0.06em;
+  }
+  .field {
+    @apply w-full rounded-md border border-line-strong bg-surface px-2.5 py-2 text-[13px] text-ink;
+  }
+  .field:focus {
+    @apply border-accent outline-none;
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md border border-line-strong bg-surface px-3 py-1.5 text-[13px] font-medium text-ink transition-colors hover:bg-surface-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md bg-accent px-3.5 py-2 text-[13px] font-medium text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-50;
+  }
 }
 
-.glass-panel-glow {
-  background: rgba(17, 24, 39, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.2);
-}
-
-/* Custom Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: transparent;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #374151;
-  border-radius: 3px;
+  background: var(--line-strong);
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #4b5563;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
