@@ -46,7 +46,7 @@ export const CompareGradientView: React.FC = () => {
       .then((data) => {
         if (data && data.score_tables) {
           const rawTables = data.score_tables.contrastive_uncalibrated;
-          const calTables = data.score_tables.contrastive_calibrated;
+          const calTables = data.score_tables.contrastive_isotonic_calibrated;
           if (rawTables && rawTables[selectedSpeech]) {
             const rawVals = rawTables[selectedSpeech];
             setTierScores({
